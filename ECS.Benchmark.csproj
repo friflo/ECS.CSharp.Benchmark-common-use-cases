@@ -15,4 +15,10 @@
       <PackageReference Include="Friflo.Engine.ECS" Version="3.0.0-preview.2" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="**/*-report.html" />
+      <None Remove="**/*-report.csv" />
+      <None Remove="BenchmarkDotNet.Artifacts/*.log" />
+    </ItemGroup>
+
 </Project>
