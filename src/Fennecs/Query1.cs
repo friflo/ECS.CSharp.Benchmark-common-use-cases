@@ -9,20 +9,26 @@ namespace Fennecs;
 [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
 public class Query1
 {
-    private Query    query;
+    private World               world;
+    private Stream<Component1>  stream;
     
     [GlobalSetup]
     public void Setup() {
-        var world = new World();
+        world = new World();
         for (int n = 0; n < 10; n++) {
             world.Spawn();
         }
-        query = world.Query<Component1>().Compile();
+        stream = world.Query<Component1>().Compile().Stream<Component1>();
+    }
+    
+    [GlobalCleanup]
+    public void Shutdown() {
+        world.Dispose();
     }
     
     [Benchmark]
     public void Run() {
-        query.Stream<Component1>().Raw((Memory<Component1> components) => {
+        stream.Raw((Memory<Component1> components) => {
             foreach (Component1 _ in components.Span) {
             }
         });

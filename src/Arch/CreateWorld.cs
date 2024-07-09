@@ -8,12 +8,6 @@ namespace Arch;
 [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
 public class CreateWorld
 {
-    [GlobalSetup]
-    public void Setup() { }
-    
-    [GlobalCleanup]
-    public void Shutdown() { }
-    
     [Benchmark]
     public void Run()
     {

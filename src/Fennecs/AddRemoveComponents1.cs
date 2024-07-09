@@ -9,12 +9,18 @@ namespace Fennecs;
 [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
 public class AddRemoveComponents1
 {
-    private Entity entity;
+    private World   world;
+    private Entity  entity;
     
     [GlobalSetup]
     public void Setup() {
-        var world = new World();
+        world = new World();
         entity = world.Spawn();
+    }
+    
+    [GlobalCleanup]
+    public void Shutdown() {
+        world.Dispose();
     }
     
     [Benchmark]
