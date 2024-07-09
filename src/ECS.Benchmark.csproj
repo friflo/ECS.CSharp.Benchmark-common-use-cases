@@ -21,16 +21,4 @@
       <None Remove="BenchmarkDotNet.Artifacts/*.log" />
     </ItemGroup>
 
-    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-      <DefineConstants>TRACE</DefineConstants>
-      <OutputPath>..\bin\Debug\</OutputPath>
-      <BaseIntermediateOutputPath>..\obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
-    </PropertyGroup>
-
-    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-      <OutputPath>..\bin\Release\</OutputPath>
-      <BaseIntermediateOutputPath>..\obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
-    </PropertyGroup>
 </Project>
