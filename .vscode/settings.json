@@ -9,7 +9,7 @@
         "**/.idea": true,
         "**/*-report.csv": true,
         "**/*-report.html": true,
-        "BenchmarkDotNet.Artifacts/*.log": true,
+        "src/BenchmarkDotNet.Artifacts/*.log": true,
     },
     "cSpell.words": [
        
