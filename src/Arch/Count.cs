@@ -1,4 +1,5 @@
-﻿using Arch.Core;
+﻿using System.Diagnostics;
+using Arch.Core;
 using Arch.Core.Extensions;
 using Arch.Types;
 using BenchmarkDotNet.Attributes;
@@ -16,10 +17,12 @@ public class Count
     [GlobalSetup]
     public void Setup() {
         world   = World.Create();
-        for (int n = 0; n < 10; n++) {
-            world.Create().Add(new Component1());    
+        for (int n = 0; n < Constant.EntityCount; n++) {
+            var entity = world.Create();
+            entity.Add(new Component1());    
         }
         queryDescription = new QueryDescription().WithAll<Component1>();
+        Assert.AreEqual(Constant.EntityCount, world.CountEntities(queryDescription));
     }
     
     [GlobalCleanup]

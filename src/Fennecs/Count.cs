@@ -1,4 +1,5 @@
-﻿using BenchmarkDotNet.Attributes;
+﻿using System.Diagnostics;
+using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
 using fennecs;
 using Fennecs.Types;
@@ -15,10 +16,12 @@ public class Count
     [GlobalSetup]
     public void Setup() {
         world = new World();
-        for (int n = 0; n < 10; n++) {
-            world.Spawn();
+        for (int n = 0; n < Constant.EntityCount; n++) {
+            var entity = world.Spawn();
+            entity.Add<Component1>();
         }
         query = world.Query<Component1>().Compile();
+        Assert.AreEqual(Constant.EntityCount, query.Count);
     }
     
     [GlobalCleanup]

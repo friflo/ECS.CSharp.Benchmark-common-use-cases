@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using Arch.Core;
 using Arch.Core.Extensions;
 using Arch.Types;
@@ -17,11 +18,13 @@ public class Query1
     [GlobalSetup]
     public void Setup() {
         world   = World.Create();
-        for (int n = 0; n < 10; n++) {
-            world.Create().Add(new Component1());    
+        for (int n = 0; n < Constant.EntityCount; n++) {
+            var entity = world.Create();
+            entity.Add(new Component1());
         }
         var queryDescription = new QueryDescription().WithAll<Component1>();
         query = world.Query(in queryDescription);
+        Assert.AreEqual(Constant.EntityCount, world.CountEntities(queryDescription));
     }
     
     [GlobalCleanup]

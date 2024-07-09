@@ -1,4 +1,5 @@
-﻿using BenchmarkDotNet.Attributes;
+﻿using System.Diagnostics;
+using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
 using Friflo.Engine.ECS.Types;
 
@@ -13,10 +14,12 @@ public class Count
     [GlobalSetup]
     public void Setup() {
         var world = new EntityStore();
-        for (int n = 0; n < 10; n++) {
-            world.CreateEntity();
+        for (int n = 0; n < Constant.EntityCount; n++) {
+            var entity = world.CreateEntity();
+            entity.AddComponent<Component1>();
         }
         query = world.Query<Component1>();
+        Assert.AreEqual(Constant.EntityCount, query.Count);
     }
     
     [Benchmark]
