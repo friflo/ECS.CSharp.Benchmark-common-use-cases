@@ -1,4 +1,6 @@
 ﻿
+namespace All;
+
 internal static class Categories
 {
     public const string Arch = "Arch";
