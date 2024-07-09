@@ -1,13 +1,14 @@
-﻿using All;
-using Arch.Core;
+﻿using Arch.Core;
 using Arch.Core.Extensions;
 using Arch.Types;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Configs;
 
 namespace Arch;
 
 [ShortRunJob]
-public class Query1Count
+[GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
+public class Count
 {
     private World   world;
     private QueryDescription queryDescription;
@@ -27,7 +28,6 @@ public class Query1Count
     }
     
     [Benchmark]
-    [BenchmarkCategory(Categories.Arch)]
     public void Run() {
         world.CountEntities(queryDescription);
     }

@@ -1,10 +1,11 @@
-﻿using All;
-using Arch.Core;
+﻿using Arch.Core;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Configs;
 
 namespace Arch;
 
 [ShortRunJob]
+[GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
 public class CreateWorld
 {
     [GlobalSetup]
@@ -14,7 +15,6 @@ public class CreateWorld
     public void Shutdown() { }
     
     [Benchmark]
-    [BenchmarkCategory(Categories.Arch)]
     public void Run()
     {
         var world = World.Create();

@@ -1,11 +1,12 @@
-﻿using All;
-using BenchmarkDotNet.Attributes;
+﻿using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Configs;
 using Friflo.Engine.ECS.Types;
 
 namespace Friflo.Engine.ECS;
 
 [ShortRunJob]
-public class Query1Count
+[GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
+public class Count
 {
     private ArchetypeQuery<Component1>    query;
     
@@ -19,7 +20,6 @@ public class Query1Count
     }
     
     [Benchmark]
-    [BenchmarkCategory(Categories.Friflo)]
     public void Run() {
         _ = query.Count;
     }

@@ -1,13 +1,14 @@
 ﻿using System.Runtime.CompilerServices;
-using All;
 using Arch.Core;
 using Arch.Core.Extensions;
 using Arch.Types;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Configs;
 
 namespace Arch;
 
 [ShortRunJob]
+[GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
 public class Query1
 {
     private World   world;
@@ -29,7 +30,6 @@ public class Query1
     }
     
     [Benchmark]
-    [BenchmarkCategory(Categories.Arch)]
     public void Run()
     {
         foreach(ref var chunk in query.GetChunkIterator())

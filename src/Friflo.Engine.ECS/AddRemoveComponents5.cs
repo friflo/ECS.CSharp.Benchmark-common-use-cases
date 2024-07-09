@@ -1,10 +1,11 @@
-﻿using All;
-using BenchmarkDotNet.Attributes;
+﻿using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Configs;
 using Friflo.Engine.ECS.Types;
 
 namespace Friflo.Engine.ECS;
 
 [ShortRunJob]
+[GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
 public class AddRemoveComponents5
 {
     private Entity entity;
@@ -16,7 +17,6 @@ public class AddRemoveComponents5
     }
     
     [Benchmark]
-    [BenchmarkCategory(Categories.Friflo)]
     public void Run() {
         entity.Add(new Component1(), new Component2(), new Component3(), new Component4(), new Component5());
         entity.Remove<Component1, Component2, Component3, Component4, Component5>();

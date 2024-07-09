@@ -12,6 +12,7 @@
     <ItemGroup>
       <PackageReference Include="Arch" Version="1.2.8" />
       <PackageReference Include="BenchmarkDotNet" Version="0.13.12" />
+      <PackageReference Include="fennecs" Version="0.5.8-beta" />
       <PackageReference Include="Friflo.Engine.ECS" Version="3.0.0-preview.2" />
     </ItemGroup>
 

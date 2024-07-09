@@ -1,13 +1,14 @@
-﻿using All;
-using Arch.Core;
+﻿using Arch.Core;
 using Arch.Core.Extensions;
 using Arch.Types;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Configs;
 
 namespace Arch;
 
 [ShortRunJob]
-public class AddRemoveComponent1
+[GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
+public class AddRemoveComponents1
 {
     private World   world;
     private Entity  entity;
@@ -24,7 +25,6 @@ public class AddRemoveComponent1
     }
     
     [Benchmark]
-    [BenchmarkCategory(Categories.Arch)]
     public void Run() {
         entity.Add(new Component1());
         entity.Remove<Component1>();

@@ -1,7 +1,8 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
+using fennecs;
 
-namespace Friflo.Engine.ECS;
+namespace Fennecs;
 
 [ShortRunJob]
 [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
@@ -17,7 +18,7 @@ public class CreateWorld
     [Benchmark]
     public void Run()
     {
-        _ = new EntityStore();
-        // nothing to Dispose() - has no unmanaged resources
+        var world = new World();
+        world.Dispose();
     }
 }
