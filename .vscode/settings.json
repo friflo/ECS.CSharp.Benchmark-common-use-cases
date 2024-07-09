@@ -9,6 +9,7 @@
         "**/.idea": true,
         "**/*-report.csv": true,
         "**/*-report.html": true,
+        "Directory.Build.props": true,
         "Artifacts/*.log": true,
     },
     "cSpell.words": [

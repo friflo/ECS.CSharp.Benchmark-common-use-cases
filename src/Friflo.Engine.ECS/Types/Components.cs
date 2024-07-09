@@ -1,4 +1,4 @@
-﻿namespace Friflo.Engine.ECS;
+﻿namespace Friflo.Engine.ECS.Types;
 
 internal struct Component1 : IComponent
 {

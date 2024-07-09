@@ -1,5 +1,6 @@
 ﻿using All;
 using BenchmarkDotNet.Attributes;
+using Friflo.Engine.ECS.Types;
 
 namespace Friflo.Engine.ECS;
 

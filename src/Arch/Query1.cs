@@ -2,6 +2,7 @@
 using All;
 using Arch.Core;
 using Arch.Core.Extensions;
+using Arch.Types;
 using BenchmarkDotNet.Attributes;
 
 namespace Arch;

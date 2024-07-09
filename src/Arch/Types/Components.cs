@@ -1,4 +1,4 @@
-﻿namespace Arch;
+﻿namespace Arch.Types;
 
 internal struct Component1
 {
