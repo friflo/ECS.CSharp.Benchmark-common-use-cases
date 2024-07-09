@@ -1,5 +1,7 @@
 ﻿namespace Friflo.Engine.ECS.Types;
 
+#pragma warning disable CS0649 // Field is never assigned to, and will always have its default value
+
 internal struct Component1 : IComponent
 {
     public int value;
