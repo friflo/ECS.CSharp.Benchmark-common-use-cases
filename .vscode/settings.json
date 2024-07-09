@@ -1,0 +1,14 @@
+{
+    "editor.wordWrap": "off",
+    "[markdown]": {
+        "editor.wordWrap": "off",
+    },
+	"files.exclude": {
+        "**/obj": true,
+		"**/bin": true,
+        "**/.idea": true,
+    },
+    "cSpell.words": [
+       
+    ]
+}
