@@ -7,6 +7,9 @@
         "**/obj": true,
 		"**/bin": true,
         "**/.idea": true,
+        "**/*-report.csv": true,
+        "**/*-report.html": true,
+        "BenchmarkDotNet.Artifacts/*.log": true,
     },
     "cSpell.words": [
        

@@ -1,1 +1,4 @@
-# ECS.CSharp.Benchmark-real-world-use-cases
+# ECS.CSharp.Benchmark Real World use-cases
+
+
+dotnet run -c Release --filter *
