@@ -9,9 +9,9 @@ namespace Fennecs;
 [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
 public class AddRemoveLinks
 {
-    private World   world;
-    private Entity  entity;
-    private Entity[] targets;
+    private World       world;
+    private Entity[]    sources;
+    private Entity[]    targets;
     
     [Params(1, 10, 100)]
     public int LinkCount { get; set; }
@@ -19,7 +19,10 @@ public class AddRemoveLinks
     [GlobalSetup]
     public void Setup() {
         world = new World();
-        entity = world.Spawn();
+        sources = new Entity[Constant.SourceEntitiesCount];
+        for (int n = 0; n < Constant.SourceEntitiesCount; n++) {
+            sources[n] = world.Spawn();
+        }
         targets = new Entity[LinkCount];
         for (int n = 0; n < LinkCount; n++) {
             targets[n] = world.Spawn();
@@ -33,11 +36,14 @@ public class AddRemoveLinks
     
     [Benchmark]
     public void Run() {
-        for (int n = 0; n < LinkCount; n++) {
-            entity.Add(new LinkRelation { value = n }, targets[n] );
+        foreach (var source in sources) {
+            for (int n = 0; n < LinkCount; n++) {
+                source.Add(new LinkRelation { value = n }, targets[n] );
+            }
+            for (int n = 0; n < LinkCount; n++) {
+                source.Remove<LinkRelation>(targets[n]);
+            }
         }
-        for (int n = 0; n < LinkCount; n++) {
-            entity.Remove<LinkRelation>(targets[n]);
-        }
+
     }
 }
