@@ -1,10 +1,9 @@
 ﻿using BenchmarkDotNet.Attributes;
-using Friflo.Engine.ECS;
 
 namespace Friflo.Engine.ECS;
 
 [ShortRunJob]
-public class QueryCount
+public class Query1Count
 {
     private ArchetypeQuery<Component1>    query;
     

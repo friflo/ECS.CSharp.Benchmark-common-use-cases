@@ -5,7 +5,7 @@ using BenchmarkDotNet.Attributes;
 namespace Arch;
 
 [ShortRunJob]
-public class QueryCount
+public class Query1Count
 {
     private World   world;
     private QueryDescription queryDescription;
