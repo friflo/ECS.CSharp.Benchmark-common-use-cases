@@ -10,10 +10,13 @@ public class Query5
 {
     private ArchetypeQuery<Component1,Component2,Component3,Component4,Component5> query;
     
+    [Params(Constant.EntityCountP1)]
+    public int EntityCount { get; set; }
+    
     [GlobalSetup]
     public void Setup() {
         var world = new EntityStore();
-        for (int n = 0; n < Constant.EntityCount; n++) {
+        for (int n = 0; n < EntityCount; n++) {
             var entity = world.CreateEntity();
             entity.AddComponent<Component1>();
             entity.AddComponent<Component2>();

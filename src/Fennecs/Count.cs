@@ -13,15 +13,18 @@ public class Count
     private Query    query;
     private World    world;
     
+    [Params(Constant.EntityCountP1)]
+    public int EntityCount { get; set; }
+    
     [GlobalSetup]
     public void Setup() {
         world = new World();
-        for (int n = 0; n < Constant.EntityCount; n++) {
+        for (int n = 0; n < EntityCount; n++) {
             var entity = world.Spawn();
             entity.Add<Component1>();
         }
         query = world.Query<Component1>().Compile();
-        Assert.AreEqual(Constant.EntityCount, query.Count);
+        Assert.AreEqual(EntityCount, query.Count);
     }
     
     [GlobalCleanup]

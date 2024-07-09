@@ -13,15 +13,18 @@ public class Query1
     private World               world;
     private Stream<Component1>  stream;
     
+    [Params(Constant.EntityCountP1)]
+    public int EntityCount { get; set; }
+    
     [GlobalSetup]
     public void Setup() {
         world = new World();
-        for (int n = 0; n < Constant.EntityCount; n++) {
+        for (int n = 0; n < EntityCount; n++) {
             var entity = world.Spawn();
             entity.Add<Component1>();
         }
         stream = world.Query<Component1>().Compile().Stream<Component1>();
-        Assert.AreEqual(Constant.EntityCount, stream.Count);
+        Assert.AreEqual(EntityCount, stream.Count);
     }
     
     [GlobalCleanup]

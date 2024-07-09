@@ -11,15 +11,18 @@ public class Query1
 {
     private ArchetypeQuery<Component1>    query;
     
+    [Params(Constant.EntityCountP1)]
+    public int EntityCount { get; set; }
+    
     [GlobalSetup]
     public void Setup() {
         var world = new EntityStore();
-        for (int n = 0; n < Constant.EntityCount; n++) {
+        for (int n = 0; n < EntityCount; n++) {
             var entity = world.CreateEntity();
             entity.AddComponent<Component1>();
         }
         query = world.Query<Component1>();
-        Assert.AreEqual(Constant.EntityCount, query.Count);
+        Assert.AreEqual(EntityCount, query.Count);
     }
     
     [Benchmark]
