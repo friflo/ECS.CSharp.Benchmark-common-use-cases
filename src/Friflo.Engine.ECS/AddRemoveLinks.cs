@@ -15,7 +15,8 @@ public class AddRemoveLinks
     public int LinkCount { get; set; }
     
     [GlobalSetup]
-    public void Setup() {
+    public void Setup()
+    {
         var world = new EntityStore();
         sources = new Entity[Constant.SourceEntitiesCount];
         for (int n = 0; n < Constant.SourceEntitiesCount; n++) {
@@ -25,7 +26,6 @@ public class AddRemoveLinks
         for (int n = 0; n < LinkCount; n++) {
             targets[n] = world.CreateEntity();
         }
-        
     }
     
     [Benchmark]
@@ -33,7 +33,7 @@ public class AddRemoveLinks
     {
         foreach (var source in sources) {
             for (int n = 0; n < LinkCount; n++) {
-                source.AddRelation(new LinkRelation { value = 42, target = targets[n] });
+                source.AddRelation(new LinkRelation { value = n, target = targets[n] });
             }
             for (int n = 0; n < LinkCount; n++) {
                 source.RemoveRelation<LinkRelation>(targets[n]);
