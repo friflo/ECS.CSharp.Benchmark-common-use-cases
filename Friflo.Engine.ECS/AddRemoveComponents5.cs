@@ -1,10 +1,9 @@
 ﻿using BenchmarkDotNet.Attributes;
 
-
 namespace Friflo.Engine.ECS;
 
 [ShortRunJob]
-public class AddRemoveComponent
+public class AddRemoveComponents5
 {
     private Entity entity;
     
@@ -17,7 +16,7 @@ public class AddRemoveComponent
     [Benchmark]
     [BenchmarkCategory(Categories.Friflo)]
     public void Run() {
-        entity.AddComponent(new Position());
-        entity.Remove<Position>();
+        entity.Add(new Component1(), new Component2(), new Component3(), new Component4(), new Component5());
+        entity.Remove<Component1, Component2, Component3, Component4, Component5>();
     }
 }

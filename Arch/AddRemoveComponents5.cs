@@ -5,18 +5,15 @@ using BenchmarkDotNet.Attributes;
 namespace Arch;
 
 [ShortRunJob]
-public class QueryCount
+public class AddRemoveComponents5
 {
     private World   world;
-    private QueryDescription queryDescription;
+    private Entity  entity;
     
     [GlobalSetup]
     public void Setup() {
         world   = World.Create();
-        for (int n = 0; n < 10; n++) {
-            world.Create().Add(new Component1());    
-        }
-        queryDescription = new QueryDescription().WithAll<Component1>();
+        entity  = world.Create();
     }
     
     [GlobalCleanup]
@@ -27,6 +24,7 @@ public class QueryCount
     [Benchmark]
     [BenchmarkCategory(Categories.Arch)]
     public void Run() {
-        world.CountEntities(queryDescription);
+        entity.Add(new Component1(), new Component2(), new Component3(), new Component4(), new Component5());
+        entity.Remove<Component1, Component2, Component3, Component4, Component5>();
     }
 }

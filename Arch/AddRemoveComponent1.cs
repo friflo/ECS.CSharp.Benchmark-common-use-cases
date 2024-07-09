@@ -1,17 +1,11 @@
-﻿using System.Numerics;
-using Arch.Core;
+﻿using Arch.Core;
 using Arch.Core.Extensions;
 using BenchmarkDotNet.Attributes;
 
 namespace Arch;
 
-struct Position
-{
-    Vector3 value;
-}
-
 [ShortRunJob]
-public class AddRemoveComponent
+public class AddRemoveComponent1
 {
     private World   world;
     private Entity  entity;
@@ -30,7 +24,7 @@ public class AddRemoveComponent
     [Benchmark]
     [BenchmarkCategory(Categories.Arch)]
     public void Run() {
-        entity.Add(new Position());
-        entity.Remove<Position>();
+        entity.Add(new Component1());
+        entity.Remove<Component1>();
     }
 }

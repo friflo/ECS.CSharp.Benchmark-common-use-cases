@@ -1,25 +1,22 @@
 ﻿using BenchmarkDotNet.Attributes;
-using Friflo.Engine.ECS;
 
 namespace Friflo.Engine.ECS;
 
 [ShortRunJob]
-public class QueryCount
+public class AddRemoveComponent1
 {
-    private ArchetypeQuery<Component1>    query;
+    private Entity entity;
     
     [GlobalSetup]
     public void Setup() {
         var world = new EntityStore();
-        for (int n = 0; n < 10; n++) {
-            world.CreateEntity();
-        }
-        query = world.Query<Component1>();
+        entity = world.CreateEntity();
     }
     
     [Benchmark]
     [BenchmarkCategory(Categories.Friflo)]
     public void Run() {
-        _ = query.Count;
+        entity.Add(new Component1());
+        entity.Remove<Component1>();
     }
 }
