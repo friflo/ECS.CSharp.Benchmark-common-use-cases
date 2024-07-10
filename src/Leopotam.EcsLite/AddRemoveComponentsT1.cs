@@ -26,6 +26,8 @@ public class AddRemoveComponentsT1
     {
         foreach (var entity in entities) {
             ecsPoolC1.Add(entity);
+        }
+        foreach (var entity in entities) {
             ecsPoolC1.Del(entity);
         }
     }

@@ -26,9 +26,10 @@ public class AddRemoveComponentsT1
     [Benchmark]
     public void Run()
     {
-        foreach (var entity in entities)
-        {
+        foreach (var entity in entities) {
             entity.Add(new Component1());
+        }
+        foreach (var entity in entities) {
             entity.Remove<Component1>();
         }
     }

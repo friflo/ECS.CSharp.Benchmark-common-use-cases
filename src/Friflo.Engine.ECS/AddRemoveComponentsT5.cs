@@ -19,6 +19,8 @@ public class AddRemoveComponentsT5
     {
         foreach (var entity in entities) {
             entity.Add(new Component1(), new Component2(), new Component3(), new Component4(), new Component5());
+        }
+        foreach (var entity in entities) {
             entity.Remove<Component1, Component2, Component3, Component4, Component5>();
         }
     }

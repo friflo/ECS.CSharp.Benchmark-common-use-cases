@@ -24,6 +24,8 @@ public class AddRemoveComponentsT1
     {
         foreach (var entity in entities) {
             entity.Set(new Component1());
+        }
+        foreach (var entity in entities) {
             entity.Unset<Component1>();
         }
     }
