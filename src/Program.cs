@@ -14,8 +14,12 @@ ManualConfig customConfig = DefaultConfig.Instance
     .WithOrderer(new DefaultOrderer(SummaryOrderPolicy.FastestToSlowest))
     .AddLogicalGroupRules(BenchmarkLogicalGroupRule.ByMethod)
 //  .WithSummaryStyle(SummaryStyle.Default.WithTimeUnit(TimeUnit.Microsecond))
-    .AddDiagnoser(MemoryDiagnoser.Default)                                          // add column: Allocated
-    .HideColumns("Method", "Error", "StdDev", "RatioSD", "Gen0", "Gen1", "Gen2");   // last column "Alloc Ratio" not hidden otherwise Markdown table is in valid 
+    .AddDiagnoser(MemoryDiagnoser.Default)                      // adds column: Allocated
+    .HideColumns(
+        "Method", "Error", "StdDev", "Median",                  // removed to reduce noise
+        "RatioSD",                                              // added by using: [Benchmark(Baseline = true)]
+        "InvocationCount", "IterationCount", "UnrollFactor",    // added by using: [InvocationCount()] & [IterationCount()] 
+        "Gen0", "Gen1", "Gen2");                                // last column "Alloc Ratio" not hidden otherwise Markdown table is in valid 
     
 
 BenchmarkSwitcher
