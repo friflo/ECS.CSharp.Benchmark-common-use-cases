@@ -4,7 +4,9 @@ using BenchmarkDotNet.Attributes;
 namespace Arch;
 
 [ShortRunJob]
-public class QueryT1
+[BenchmarkCategory(Category.QueryT1)]
+// ReSharper disable once InconsistentNaming
+public class QueryT1_Arch
 {
     private World               world;
     private QueryDescription    queryDescription;

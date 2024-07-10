@@ -3,7 +3,9 @@
 namespace Leopotam.EcsLite;
 
 [ShortRunJob]
-public class CreateWorld
+[BenchmarkCategory(Category.CreateWorld)]
+// ReSharper disable once InconsistentNaming
+public class CreateWorld_Leopotam
 {
     [Benchmark]
     public void Run()

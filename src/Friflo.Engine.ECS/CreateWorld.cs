@@ -3,7 +3,9 @@
 namespace Friflo.Engine.ECS;
 
 [ShortRunJob]
-public class CreateWorld
+[BenchmarkCategory(Category.CreateWorld)]
+// ReSharper disable once InconsistentNaming
+public class CreateWorld_Friflo
 {
     [Benchmark(Baseline = true)]
     public void Run()

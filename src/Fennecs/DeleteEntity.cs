@@ -5,7 +5,9 @@ namespace fennecs;
 [InvocationCount(Constants.DeleteEntityCount)]
 [IterationCount(Constants.DeleteEntityIterationCount)]
 [ShortRunJob]
-public class DeleteEntity
+[BenchmarkCategory(Category.DeleteEntity)]
+// ReSharper disable once InconsistentNaming
+public class DeleteEntity_Fennecs
 {
     private World       world;
     private Entity[]    entities;

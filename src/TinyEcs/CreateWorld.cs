@@ -3,7 +3,9 @@
 namespace TinyEcs;
 
 [ShortRunJob]
-public class CreateWorld
+[BenchmarkCategory(Category.CreateWorld)]
+// ReSharper disable once InconsistentNaming
+public class CreateWorld_TinyEcs
 {
     [Benchmark]
     public void Run()

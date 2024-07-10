@@ -3,7 +3,9 @@
 namespace Leopotam.EcsLite;
 
 [ShortRunJob]
-public class QueryT1
+[BenchmarkCategory(Category.QueryT1)]
+// ReSharper disable once InconsistentNaming
+public class QueryT1_Leopotam
 {
     private EcsWorld            world;
     private EcsFilter           filter;

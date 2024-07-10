@@ -6,7 +6,9 @@ namespace Friflo.Engine.ECS;
 [InvocationCount(Constants.DeleteEntityCount)]
 [IterationCount(Constants.DeleteEntityIterationCount)]
 [ShortRunJob]
-public class DeleteEntity
+[BenchmarkCategory(Category.DeleteEntity)]
+// ReSharper disable once InconsistentNaming
+public class DeleteEntity_Friflo
 {
     private EntityStore world;
     private Entity[]    entities;

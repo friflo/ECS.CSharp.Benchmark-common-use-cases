@@ -3,7 +3,9 @@
 namespace TinyEcs;
 
 [ShortRunJob]
-public class AddRemoveComponentsT5
+[BenchmarkCategory(Category.AddRemoveComponentsT5)]
+// ReSharper disable once InconsistentNaming
+public class AddRemoveComponentsT5_TinyEcs
 {
     private World           world;
     private EntityView[]    entities;

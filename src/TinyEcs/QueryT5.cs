@@ -3,7 +3,9 @@
 namespace TinyEcs;
 
 [ShortRunJob]
-public class QueryT5
+[BenchmarkCategory(Category.QueryT5)]
+// ReSharper disable once InconsistentNaming
+public class QueryT5_TinyEcs
 {
     private World   world;
     private Query   query;

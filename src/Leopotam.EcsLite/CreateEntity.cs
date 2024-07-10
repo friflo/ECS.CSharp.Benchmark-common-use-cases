@@ -5,7 +5,9 @@ namespace Leopotam.EcsLite;
 [InvocationCount(Constants.CreateEntityCount)]
 [IterationCount(Constants.CreateEntityIterationCount)]
 [ShortRunJob]
-public class CreateEntity
+[BenchmarkCategory(Category.CreateEntity)]
+// ReSharper disable once InconsistentNaming
+public class CreateEntity_Leopotam
 {
     private EcsWorld    world;
     

@@ -3,7 +3,9 @@
 namespace fennecs;
 
 [ShortRunJob]
-public class AddRemoveComponentsT5
+[BenchmarkCategory(Category.AddRemoveComponentsT5)]
+// ReSharper disable once InconsistentNaming
+public class AddRemoveComponentsT5_Fennecs
 {
     private World       world;
     private Entity[]    entities;

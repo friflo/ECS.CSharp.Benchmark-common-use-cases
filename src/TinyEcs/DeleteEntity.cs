@@ -5,7 +5,9 @@ namespace TinyEcs;
 [InvocationCount(Constants.DeleteEntityCount)]
 [IterationCount(Constants.DeleteEntityIterationCount)]
 [ShortRunJob]
-public class DeleteEntity
+[BenchmarkCategory(Category.DeleteEntity)]
+// ReSharper disable once InconsistentNaming
+public class DeleteEntity_TinyEcs
 {
     private World           world;
     private EntityView[]    entities;

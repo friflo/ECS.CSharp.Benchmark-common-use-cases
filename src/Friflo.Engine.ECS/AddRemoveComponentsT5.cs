@@ -3,7 +3,9 @@
 namespace Friflo.Engine.ECS;
 
 [ShortRunJob]
-public class AddRemoveComponentsT5
+[BenchmarkCategory(Category.AddRemoveComponentsT5)]
+// ReSharper disable once InconsistentNaming
+public class AddRemoveComponentsT5_Friflo
 {
     private Entity[] entities;
     

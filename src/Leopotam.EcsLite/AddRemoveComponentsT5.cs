@@ -3,7 +3,9 @@
 namespace Leopotam.EcsLite;
 
 [ShortRunJob]
-public class AddRemoveComponentsT5
+[BenchmarkCategory(Category.AddRemoveComponentsT5)]
+// ReSharper disable once InconsistentNaming
+public class AddRemoveComponentsT5_Leopotam
 {
     private EcsWorld            world;
     private int[]               entities;

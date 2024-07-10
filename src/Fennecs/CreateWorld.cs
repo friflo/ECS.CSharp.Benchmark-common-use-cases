@@ -3,7 +3,9 @@
 namespace fennecs;
 
 [ShortRunJob]
-public class CreateWorld
+[BenchmarkCategory(Category.CreateWorld)]
+// ReSharper disable once InconsistentNaming
+public class CreateWorld_Fennecs
 {
     [Benchmark]
     public void Run()

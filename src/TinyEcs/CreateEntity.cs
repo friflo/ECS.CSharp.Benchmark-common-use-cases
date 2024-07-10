@@ -5,7 +5,9 @@ namespace TinyEcs;
 [InvocationCount(Constants.CreateEntityCount)]
 [IterationCount(Constants.CreateEntityIterationCount)]
 [ShortRunJob]
-public class CreateEntity
+[BenchmarkCategory(Category.CreateEntity)]
+// ReSharper disable once InconsistentNaming
+public class CreateEntity_TinyEcs
 {
     private World   world;
     

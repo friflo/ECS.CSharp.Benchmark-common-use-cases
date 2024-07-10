@@ -5,7 +5,9 @@ using BenchmarkDotNet.Attributes;
 namespace Arch;
 
 [ShortRunJob]
-public class AddRemoveComponentsT1
+[BenchmarkCategory(Category.AddRemoveComponentsT1)]
+// ReSharper disable once InconsistentNaming
+public class AddRemoveComponentsT1_Arch
 {
     private World       world;
     private Entity[]    entities;

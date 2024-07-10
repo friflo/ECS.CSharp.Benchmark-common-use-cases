@@ -3,7 +3,9 @@
 namespace Friflo.Engine.ECS;
 
 [ShortRunJob]
-public class AddRemoveLinks
+[BenchmarkCategory(Category.AddRemoveLinks)]
+// ReSharper disable once InconsistentNaming
+public class AddRemoveLinks_Friflo
 {
     private Entity[]    sources;
     private Entity[]    targets;

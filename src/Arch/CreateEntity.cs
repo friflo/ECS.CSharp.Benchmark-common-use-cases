@@ -7,7 +7,9 @@ namespace Arch;
 [InvocationCount(Constants.CreateEntityCount)]
 [IterationCount(Constants.CreateEntityIterationCount)]
 [ShortRunJob]
-public class CreateEntity
+[BenchmarkCategory(Category.CreateEntity)]
+// ReSharper disable once InconsistentNaming
+public class CreateEntity_Arch
 {
     private World   world;
     

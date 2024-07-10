@@ -3,7 +3,9 @@
 namespace fennecs;
 
 [ShortRunJob]
-public class QueryT1
+[BenchmarkCategory(Category.QueryT1)]
+// ReSharper disable once InconsistentNaming
+public class QueryT1_Fennecs
 {
     private World               world;
     private Stream<Component1>  stream;

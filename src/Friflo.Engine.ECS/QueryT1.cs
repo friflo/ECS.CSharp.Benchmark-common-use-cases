@@ -3,7 +3,9 @@
 namespace Friflo.Engine.ECS;
 
 [ShortRunJob]
-public class QueryT1
+[BenchmarkCategory(Category.QueryT1)]
+// ReSharper disable once InconsistentNaming
+public class QueryT1_Friflo
 {
     private ArchetypeQuery<Component1>    query;
     

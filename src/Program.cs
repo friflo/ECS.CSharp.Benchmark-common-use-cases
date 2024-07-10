@@ -12,7 +12,7 @@ ManualConfig customConfig = DefaultConfig.Instance
     .WithOption(ConfigOptions.JoinSummary, true)
     .WithArtifactsPath(@"../Artifacts")
     .WithOrderer(new DefaultOrderer(SummaryOrderPolicy.FastestToSlowest))
-    .AddLogicalGroupRules(BenchmarkLogicalGroupRule.ByMethod)
+    .AddLogicalGroupRules(BenchmarkLogicalGroupRule.ByCategory)
 //  .WithSummaryStyle(SummaryStyle.Default.WithTimeUnit(TimeUnit.Microsecond))
     .AddDiagnoser(MemoryDiagnoser.Default)                      // adds column: Allocated
     .HideColumns(
@@ -29,3 +29,20 @@ BenchmarkSwitcher
 #else
     .Run(args, customConfig);
 #endif
+
+
+public static class Assert
+{
+    public static void AreEqual(int expect, int actual)
+    {
+        var isEqual = expect == actual;
+        if (!isEqual) {
+            throw new AssertException($"expect: {expect}, was: {actual}");
+        }
+    }
+}
+
+public class AssertException : Exception
+{
+    public AssertException(string message) : base (message) { }
+}
