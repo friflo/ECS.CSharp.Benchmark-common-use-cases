@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System.Reflection;
+using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Diagnosers;
 using BenchmarkDotNet.Order;
@@ -14,7 +15,8 @@ ManualConfig customConfig = DefaultConfig.Instance
     .WithArtifactsPath(@"../Artifacts")
     .WithOrderer(new DefaultOrderer(SummaryOrderPolicy.FastestToSlowest))
     .AddDiagnoser(MemoryDiagnoser.Default)                                      // adds column: Allocated
-    .WithSummaryStyle(SummaryStyle.Default.WithTimeUnit(TimeUnit.Microsecond))  
+//  .WithSummaryStyle(SummaryStyle.Default.WithTimeUnit(TimeUnit.Microsecond))
+    .HideColumns("Error", "StdDev", "RatioSD", "Gen0", "Gen1", "Gen2", "Alloc Ratio")
     .WithOption(ConfigOptions.JoinSummary, true);
 
 BenchmarkSwitcher
