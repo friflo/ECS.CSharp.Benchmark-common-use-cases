@@ -18,10 +18,7 @@ public class Count
     [GlobalSetup]
     public void Setup() {
         world = new World();
-        for (int n = 0; n < EntityCount; n++) {
-            var entity = world.Spawn();
-            entity.Add<Component1>();
-        }
+        BenchUtils.AddComponents(BenchUtils.CreateEntities(world, EntityCount));
         query = world.Query<Component1>().Compile();
         Assert.AreEqual(EntityCount, query.Count);
     }
@@ -32,7 +29,8 @@ public class Count
     }
     
     [Benchmark]
-    public void Run() {
+    public void Run()
+    {
         _ = query.Count;
     }
 }

@@ -16,23 +16,23 @@ public class QueryT1
     public int EntityCount { get; set; }
     
     [GlobalSetup]
-    public void Setup() {
+    public void Setup()
+    {
         world = new World();
-        for (int n = 0; n < EntityCount; n++) {
-            var entity = world.Spawn();
-            entity.Add<Component1>();
-        }
+        BenchUtils.AddComponents(BenchUtils.CreateEntities(world, EntityCount));
         stream = world.Query<Component1>().Compile().Stream<Component1>();
         Assert.AreEqual(EntityCount, stream.Count);
     }
     
     [GlobalCleanup]
-    public void Shutdown() {
+    public void Shutdown()
+    {
         world.Dispose();
     }
     
     [Benchmark]
-    public void Run() {
+    public void Run()
+    {
         stream.Raw(components => {
             foreach (Component1 _ in components.Span) {
             }

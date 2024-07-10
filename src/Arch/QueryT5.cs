@@ -18,23 +18,18 @@ public class QueryT5
     public int EntityCount { get; set; }
     
     [GlobalSetup]
-    public void Setup() {
-        world   = World.Create();
-        for (int n = 0; n < EntityCount; n++) {
-            var entity = world.Create();
-            entity.Add(new Component1());
-            entity.Add(new Component2());
-            entity.Add(new Component3());
-            entity.Add(new Component4());
-            entity.Add(new Component5());
-        }
+    public void Setup()
+    {
+        world = World.Create();
+        BenchUtils.AddComponents(BenchUtils.CreateEntities(world, EntityCount));
         var queryDescription = new QueryDescription().WithAll<Component1,Component2,Component3,Component4,Component5>();
         query = world.Query(in queryDescription);
         Assert.AreEqual(EntityCount, world.CountEntities(queryDescription));
     }
     
     [GlobalCleanup]
-    public void Shutdown() {
+    public void Shutdown()
+    {
         World.Destroy(world);
     }
     

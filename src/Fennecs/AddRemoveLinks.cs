@@ -23,25 +23,21 @@ public class AddRemoveLinks
     public void Setup()
     {
         world = new World();
-        sources = new Entity[EntityCount];
-        for (int n = 0; n < EntityCount; n++) {
-            sources[n] = world.Spawn();
-        }
-        targets = new Entity[TargetCount];
-        for (int n = 0; n < TargetCount; n++) {
-            targets[n] = world.Spawn();
-        }
+        sources = BenchUtils.AddComponents(BenchUtils.CreateEntities(world, EntityCount));
+        targets = BenchUtils.AddComponents(BenchUtils.CreateEntities(world, TargetCount));
     }
     
     [GlobalCleanup]
-    public void Shutdown() {
+    public void Shutdown()
+    {
         world.Dispose();
     }
     
     [Benchmark]
     public void Run()
     {
-        foreach (var source in sources) {
+        foreach (var source in sources)
+        {
             for (int n = 0; n < TargetCount; n++) {
                 source.Add(new LinkRelation { value = n }, targets[n] );
             }

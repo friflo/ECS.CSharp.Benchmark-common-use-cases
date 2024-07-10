@@ -20,21 +20,16 @@ public class AddRemoveLinks
     [GlobalSetup]
     public void Setup()
     {
-        var world = new EntityStore();
-        sources = new Entity[EntityCount];
-        for (int n = 0; n < EntityCount; n++) {
-            sources[n] = world.CreateEntity();
-        }
-        targets = new Entity[TargetCount];
-        for (int n = 0; n < TargetCount; n++) {
-            targets[n] = world.CreateEntity();
-        }
+        var world   = new EntityStore();
+        sources     = BenchUtils.AddComponents(BenchUtils.CreateEntities(world, EntityCount));
+        targets     = BenchUtils.AddComponents(BenchUtils.CreateEntities(world, TargetCount));
     }
     
     [Benchmark(Baseline = true)]
     public void Run()
     {
-        foreach (var source in sources) {
+        foreach (var source in sources)
+        {
             for (int n = 0; n < TargetCount; n++) {
                 source.AddRelation(new LinkRelation { value = n, target = targets[n] });
             }

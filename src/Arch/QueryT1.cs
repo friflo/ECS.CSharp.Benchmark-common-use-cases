@@ -18,19 +18,18 @@ public class QueryT1
     public int EntityCount { get; set; }
     
     [GlobalSetup]
-    public void Setup() {
+    public void Setup()
+    {
         world   = World.Create();
-        for (int n = 0; n < EntityCount; n++) {
-            var entity = world.Create();
-            entity.Add(new Component1());
-        }
+        BenchUtils.AddComponents(BenchUtils.CreateEntities(world, EntityCount));
         var queryDescription = new QueryDescription().WithAll<Component1>();
         query = world.Query(in queryDescription);
         Assert.AreEqual(EntityCount, world.CountEntities(queryDescription));
     }
     
     [GlobalCleanup]
-    public void Shutdown() {
+    public void Shutdown()
+    {
         World.Destroy(world);
     }
     

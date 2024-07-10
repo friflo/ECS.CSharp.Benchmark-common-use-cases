@@ -14,18 +14,17 @@ public class QueryT1
     public int EntityCount { get; set; }
     
     [GlobalSetup]
-    public void Setup() {
+    public void Setup()
+    {
         var world = new EntityStore();
-        for (int n = 0; n < EntityCount; n++) {
-            var entity = world.CreateEntity();
-            entity.AddComponent<Component1>();
-        }
+        BenchUtils.AddComponents(BenchUtils.CreateEntities(world, EntityCount));
         query = world.Query<Component1>();
         Assert.AreEqual(EntityCount, query.Count);
     }
     
     [Benchmark(Baseline = true)]
-    public void Run() {
+    public void Run()
+    {
         foreach (var (components, _) in query.Chunks) {
             foreach (ref var _ in components.Span) {
             }
