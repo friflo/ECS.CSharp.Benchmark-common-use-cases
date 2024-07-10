@@ -15,6 +15,7 @@
       <PackageReference Include="fennecs" Version="0.5.8-beta" />
       <PackageReference Include="Friflo.Engine.ECS" Version="3.0.0-preview.2" />
       <PackageReference Include="TinyEcs.Main" Version="1.2.0" />
+      <PackageReference Include="Leopotam.EcsLite" Version="1.0.1" />
     </ItemGroup>
 
     <ItemGroup>
