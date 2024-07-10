@@ -35,11 +35,14 @@ public class QueryT5
     public void Run()
     {
         int[] entities = filter.GetRawEntities();
-        for (int i = 0, iMax = filter.GetEntitiesCount(); i < iMax; i++) {
-            c1.Get(entities[i]).value = c2.Get(entities[i]).value +
-                                        c3.Get(entities[i]).value +
-                                        c4.Get(entities[i]).value +
-                                        c5.Get(entities[i]).value;
+        for (int i = 0, iMax = filter.GetEntitiesCount(); i < iMax; i++)
+        {
+            var entity = entities[i];
+            c1.Get(entity).value =
+            c2.Get(entity).value +
+            c3.Get(entity).value +
+            c4.Get(entity).value +
+            c5.Get(entity).value;
         }
     }
 }
