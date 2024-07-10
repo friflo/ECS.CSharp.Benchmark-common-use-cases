@@ -9,10 +9,13 @@ public static class Constant
     /// NOTE! Constants must be used only in <see cref="ParamsAttribute"/>
     public const int TargetCountP2  = 100;
     
-    public const int EntityCount    = 1;
-    
-    public const int CreateEntityIterationCount = 2000;
+    public const int EntityCount    = 1000;
+    //
     public const int CreateEntityCount          = 1000;
+    public const int CreateEntityIterationCount = 2000;
+    //
+    public const int DeleteEntityCount          = 1000;
+    public const int DeleteEntityIterationCount = 2000;
 }
 
 public static class Assert
