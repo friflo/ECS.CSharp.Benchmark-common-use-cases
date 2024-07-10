@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Arch.Core;
+﻿using Arch.Core;
 using Arch.Core.Extensions;
 using Arch.Types;
 using BenchmarkDotNet.Attributes;

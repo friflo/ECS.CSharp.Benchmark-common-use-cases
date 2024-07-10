@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using BenchmarkDotNet.Attributes;
+﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
 using fennecs;
 using Fennecs.Types;
@@ -34,7 +33,7 @@ public class Query1
     
     [Benchmark]
     public void Run() {
-        stream.Raw((Memory<Component1> components) => {
+        stream.Raw(components => {
             foreach (Component1 _ in components.Span) {
             }
         });

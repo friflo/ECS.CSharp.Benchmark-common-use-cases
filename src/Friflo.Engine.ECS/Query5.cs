@@ -29,9 +29,16 @@ public class Query5
     
     // [Benchmark]
     public void Run() {
-        foreach (var (components1, components2, components3, components4, components5, _) in query.Chunks) {
-            foreach (ref var _ in components1.Span) {
+        foreach (var (components1, components2, components3, components4, components5, entities) in query.Chunks) {
+            var span1 = components1.Span;
+            var span2 = components2.Span;
+            var span3 = components3.Span;
+            var span4 = components4.Span;
+            var span5 = components5.Span;
+            for (int n = 0; n < entities.Length; n++) {
+                span1[n].value = span2[n].value + span3[n].value + span4[n].value * span5[n].value;  
             }
+            
         }
     }
 }
