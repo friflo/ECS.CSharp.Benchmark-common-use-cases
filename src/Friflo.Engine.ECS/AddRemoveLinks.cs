@@ -11,7 +11,7 @@ public class AddRemoveLinks
     private Entity[]    sources;
     private Entity[]    targets;
     
-    [Params(Constant.TargetCountP1, Constant.TargetCountP2, Constant.TargetCountP3)]
+    [Params(Constant.TargetCountP1, Constant.TargetCountP2)]
     public int TargetCount { get; set; }
     
     [GlobalSetup]
