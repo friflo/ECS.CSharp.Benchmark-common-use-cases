@@ -1,6 +1,4 @@
-﻿using fennecs;
-
-namespace Fennecs;
+﻿namespace fennecs;
 
 public static class BenchUtils
 {

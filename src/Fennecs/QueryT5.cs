@@ -1,7 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
-using fennecs;
 
-namespace Fennecs;
+namespace fennecs;
 
 [ShortRunJob]
 public class QueryT5
