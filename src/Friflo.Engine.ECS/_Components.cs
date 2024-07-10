@@ -1,4 +1,4 @@
-﻿namespace Friflo.Engine.ECS.Types;
+﻿namespace Friflo.Engine.ECS;
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value
 

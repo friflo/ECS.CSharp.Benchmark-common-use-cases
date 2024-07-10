@@ -1,6 +1,6 @@
 ﻿using fennecs;
 
-namespace Fennecs.Types;
+namespace Fennecs;
 
 public static class BenchUtils
 {

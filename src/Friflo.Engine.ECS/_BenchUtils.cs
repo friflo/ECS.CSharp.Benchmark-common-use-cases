@@ -1,4 +1,4 @@
-﻿namespace Friflo.Engine.ECS.Types;
+﻿namespace Friflo.Engine.ECS;
 
 public static class BenchUtils
 {

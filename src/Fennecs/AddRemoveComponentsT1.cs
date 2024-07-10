@@ -1,7 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Configs;
 using fennecs;
-using Fennecs.Types;
 
 namespace Fennecs;
 

@@ -1,7 +1,7 @@
 ﻿using Arch.Core;
 using Arch.Core.Extensions;
 
-namespace Arch.Types;
+namespace Arch;
 
 public static class BenchUtils
 {

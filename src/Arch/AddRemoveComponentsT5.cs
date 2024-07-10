@@ -1,8 +1,6 @@
 ﻿using Arch.Core;
 using Arch.Core.Extensions;
-using Arch.Types;
 using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Configs;
 
 namespace Arch;
 

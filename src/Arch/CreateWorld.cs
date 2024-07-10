@@ -1,6 +1,5 @@
 ﻿using Arch.Core;
 using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Configs;
 
 namespace Arch;
 
