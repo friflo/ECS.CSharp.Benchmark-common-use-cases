@@ -15,9 +15,9 @@ public static class BenchUtils
     {
         EcsPool<Component1> c1 = world.GetPool<Component1>();
         EcsPool<Component2> c2 = world.GetPool<Component2>();
-        EcsPool<Component2> c3 = world.GetPool<Component2>();
-        EcsPool<Component2> c4 = world.GetPool<Component2>();
-        EcsPool<Component2> c5 = world.GetPool<Component2>();
+        EcsPool<Component3> c3 = world.GetPool<Component3>();
+        EcsPool<Component4> c4 = world.GetPool<Component4>();
+        EcsPool<Component5> c5 = world.GetPool<Component5>();
         
         foreach (var entity in entities)
         {
