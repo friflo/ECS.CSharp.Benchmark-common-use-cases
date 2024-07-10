@@ -5,8 +5,8 @@ namespace TinyEcs;
 [ShortRunJob]
 public class CountT1
 {
-    private Query    query;
-    private World    world;
+    private World               world;
+    private Query<Component1>   query;
     
     [GlobalSetup]
     public void Setup() {
@@ -21,7 +21,7 @@ public class CountT1
         world.Dispose();
     }
     
-    // [Benchmark]
+    [Benchmark]
     public void Run()
     {
         _ = query.Count();

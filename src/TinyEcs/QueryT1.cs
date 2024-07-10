@@ -6,7 +6,7 @@ namespace TinyEcs;
 public class QueryT1
 {
     private World   world;
-    private Query   query;
+    private Query<Component1>   query;
     
     [GlobalSetup]
     public void Setup()
@@ -23,10 +23,10 @@ public class QueryT1
         world.Dispose();
     }
     
-    // [Benchmark]
+    [Benchmark]
     public void Run()
     {
-        query.Each<Component1>((ref Component1 c1) => {
+        query.Each((ref Component1 c1) => {
             c1.value++;
         });
     }
