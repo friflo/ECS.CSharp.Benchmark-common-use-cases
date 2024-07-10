@@ -12,12 +12,13 @@ using Perfolizer.Horology;
 Console.WriteLine("Hello, World!");
 
 ManualConfig customConfig = DefaultConfig.Instance
+    .WithOption(ConfigOptions.JoinSummary, true)
     .WithArtifactsPath(@"../Artifacts")
     .WithOrderer(new DefaultOrderer(SummaryOrderPolicy.FastestToSlowest))
-    .AddDiagnoser(MemoryDiagnoser.Default)                                      // adds column: Allocated
 //  .WithSummaryStyle(SummaryStyle.Default.WithTimeUnit(TimeUnit.Microsecond))
-    .HideColumns("Error", "StdDev", "RatioSD", "Gen0", "Gen1", "Gen2", "Alloc Ratio")
-    .WithOption(ConfigOptions.JoinSummary, true);
+    .AddDiagnoser(MemoryDiagnoser.Default)                                              // add column: Allocated
+    .HideColumns("Error", "StdDev", "RatioSD", "Gen0", "Gen1", "Gen2", "Alloc Ratio");
+    
 
 BenchmarkSwitcher
     .FromAssembly(Assembly.GetExecutingAssembly())
