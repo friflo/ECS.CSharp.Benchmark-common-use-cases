@@ -4,8 +4,8 @@
 
 namespace Arch;
 
-[InvocationCount(Constant.DeleteEntityCount)]
-[IterationCount(Constant.DeleteEntityIterationCount)]
+[InvocationCount(Constants.DeleteEntityCount)]
+[IterationCount(Constants.DeleteEntityIterationCount)]
 [ShortRunJob]
 public class DeleteEntity
 {
@@ -17,7 +17,7 @@ public class DeleteEntity
     public void Setup()
     {
         world       = World.Create();
-        entities    = world.CreateEntities(Constant.DeleteEntityCount);
+        entities    = world.CreateEntities(Constants.DeleteEntityCount);
         entityIndex = 0;
     }
     

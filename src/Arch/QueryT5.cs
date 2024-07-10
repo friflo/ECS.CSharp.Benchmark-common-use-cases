@@ -14,10 +14,10 @@ public class QueryT5
     public void Setup()
     {
         world = World.Create();
-        world.CreateEntities(Constant.EntityCount).AddComponents();
+        world.CreateEntities(Constants.EntityCount).AddComponents();
         queryDescription = new QueryDescription().WithAll<Component1,Component2,Component3,Component4,Component5>();
 
-        Assert.AreEqual(Constant.EntityCount, world.CountEntities(queryDescription));
+        Assert.AreEqual(Constants.EntityCount, world.CountEntities(queryDescription));
     }
     
     [GlobalCleanup]

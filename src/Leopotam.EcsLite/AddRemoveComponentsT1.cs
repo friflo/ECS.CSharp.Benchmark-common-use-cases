@@ -12,7 +12,7 @@ public class AddRemoveComponentsT1
     [GlobalSetup]
     public void Setup() {
         world       = new EcsWorld();
-        entities    = world.CreateEntities(Constant.EntityCount);
+        entities    = world.CreateEntities(Constants.EntityCount);
         ecsPoolC1   = world.GetPool<Component1>();
     }
     

@@ -11,7 +11,7 @@ public class AddRemoveComponentsT5
     public void Setup()
     {
         var world   = new EntityStore();
-        entities    = world.CreateEntities(Constant.EntityCount);
+        entities    = world.CreateEntities(Constants.EntityCount);
     }
     
     [Benchmark(Baseline = true)]

@@ -12,9 +12,9 @@ public class QueryT1
     public void Setup()
     {
         world = new World();
-        world.CreateEntities(Constant.EntityCount).AddComponents();
+        world.CreateEntities(Constants.EntityCount).AddComponents();
         query = world.Query<Component1>();
-        Assert.AreEqual(Constant.EntityCount, query.Count());
+        Assert.AreEqual(Constants.EntityCount, query.Count());
     }
     
     [GlobalCleanup]

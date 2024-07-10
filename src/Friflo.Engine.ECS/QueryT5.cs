@@ -11,9 +11,9 @@ public class QueryT5
     public void Setup()
     {
         var world = new EntityStore();
-        world.CreateEntities(Constant.EntityCount).AddComponents();
+        world.CreateEntities(Constants.EntityCount).AddComponents();
         query = world.Query<Component1,Component2,Component3,Component4,Component5>();
-        Assert.AreEqual(Constant.EntityCount, query.Count);
+        Assert.AreEqual(Constants.EntityCount, query.Count);
     }
     
     [Benchmark(Baseline = true)]

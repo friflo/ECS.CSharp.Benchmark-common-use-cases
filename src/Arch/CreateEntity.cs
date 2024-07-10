@@ -4,8 +4,8 @@
 
 namespace Arch;
 
-[InvocationCount(Constant.CreateEntityCount)]
-[IterationCount(Constant.CreateEntityIterationCount)]
+[InvocationCount(Constants.CreateEntityCount)]
+[IterationCount(Constants.CreateEntityIterationCount)]
 [ShortRunJob]
 public class CreateEntity
 {
@@ -15,7 +15,7 @@ public class CreateEntity
     public void Setup()
     {
         world   = World.Create();
-        world.EnsureCapacity(Constant.CreateEntityCount);
+        world.EnsureCapacity(Constants.CreateEntityCount);
     }
     
     [IterationCleanup]

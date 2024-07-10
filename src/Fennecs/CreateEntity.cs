@@ -2,8 +2,8 @@
 
 namespace fennecs;
 
-[InvocationCount(Constant.CreateEntityCount)]
-[IterationCount(Constant.CreateEntityIterationCount)]
+[InvocationCount(Constants.CreateEntityCount)]
+[IterationCount(Constants.CreateEntityIterationCount)]
 [ShortRunJob]
 public class CreateEntity
 {

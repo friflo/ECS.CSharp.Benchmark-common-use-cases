@@ -12,9 +12,9 @@ public class QueryT1
     public void Setup()
     {
         world = new World();
-        world.CreateEntities(Constant.EntityCount).AddComponents();
+        world.CreateEntities(Constants.EntityCount).AddComponents();
         stream = world.Query<Component1>().Compile().Stream<Component1>();
-        Assert.AreEqual(Constant.EntityCount, stream.Count);
+        Assert.AreEqual(Constants.EntityCount, stream.Count);
     }
     
     [GlobalCleanup]

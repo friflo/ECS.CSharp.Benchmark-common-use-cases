@@ -11,9 +11,9 @@ public class QueryT5
     [GlobalSetup]
     public void Setup() {
         world = new World();
-        world.CreateEntities(Constant.EntityCount).AddComponents();
+        world.CreateEntities(Constants.EntityCount).AddComponents();
         stream = world.Query<Component1>().Compile().Stream<Component1,Component2,Component3,Component4,Component5>();
-        Assert.AreEqual(Constant.EntityCount, stream.Count);
+        Assert.AreEqual(Constants.EntityCount, stream.Count);
     }
     
     [GlobalCleanup]

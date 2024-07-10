@@ -4,8 +4,8 @@ using BenchmarkDotNet.Engines;
 namespace Friflo.Engine.ECS;
 
 
-[InvocationCount(Constant.DeleteEntityCount)]
-[IterationCount(Constant.DeleteEntityIterationCount)]
+[InvocationCount(Constants.DeleteEntityCount)]
+[IterationCount(Constants.DeleteEntityIterationCount)]
 [ShortRunJob]
 public class DeleteEntity
 {
@@ -17,7 +17,7 @@ public class DeleteEntity
     public void Setup()
     {
         world       = new EntityStore();
-        entities    = world.CreateEntities(Constant.DeleteEntityCount);
+        entities    = world.CreateEntities(Constants.DeleteEntityCount);
         entityIndex = 0;
     }
     

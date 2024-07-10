@@ -11,7 +11,7 @@ public class AddRemoveComponentsT5
     [GlobalSetup]
     public void Setup() {
         world       = new World();
-        entities    = world.CreateEntities(Constant.EntityCount);
+        entities    = world.CreateEntities(Constants.EntityCount);
     }
     
     [GlobalCleanup]
