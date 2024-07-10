@@ -4,7 +4,7 @@ using fennecs;
 namespace Fennecs;
 
 [ShortRunJob]
-public class Count
+public class CountT1
 {
     private Query    query;
     private World    world;

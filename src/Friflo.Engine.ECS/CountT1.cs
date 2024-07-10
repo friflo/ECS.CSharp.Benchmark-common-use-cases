@@ -3,7 +3,7 @@
 namespace Friflo.Engine.ECS;
 
 [ShortRunJob]
-public class Count
+public class CountT1
 {
     private ArchetypeQuery<Component1>    query;
     
