@@ -24,7 +24,7 @@ public class Count
         Assert.AreEqual(EntityCount, query.Count);
     }
     
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public void Run() {
         _ = query.Count;
     }

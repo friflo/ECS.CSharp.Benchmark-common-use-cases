@@ -7,7 +7,7 @@ namespace Friflo.Engine.ECS;
 [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
 public class CreateWorld
 {
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public void Run()
     {
         _ = new EntityStore();

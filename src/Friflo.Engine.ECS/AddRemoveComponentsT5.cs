@@ -16,7 +16,7 @@ public class AddRemoveComponentsT5
         entity = world.CreateEntity();
     }
     
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public void Run() {
         entity.Add(new Component1(), new Component2(), new Component3(), new Component4(), new Component5());
         entity.Remove<Component1, Component2, Component3, Component4, Component5>();

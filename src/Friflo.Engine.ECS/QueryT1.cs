@@ -24,7 +24,7 @@ public class QueryT1
         Assert.AreEqual(EntityCount, query.Count);
     }
     
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public void Run() {
         foreach (var (components, _) in query.Chunks) {
             foreach (ref var _ in components.Span) {

@@ -31,7 +31,7 @@ public class AddRemoveLinks
         }
     }
     
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public void Run()
     {
         foreach (var source in sources) {
