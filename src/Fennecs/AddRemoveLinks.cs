@@ -13,9 +13,6 @@ public class AddRemoveLinks
     private Entity[]    sources;
     private Entity[]    targets;
     
-    [Params(Constant.EntityCountP1)]
-    public int EntityCount { get; set; }
-    
     [Params(Constant.TargetCountP1, Constant.TargetCountP2, Constant.TargetCountP3)]
     public int TargetCount { get; set; }
     
@@ -23,7 +20,7 @@ public class AddRemoveLinks
     public void Setup()
     {
         world = new World();
-        sources = world.CreateEntities(EntityCount).AddComponents();
+        sources = world.CreateEntities(Constant.EntityCount).AddComponents();
         targets = world.CreateEntities(TargetCount).AddComponents();
     }
     

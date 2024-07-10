@@ -10,14 +10,11 @@ public class AddRemoveComponentsT5
 {
     private Entity[] entities;
     
-    [Params(Constant.EntityCountP1)]
-    public int EntityCount { get; set; }
-    
     [GlobalSetup]
     public void Setup()
     {
         var world   = new EntityStore();
-        entities    = world.CreateEntities(EntityCount);
+        entities    = world.CreateEntities(Constant.EntityCount);
     }
     
     [Benchmark(Baseline = true)]

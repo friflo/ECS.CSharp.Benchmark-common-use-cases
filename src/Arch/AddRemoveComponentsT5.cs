@@ -13,14 +13,11 @@ public class AddRemoveComponentsT5
     private World       world;
     private Entity[]    entities;
     
-    [Params(Constant.EntityCountP1)]
-    public int EntityCount { get; set; }
-    
     [GlobalSetup]
     public void Setup()
     {
         world       = World.Create();
-        entities    = world.CreateEntities(EntityCount);
+        entities    = world.CreateEntities(Constant.EntityCount);
     }
     
     [GlobalCleanup]

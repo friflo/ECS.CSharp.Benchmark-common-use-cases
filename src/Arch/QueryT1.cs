@@ -14,17 +14,14 @@ public class QueryT1
     private World   world;
     private Query   query;
     
-    [Params(Constant.EntityCountP1)]
-    public int EntityCount { get; set; }
-    
     [GlobalSetup]
     public void Setup()
     {
         world   = World.Create();
-        world.CreateEntities(EntityCount).AddComponents();
+        world.CreateEntities(Constant.EntityCount).AddComponents();
         var queryDescription = new QueryDescription().WithAll<Component1>();
         query = world.Query(in queryDescription);
-        Assert.AreEqual(EntityCount, world.CountEntities(queryDescription));
+        Assert.AreEqual(Constant.EntityCount, world.CountEntities(queryDescription));
     }
     
     [GlobalCleanup]

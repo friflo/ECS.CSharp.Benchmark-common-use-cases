@@ -12,15 +12,12 @@ public class QueryT5
     private World                                                           world;
     private Stream<Component1,Component2,Component3,Component4,Component5>  stream;
     
-    [Params(Constant.EntityCountP1)]
-    public int EntityCount { get; set; }
-    
     [GlobalSetup]
     public void Setup() {
         world = new World();
-        world.CreateEntities(EntityCount).AddComponents();
+        world.CreateEntities(Constant.EntityCount).AddComponents();
         stream = world.Query<Component1>().Compile().Stream<Component1,Component2,Component3,Component4,Component5>();
-        Assert.AreEqual(EntityCount, stream.Count);
+        Assert.AreEqual(Constant.EntityCount, stream.Count);
     }
     
     [GlobalCleanup]

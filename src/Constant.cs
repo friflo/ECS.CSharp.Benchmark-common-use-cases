@@ -1,17 +1,17 @@
 ﻿
 using BenchmarkDotNet.Attributes;
 
-/// <summary>
-/// NOTE!
-/// Constants must bu used only in <see cref="ParamsAttribute"/>
-/// </summary>
+
 public static class Constant
 {
+    /// NOTE! Constants must be used only in <see cref="ParamsAttribute"/>
     public const int TargetCountP1  = 1;
+    /// NOTE! Constants must be used only in <see cref="ParamsAttribute"/>
     public const int TargetCountP2  = 10;
+    /// NOTE! Constants must be used only in <see cref="ParamsAttribute"/>
     public const int TargetCountP3  = 100;
     
-    public const int EntityCountP1  = 1000;
+    public const int EntityCount    = 1;
 }
 
 public static class Assert
