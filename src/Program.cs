@@ -14,8 +14,8 @@ ManualConfig customConfig = DefaultConfig.Instance
     .WithOrderer(new DefaultOrderer(SummaryOrderPolicy.FastestToSlowest))
     .AddLogicalGroupRules(BenchmarkLogicalGroupRule.ByMethod)
 //  .WithSummaryStyle(SummaryStyle.Default.WithTimeUnit(TimeUnit.Microsecond))
-    .AddDiagnoser(MemoryDiagnoser.Default)                                              // add column: Allocated
-    .HideColumns("Method", "Error", "StdDev", "RatioSD", "Gen0", "Gen1", "Gen2", "Alloc Ratio");
+    .AddDiagnoser(MemoryDiagnoser.Default)                                          // add column: Allocated
+    .HideColumns("Method", "Error", "StdDev", "RatioSD", "Gen0", "Gen1", "Gen2");   // last column "Alloc Ratio" not hidden otherwise Markdown table is in valid 
     
 
 BenchmarkSwitcher
