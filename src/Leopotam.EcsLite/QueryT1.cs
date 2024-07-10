@@ -30,7 +30,7 @@ public class QueryT1
     {
         int[] entities = filter.GetRawEntities();
         for (int i = 0, iMax = filter.GetEntitiesCount(); i < iMax; i++) {
-            ++c1.Get(entities[i]).value;
+            ++c1.Get(entities[i]).Value;
         }
     }
 }

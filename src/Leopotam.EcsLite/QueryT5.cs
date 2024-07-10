@@ -38,11 +38,11 @@ public class QueryT5
         for (int i = 0, iMax = filter.GetEntitiesCount(); i < iMax; i++)
         {
             var entity = entities[i];
-            c1.Get(entity).value =
-            c2.Get(entity).value +
-            c3.Get(entity).value +
-            c4.Get(entity).value +
-            c5.Get(entity).value;
+            c1.Get(entity).Value =
+            c2.Get(entity).Value +
+            c3.Get(entity).Value +
+            c4.Get(entity).Value +
+            c5.Get(entity).Value;
         }
     }
 }

@@ -27,7 +27,7 @@ public class QueryT1
     public void Run()
     {
         query.Each((ref Component1 c1) => {
-            c1.value++;
+            c1.Value++;
         });
     }
 }

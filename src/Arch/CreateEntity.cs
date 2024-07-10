@@ -1,6 +1,6 @@
-﻿    using Arch.Core;
-    using Arch.Core.Extensions.Dangerous;
-    using BenchmarkDotNet.Attributes;
+﻿using Arch.Core;
+using Arch.Core.Extensions.Dangerous;
+using BenchmarkDotNet.Attributes;
 
 namespace Arch;
 
