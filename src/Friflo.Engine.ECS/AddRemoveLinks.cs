@@ -21,8 +21,8 @@ public class AddRemoveLinks
     public void Setup()
     {
         var world   = new EntityStore();
-        sources     = BenchUtils.AddComponents(BenchUtils.CreateEntities(world, EntityCount));
-        targets     = BenchUtils.AddComponents(BenchUtils.CreateEntities(world, TargetCount));
+        sources     = world.CreateEntities(EntityCount).AddComponents();
+        targets     = world.CreateEntities(TargetCount).AddComponents();
     }
     
     [Benchmark(Baseline = true)]

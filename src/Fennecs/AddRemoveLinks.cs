@@ -23,8 +23,8 @@ public class AddRemoveLinks
     public void Setup()
     {
         world = new World();
-        sources = BenchUtils.AddComponents(BenchUtils.CreateEntities(world, EntityCount));
-        targets = BenchUtils.AddComponents(BenchUtils.CreateEntities(world, TargetCount));
+        sources = world.CreateEntities(EntityCount).AddComponents();
+        targets = world.CreateEntities(TargetCount).AddComponents();
     }
     
     [GlobalCleanup]

@@ -21,7 +21,7 @@ public class QueryT1
     public void Setup()
     {
         world   = World.Create();
-        BenchUtils.AddComponents(BenchUtils.CreateEntities(world, EntityCount));
+        world.CreateEntities(EntityCount).AddComponents();
         var queryDescription = new QueryDescription().WithAll<Component1>();
         query = world.Query(in queryDescription);
         Assert.AreEqual(EntityCount, world.CountEntities(queryDescription));

@@ -17,7 +17,7 @@ public class Count
     public void Setup()
     {
         var world = new EntityStore();
-        BenchUtils.AddComponents(BenchUtils.CreateEntities(world, EntityCount));
+        world.CreateEntities(EntityCount).AddComponents();
         query = world.Query<Component1>();
         Assert.AreEqual(EntityCount, query.Count);
     }

@@ -20,7 +20,7 @@ public class AddRemoveComponentsT5
     public void Setup()
     {
         world       = World.Create();
-        entities    = BenchUtils.CreateEntities(world, EntityCount);
+        entities    = world.CreateEntities(EntityCount);
     }
     
     [GlobalCleanup]

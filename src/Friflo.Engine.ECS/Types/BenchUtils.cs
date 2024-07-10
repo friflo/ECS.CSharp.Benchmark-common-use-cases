@@ -3,7 +3,7 @@
 public static class BenchUtils
 {
     
-    public static Entity[] CreateEntities (EntityStore world, int count)
+    public static Entity[] CreateEntities (this EntityStore world, int count)
     {
         var entities = new Entity[count];
         for (int n = 0; n < count; n++) {
@@ -12,7 +12,7 @@ public static class BenchUtils
         return entities;
     }
     
-    public static Entity[] AddComponents(Entity[] entities)
+    public static Entity[] AddComponents(this Entity[] entities)
     {
         foreach (var entity in entities)
         {

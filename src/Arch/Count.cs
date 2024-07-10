@@ -20,7 +20,7 @@ public class Count
     public void Setup()
     {
         world   = World.Create();
-        BenchUtils.AddComponents(BenchUtils.CreateEntities(world, EntityCount));
+        world.CreateEntities(EntityCount).AddComponents();
         queryDescription = new QueryDescription().WithAll<Component1>();
         Assert.AreEqual(EntityCount, world.CountEntities(queryDescription));
     }

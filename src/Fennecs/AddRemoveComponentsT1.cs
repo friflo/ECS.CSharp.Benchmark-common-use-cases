@@ -18,7 +18,7 @@ public class AddRemoveComponentsT1
     [GlobalSetup]
     public void Setup() {
         world       = new World();
-        entities    = BenchUtils.CreateEntities(world, EntityCount);
+        entities    = world.CreateEntities(EntityCount);
     }
     
     [GlobalCleanup]

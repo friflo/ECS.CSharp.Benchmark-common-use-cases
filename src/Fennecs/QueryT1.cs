@@ -19,7 +19,7 @@ public class QueryT1
     public void Setup()
     {
         world = new World();
-        BenchUtils.AddComponents(BenchUtils.CreateEntities(world, EntityCount));
+        world.CreateEntities(EntityCount).AddComponents();
         stream = world.Query<Component1>().Compile().Stream<Component1>();
         Assert.AreEqual(EntityCount, stream.Count);
     }

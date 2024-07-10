@@ -11,7 +11,7 @@ public static class Constant
     public const int TargetCountP2  = 10;
     public const int TargetCountP3  = 100;
     
-    public const int EntityCountP1  = 10;
+    public const int EntityCountP1  = 1000;
 }
 
 public static class Assert
