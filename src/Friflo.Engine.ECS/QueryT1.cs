@@ -6,7 +6,7 @@ namespace Friflo.Engine.ECS;
 
 [ShortRunJob]
 [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
-public class Query1
+public class QueryT1
 {
     private ArchetypeQuery<Component1>    query;
     

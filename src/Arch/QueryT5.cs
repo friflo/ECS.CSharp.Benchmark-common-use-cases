@@ -9,7 +9,7 @@ namespace Arch;
 
 [ShortRunJob]
 [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
-public class Query1
+public class QueryT5
 {
     private World   world;
     private Query   query;
@@ -23,8 +23,12 @@ public class Query1
         for (int n = 0; n < EntityCount; n++) {
             var entity = world.Create();
             entity.Add(new Component1());
+            entity.Add(new Component2());
+            entity.Add(new Component3());
+            entity.Add(new Component4());
+            entity.Add(new Component5());
         }
-        var queryDescription = new QueryDescription().WithAll<Component1>();
+        var queryDescription = new QueryDescription().WithAll<Component1,Component2,Component3,Component4,Component5>();
         query = world.Query(in queryDescription);
         Assert.AreEqual(EntityCount, world.CountEntities(queryDescription));
     }
@@ -34,16 +38,27 @@ public class Query1
         World.Destroy(world);
     }
     
-    [Benchmark]
+    // [Benchmark]
     public void Run()
     {
         foreach(ref var chunk in query.GetChunkIterator())
         {
-            var components = chunk.GetFirst<Component1>;    // chunk.GetArray, chunk.GetSpan...
+            /* ???
+            var components1 = chunk.GetFirst<Component1>;
+            var components2 = chunk.GetFirst<Component2>;
+            var components3 = chunk.GetFirst<Component3>;
+            var components4 = chunk.GetFirst<Component4>;
+            var components5 = chunk.GetFirst<Component5>;
             foreach(var entity in chunk)                    // Iterate over each row/entity inside chunk
             {
-                ref var _ = ref Unsafe.Add(ref components, entity);
+                ref Component1 c1 = ref Unsafe.Add(ref components1, entity);
+                ref var c2 = ref Unsafe.Add(ref components2, entity);
+                ref var c3 = ref Unsafe.Add(ref components3, entity);
+                ref var c4 = ref Unsafe.Add(ref components4, entity);
+                ref var c5 = ref Unsafe.Add(ref components5, entity);
+                c1.value = c2.value;
             }
+            */
         }
     }
 }

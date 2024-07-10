@@ -7,7 +7,7 @@ namespace Fennecs;
 
 [ShortRunJob]
 [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
-public class Query5
+public class QueryT5
 {
     private World                                                           world;
     private Stream<Component1,Component2,Component3,Component4,Component5>  stream;

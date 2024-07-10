@@ -1,27 +1,19 @@
-﻿using Arch.Core;
-using Arch.Core.Extensions;
-using Arch.Types;
-using BenchmarkDotNet.Attributes;
+﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
+using Friflo.Engine.ECS.Types;
 
-namespace Arch;
+namespace Friflo.Engine.ECS;
 
 [ShortRunJob]
 [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
-public class AddRemoveComponents5
+public class AddRemoveComponentsT5
 {
-    private World   world;
-    private Entity  entity;
+    private Entity entity;
     
     [GlobalSetup]
     public void Setup() {
-        world   = World.Create();
-        entity  = world.Create();
-    }
-    
-    [GlobalCleanup]
-    public void Shutdown() {
-        World.Destroy(world);
+        var world = new EntityStore();
+        entity = world.CreateEntity();
     }
     
     [Benchmark]

@@ -7,7 +7,7 @@ namespace Fennecs;
 
 [ShortRunJob]
 [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
-public class AddRemoveComponents1
+public class AddRemoveComponentsT1
 {
     private World   world;
     private Entity  entity;
