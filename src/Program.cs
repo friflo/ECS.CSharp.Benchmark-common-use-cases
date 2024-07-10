@@ -20,4 +20,8 @@ ManualConfig customConfig = DefaultConfig.Instance
 
 BenchmarkSwitcher
     .FromAssembly(Assembly.GetExecutingAssembly())
+#if DEBUG
+    .Run(args, new DebugInProcessConfig());
+#else
     .Run(args, customConfig);
+#endif

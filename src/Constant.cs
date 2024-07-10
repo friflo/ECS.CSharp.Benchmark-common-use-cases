@@ -10,6 +10,9 @@ public static class Constant
     public const int TargetCountP2  = 100;
     
     public const int EntityCount    = 1;
+    
+    public const int CreateEntityIterationCount = 1000;    
+    public const int CreateEntityCount          = 1000;
 }
 
 public static class Assert
