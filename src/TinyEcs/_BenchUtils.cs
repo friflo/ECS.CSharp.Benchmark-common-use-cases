@@ -13,8 +13,6 @@ public static class BenchUtils
     
     public static EntityView[] AddComponents(this EntityView[] entities)
     {
-        EntityView e = entities[0];
-        
         foreach (var entity in entities)
         {
             entity.Set<Component1>();
