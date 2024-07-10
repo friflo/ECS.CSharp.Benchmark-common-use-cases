@@ -5,9 +5,9 @@ namespace Leopotam.EcsLite;
 [ShortRunJob]
 public class AddRemoveComponentsT1
 {
-    private EcsWorld    world;
-    private int[]       entities;
-    EcsPool<Component1> ecsPoolC1;
+    private EcsWorld            world;
+    private int[]               entities;
+    private EcsPool<Component1> ecsPoolC1;
     
     [GlobalSetup]
     public void Setup() {

@@ -5,9 +5,9 @@ namespace Leopotam.EcsLite;
 [ShortRunJob]
 public class QueryT1
 {
-    private EcsWorld    world;
-    private EcsFilter   filter;
-    EcsPool<Component1> c1;
+    private EcsWorld            world;
+    private EcsFilter           filter;
+    private EcsPool<Component1> c1;
     
     [GlobalSetup]
     public void Setup()

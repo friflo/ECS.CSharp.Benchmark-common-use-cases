@@ -5,13 +5,13 @@ namespace Leopotam.EcsLite;
 [ShortRunJob]
 public class QueryT5
 {
-    private EcsWorld    world;
-    private EcsFilter   filter;
-    EcsPool<Component1> c1;
-    EcsPool<Component2> c2;
-    EcsPool<Component3> c3;
-    EcsPool<Component4> c4;
-    EcsPool<Component5> c5;
+    private EcsWorld            world;
+    private EcsFilter           filter;
+    private EcsPool<Component1> c1;
+    private EcsPool<Component2> c2;
+    private EcsPool<Component3> c3;
+    private EcsPool<Component4> c4;
+    private EcsPool<Component5> c5;
     
     [GlobalSetup]
     public void Setup() {
