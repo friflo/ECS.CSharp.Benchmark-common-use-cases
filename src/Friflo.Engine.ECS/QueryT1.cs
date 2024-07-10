@@ -20,7 +20,8 @@ public class QueryT1
     public void Run()
     {
         foreach (var (components, _) in query.Chunks) {
-            foreach (ref var _ in components.Span) {
+            foreach (ref var component in components.Span) {
+                component.value++;
             }
         }
     }

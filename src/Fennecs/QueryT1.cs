@@ -27,7 +27,8 @@ public class QueryT1
     public void Run()
     {
         stream.Raw(components => {
-            foreach (Component1 _ in components.Span) {
+            foreach (ref Component1 component1 in components.Span) {
+                component1.value++;
             }
         });
     }

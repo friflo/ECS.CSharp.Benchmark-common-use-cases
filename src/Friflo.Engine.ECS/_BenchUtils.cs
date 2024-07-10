@@ -2,7 +2,6 @@
 
 public static class BenchUtils
 {
-    
     public static Entity[] CreateEntities (this EntityStore world, int count)
     {
         var entities = new Entity[count];
