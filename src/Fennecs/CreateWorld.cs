@@ -5,7 +5,6 @@ using fennecs;
 namespace Fennecs;
 
 [ShortRunJob]
-[GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
 public class CreateWorld
 {
     [Benchmark]

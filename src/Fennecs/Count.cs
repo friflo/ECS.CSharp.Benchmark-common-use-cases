@@ -6,7 +6,6 @@ using Fennecs.Types;
 namespace Fennecs;
 
 [ShortRunJob]
-[GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
 public class Count
 {
     private Query    query;

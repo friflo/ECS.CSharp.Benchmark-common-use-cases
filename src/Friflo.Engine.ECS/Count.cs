@@ -5,7 +5,6 @@ using Friflo.Engine.ECS.Types;
 namespace Friflo.Engine.ECS;
 
 [ShortRunJob]
-[GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
 public class Count
 {
     private ArchetypeQuery<Component1>    query;

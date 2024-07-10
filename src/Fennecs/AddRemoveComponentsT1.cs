@@ -6,7 +6,6 @@ using Fennecs.Types;
 namespace Fennecs;
 
 [ShortRunJob]
-[GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
 public class AddRemoveComponentsT1
 {
     private World       world;
@@ -22,7 +21,7 @@ public class AddRemoveComponentsT1
     public void Shutdown() {
         world.Dispose();
     }
-    
+
     [Benchmark]
     public void Run()
     {

@@ -5,7 +5,6 @@ using BenchmarkDotNet.Configs;
 namespace Arch;
 
 [ShortRunJob]
-[GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
 public class CreateWorld
 {
     [Benchmark]

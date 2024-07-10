@@ -8,7 +8,6 @@ using BenchmarkDotNet.Configs;
 namespace Arch;
 
 [ShortRunJob]
-[GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
 public class QueryT1
 {
     private World   world;

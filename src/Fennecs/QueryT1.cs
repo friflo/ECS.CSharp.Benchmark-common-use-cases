@@ -6,7 +6,6 @@ using Fennecs.Types;
 namespace Fennecs;
 
 [ShortRunJob]
-[GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
 public class QueryT1
 {
     private World               world;

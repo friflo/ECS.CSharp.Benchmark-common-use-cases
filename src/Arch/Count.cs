@@ -7,7 +7,6 @@ using BenchmarkDotNet.Configs;
 namespace Arch;
 
 [ShortRunJob]
-[GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
 public class Count
 {
     private World   world;

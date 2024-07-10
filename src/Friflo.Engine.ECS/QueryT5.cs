@@ -5,7 +5,6 @@ using Friflo.Engine.ECS.Types;
 namespace Friflo.Engine.ECS;
 
 [ShortRunJob]
-[GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
 public class QueryT5
 {
     private ArchetypeQuery<Component1,Component2,Component3,Component4,Component5> query;

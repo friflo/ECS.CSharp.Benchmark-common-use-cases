@@ -4,7 +4,6 @@ using BenchmarkDotNet.Configs;
 namespace Friflo.Engine.ECS;
 
 [ShortRunJob]
-[GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
 public class CreateWorld
 {
     [Benchmark(Baseline = true)]

@@ -5,7 +5,6 @@ using Friflo.Engine.ECS.Types;
 namespace Friflo.Engine.ECS;
 
 [ShortRunJob]
-[GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
 public class AddRemoveComponentsT5
 {
     private Entity[] entities;
