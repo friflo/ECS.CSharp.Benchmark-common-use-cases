@@ -5,7 +5,7 @@ Motivation of this benchmark project:
 - Compare performance of common uses cases of multiple ECS projects.  
 
 - Utilize a common ECS operation of a specific ECS project in most **simple & performant** way.  
-  This make this benchmarks applicable to support migration from one project to another.
+  This make this benchmarks applicable to support migration from one ECS to another.
 
 - Having an alternative to the popular [Ecs.CSharp.Benchmark](https://github.com/Doraku/Ecs.CSharp.Benchmark).  
   As the mentioned project is currently not active maintained.
@@ -52,19 +52,19 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 # Benchmarks
 
 | Benchmark                             | Description               
-|-------------------------------------- | --------------------------------------
-| Add / Remove 1 component              |
-| Add / Remove 5 components             |
+|-------------------------------------- | --------------------------------------------------------------
+| Add / Remove 1 component              | Check performance impact by the structural change in Archetype based ECS projects.
+| Add / Remove 5 components             | Check performance impact by the structural change in Archetype based ECS projects.
 | Create entity                         |
-| Create world                          |
+| Create world                          | Check memory and CPU resources required by a new World.
 | Delete entity                         |
-| Get / Set component                   |
-| Query with 1 component                |
-| Query with 5 components               |
+| Get / Set component                   | 
+| Query with 1 component                | Check performance impact by cache misses in Sparse Set based ECS projects.
+| Query with 5 components               | Check performance impact by cache misses in Sparse Set based ECS projects.
 |                                       | 
 | **Projects with relation support**    | 
-| Add / Remove 1 link relation          |
-| Add / Remove 100 link relations       |
+| Add / Remove 1 link relation          | Check memory and CPU resources required for a new relation.
+| Add / Remove 100 link relations       | Check memory and CPU resources required for a new relation.
 
 
 ```
