@@ -8,7 +8,7 @@ Motivation of this benchmark project:
   This make this benchmarks applicable to support migration from one ECS to another.
 
 - The majority of C# ECS benchmarks focus on big data sets. Typically a multiple of 100.000 entities.  
-  This sets a bias for many ECS implementations. Its also likely having many queries (systems) dealing only with 10 or 100 entities.  
+  This sets a bias for many ECS implementations. Its also likely having many queries (systems) dealing only with 10, 100 or no entities.  
   In this case the setup cost for queries (systems) and command buffers gets relevant and can become the bottleneck.
   This benchmark has its focus on this case.
 
