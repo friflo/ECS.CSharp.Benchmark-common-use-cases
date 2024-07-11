@@ -19,7 +19,7 @@ ManualConfig customConfig = DefaultConfig.Instance
         "Method", "Error", "StdDev", "Median",                  // removed to reduce noise
         "RatioSD",                                              // added by using: [Benchmark(Baseline = true)]
         "InvocationCount", "IterationCount", "UnrollFactor",    // added by using: [InvocationCount()] & [IterationCount()] 
-        "Gen0", "Gen1", "Gen2");                                // last column "Alloc Ratio" not hidden otherwise Markdown table is in valid 
+        "Gen0", "Gen1", "Gen2", "Alloc Ratio");                 // removing last column "Alloc Ratio" makes Markdown table valid
     
 
 BenchmarkSwitcher
