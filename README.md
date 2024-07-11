@@ -11,16 +11,38 @@ This projects aims for two goals
 
 Ordered by GitHub Activity
 
-| ECS                                                                                           | Type               
-|---------------------------------------------------------------------------------------------- | -----
+| ECS                                                                                           | ECS implementation
+|---------------------------------------------------------------------------------------------- | ------------------
 | [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/README.md)   | Archetype
 | [fennecs](https://github.com/thygrrr/fennecs)                                                 | Archetype
 | [TinyEcs](https://github.com/andreakarasho/TinyEcs)                                           | Archetype
 | [Arch](https://github.com/genaray/Arch)                                                       | Archetype
 | [Flecs.Net](https://github.com/BeanCheeseBurrito/Flecs.NET)                                   | Archetype
 | [Morpeh](https://github.com/scellecs/morpeh)                                                  | ?
-| [Leopotam.EcsLite](https://github.com/Leopotam/ecslite)                                       | Sparse array
-| [DefaultEcs](https://github.com/Doraku/DefaultEcs)                                            | Sparse array
+| [Leopotam.EcsLite](https://github.com/Leopotam/ecslite)                                       | Sparse Set
+| [DefaultEcs](https://github.com/Doraku/DefaultEcs)                                            | Sparse Set
+
+
+## ECS implementation
+
+The are typically two types used by many ECS projects
+
+### Archetype
+
+Entities are stored in single array. Components as stored in "tables" aka Archetypes.  
+An Archetype contains arrays of components for a specific set of component types.
+
+**Pros:** Enable fast iteration of component queries.  
+**Cons**: Add/remove operations require a structural change.  
+
+### Sparse Set
+
+A sparse Set based ECS stores each component in its own sparse set which is has the entity id as key.
+
+**Pros:** Fast add/remove operations.  
+**Cons:** Each component type requires an array with the size of all components.  
+
+<br/>
 
 
 # Benchmarks
@@ -156,7 +178,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 
 ## Add / Remove link relations
 
-Some ECS projects have support for entity relationships
+Some ECS projects have support for [Entity Relationships](https://github.com/friflo/Friflo.Json.Fliox/wiki/Examples-~-Component-Types#entity-relationships).
 
 ### Add / Remove 1 link relation
 | ECS               | TargetCount | Mean       | Ratio | Allocated   | 
@@ -178,14 +200,21 @@ Some ECS projects have support for entity relationships
 
 Running all 68 benchmarks ~ 7 minutes
 
+The benchmark project can be build and executed on **Windows**, **macOS** & **Linux**.  
+All popular IDE's can be used to run and debug the project: **Rider**, **Visual Studio Code** & **Visual Studio**.
+
 **Benchmark constraints**
 
-- Each Benchmark shares no state with any other benchmark
-- Each benchmark uses the fastest single threaded variant available
-- Adding removing a benchmark implementation has no effect on all others
+- Each Benchmark shares no state with any other benchmarks.
+- Each benchmark uses the fastest single threaded variant available.
+- Adding or removing a benchmark implementation has no effect on all others.
+- Each project has an extension class `BenchUtils` with two methods to used by its benchmarks.  
+  `BenchUtils.CreateEntities(int count)`  
+  `BenchUtils.AddComponents(this Entity[] entities)`  
 
 
-CLI benchmark example commands
+**CLI benchmark example commands**
+
 ```shell
 cd ./src
 
