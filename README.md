@@ -20,16 +20,16 @@ Motivation of this benchmark project:
 
 Ordered by GitHub Activity
 
-| ECS                                                                                           | ECS implementation
-|---------------------------------------------------------------------------------------------- | ------------------
-| [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/README.md)   | Archetype
-| [fennecs](https://github.com/thygrrr/fennecs)                                                 | Archetype
-| [TinyEcs](https://github.com/andreakarasho/TinyEcs)                                           | Archetype
-| [Arch](https://github.com/genaray/Arch)                                                       | Archetype
-| [Flecs.Net](https://github.com/BeanCheeseBurrito/Flecs.NET)                                   | Archetype
-| [Morpeh](https://github.com/scellecs/morpeh)                                                  | ?
-| [Leopotam.EcsLite](https://github.com/Leopotam/ecslite)                                       | Sparse Set
-| [DefaultEcs](https://github.com/Doraku/DefaultEcs)                                            | Sparse Set
+| ECS                                                                                           | ECS implementation | Entity |
+|---------------------------------------------------------------------------------------------- | ------------------ | -------|
+| [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/README.md)   | Archetype          | struct |
+| [fennecs](https://github.com/thygrrr/fennecs)                                                 | Archetype          | struct |
+| [TinyEcs](https://github.com/andreakarasho/TinyEcs)                                           | Archetype          | struct |
+| [Arch](https://github.com/genaray/Arch)                                                       | Archetype          | struct |
+| [Flecs.Net](https://github.com/BeanCheeseBurrito/Flecs.NET)                                   | Archetype          | struct |
+| [Morpeh](https://github.com/scellecs/morpeh)                                                  | ?                  | class  |
+| [Leopotam.EcsLite](https://github.com/Leopotam/ecslite)                                       | Sparse Set         | int    |
+| [DefaultEcs](https://github.com/Doraku/DefaultEcs)                                            | Sparse Set         | struct |
 
 
 ## ECS implementation
