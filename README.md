@@ -205,8 +205,8 @@ All popular IDE's can be used to run and debug the project: **Rider**, **Visual 
 
 **Benchmark constraints**
 
-- Each Benchmark shares no state with any other benchmarks.
-- Each benchmark uses the fastest single threaded variant available.
+- Each benchmark is **simple** and uses the fastest single threaded variant available.
+- Each Benchmark shares no state or code with any other benchmarks.
 - Adding or removing a benchmark implementation has no effect on all others.
 - Each project has an extension class `BenchUtils` with two methods to used by its benchmarks.  
   `BenchUtils.CreateEntities(int count)`  
