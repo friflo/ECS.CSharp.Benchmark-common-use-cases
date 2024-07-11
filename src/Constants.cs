@@ -21,13 +21,13 @@ public static class Constants
 // --- Benchmark categories
 public static class Category
 {
-    public const string     AddRemoveComponentsT1   = "AddRemoveComponentsT1";
-    public const string     AddRemoveComponentsT5   = "AddRemoveComponentsT5";
-    public const string     AddRemoveLinks          = "AddRemoveLinks";
-    public const string     CreateEntity            = "CreateEntity";
-    public const string     CreateWorld             = "CreateWorld";
-    public const string     DeleteEntity            = "DeleteEntity";
-    public const string     QueryT1                 = "QueryT1";
-    public const string     QueryT5                 = "QueryT5";
-    public const string     GetSetComponentsT1      = "GetSetComponentsT1";
+    public const string     AddRemoveComponentsT1   = nameof(AddRemoveComponentsT1);
+    public const string     AddRemoveComponentsT5   = nameof(AddRemoveComponentsT5);
+    public const string     AddRemoveLinks          = nameof(AddRemoveLinks);
+    public const string     CreateEntity            = nameof(CreateEntity);
+    public const string     CreateWorld             = nameof(CreateWorld);
+    public const string     DeleteEntity            = nameof(DeleteEntity);
+    public const string     QueryT1                 = nameof(QueryT1);
+    public const string     QueryT5                 = nameof(QueryT5);
+    public const string     GetSetComponentsT1      = nameof(GetSetComponentsT1);
 }
