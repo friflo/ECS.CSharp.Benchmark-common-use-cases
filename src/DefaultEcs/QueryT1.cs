@@ -25,7 +25,7 @@ public class QueryT1_Default
         world.Dispose();
     }
     
-    // [Benchmark]
+    [Benchmark]
     public void Run()
     {
         componentSystem.Update(0);

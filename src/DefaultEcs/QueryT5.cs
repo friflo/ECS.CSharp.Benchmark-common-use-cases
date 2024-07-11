@@ -21,7 +21,7 @@ public partial class QueryT5_DefaultEcs
         // Assert.AreEqual(Constants.EntityCount, query.Count);
     }
     
-    [IterationCleanup]
+    [GlobalCleanup]
     public void Shutdown()
     {
         world.Dispose();

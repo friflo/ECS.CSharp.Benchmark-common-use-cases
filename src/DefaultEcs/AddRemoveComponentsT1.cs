@@ -17,13 +17,13 @@ public class AddRemoveComponentsT1_DefaultEcs
         entities    = world.CreateEntities(Constants.EntityCount);
     }
     
-    [IterationCleanup]
+    [GlobalCleanup]
     public void Shutdown()
     {
         world.Dispose();
     }
     
-    // [Benchmark]
+    [Benchmark]
     public void Run()
     {
         foreach (var entity in entities) {
