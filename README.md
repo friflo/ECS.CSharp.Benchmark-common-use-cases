@@ -1,11 +1,15 @@
 # ECS.CSharp.Benchmark - Common use-cases
 
-This projects aims for two goals
+Motivation of this benchmark project:
 
-- Compare performance of common uses cases of multiple ECS projects.
+- Compare performance of common uses cases of multiple ECS projects.  
 
-- Utilize a specific ECS operation of a project in most simple & performant way.  
-  This make the benchmarks applicable to migrate from one project to another.
+- Utilize a common ECS operation of a specific ECS project in most **simple & performant** way.  
+  This make this benchmarks applicable to support migration from one project to another.
+
+- Having an alternative to the popular [Ecs.CSharp.Benchmark](https://github.com/Doraku/Ecs.CSharp.Benchmark).  
+  As the mentioned project is currently not active maintained.
+
 
 ## Tested projects
 
