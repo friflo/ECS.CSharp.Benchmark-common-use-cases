@@ -212,6 +212,12 @@ All popular IDE's can be used to run and debug the project: **Rider**, **Visual 
   `BenchUtils.CreateEntities(int count)`  
   `BenchUtils.AddComponents(this Entity[] entities)`  
 
+## Contribution
+
+Contributions are welcome.
+
+
+## Benchmark CLI
 
 **CLI benchmark example commands**
 
