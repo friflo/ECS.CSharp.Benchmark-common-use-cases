@@ -29,4 +29,5 @@ public static class Category
     public const string     DeleteEntity            = "DeleteEntity";
     public const string     QueryT1                 = "QueryT1";
     public const string     QueryT5                 = "QueryT5";
+    public const string     GetSetComponentsT1      = "GetSetComponentsT1";
 }
