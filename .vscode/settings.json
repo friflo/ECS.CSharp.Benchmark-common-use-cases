@@ -10,7 +10,7 @@
         "**/*-report.csv": true,
         "**/*-report.html": true,
         "Directory.Build.props": true,
-        "Artifacts/*.log": true,
+        "Artifacts/*.log": false,
     },
     "cSpell.words": [
         "Diagnoser",

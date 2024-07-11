@@ -3,10 +3,11 @@
 using System.Reflection;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Diagnosers;
+using BenchmarkDotNet.Loggers;
 using BenchmarkDotNet.Order;
 using BenchmarkDotNet.Running;
 
-var info =
+var header =
 $@"
     ECS.CSharp.Benchmark Common use-cases
     -------------------------------------
@@ -15,8 +16,6 @@ $@"
     {nameof(Constants.DeleteEntityCount)}:  {Constants.DeleteEntityCount}
     args: {string.Join(' ', args)}
 ";
-Console.WriteLine(info);
-
 
 ManualConfig customConfig = DefaultConfig.Instance
     .WithOption(ConfigOptions.JoinSummary, true)
@@ -30,15 +29,14 @@ ManualConfig customConfig = DefaultConfig.Instance
         "RatioSD",                                              // added by using: [Benchmark(Baseline = true)]
         "InvocationCount", "IterationCount", "UnrollFactor",    // added by using: [InvocationCount()] & [IterationCount()] 
         "Gen0", "Gen1", "Gen2", "Alloc Ratio");                 // removing last column "Alloc Ratio" makes Markdown table valid
-    
-
-BenchmarkSwitcher
-    .FromAssembly(Assembly.GetExecutingAssembly())
 #if DEBUG
-    .Run(args, new DebugInProcessConfig());
+    IConfig config = new DebugInProcessConfig();
 #else
-    .Run(args, customConfig);
+    IConfig config = customConfig;
 #endif
+    foreach (var logger in config.GetLoggers()) { logger.WriteLine(header); }
+
+BenchmarkSwitcher.FromAssembly(Assembly.GetExecutingAssembly()).Run(args, config);
 
 
 public static class Assert
