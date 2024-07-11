@@ -6,7 +6,17 @@ using BenchmarkDotNet.Diagnosers;
 using BenchmarkDotNet.Order;
 using BenchmarkDotNet.Running;
 
-Console.WriteLine("Hello, World!");
+var info =
+$@"
+    ECS.CSharp.Benchmark Common use-cases
+    -------------------------------------
+    {nameof(Constants.EntityCount)}:        {Constants.EntityCount}
+    {nameof(Constants.CreateEntityCount)}:  {Constants.CreateEntityCount}
+    {nameof(Constants.DeleteEntityCount)}:  {Constants.DeleteEntityCount}
+    args: {string.Join(' ', args)}
+";
+Console.WriteLine(info);
+
 
 ManualConfig customConfig = DefaultConfig.Instance
     .WithOption(ConfigOptions.JoinSummary, true)
