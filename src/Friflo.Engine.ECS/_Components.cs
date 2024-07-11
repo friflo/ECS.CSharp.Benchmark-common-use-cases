@@ -2,34 +2,17 @@
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value
 
-internal struct Component1 : IComponent
-{
-    public int value;
-}
+internal record struct Component1(int Value) : IComponent;
 
-internal struct Component2 : IComponent
-{
-    public int value;
-}
+internal record struct Component2(int Value) : IComponent;
 
-internal struct Component3 : IComponent
-{
-    public int value;
-}
+internal record struct Component3(int Value) : IComponent;
 
-internal struct Component4 : IComponent
-{
-    public int value;
-}
+internal record struct Component4(int Value) : IComponent;
 
-internal struct Component5 : IComponent
-{
-    public int value;
-}
+internal record struct Component5(int Value) : IComponent;
 
-internal struct LinkRelation : ILinkRelation
+internal record struct LinkRelation(int Value, Entity Target) : ILinkRelation
 {
-    public int      value;
-    public Entity   target;
-    public Entity   GetRelationKey() => target;
+    public Entity   GetRelationKey() => Target;
 }

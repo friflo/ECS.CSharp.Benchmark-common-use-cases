@@ -29,7 +29,7 @@ public class QueryT5_Friflo
             var span4 = components4.Span;
             var span5 = components5.Span;
             for (int n = 0; n < components1.Length; n++) {
-                span1[n].value = span2[n].value + span3[n].value + span4[n].value + span5[n].value;
+                span1[n].Value = span2[n].Value + span3[n].Value + span4[n].Value + span5[n].Value;
             }
         }
     }

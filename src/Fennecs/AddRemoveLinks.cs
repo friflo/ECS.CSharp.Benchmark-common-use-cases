@@ -34,7 +34,7 @@ public class AddRemoveLinks_Fennecs
         foreach (var source in sources)
         {
             for (int n = 0; n < TargetCount; n++) {
-                source.Add(new LinkRelation { value = n }, targets[n] );
+                source.Add(new LinkRelation { Value = n }, targets[n] );
             }
             for (int n = 0; n < TargetCount; n++) {
                 source.Remove<LinkRelation>(targets[n]);

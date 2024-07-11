@@ -27,7 +27,7 @@ public class AddRemoveLinks_Friflo
         foreach (var source in sources)
         {
             for (int n = 0; n < TargetCount; n++) {
-                source.AddRelation(new LinkRelation { value = n, target = targets[n] });
+                source.AddRelation(new LinkRelation { Value = n, Target = targets[n] });
             }
             for (int n = 0; n < TargetCount; n++) {
                 source.RemoveRelation<LinkRelation>(targets[n]);

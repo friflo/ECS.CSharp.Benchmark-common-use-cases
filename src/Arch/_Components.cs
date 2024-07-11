@@ -2,27 +2,12 @@
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value
 
-internal struct Component1
-{
-    public int value;
-}
+internal record struct Component1(int Value);
 
-internal struct Component2
-{
-    public int value;
-}
+internal record struct Component2(int Value);
 
-internal struct Component3
-{
-    public int value;
-}
+internal record struct Component3(int Value);
 
-internal struct Component4
-{
-    public int value;
-}
+internal record struct Component4(int Value);
 
-internal struct Component5
-{
-    public int value;
-}
+internal record struct Component5(int Value);

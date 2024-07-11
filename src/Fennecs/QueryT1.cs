@@ -30,7 +30,7 @@ public class QueryT1_Fennecs
     {
         stream.Raw(components => {
             foreach (ref Component1 component1 in components.Span) {
-                component1.value++;
+                component1.Value++;
             }
         });
     }

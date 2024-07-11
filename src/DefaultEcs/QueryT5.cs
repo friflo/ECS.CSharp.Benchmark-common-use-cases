@@ -40,7 +40,7 @@ public partial class QueryT5_DefaultEcs
         [Update]
         private static void Update(ref Component1 c1, in Component2 c2, in Component3 c3, in Component4 c4, in Component5 c5)
         {
-            c1.value = c2.value + c3.value + c4.value + c5.value;  
+            c1.Value = c2.Value + c3.Value + c4.Value + c5.Value;  
         }
     }
 }

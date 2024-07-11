@@ -37,7 +37,7 @@ public class QueryT1_Default
         protected override void Update(int state, Span<Component1> components)
         {
             foreach (ref Component1 component in components) {
-                ++component.value;
+                ++component.Value;
             }
         }
     }

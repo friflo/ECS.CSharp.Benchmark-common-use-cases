@@ -23,7 +23,7 @@ public class QueryT1_Friflo
     {
         foreach (var (components, _) in query.Chunks) {
             foreach (ref var component in components.Span) {
-                component.value++;
+                component.Value++;
             }
         }
     }
