@@ -12,3 +12,7 @@ internal record struct Component4(int Value) : IComponent;
 
 internal record struct Component5(int Value) : IComponent;
 
+/// https://github.com/scellecs/morpeh?tab=readme-ov-file#-entity
+/// "if you remove last component on entity it will be destroyed on next world.Commit()"
+internal record struct AliveComponent : IComponent;
+

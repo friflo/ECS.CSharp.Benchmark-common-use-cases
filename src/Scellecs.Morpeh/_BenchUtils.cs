@@ -6,7 +6,8 @@ public static class BenchUtils
     {
         var entities = new Entity[count];
         for (int n = 0; n < count; n++) {
-            entities[n] = world.CreateEntity(); 
+            var entity = entities[n] = world.CreateEntity(); 
+            entity.AddComponent<AliveComponent>();
         }
         world.Commit();
         return entities;

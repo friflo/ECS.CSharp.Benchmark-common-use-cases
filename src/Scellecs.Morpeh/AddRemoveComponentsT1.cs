@@ -30,6 +30,6 @@ public class AddRemoveComponentsT1_Morpeh
         foreach (var entity in entities) {
             entity.RemoveComponent<Component1>();
         }
-        //world.Commit();
+        world.Commit();
     }
 }

@@ -22,7 +22,6 @@ public class QueryT1_Morpeh
     [GlobalCleanup]
     public void Shutdown()
     {
-        stashSystem.Dispose();
         world.Dispose();
     }
     
