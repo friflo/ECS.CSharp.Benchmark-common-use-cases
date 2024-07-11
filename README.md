@@ -7,6 +7,11 @@ Motivation of this benchmark project:
 - Utilize a common ECS operation of a specific ECS project in most **simple & performant** way.  
   This make this benchmarks applicable to support migration from one ECS to another.
 
+- The majority of C# ECS benchmarks focus on big data sets. Typically a multiple of 100.000 entities.  
+  This sets a bias for many ECS implementations. Its also likely having many queries (systems) dealing only with 10 or 100 entities.  
+  In this case the setup cost for queries (systems) and command buffers gets relevant and can become the bottleneck.
+  This benchmark has its focus on this case.
+
 - Having an alternative to the popular [Ecs.CSharp.Benchmark](https://github.com/Doraku/Ecs.CSharp.Benchmark).  
   As the mentioned project is currently not active maintained.
 
