@@ -11,7 +11,7 @@ Method=Run
 
 ```
 | Namespace         | Type                             | Mean             | Ratio    | Allocated  | 
-|------------------ |--------------------------------- |-----------------:|---------:|-----------:|-
+|------------------ |--------------------------------- |-----------------:|---------:|-----------:|
 | Leopotam.EcsLite  | AddRemoveComponentsT1_Leopotam   |        985.98 ns |     0.18 |          - | 
 | DefaultEcs        | AddRemoveComponentsT1_DefaultEcs |      1,472.27 ns |     0.26 |          - | 
 | Scellecs.Morpeh   | AddRemoveComponentsT1_Morpeh     |      1,839.31 ns |     0.33 |          - | 
