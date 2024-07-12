@@ -221,6 +221,19 @@ All popular IDE's can be used to run and debug the project: **Rider**, **Visual 
   `BenchUtils.CreateEntities(int count)`  
   `BenchUtils.AddComponents(this Entity[] entities)`  
 
+Benchmarks changing the state of World in a way that has influence on the measurement have a specific handling.  
+Currently these Benchmarks are `CreateEntity` and `DeleteEntity`.  
+They are attributed with
+```
+[InvocationCount(1000)]  // <- Constants are replaced by numbers for this explanation
+[IterationCount(2000)]
+```
+and using a `[IterationSetup] / [IterationCleanup]` pair instead of a `[GlobalSetup] / [GlobalCleanup]` pair.  
+In this case a benchmark is executed 1000 * 2000 times to ensure the JIT has finished its optimizations.  
+In each iteration the benchmarked code is invoked 1000 times.
+
+
+
 ## Contribution
 
 Contributions are welcome.
