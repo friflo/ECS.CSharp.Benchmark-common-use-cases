@@ -229,9 +229,9 @@ They are attributed with
 [IterationCount(2000)]
 ```
 and using a `[IterationSetup] / [IterationCleanup]` pair instead of a `[GlobalSetup] / [GlobalCleanup]` pair.  
-In this case a benchmark is executed 1000 * 2000 times to ensure the JIT has finished its optimizations.  
-In each iteration the benchmarked code is invoked 1000 times.
-
+In this case a benchmark is executed 1000 * 2000 times to ensure the JIT has finished its optimizations in `WorkloadActual` phase.  
+In each iteration the benchmarked code is invoked 1000 times.  
+The same applies to `WorkloadResult` phase when BDN do the measurement for the benchmark results in the summary.
 
 
 ## Contribution
