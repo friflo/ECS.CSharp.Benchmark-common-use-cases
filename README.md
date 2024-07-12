@@ -15,6 +15,8 @@ Motivation of this benchmark project:
 - Having an alternative to the popular [Ecs.CSharp.Benchmark](https://github.com/Doraku/Ecs.CSharp.Benchmark).  
   As the mentioned project is currently not active maintained.
 
+See comments about this benchmark at [reddit announcement post](https://www.reddit.com/r/EntityComponentSystem/comments/1e0qo62/just_published_new_github_repo_ecs_c_benchmark/)
+
 
 ## Tested projects
 
