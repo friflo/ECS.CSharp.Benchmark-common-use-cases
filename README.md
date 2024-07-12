@@ -63,7 +63,7 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 | Create 100.000 entities with 1 component  |
 | Create 100.000 entities with 3 components |
 | Create world                              | Check memory and CPU resources required by a new World.
-| Delete 100 entities with 5 components     |
+| Delete 100.000 entities with 5 components |
 | Get / Set 1 component on 100 entities     | 
 | Query 100 entities with 1 component       | Check performance impact by cache misses in Sparse Set based ECS projects.
 | Query 100 entities with 5 components      | Check performance impact by cache misses in Sparse Set based ECS projects.
@@ -149,7 +149,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 | TinyEcs           |     35,831 ns |   165.51 |   1087272 B | 
 | Flecs.NET         |    984,064 ns | 4,545.19 |      2394 B | 
 
-## Delete 100 entities with 5 components
+## Delete 100.000 entities with 5 components
 
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
