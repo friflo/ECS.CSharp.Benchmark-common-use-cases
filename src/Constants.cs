@@ -2,7 +2,7 @@
 public static class Constants
 {
     // --- for Benchmark: AddRemoveComponentsT1, AddRemoveComponentsT5, QueryT1, QueryT5
-    public const int    EntityCount         = 1000;
+    public const int    EntityCount         = 100;
 
     // --- for Benchmark: AddRemoveLinks
     public const int    TargetCountP1       = 1;        // NOTE! Must be used only in [Params()]
