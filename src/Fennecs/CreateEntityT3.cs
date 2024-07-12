@@ -23,11 +23,10 @@ public class CreateEntityT3_Fennecs
     [Benchmark]
     public void Run()
     {
-        for (int n = 0; n < Constants.CreateEntityCount; n++) {
-            var entity = world.Spawn();
-            entity.Add<Component1>();
-            entity.Add<Component2>();
-            entity.Add<Component3>();
-        }
+        world.Entity()
+            .Add(new Component1())
+            .Add(new Component2())
+            .Add(new Component3())
+            .Spawn(Constants.CreateEntityCount);
     }
 }

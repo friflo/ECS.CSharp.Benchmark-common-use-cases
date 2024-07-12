@@ -23,9 +23,8 @@ public class CreateEntityT1_Fennecs
     [Benchmark]
     public void Run()
     {
-        for (int n = 0; n < Constants.CreateEntityCount; n++) {
-            var entity = world.Spawn();
-            entity.Add<Component1>();
-        }
+        world.Entity()
+            .Add(new Component1())
+            .Spawn(Constants.CreateEntityCount);
     }
 }

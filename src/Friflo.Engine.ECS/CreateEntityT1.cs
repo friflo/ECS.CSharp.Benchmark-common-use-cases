@@ -13,9 +13,7 @@ public class CreateEntityT1_Friflo
     public void Setup()
     {
         world = new EntityStore();
-        world.EnsureCapacity(Constants.CreateEntityCount);
         archetype1 = world.GetArchetype(ComponentTypes.Get<Component1>());
-        archetype1.EnsureCapacity(Constants.CreateEntityCount);
     }
     
     [IterationCleanup]
@@ -27,8 +25,6 @@ public class CreateEntityT1_Friflo
     [Benchmark(Baseline = true)]
     public void Run()
     {
-        for (int n = 0; n < Constants.CreateEntityCount; n++) {
-            archetype1.CreateEntity();
-        }
+        archetype1.CreateEntities(Constants.CreateEntityCount);
     }
 }
