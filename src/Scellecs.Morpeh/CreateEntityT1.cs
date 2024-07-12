@@ -2,18 +2,16 @@
 
 namespace Scellecs.Morpeh;
 
-[BenchmarkCategory(Category.DeleteEntity)]
+[BenchmarkCategory(Category.CreateEntityT1)]
 // ReSharper disable once InconsistentNaming
-public class DeleteEntity_Morpeh
+public class CreateEntityT1_Morpeh
 {
-    private World       world;
-    private Entity[]    entities;
+    private World   world;
     
     [IterationSetup]
     public void Setup()
     {
-        world       = World.Create();
-        entities    = world.CreateEntities(Constants.DeleteEntityCount).AddComponents(world);
+        world = World.Create();
     }
     
     [IterationCleanup]
@@ -25,8 +23,9 @@ public class DeleteEntity_Morpeh
     [Benchmark]
     public void Run()
     {
-        foreach (var entity in entities) {
-            entity.Dispose();
+        for (int n = 0; n < Constants.CreateEntityCount; n++) {
+            var entity = world.CreateEntity();
+            entity.AddComponent<Component1>();
         }
         world.Commit();
     }

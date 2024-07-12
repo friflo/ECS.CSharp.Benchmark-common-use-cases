@@ -3,12 +3,9 @@
 namespace DefaultEcs;
 
 
-[InvocationCount(Constants.CreateEntityCount)]
-[IterationCount(Constants.CreateEntityIterationCount)]
-[ShortRunJob]
-[BenchmarkCategory(Category.CreateEntity)]
+[BenchmarkCategory(Category.CreateEntityT1)]
 // ReSharper disable once InconsistentNaming
-public class CreateEntity_DefaultEcs
+public class CreateEntityT1_DefaultEcs
 {
     private World world;
     
@@ -27,6 +24,9 @@ public class CreateEntity_DefaultEcs
     [Benchmark]
     public void Run()
     {
-        world.CreateEntity();
+        for (int n = 0; n < Constants.CreateEntityCount; n++) {
+            var entity = world.CreateEntity();
+            entity.Set<Component1>();
+        }
     }
 }

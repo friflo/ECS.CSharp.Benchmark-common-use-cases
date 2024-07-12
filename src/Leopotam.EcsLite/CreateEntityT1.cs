@@ -2,18 +2,18 @@
 
 namespace Leopotam.EcsLite;
 
-[BenchmarkCategory(Category.DeleteEntity)]
+[BenchmarkCategory(Category.CreateEntityT1)]
 // ReSharper disable once InconsistentNaming
-public class DeleteEntity_Leopotam
+public class CreateEntityT1_Leopotam
 {
-    private EcsWorld    world;
-    private int[]       entities;
+    private EcsWorld            world;
+    private EcsPool<Component1> ecsPoolC1;
     
     [IterationSetup]
     public void Setup()
     {
         world       = new EcsWorld();
-        entities    = world.CreateEntities(Constants.DeleteEntityCount).AddComponents(world);
+        ecsPoolC1   = world.GetPool<Component1>();
     }
     
     [IterationCleanup]
@@ -25,8 +25,9 @@ public class DeleteEntity_Leopotam
     [Benchmark]
     public void Run()
     {
-        foreach (var entity in entities) {
-            world.DelEntity(entity);
+        for (int n = 0; n < Constants.CreateEntityCount; n++) {
+            var entity = world.NewEntity();
+            ecsPoolC1.Add(entity);
         }
     }
 }

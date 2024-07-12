@@ -27,7 +27,8 @@ ManualConfig customConfig = DefaultConfig.Instance
     .HideColumns(
         "Method", "Error", "StdDev", "Median",                  // removed to reduce noise
         "RatioSD",                                              // added by using: [Benchmark(Baseline = true)]
-        "InvocationCount", "IterationCount", "UnrollFactor",    // added by using: [InvocationCount()] & [IterationCount()] 
+        "InvocationCount", "IterationCount", "UnrollFactor",    // added by using: [InvocationCount()] & [IterationCount()]
+        "Job", "LaunchCount", "WarmupCount",                    // added by using: [IterationSetup] & [IterationCleanup]
         "Gen0", "Gen1", "Gen2", "Alloc Ratio");                 // removing last column "Alloc Ratio" makes Markdown table valid
 
     // ReSharper disable once RedundantAssignment

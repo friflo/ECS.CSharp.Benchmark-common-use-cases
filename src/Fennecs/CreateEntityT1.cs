@@ -2,12 +2,9 @@
 
 namespace fennecs;
 
-[InvocationCount(Constants.CreateEntityCount)]
-[IterationCount(Constants.CreateEntityIterationCount)]
-[ShortRunJob]
-[BenchmarkCategory(Category.CreateEntity)]
+[BenchmarkCategory(Category.CreateEntityT1)]
 // ReSharper disable once InconsistentNaming
-public class CreateEntity_Fennecs
+public class CreateEntityT1_Fennecs
 {
     private World   world;
     
@@ -26,6 +23,9 @@ public class CreateEntity_Fennecs
     [Benchmark]
     public void Run()
     {
-        world.Spawn();
+        for (int n = 0; n < Constants.CreateEntityCount; n++) {
+            var entity = world.Spawn();
+            entity.Add<Component1>();
+        }
     }
 }

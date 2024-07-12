@@ -1,23 +1,21 @@
 ﻿using Arch.Core;
-using Arch.Core.Extensions.Dangerous;
+using Arch.Core.Utils;
 using BenchmarkDotNet.Attributes;
 
 namespace Arch;
 
-[InvocationCount(Constants.CreateEntityCount)]
-[IterationCount(Constants.CreateEntityIterationCount)]
-[ShortRunJob]
-[BenchmarkCategory(Category.CreateEntity)]
+[BenchmarkCategory(Category.CreateEntityT1)]
 // ReSharper disable once InconsistentNaming
-public class CreateEntity_Arch
+public class CreateEntityT1_Arch
 {
     private World   world;
+    private static readonly ComponentType[] ComponentTypes1 = [typeof(Component1)];
     
     [IterationSetup]
     public void Setup()
     {
         world   = World.Create();
-        world.EnsureCapacity(Constants.CreateEntityCount);
+        world.Reserve(ComponentTypes1, Constants.CreateEntityCount);
     }
     
     [IterationCleanup]
@@ -29,6 +27,8 @@ public class CreateEntity_Arch
     [Benchmark]
     public void Run()
     {
-        world.Create();
+        for (int n = 0; n < Constants.CreateEntityCount; n++) {
+            world.Create(ComponentTypes1);
+        }
     }
 }

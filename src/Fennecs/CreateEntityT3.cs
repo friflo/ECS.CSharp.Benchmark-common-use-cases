@@ -1,13 +1,10 @@
 ﻿using BenchmarkDotNet.Attributes;
 
-namespace TinyEcs;
+namespace fennecs;
 
-[InvocationCount(Constants.CreateEntityCount)]
-[IterationCount(Constants.CreateEntityIterationCount)]
-[ShortRunJob]
-[BenchmarkCategory(Category.CreateEntity)]
+[BenchmarkCategory(Category.CreateEntityT3)]
 // ReSharper disable once InconsistentNaming
-public class CreateEntity_TinyEcs
+public class CreateEntityT3_Fennecs
 {
     private World   world;
     
@@ -26,6 +23,11 @@ public class CreateEntity_TinyEcs
     [Benchmark]
     public void Run()
     {
-        world.Entity();
+        for (int n = 0; n < Constants.CreateEntityCount; n++) {
+            var entity = world.Spawn();
+            entity.Add<Component1>();
+            entity.Add<Component2>();
+            entity.Add<Component3>();
+        }
     }
 }

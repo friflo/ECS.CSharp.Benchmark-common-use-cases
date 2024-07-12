@@ -243,7 +243,7 @@ Contributions are welcome.
 
 **CLI benchmark example commands**
 
-```shell
+```php
 cd ./src
 
 --- windows
