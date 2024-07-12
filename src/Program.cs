@@ -29,10 +29,11 @@ ManualConfig customConfig = DefaultConfig.Instance
         "RatioSD",                                              // added by using: [Benchmark(Baseline = true)]
         "InvocationCount", "IterationCount", "UnrollFactor",    // added by using: [InvocationCount()] & [IterationCount()] 
         "Gen0", "Gen1", "Gen2", "Alloc Ratio");                 // removing last column "Alloc Ratio" makes Markdown table valid
-#if DEBUG
-    IConfig config = new DebugInProcessConfig();
-#else
+
+    // ReSharper disable once RedundantAssignment
     IConfig config = customConfig;
+#if DEBUG
+    config = new DebugInProcessConfig();
 #endif
     foreach (var logger in config.GetLoggers()) { logger.WriteLine(header); }
 

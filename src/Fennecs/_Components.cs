@@ -12,4 +12,5 @@ internal record struct Component4(int Value);
 
 internal record struct Component5(int Value);
 
+// ReSharper disable once NotAccessedPositionalProperty.Global
 internal record struct LinkRelation(int Value);
