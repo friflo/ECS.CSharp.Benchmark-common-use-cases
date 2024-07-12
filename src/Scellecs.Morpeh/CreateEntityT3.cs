@@ -6,12 +6,18 @@ namespace Scellecs.Morpeh;
 // ReSharper disable once InconsistentNaming
 public class CreateEntityT3_Morpeh
 {
-    private World   world;
+    private World               world;
+    private Stash<Component1>   stash1;
+    private Stash<Component2>   stash2;
+    private Stash<Component3>   stash3;
     
     [IterationSetup]
     public void Setup()
     {
-        world = World.Create();
+        world   = World.Create();
+        stash1  = world.GetStash<Component1>();
+        stash2  = world.GetStash<Component2>();
+        stash3  = world.GetStash<Component3>();
     }
     
     [IterationCleanup]
@@ -23,11 +29,12 @@ public class CreateEntityT3_Morpeh
     [Benchmark]
     public void Run()
     {
-        for (int n = 0; n < Constants.CreateEntityCount; n++) {
+        for (int n = 0; n < Constants.CreateEntityCount; n++)
+        {
             var entity = world.CreateEntity();
-            entity.AddComponent<Component1>();
-            entity.AddComponent<Component2>();
-            entity.AddComponent<Component3>();
+            stash1.Add(entity);
+            stash2.Add(entity);
+            stash3.Add(entity);
         }
         world.Commit();
     }
