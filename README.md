@@ -56,21 +56,21 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
 # Benchmarks
 
-| Benchmark                                 | Description               
-|------------------------------------------ | --------------------------------------------------------------
-| Add / Remove 1 component on 100 entities  | Check performance impact by the structural change in Archetype based ECS projects.
-| Add / Remove 5 components on 100 entities | Check performance impact by the structural change in Archetype based ECS projects.
-| Create 100.000 entities with 1 component  |
-| Create 100.000 entities with 3 components |
-| Create world                              | Check memory and CPU resources required by a new World.
-| Delete 100.000 entities with 5 components |
-| Get / Set 1 component on 100 entities     | 
-| Query 100 entities with 1 component       | Check performance impact by cache misses in Sparse Set based ECS projects.
-| Query 100 entities with 5 components      | Check performance impact by cache misses in Sparse Set based ECS projects.
-|                                           | 
-| **Projects with relation support**        | 
-| Add / Remove 1 link relation              | Check memory and CPU resources required for a new relation.
-| Add / Remove 100 link relations           | Check memory and CPU resources required for a new relation.
+| Benchmark                                 | Category                              | Description
+|------------------------------------------ | ------------------------------------- | -------------------------------------------------------------------------------
+| Add / Remove 1 component on 100 entities  | `AddRemoveComponentsT1`               | Check performance impact by the structural change in Archetype based ECS projects.
+| Add / Remove 5 components on 100 entities | `AddRemoveComponentsT5`               | Check performance impact by the structural change in Archetype based ECS projects.
+| Create 100.000 entities with 1 component  | `CreateEntityT1`                      | 
+| Create 100.000 entities with 3 components | `CreateEntityT3`                      | 
+| Create world                              | `CreateWorld`                         | Check memory and CPU resources required by a new World.
+| Delete 100.000 entities with 5 components | `DeleteEntity`                        | 
+| Get / Set 1 component on 100 entities     | `GetSetComponentsT1`                  | 
+| Query 100 entities with 1 component       | `QueryT1`                             | Check performance impact by cache misses in Sparse Set based ECS projects.
+| Query 100 entities with 5 components      | `QueryT5`                             | Check performance impact by cache misses in Sparse Set based ECS projects.
+|                                           |                                       | 
+| **Projects with relation support**        |                                       | 
+| Add / Remove 1 link relation              | `AddRemoveLinks` `TargetCount`: 1     | Check memory and CPU resources required for a new relation.
+| Add / Remove 100 link relations           | `AddRemoveLinks` `TargetCount`: 100   | Check memory and CPU resources required for a new relation.
 
 
 ```

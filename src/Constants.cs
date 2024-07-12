@@ -21,12 +21,13 @@ public static class Category
 {
     public const string     AddRemoveComponentsT1   = nameof(AddRemoveComponentsT1);
     public const string     AddRemoveComponentsT5   = nameof(AddRemoveComponentsT5);
-    public const string     AddRemoveLinks          = nameof(AddRemoveLinks);
     public const string     CreateEntityT1          = nameof(CreateEntityT1);
     public const string     CreateEntityT3          = nameof(CreateEntityT3);
     public const string     CreateWorld             = nameof(CreateWorld);
     public const string     DeleteEntity            = nameof(DeleteEntity);
+    public const string     GetSetComponentsT1      = nameof(GetSetComponentsT1);
     public const string     QueryT1                 = nameof(QueryT1);
     public const string     QueryT5                 = nameof(QueryT5);
-    public const string     GetSetComponentsT1      = nameof(GetSetComponentsT1);
+    // --- projects supporting relations
+    public const string     AddRemoveLinks          = nameof(AddRemoveLinks);
 }
