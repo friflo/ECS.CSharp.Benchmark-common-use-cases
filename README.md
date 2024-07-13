@@ -89,12 +89,15 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 | Query 100 entities with 1 component               | `QueryT1`                             | Check performance impact by cache misses in Sparse Set based ECS projects.
 | Query 100 entities with 5 components              | `QueryT5`                             | Check performance impact by cache misses in Sparse Set based ECS projects.
 |                                                   |                                       | 
-| **Projects with relation support**                |                                       | 
+| Support for: **Relations**                        |                                       | 
 | Add / Remove 1 link relation on 100 entities      | `AddRemoveLinks` `TargetCount`: 1     | Check memory and CPU resources required for a new relation.
 | Add / Remove 100 link relations on 100 entities   | `AddRemoveLinks` `TargetCount`: 100   | Check memory and CPU resources required for a new relation.
 |                                                   |                                       | 
-| **Projects with command buffer support**          |                                       | 
+| Support for: **Command Buffer**                   |                                       | 
 | Add / Remove 2 components on 100 entities         | `CommandBufferAddRemoveT2`            |
+|                                                   |                                       |
+| Support for: **Search**                           |                                       | 
+| Search component field in 100.000 entities        | `SearchComponentField`                |
 
 
 ```
@@ -233,6 +236,7 @@ In case of Flecs.NET components are store in native heap which is not monitored 
 
 <br/>
 
+
 ## Projects supporting: **Relations**
 
 Some ECS projects have support for [Entity Relationships](https://github.com/friflo/Friflo.Json.Fliox/wiki/Examples-~-Component-Types#entity-relationships).
@@ -256,6 +260,7 @@ Some ECS projects have support for [Entity Relationships](https://github.com/fri
 
 <br/>
 
+
 ## Projects supporting: **Command buffers**
 
 ### Add / Remove 2 components on 100 entities using a command buffer
@@ -271,6 +276,19 @@ Some ECS projects have support for [Entity Relationships](https://github.com/fri
 | DefaultEcs        |  16.24 μs |  1.92 |         - | 
 | TinyEcs           |  39.62 μs |  4.68 |   46928 B | 
 | Arch              |  47.04 μs |  5.55 |    4800 B | 
+
+<br/>
+
+
+## Projects supporting: **Search**
+
+### Search component field in 100.000 entities
+
+Execute 1000 searches for different values in a data set to 100.000 entities
+
+| ECS               |  Mean     | Ratio | Allocated | 
+|------------------ |----------:|------:|----------:|
+| Friflo.Engine.ECS |  4.716 μs |  1.00 |         - | 
 
 <br/>
 
