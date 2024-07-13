@@ -159,6 +159,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 
 *Note*  
 The allocations comes from the fact that the buffers used to store components are replaced by smaller buffers over time.  
+Without this behavior the component buffers allocated by the ECS would never shrink.  
 In case of Flecs.NET components are store in native heap which is not monitored by BenchmarkDotNet.
 
 | ECS               | Mean          | Ratio    |   Allocated | 
