@@ -73,6 +73,9 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 | **Projects with relation support**                |                                       | 
 | Add / Remove 1 link relation on 100 entities      | `AddRemoveLinks` `TargetCount`: 1     | Check memory and CPU resources required for a new relation.
 | Add / Remove 100 link relations on 100 entities   | `AddRemoveLinks` `TargetCount`: 100   | Check memory and CPU resources required for a new relation.
+|                                                   |                                       | 
+| **Projects with command buffer support**          |                                       | 
+| Add / Remove 2 components on 100 entities         | `CommandBufferAddRemoveT2`            |
 
 
 ```
@@ -83,7 +86,9 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
   ShortRun : .NET 8.0.0 (8.0.23.53103), Arm64 RyuJIT AdvSIMD
 ```
 
-## Add / Remove 1 component on 100 entities
+## Benchmarks supported by all projects
+
+### Add / Remove 1 component on 100 entities
 
 | ECS               | Mean          | Ratio    | Allocated   | 
 |------------------ |--------------:|---------:|------------:|
@@ -97,7 +102,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 | fennecs           |     38,806 ns |     6.92 |     86400 B | 
 
 
-## Add / Remove 5 components on 100 entities
+### Add / Remove 5 components on 100 entities
 
 | ECS               | Mean          | Ratio    | Allocated   | 
 |------------------ |--------------:|---------:|------------:|
@@ -110,8 +115,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 | TinyEcs           |     71,567 ns |     9.26 |     64000 B | 
 | fennecs           |    306,096 ns |    39.60 |    620800 B | 
 
-
-## Create 100.000 entities with 1 component
+### Create 100.000 entities with 1 component
 
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
@@ -125,7 +129,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 | Scellecs.Morpeh   | 43,054,258 ns |   109.60 |  42293152 B | 
 
 
-## Create 100.000 entities with 3 components
+### Create 100.000 entities with 3 components
 
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
@@ -138,7 +142,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 | TinyEcs           | 20,568,728 ns |    46.63 |  21824112 B | 
 | Scellecs.Morpeh   | 29,992,288 ns |    67.99 |  49284080 B | 
 
-## Create world
+### Create world
 
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
@@ -151,7 +155,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 | TinyEcs           |     36,124 ns |   167.20 |   1087272 B | 
 | Flecs.NET         |    954,424 ns | 4,417.69 |      2381 B | 
 
-## Delete 100.000 entities with 5 components
+### Delete 100.000 entities with 5 components
 
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
@@ -164,7 +168,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 | TinyEcs           |  7,974,388 ns |     4.91 |      1144 B | 
 | Scellecs.Morpeh   |  8,642,839 ns |     5.25 |   1398360 B | 
 
-## Get / Set 1 component on 100 entities
+### Get / Set 1 component on 100 entities
 
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
@@ -177,7 +181,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 | Flecs.NET         |   1,038.66 ns |     6.86 |           - | 
 | fennecs           |   2,346.34 ns |    15.50 |           - | 
 
-## Query 100 entities with 1 component
+### Query 100 entities with 1 component
 
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
@@ -190,7 +194,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 | fennecs           |     166.36 ns |     3.49 |        40 B | 
 | Scellecs.Morpeh   |     312.29 ns |     6.55 |           - | 
 
-## Query 100 entities with 5 components
+### Query 100 entities with 5 components
 
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
@@ -204,7 +208,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 | Scellecs.Morpeh   |     790.32 ns |     7.17 |           - | 
 
 
-## Add / Remove link relations
+## Projects supporting: **Relations**
 
 Some ECS projects have support for [Entity Relationships](https://github.com/friflo/Friflo.Json.Fliox/wiki/Examples-~-Component-Types#entity-relationships).
 
@@ -224,6 +228,22 @@ Some ECS projects have support for [Entity Relationships](https://github.com/fri
 | Friflo.Engine.ECS | 100         |   1,171 μs |  1.00 |         1 B | 
 | TinyEcs           | 100         |   8,680 μs |  7.41 |  18080012 B | 
 | fennecs           | 100         |  71,750 μs | 61.26 |  93124905 B | 
+
+
+## Projects supporting: **Command buffers**
+
+### Add / Remove 2 components on 100 entities using a command buffer
+
+1. Add components.    Apply changes. via Playback(), Execute() or Commit()
+2. Remove components. Apply changes.
+
+| ECS               |  Mean     | Ratio | Allocated   | 
+|------------------ |----------:|------:|------------:|
+| Scellecs.Morpeh   |      4 μs |  0.59 |           - | 
+| Friflo.Engine.ECS |      8 μs |  1.00 |           - | 
+| DefaultEcs        |     16 μs |  1.92 |           - | 
+| Arch              |     46 μs |  5.63 |      4800 B | 
+
 
 <br/>
 
