@@ -89,14 +89,14 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 | Query 100 entities with 1 component               | `QueryT1`                             | Check performance impact by cache misses in Sparse Set based ECS projects.
 | Query 100 entities with 5 components              | `QueryT5`                             | Check performance impact by cache misses in Sparse Set based ECS projects.
 |                                                   |                                       | 
-| Support for: **Relations**                        |                                       | 
+| **Relations**                                     |                                       | 
 | Add / Remove 1 link relation on 100 entities      | `AddRemoveLinks` `TargetCount`: 1     | Check memory and CPU resources required for a new relation.
 | Add / Remove 100 link relations on 100 entities   | `AddRemoveLinks` `TargetCount`: 100   | Check memory and CPU resources required for a new relation.
 |                                                   |                                       | 
-| Support for: **Command Buffer**                   |                                       | 
+| **Command Buffer**                                |                                       | 
 | Add / Remove 2 components on 100 entities         | `CommandBufferAddRemoveT2`            |
 |                                                   |                                       |
-| Support for: **Search**                           |                                       | 
+| **Search**                                        |                                       | 
 | Search component field in 100.000 entities        | `SearchComponentField`                |
 
 
