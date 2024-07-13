@@ -3,10 +3,12 @@
 Motivation of this benchmark project:
 
 - Compare performance of common uses cases of multiple ECS projects.  
+  *"I want to compare the performance of two C# ECS projects"?*  
+  Use the example command shown in the [Benchmark CLI](#benchmark-cli) examples below.
 
-- Utilize a common ECS operation of a specific ECS project in most **simple & performant** way.
+- Utilize a common ECS operation of a specific ECS project in most **simple & performant** way.  
 
-- *"I want to migrate from one ECS to another"?*  
+- *"I want to migrate from one C# ECS to another"?*  
   Navigate to a specific benchmark in both projects an use their implementations as migration guide.  
   Benchmark implementations are intended to be as simple as possible.
 
