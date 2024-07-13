@@ -79,6 +79,7 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
 | Benchmark                                         | Category                              | Description
 |-------------------------------------------------- | ------------------------------------- | -------------------------------------------------------------------------------
+| [**Basic**](#basic)                               |                                       | 
 | Add / Remove 1 component on 100 entities          | `AddRemoveComponentsT1`               | Check performance impact by the structural change in Archetype based ECS projects.
 | Add / Remove 5 components on 100 entities         | `AddRemoveComponentsT5`               | Check performance impact by the structural change in Archetype based ECS projects.
 | Create 100.000 entities with 1 component          | `CreateEntityT1`                      | 
@@ -89,14 +90,14 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 | Query 100 entities with 1 component               | `QueryT1`                             | Check performance impact by cache misses in Sparse Set based ECS projects.
 | Query 100 entities with 5 components              | `QueryT5`                             | Check performance impact by cache misses in Sparse Set based ECS projects.
 |                                                   |                                       | 
-| **Relations**                                     |                                       | 
+| [**Relations**](#relations)                       |                                       | 
 | Add / Remove 1 link relation on 100 entities      | `AddRemoveLinks` `TargetCount`: 1     | Check memory and CPU resources required for a new relation.
 | Add / Remove 100 link relations on 100 entities   | `AddRemoveLinks` `TargetCount`: 100   | Check memory and CPU resources required for a new relation.
 |                                                   |                                       | 
-| **Command Buffer**                                |                                       | 
+| [**Command Buffer**](#command-buffer)             |                                       | 
 | Add / Remove 2 components on 100 entities         | `CommandBufferAddRemoveT2`            |
 |                                                   |                                       |
-| **Search**                                        |                                       | 
+| [**Search**](#search)                             |                                       | 
 | Search component field in 100.000 entities        | `SearchComponentField`                |
 
 
@@ -108,7 +109,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
   ShortRun : .NET 8.0.0 (8.0.23.53103), Arm64 RyuJIT AdvSIMD
 ```
 
-## Benchmarks supported by all projects
+## **Basic**
 
 ### Add / Remove 1 component on 100 entities
 
@@ -237,7 +238,7 @@ In case of Flecs.NET components are store in native heap which is not monitored 
 <br/>
 
 
-## Projects supporting: **Relations**
+## **Relations**
 
 Some ECS projects have support for [Entity Relationships](https://github.com/friflo/Friflo.Json.Fliox/wiki/Examples-~-Component-Types#entity-relationships).
 
@@ -261,7 +262,7 @@ Some ECS projects have support for [Entity Relationships](https://github.com/fri
 <br/>
 
 
-## Projects supporting: **Command buffers**
+## **Command buffer**
 
 ### Add / Remove 2 components on 100 entities using a command buffer
 
@@ -280,7 +281,7 @@ Some ECS projects have support for [Entity Relationships](https://github.com/fri
 <br/>
 
 
-## Projects supporting: **Search**
+## **Search**
 
 ### Search component field in 100.000 entities
 
