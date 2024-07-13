@@ -1,5 +1,4 @@
 ﻿using Arch.Core;
-using Arch.Core.Extensions;
 using BenchmarkDotNet.Attributes;
 
 namespace Arch;
@@ -29,10 +28,10 @@ public class AddRemoveComponentsT5_Arch
     public void Run()
     {
         foreach (var entity in entities) {
-            entity.Add(new Component1(), new Component2(), new Component3(), new Component4(), new Component5());
+            world.Add(entity, new Component1(), new Component2(), new Component3(), new Component4(), new Component5());
         }
         foreach (var entity in entities) {
-            entity.Remove<Component1, Component2, Component3, Component4, Component5>();
+            world.Remove<Component1, Component2, Component3, Component4, Component5>(entity);
         }
     }
 }

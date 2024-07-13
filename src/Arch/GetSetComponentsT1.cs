@@ -1,5 +1,4 @@
 ﻿using Arch.Core;
-using Arch.Core.Extensions;
 using BenchmarkDotNet.Attributes;
 
 namespace Arch;
@@ -29,7 +28,7 @@ public class GetSetComponentsT1_Arch
     public void Run()
     {
         foreach (var entity in entities) {
-            entity.Get<Component1>() = new Component1();
+            world.Get<Component1>(entity) = new Component1();
         }
     }
 }
