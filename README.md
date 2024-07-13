@@ -18,6 +18,20 @@ Motivation of this benchmark project:
 See comments about this benchmark at [reddit announcement post](https://www.reddit.com/r/EntityComponentSystem/comments/1e0qo62/just_published_new_github_repo_ecs_c_benchmark/)
 
 
+# Contents
+
+* [Tested projects](#tested-projects)
+* [ECS implementation](#ecs-implementation)
+* [Benchmarks](#benchmarks)
+  - [Benchmarks supported by all projects](#benchmarks-supported-by-all-projects)
+  - [Projects supporting: **Relations**](#projects-supporting-relations)
+  - [Projects supporting: **Command buffers**](#projects-supporting-command-buffers)
+* [Setup](#setup)
+* [Contribution](#contribution)
+* [Benchmark CLI](#benchmark-cli)
+
+<br/>
+
 ## Tested projects
 
 Ordered by GitHub Activity
