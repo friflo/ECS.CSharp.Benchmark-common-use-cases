@@ -157,6 +157,10 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 
 ### Delete 100.000 entities with 5 components
 
+*Note*  
+The allocations comes from the fact that the buffers used to store components are replaced by smaller buffers over time.  
+In case of Flecs.NET components are store in native heap which is not monitored by BenchmarkDotNet.
+
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
 | Friflo.Engine.ECS |  1,597,744 ns |     1.00 |  3122896 B | 
