@@ -304,7 +304,17 @@ The same applies to `WorkloadResult` phase when BDN do the measurement for the b
 
 ## Contribution
 
-Contributions are welcome.
+Contributions are welcome.  
+Only requirement: Ensure it compiles.
+
+- *How to add a single benchmark*?  
+  Copy an existing benchmark and make adaptations.
+
+- *How to add benchmarks for a new ECS project*?  
+  Copy an existing project and make adaptations.
+
+- *Adding a new benchmark category*?  
+  Open a new issue or discussion to explain the feature.
 
 
 ## Benchmark CLI
