@@ -1,19 +1,18 @@
 ﻿using BenchmarkDotNet.Attributes;
-using Flecs.NET.Core;
 
-namespace Flecs.NET;
+namespace TinyEcs;
 
 [ShortRunJob]
 [BenchmarkCategory(Category.CommandBufferAddRemoveT2)]
 // ReSharper disable once InconsistentNaming
-public class CommandBufferAddRemoveT2_FlecsNet
+public class CommandBufferAddRemoveT2_TinyEcs
 {
-    private World       world;
-    private Entity[]    entities;
+    private World           world;
+    private EntityView[]    entities;
     
     [GlobalSetup]
     public void Setup() {
-        world       = World.Create();
+        world       = new World();
         entities    = world.CreateEntities(Constants.EntityCount);
     }
     
@@ -25,20 +24,20 @@ public class CommandBufferAddRemoveT2_FlecsNet
     [Benchmark]
     public void Run()
     {
-        world.DeferBegin();
+        world.BeginDeferred();
         foreach (var entity in entities) {
             entity
-                .Add<Component1>()
-                .Add<Component2>();
+                .Set<Component1>()
+                .Set<Component1>();
         }
-        world.DeferEnd(); // Apply changes 1
-
-        world.DeferBegin();
+        world.EndDeferred(); // Apply changes 1
+        
+        world.BeginDeferred();
         foreach (var entity in entities) {
             entity
-                .Remove<Component1>()
-                .Remove<Component2>();
+                .Unset<Component1>()
+                .Unset<Component1>();
         }
-        world.DeferEnd(); // Apply changes 2
+        world.EndDeferred(); // Apply changes 2
     }
 }
