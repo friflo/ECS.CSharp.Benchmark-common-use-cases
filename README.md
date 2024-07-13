@@ -7,8 +7,8 @@ Motivation of this benchmark project:
 - Utilize a common ECS operation of a specific ECS project in most **simple & performant** way.
 
 - *"I want to migrate from one ECS to another"?*  
-  Navigate to a specific benchmark in both projects an use its implementation as migration guide.  
-  Their implementation is intended to be as simple as possible.
+  Navigate to a specific benchmark in both projects an use their implementations as migration guide.  
+  Benchmark implementations are intended to be as simple as possible.
 
 - The majority of C# ECS benchmarks focus on big data sets. Typically a multiple of 100.000 entities.  
   This sets a bias for many ECS implementations. Its also likely having many queries (systems) dealing only with 10, 100 or no entities.  
