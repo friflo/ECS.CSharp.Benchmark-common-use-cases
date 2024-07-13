@@ -17,3 +17,8 @@ internal record struct LinkRelation(int Value, Entity Target) : ILinkRelation
 {
     public Entity   GetRelationKey() => Target;
 }
+
+internal record struct SearchableComponent(int Value) : IIndexedComponent<int>
+{
+    public  int  GetIndexedValue() => Value;  // indexed field
+}
