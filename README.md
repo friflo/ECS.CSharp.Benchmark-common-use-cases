@@ -263,12 +263,14 @@ Some ECS projects have support for [Entity Relationships](https://github.com/fri
 1. Add components.    Apply changes. via Playback(), Execute() or Commit()
 2. Remove components. Apply changes.
 
-| ECS               |  Mean     | Ratio | Allocated   | 
-|------------------ |----------:|------:|------------:|
-| Scellecs.Morpeh   |      4 μs |  0.59 |           - | 
-| Friflo.Engine.ECS |      8 μs |  1.00 |           - | 
-| DefaultEcs        |     16 μs |  1.92 |           - | 
-| Arch              |     46 μs |  5.63 |      4800 B | 
+| ECS               |  Mean     | Ratio | Allocated | 
+|------------------ |----------:|------:|----------:|
+| Scellecs.Morpeh   |   4.95 μs |  0.58 |         - | 
+| Friflo.Engine.ECS |   8.47 μs |  1.00 |         - | 
+| Flecs.NET         |   9.77 μs |  1.15 |         - | 
+| DefaultEcs        |  16.24 μs |  1.92 |         - | 
+| TinyEcs           |  39.62 μs |  4.68 |   46928 B | 
+| Arch              |  47.04 μs |  5.55 |    4800 B | 
 
 <br/>
 
@@ -302,7 +304,7 @@ In each iteration the benchmarked code is invoked 1000 times.
 The same applies to `WorkloadResult` phase when BDN do the measurement for the benchmark results in the summary.
 
 
-## Contribution
+# Contribution
 
 Contributions are welcome.  
 Only requirement: Ensure it compiles.
@@ -317,7 +319,7 @@ Only requirement: Ensure it compiles.
   Open a new issue or discussion to explain the feature.
 
 
-## Benchmark CLI
+# Benchmark CLI
 
 **CLI benchmark example commands**
 

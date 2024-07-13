@@ -12,7 +12,7 @@ WarmupCount=3  Alloc Ratio=NA
 
 ```
 | Namespace         | Type                                | Mean      | Ratio | Allocated | 
-|------------------ |------------------------------------ |----------:|------:|----------:|-
+|------------------ |------------------------------------ |----------:|------:|----------:|
 | Scellecs.Morpeh   | CommandBufferAddRemoveT2_Morpeh     |  4.954 μs |  0.58 |         - | 
 | Friflo.Engine.ECS | CommandBufferAddRemoveT2_Friflo     |  8.470 μs |  1.00 |         - | 
 | Flecs.NET         | CommandBufferAddRemoveT2_FlecsNet   |  9.776 μs |  1.15 |         - | 
