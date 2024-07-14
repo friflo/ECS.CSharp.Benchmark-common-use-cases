@@ -78,25 +78,27 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
 # Benchmarks
 
-| Benchmark Category                                | Category id                                     | Description
-|-------------------------------------------------- | ----------------------------------------------- | -------------------------------------------------------------------------------
-| [**Basic**](#basic)                               |                                                 | 
-| Add & Remove 1/3 components on 100 entities       | `AddRemoveComponentsT1` `AddRemoveComponentsT5` | Check performance impact by the structural change in Archetype based ECS projects.
-| Create 100.000 entities with 1/3 components       | `CreateEntityT1` `CreateEntityT3`               | 
-| Create world                                      | `CreateWorld`                                   | Check memory and CPU resources required by a new World.
-| Delete 100.000 entities with 5 components         | `DeleteEntity`                                  | 
-| Get & Set 1 component on 100 entities             | `GetSetComponentsT1`                            | 
-| Query 100 entities with 1/5 components            | `QueryT1` `QueryT5`                             | Check performance impact by cache misses in Sparse Set based ECS projects.
-|                                                   |                                                 | 
-| [**Relations**](#relations)                       |                                                 | 
-| Add & Remove 1/100 link relation on 100 entities  | `AddRemoveLinks` `TargetCount`: 1/100           | Check memory and CPU resources required for a new relation.
-|                                                   |                                                 | 
-| [**Command Buffer**](#command-buffer)             |                                                 | 
-| Add & Remove 2 components on 100 entities         | `CommandBufferAddRemoveT2`                      |
-|                                                   |                                                 |
-| [**Search**](#search)                             |                                                 | 
-| Search component field in 100.000 entities        | `SearchComponentField`                          |
+| Benchmark Category                                     | Category id                                     | Description
+|------------------------------------------------------- | ----------------------------------------------- | -------------------------------------------------------------------------------
+| [**Basic**](#basic)                                    |                                                 | 
+| Add & Remove 1/3 components on 100 entities            | `AddRemoveComponentsT1` `AddRemoveComponentsT5` | Check performance impact by the structural change in Archetype based ECS projects.
+| Create 100.000 entities with 1/3 components            | `CreateEntityT1` `CreateEntityT3`               | 
+| Create world                                           | `CreateWorld`                                   | Check memory and CPU resources required by a new World.
+| Delete 100.000 entities with 5 components              | `DeleteEntity`                                  | 
+| Get & Set 1 component on 100 entities                  | `GetSetComponentsT1`                            | 
+| Query 100 entities with 1/5 components                 | `QueryT1` `QueryT5`                             | Check performance impact by cache misses in Sparse Set based ECS projects.
+|                                                        |                                                 | 
+| [**Relations**](#relations)                            |                                                 | 
+| Add & Remove 1/100 link relation on 100 entities       | `AddRemoveLinks` `TargetCount`: 1/100           | Check memory and CPU resources required for a new relation.
+|                                                        |                                                 | 
+| [**Command Buffer**](#command-buffer)                  |                                                 | 
+| Add & Remove 2 components on 100 entities              | `CommandBufferAddRemoveT2`                      |
+|                                                        |                                                 |
+| [**Search**](#search)                                  |                                                 | 
+| Search component field in 1.000.000 entities           | `SearchComponentField`                          |
+| Search range of component fields in 1.000.000 entities | `SearchRange`                                   |
 
+<br/>
 
 ```
 BenchmarkDotNet v0.13.12, macOS Sonoma 14.5 (23F79) [Darwin 23.5.0]
@@ -135,6 +137,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 | TinyEcs           |     71,801 ns |     8.88 |    64000 B | 
 | fennecs           |    303,704 ns |    37.54 |   620800 B | 
 
+
 ### Create 100.000 entities with 1 component
 
 | ECS               | Mean          | Ratio    |   Allocated | 
@@ -162,6 +165,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 | TinyEcs           | 20,476,307 ns |    46.64 | 21824112 B | 
 | Scellecs.Morpeh   | 42,418,928 ns |    96.81 | 49284080 B |  
 
+
 ### Create world
 
 | ECS               | Mean          | Ratio    |   Allocated | 
@@ -174,6 +178,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 | fennecs           |     21,960 ns |    92.21 |   169820 B | 
 | TinyEcs           |     35,735 ns |   149.77 |  1087272 B | 
 | Flecs.NET         |    934,491 ns | 3,913.81 |     2381 B | 
+
 
 ### Delete 100.000 entities with 5 components
 
@@ -193,6 +198,7 @@ In case of Flecs.NET components are store in native heap which is not monitored 
 | Scellecs.Morpeh   |  8,631,451 ns |     5.40 |  1398360 B | 
 | TinyEcs           |  8,660,894 ns |     5.42 |     1144 B | 
 
+
 ### Get / Set 1 component on 100 entities
 
 | ECS               | Mean          | Ratio    |   Allocated | 
@@ -206,6 +212,7 @@ In case of Flecs.NET components are store in native heap which is not monitored 
 | Flecs.NET         |      1,043 ns |     6.58 |          - | 
 | fennecs           |      2,550 ns |    16.08 |          - | 
 
+
 ### Query 100 entities with 1 component
 
 | ECS               | Mean          | Ratio    |   Allocated | 
@@ -218,6 +225,7 @@ In case of Flecs.NET components are store in native heap which is not monitored 
 | Arch              |        119 ns |     2.45 |          - | 
 | fennecs           |        173 ns |     3.55 |       40 B | 
 | Scellecs.Morpeh   |        312 ns |     6.40 |          - | 
+
 
 ### Query 100 entities with 5 components
 
@@ -246,6 +254,7 @@ Some ECS projects have support for [Entity Relationships](https://github.com/fri
 | Flecs.NET         | 1           |       9 μs |  1.94 |           - | 
 | TinyEcs           | 1           |      25 μs |  5.02 |     22400 B | 
 | fennecs           | 1           |      93 μs | 18.11 |    180000 B | 
+
 
 ### Add / Remove 100 link relations on 100 entities
 
@@ -280,13 +289,24 @@ Some ECS projects have support for [Entity Relationships](https://github.com/fri
 
 ## **Search**
 
-### Search component field in 100.000 entities
+### Search component field in 1.000.000 entities
 
-Execute 1000 searches for different values in a data set to 100.000 entities
+Execute 1000 searches for different search values in a data set of 1.000.000 entities.  
+Each result has 1 match.
 
-| ECS               |  Mean     | Ratio | Allocated | 
-|------------------ |----------:|------:|----------:|
-| Friflo.Engine.ECS |  4.716 μs |  1.00 |         - | 
+| ECS               |  Mean         | Ratio | Allocated | 
+|------------------ |--------------:|------:|----------:|
+| Friflo.Engine.ECS |       4.71 μs |  1.00 |         - | 
+
+
+### Search range of component fields in 1.000.000 entities
+
+Execute 1000 range queries with different [min, max] in a data set of 1.000.000 entities.  
+Each result has 100 matches.
+
+| ECS               |  Mean         | Ratio | Allocated | 
+|------------------ |--------------:|------:|----------:|
+| Friflo.Engine.ECS |   1,328.12 μs |  1.00 |  560001 B | 
 
 <br/>
 
