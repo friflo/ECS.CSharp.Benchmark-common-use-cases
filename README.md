@@ -307,17 +307,10 @@ All popular IDE's can be used to run and debug the project: **Rider**, **Visual 
   `BenchUtils.CreateEntities(int count)`  
   `BenchUtils.AddComponents(this Entity[] entities)`  
 
-Benchmarks changing the state of World in a way that has influence on the measurement have a specific handling.  
-Currently these Benchmarks are `CreateEntity` and `DeleteEntity`.  
-They are attributed with
-```
-[InvocationCount(1000)]  // <- Constants are replaced by numbers for this explanation
-[IterationCount(2000)]
-```
-and using a `[IterationSetup] / [IterationCleanup]` pair instead of a `[GlobalSetup] / [GlobalCleanup]` pair.  
-In this case a benchmark is executed 1000 * 2000 times to ensure the JIT has finished its optimizations in `WorkloadActual` phase.  
-In each iteration the benchmarked code is invoked 1000 times.  
-The same applies to `WorkloadResult` phase when BDN do the measurement for the benchmark results in the summary.
+The benchmarks `CreateEntity` and `DeleteEntity` are changing the state of World which has influence on the benchmark measurement.  
+If executing their `[Benchmark]` method multiple times the number of entities will grow / shrink for each method iteration.  
+This would slow down the execution over time and give wrong measurement results.  
+To avoid this these benchmarks are executed with 100.000 entities every time on a new World instance.
 
 
 # Contribution
