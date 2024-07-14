@@ -19,7 +19,7 @@
       <PackageReference Include="Scellecs.Morpeh" Version="2023.1.0" />
       <PackageReference Include="TinyEcs.Main" Version="1.2.0" />
       <PackageReference Include="Leopotam.EcsLite" Version="1.0.1" />
-      <PackageReference Include="Flecs.NET.Release" Version="3.2.11" />
+      <PackageReference Include="Flecs.NET.Release" Version="4.0.0" />
     </ItemGroup>
 
     <ItemGroup>

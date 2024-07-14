@@ -29,11 +29,8 @@ public class QueryT1_FlecsNet
     [Benchmark]
     public void Run()
     {
-        query.Iter((Iter it, Column<Component1> c1) =>
-        {
-            foreach (int i in it) {
-                c1[i].Value++;
-            }
+        query.Each<Component1>((ref Component1 c1) => {
+            c1.Value++;
         });
     }
 }
