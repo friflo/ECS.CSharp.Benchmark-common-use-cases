@@ -303,6 +303,8 @@ Some ECS projects have support for [Entity Relationships](https://github.com/fri
 
 ## **Search**
 
+Search and Range Queries of component fields are explained at this [GitHub ⋅ Wiki page](https://github.com/friflo/Friflo.Json.Fliox/wiki/Examples-~-Component-Types#search).
+
 ### Search component field in 1.000.000 entities
 
 Execute 1000 searches for different search values in a data set of 1.000.000 entities.  
