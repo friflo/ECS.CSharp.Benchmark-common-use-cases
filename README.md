@@ -47,8 +47,8 @@ Ordered by GitHub Activity
 | [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/README.md)   | 3.0.0-preview.2   | Archetype               | struct |
 | [fennecs](https://github.com/thygrrr/fennecs)                                                 | 0.5.8-beta        | Archetype               | struct |
 | [TinyEcs](https://github.com/andreakarasho/TinyEcs)                                           | 1.2.0             | Archetype               | struct |
+| [Flecs.Net](https://github.com/BeanCheeseBurrito/Flecs.NET)                                   | 4.0.0             | Archetype / Sparse Set  | struct |
 | [Arch](https://github.com/genaray/Arch)                                                       | 1.2.8             | Archetype               | struct |
-| [Flecs.Net](https://github.com/BeanCheeseBurrito/Flecs.NET)                                   | 3.2.11            | Archetype / Sparse Set  | struct |
 | [Morpeh](https://github.com/scellecs/morpeh)                                                  | 2023.1.0          | ?                       | class  |
 | [Leopotam.EcsLite](https://github.com/Leopotam/ecslite)                                       | 1.0.1             | Sparse Set              | int    | nuget package is not published by project owner
 | [DefaultEcs](https://github.com/Doraku/DefaultEcs)                                            | 0.18.0-beta01     | Sparse Set              | struct |
