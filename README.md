@@ -78,28 +78,24 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
 # Benchmarks
 
-| Benchmark                                         | Category                              | Description
-|-------------------------------------------------- | ------------------------------------- | -------------------------------------------------------------------------------
-| [**Basic**](#basic)                               |                                       | 
-| Add / Remove 1 component on 100 entities          | `AddRemoveComponentsT1`               | Check performance impact by the structural change in Archetype based ECS projects.
-| Add / Remove 5 components on 100 entities         | `AddRemoveComponentsT5`               | Check performance impact by the structural change in Archetype based ECS projects.
-| Create 100.000 entities with 1 component          | `CreateEntityT1`                      | 
-| Create 100.000 entities with 3 components         | `CreateEntityT3`                      | 
-| Create world                                      | `CreateWorld`                         | Check memory and CPU resources required by a new World.
-| Delete 100.000 entities with 5 components         | `DeleteEntity`                        | 
-| Get / Set 1 component on 100 entities             | `GetSetComponentsT1`                  | 
-| Query 100 entities with 1 component               | `QueryT1`                             | Check performance impact by cache misses in Sparse Set based ECS projects.
-| Query 100 entities with 5 components              | `QueryT5`                             | Check performance impact by cache misses in Sparse Set based ECS projects.
-|                                                   |                                       | 
-| [**Relations**](#relations)                       |                                       | 
-| Add / Remove 1 link relation on 100 entities      | `AddRemoveLinks` `TargetCount`: 1     | Check memory and CPU resources required for a new relation.
-| Add / Remove 100 link relations on 100 entities   | `AddRemoveLinks` `TargetCount`: 100   | Check memory and CPU resources required for a new relation.
-|                                                   |                                       | 
-| [**Command Buffer**](#command-buffer)             |                                       | 
-| Add / Remove 2 components on 100 entities         | `CommandBufferAddRemoveT2`            |
-|                                                   |                                       |
-| [**Search**](#search)                             |                                       | 
-| Search component field in 100.000 entities        | `SearchComponentField`                |
+| Benchmark Category                                | Category id                                     | Description
+|-------------------------------------------------- | ----------------------------------------------- | -------------------------------------------------------------------------------
+| [**Basic**](#basic)                               |                                                 | 
+| Add & Remove 1/3 components on 100 entities       | `AddRemoveComponentsT1` `AddRemoveComponentsT5` | Check performance impact by the structural change in Archetype based ECS projects.
+| Create 100.000 entities with 1/3 components       | `CreateEntityT1` `CreateEntityT3`               | 
+| Create world                                      | `CreateWorld`                                   | Check memory and CPU resources required by a new World.
+| Delete 100.000 entities with 5 components         | `DeleteEntity`                                  | 
+| Get & Set 1 component on 100 entities             | `GetSetComponentsT1`                            | 
+| Query 100 entities with 1/5 components            | `QueryT1` `QueryT5`                             | Check performance impact by cache misses in Sparse Set based ECS projects.
+|                                                   |                                                 | 
+| [**Relations**](#relations)                       |                                                 | 
+| Add & Remove 1/100 link relation on 100 entities  | `AddRemoveLinks` `TargetCount`: 1/100           | Check memory and CPU resources required for a new relation.
+|                                                   |                                                 | 
+| [**Command Buffer**](#command-buffer)             |                                                 | 
+| Add & Remove 2 components on 100 entities         | `CommandBufferAddRemoveT2`                      |
+|                                                   |                                                 |
+| [**Search**](#search)                             |                                                 | 
+| Search component field in 100.000 entities        | `SearchComponentField`                          |
 
 
 ```
