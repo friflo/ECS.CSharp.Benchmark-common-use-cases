@@ -8,10 +8,11 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 
 Method=Run  Job=ShortRun  InvocationCount=Default  
 IterationCount=3  LaunchCount=1  UnrollFactor=16  
-WarmupCount=3  Error=1.040 μs  StdDev=0.0570 μs  
-Alloc Ratio=NA  
+WarmupCount=3  
 
 ```
-| Mean     | Ratio | Allocated | 
-|---------:|------:|----------:|
-| 4.716 μs |  1.00 |         - | 
+| Type                        | Mean         | Ratio | Allocated | 
+|---------------------------- |-------------:|------:|----------:|
+| SearchComponentField_Friflo |     4.714 μs |  1.00 |         - | 
+|                             |              |       |           | 
+| SearchRange_Friflo          | 1,328.126 μs |  1.00 |  560001 B | 
