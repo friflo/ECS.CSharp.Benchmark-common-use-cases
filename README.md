@@ -349,10 +349,10 @@ dotnet run -c Release --filter *AddRemoveComponents*            # run benchmarks
 dotnet run -c Release --filter *Friflo*                         # run benchmarks of single project
 dotnet run -c Release --filter *Friflo* *Arch*                  # compare benchmarks of two projects
 
-# run benchmarks supported by all projects
+# run basic benchmarks
 dotnet run -c Release --filter *AddRemoveComponents* *GetSetComponents* *CreateEntity* *CreateWorld* *DeleteEntity* *Query*
-dotnet run -c Release --filter *AddRemoveLinks*                 # run benchmarks of projects supporting relations
-dotnet run -c Release --filter *CommandBuffer*                  # run benchmarks of projects supporting command buffers
+dotnet run -c Release --filter *AddRemoveLinks*                 # run relations benchmarks
+dotnet run -c Release --filter *CommandBuffer*                  # run command buffer benchmarks
 
 --- macos
 dotnet run -c Release --filter \*                               # run all benchmarks
@@ -361,10 +361,10 @@ dotnet run -c Release --filter \*AddRemoveComponents\*          # run benchmarks
 dotnet run -c Release --filter \*Friflo\*                       # run benchmarks of single project
 dotnet run -c Release --filter \*Friflo\* \*Arch\*              # compare benchmarks of two projects
 
-# run benchmarks supported by all projects
+# run basic benchmarks
 dotnet run -c Release --filter \*AddRemoveComponents\* \*GetSetComponents\* \*CreateEntity\* \*CreateWorld\* \*DeleteEntity\* \*Query\*
-dotnet run -c Release --filter \*AddRemoveLinks\*               # run benchmarks of projects supporting relations
-dotnet run -c Release --filter \*CommandBuffer\*                # run benchmarks of projects supporting command buffers
+dotnet run -c Release --filter \*AddRemoveLinks\*               # run relations benchmarks
+dotnet run -c Release --filter \*CommandBuffer\*                # run command buffer benchmarks
 ```
 
 
