@@ -332,10 +332,11 @@ Only requirement: Ensure it compiles.
 
 **CLI benchmark example commands**
 
+### Windows CLI
+
 ```php
 cd ./src
 
---- windows
 dotnet run -c Release --filter *                                # run all benchmarks
 dotnet run -c Release --filter *AddRemoveComponentsT1_Friflo*   # run a specific benchmark
 dotnet run -c Release --filter *AddRemoveComponents*            # run benchmarks of single category
@@ -346,8 +347,15 @@ dotnet run -c Release --filter *Friflo* *Arch*                  # compare benchm
 dotnet run -c Release --filter *AddRemoveComponents* *GetSetComponents* *CreateEntity* *CreateWorld* *DeleteEntity* *Query*
 dotnet run -c Release --filter *AddRemoveLinks*                 # run relations benchmarks
 dotnet run -c Release --filter *CommandBuffer*                  # run command buffer benchmarks
+dotnet run -c Release --filter *CommandBuffer*                  # run command buffer benchmarks
+dotnet run -c Release --filter *Search*                         # run search benchmarks
+```
 
---- macos
+### macOS CLI
+
+```php
+cd ./src
+
 dotnet run -c Release --filter \*                               # run all benchmarks
 dotnet run -c Release --filter \*AddRemoveComponentsT1_Friflo\* # run a specific benchmark
 dotnet run -c Release --filter \*AddRemoveComponents\*          # run benchmarks of single category
@@ -358,6 +366,7 @@ dotnet run -c Release --filter \*Friflo\* \*Arch\*              # compare benchm
 dotnet run -c Release --filter \*AddRemoveComponents\* \*GetSetComponents\* \*CreateEntity\* \*CreateWorld\* \*DeleteEntity\* \*Query\*
 dotnet run -c Release --filter \*AddRemoveLinks\*               # run relations benchmarks
 dotnet run -c Release --filter \*CommandBuffer\*                # run command buffer benchmarks
+dotnet run -c Release --filter \*Search\*                       # run search benchmarks
 ```
 
 
