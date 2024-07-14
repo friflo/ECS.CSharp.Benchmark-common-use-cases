@@ -100,7 +100,7 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
 <br/>
 
-Run benchmarks always an a Apple Mac Mini M2.  
+Run benchmarks always on an **Apple Mac Mini M2**.  
 Its hardware specs are fixed and can be compared with benchmarks you run by your own on this machine.
 
 ```
