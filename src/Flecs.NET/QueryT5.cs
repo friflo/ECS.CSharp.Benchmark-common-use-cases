@@ -26,9 +26,17 @@ public class QueryT5_FlecsNet
     [Benchmark]
     public void Run()
     {
-        query.Each((ref Component1 c1, ref Component2 c2, ref Component3 c3, ref Component4 c4, ref Component5 c5) =>
+        query.Iter((Iter it,
+            Span<Component1> c1Span,
+            Span<Component2> c2Span,
+            Span<Component3> c3Span,
+            Span<Component4> c4Span,
+            Span<Component5> c5Span) =>
         {
-            c1.Value = c2.Value + c3.Value + c4.Value + c5.Value;
+            int len = c1Span.Length;
+            for (int n = 0; n < len; n++) {
+                c1Span[n].Value = c2Span[n].Value + c3Span[n].Value + c4Span[n].Value + c5Span[n].Value;
+            }
         });
     }
 }

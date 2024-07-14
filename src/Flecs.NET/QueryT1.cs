@@ -29,8 +29,10 @@ public class QueryT1_FlecsNet
     [Benchmark]
     public void Run()
     {
-        query.Each<Component1>((ref Component1 c1) => {
-            c1.Value++;
+        query.Iter<Component1>((Iter it, Span<Component1> c1Span) => {
+            foreach (ref var c1 in c1Span) {
+                c1.Value++;
+            }
         });
     }
 }
