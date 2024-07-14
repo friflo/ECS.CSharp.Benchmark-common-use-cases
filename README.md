@@ -339,7 +339,8 @@ All popular IDE's can be used to run and debug the project: **Rider**, **Visual 
 - Adding or removing a benchmark implementation has no effect on all others.
 - Each project has an extension class `BenchUtils` with two methods to used by its benchmarks.  
   `BenchUtils.CreateEntities(int count)`  
-  `BenchUtils.AddComponents(this Entity[] entities)`  
+  `BenchUtils.AddComponents(this Entity[] entities)`
+- The Project builds with `<AllowUnsafeBlocks>false</AllowUnsafeBlocks>`. See [ECS.Benchmark.csproj](src/ECS.Benchmark.csproj).
 
 The benchmarks `CreateEntity` and `DeleteEntity` are changing the state of World which has influence on the benchmark measurement.  
 If executing their `[Benchmark]` method multiple times the number of entities will grow / shrink for each method iteration.  
