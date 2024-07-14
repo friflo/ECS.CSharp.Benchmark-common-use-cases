@@ -42,16 +42,16 @@ See comments about this benchmark at [reddit announcement post](https://www.redd
 
 Ordered by GitHub Activity
 
-| ECS                                                                                           | ECS implementation      | Entity | Notes
-|---------------------------------------------------------------------------------------------- | ----------------------- | -------| -------------
-| [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/README.md)   | Archetype               | struct |
-| [fennecs](https://github.com/thygrrr/fennecs)                                                 | Archetype               | struct |
-| [TinyEcs](https://github.com/andreakarasho/TinyEcs)                                           | Archetype               | struct |
-| [Arch](https://github.com/genaray/Arch)                                                       | Archetype               | struct |
-| [Flecs.Net](https://github.com/BeanCheeseBurrito/Flecs.NET)                                   | Archetype / Sparse Set  | struct |
-| [Morpeh](https://github.com/scellecs/morpeh)                                                  | ?                       | class  |
-| [Leopotam.EcsLite](https://github.com/Leopotam/ecslite)                                       | Sparse Set              | int    | The used nuget package is not published by the project owner
-| [DefaultEcs](https://github.com/Doraku/DefaultEcs)                                            | Sparse Set              | struct |
+| ECS                                                                                           | Version           | ECS implementation      | Entity | Notes
+|---------------------------------------------------------------------------------------------- | ----------------- | ----------------------- | -------| -------------
+| [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/README.md)   | 3.0.0-preview.2   | Archetype               | struct |
+| [fennecs](https://github.com/thygrrr/fennecs)                                                 | 0.5.8-beta        | Archetype               | struct |
+| [TinyEcs](https://github.com/andreakarasho/TinyEcs)                                           | 1.2.0             | Archetype               | struct |
+| [Arch](https://github.com/genaray/Arch)                                                       | 1.2.8             | Archetype               | struct |
+| [Flecs.Net](https://github.com/BeanCheeseBurrito/Flecs.NET)                                   | 3.2.11            | Archetype / Sparse Set  | struct |
+| [Morpeh](https://github.com/scellecs/morpeh)                                                  | 2023.1.0          | ?                       | class  |
+| [Leopotam.EcsLite](https://github.com/Leopotam/ecslite)                                       | 1.0.1             | Sparse Set              | int    | nuget package is not published by project owner
+| [DefaultEcs](https://github.com/Doraku/DefaultEcs)                                            | 0.18.0-beta01     | Sparse Set              | struct |
 
 
 ## ECS implementation
