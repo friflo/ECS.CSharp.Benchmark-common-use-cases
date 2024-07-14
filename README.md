@@ -78,23 +78,23 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
 # Benchmarks
 
-| Benchmark Category                                     | Category id                                     | Description
-|------------------------------------------------------- | ----------------------------------------------- | -------------------------------------------------------------------------------
-| [**Basic**](#basic)                                    |                                                 | 
-| Add & Remove 1/3 components on 100 entities            | `AddRemoveComponentsT1` `AddRemoveComponentsT5` | Check performance impact by the structural change in Archetype based ECS projects.
-| Create 100.000 entities with 1/3 components            | `CreateEntityT1` `CreateEntityT3`               | 
-| Create world                                           | `CreateWorld`                                   | Check memory and CPU resources required by a new World.
-| Delete 100.000 entities with 5 components              | `DeleteEntity`                                  | 
-| Get & Set 1 component on 100 entities                  | `GetSetComponentsT1`                            | 
-| Query 100 entities with 1/5 components                 | `QueryT1` `QueryT5`                             | Check performance impact by cache misses in Sparse Set based ECS projects.
-|                                                        |                                                 | 
-| [**Relations**](#relations)                            |                                                 | 
-| Add & Remove 1/100 link relation on 100 entities       | `AddRemoveLinks` `TargetCount`: 1/100           | Check memory and CPU resources required for a new relation.
-|                                                        |                                                 | 
-| [**Command Buffer**](#command-buffer)                  |                                                 | 
+| Benchmark Category                                     | Category id                                     |
+|------------------------------------------------------- | ----------------------------------------------- |
+| [**Basic**](#basic)                                    |                                                 |
+| Add & Remove 1/3 components on 100 entities            | `AddRemoveComponentsT1` `AddRemoveComponentsT5` |
+| Create 100.000 entities with 1/3 components            | `CreateEntityT1` `CreateEntityT3`               |
+| Create world                                           | `CreateWorld`                                   |
+| Delete 100.000 entities with 5 components              | `DeleteEntity`                                  |
+| Get & Set 1 component on 100 entities                  | `GetSetComponentsT1`                            |
+| Query 100 entities with 1/5 components                 | `QueryT1` `QueryT5`                             |
+|                                                        |                                                 |
+| [**Relations**](#relations)                            |                                                 |
+| Add & Remove 1/100 link relation on 100 entities       | `AddRemoveLinks` `TargetCount`: 1/100           |
+|                                                        |                                                 |
+| [**Command Buffer**](#command-buffer)                  |                                                 |
 | Add & Remove 2 components on 100 entities              | `CommandBufferAddRemoveT2`                      |
 |                                                        |                                                 |
-| [**Search**](#search)                                  |                                                 | 
+| [**Search**](#search)                                  |                                                 |
 | Search component field in 1.000.000 entities           | `SearchComponentField`                          |
 | Search range of component fields in 1.000.000 entities | `SearchRange`                                   |
 
@@ -112,6 +112,8 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 
 ### Add / Remove 1 component on 100 entities
 
+**Note:** See impact of structural changes in Archetype based ECS projects.
+
 | ECS               | Mean          | Ratio    | Allocated   | 
 |------------------ |--------------:|---------:|------------:|
 | Leopotam.EcsLite  |        994 ns |     0.17 |          - | 
@@ -125,6 +127,8 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 
 
 ### Add / Remove 5 components on 100 entities
+
+**Note:** See impact of structural changes in Archetype based ECS projects.
 
 | ECS               | Mean          | Ratio    | Allocated   | 
 |------------------ |--------------:|---------:|------------:|
@@ -182,8 +186,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 
 ### Delete 100.000 entities with 5 components
 
-*Note*  
-The allocations comes from the fact that the buffers used to store components are replaced by smaller buffers over time.  
+**Note:** The allocations comes from the fact that the buffers used to store components are replaced by smaller buffers over time.  
 Without this behavior the component buffers allocated by the ECS would never shrink.  
 In case of Flecs.NET components are store in native heap which is not monitored by BenchmarkDotNet.
 
@@ -201,6 +204,8 @@ In case of Flecs.NET components are store in native heap which is not monitored 
 
 ### Get / Set 1 component on 100 entities
 
+**Note:** Sparse Set based ECS projects are in lead because of viewer array lookups.
+
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
 | Leopotam.EcsLite  |         65 ns |     0.41 |          - | 
@@ -215,6 +220,9 @@ In case of Flecs.NET components are store in native heap which is not monitored 
 
 ### Query 100 entities with 1 component
 
+**Note:** Archetype based ECS projects are in lead if results set is big - 100.000 or more.  
+Returned components are sequentially stored in memory providing a high cache hit rate.
+
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
 | DefaultEcs        |         45 ns |     0.93 |          - | 
@@ -228,6 +236,9 @@ In case of Flecs.NET components are store in native heap which is not monitored 
 
 
 ### Query 100 entities with 5 components
+
+**Note:** Archetype based ECS projects are in lead if results set is big - 100.000 or more.  
+Returned components are sequentially stored in memory providing a high cache hit rate.
 
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
