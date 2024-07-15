@@ -28,7 +28,7 @@ public class AddRemoveRelations_FlecsNet
         world.Dispose();
     }
     
-    [Benchmark(Baseline = true)]
+    [Benchmark]
     public void Run()
     {
         if (RelationCount == 1) {
