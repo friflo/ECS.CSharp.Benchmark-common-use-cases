@@ -26,7 +26,7 @@ public class QueryT5_FlecsNet
     [Benchmark]
     public void Run()
     {
-        query.Iter((Iter it,
+        query.Iter((Iter _,
             Span<Component1> c1Span,
             Span<Component2> c2Span,
             Span<Component3> c3Span,
