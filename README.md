@@ -344,8 +344,13 @@ Typical event types are:
 
 | ECS               |  Mean     | Ratio | Allocated | 
 |------------------ |----------:|------:|----------:|
+| DefaultEcs        |   2.56 μs |  0.34 |         - | 
+| Friflo.Engine.ECS |   7.57 μs |  1.00 |         - | 
+| Flecs.NET         |  10.37 μs |  1.37 |         - | 
+| TinyEcs           |  13.83 μs |  1.83 |    6400 B | 
 
 <br/>
+
 
 ## **Search**
 
