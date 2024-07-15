@@ -42,16 +42,18 @@ See comments about this benchmark at [reddit announcement post](https://www.redd
 
 Ordered by GitHub Activity
 
-| ECS                                                                                           | Version           | ECS implementation      | Entity | Notes
-|---------------------------------------------------------------------------------------------- | ----------------- | ----------------------- | -------| -------------
-| [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/README.md)   | 3.0.0-preview.2   | Archetype               | struct |
-| [fennecs](https://github.com/thygrrr/fennecs)                                                 | 0.5.8-beta        | Archetype               | struct |
-| [TinyEcs](https://github.com/andreakarasho/TinyEcs)                                           | 1.2.0             | Archetype               | struct |
-| [Flecs.Net](https://github.com/BeanCheeseBurrito/Flecs.NET)                                   | 4.0.0             | Archetype / Sparse Set  | struct |
-| [Arch](https://github.com/genaray/Arch)                                                       | 1.2.8             | Archetype               | struct |
-| [Morpeh](https://github.com/scellecs/morpeh)                                                  | 2023.1.0          | ?                       | class  |
-| [Leopotam.EcsLite](https://github.com/Leopotam/ecslite)                                       | 1.0.1             | Sparse Set              | int    | nuget package is not published by project owner
-| [DefaultEcs](https://github.com/Doraku/DefaultEcs)                                            | 0.18.0-beta01     | Sparse Set              | struct |
+| ECS                                                                                           | ECS implementation      | Entity | tested            | nuget
+|---------------------------------------------------------------------------------------------- | ----------------------- | -------| ----------------- | ------
+| [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/README.md)   | Archetype               | struct | 3.0.0-preview.2   | [![nuget](https://img.shields.io/nuget/vpre/Friflo.Engine.ECS?color=blue)](https://www.nuget.org/packages/Friflo.Engine.ECS)
+| [fennecs](https://github.com/thygrrr/fennecs)                                                 | Archetype               | struct | 0.5.8-beta        | [![nuget](https://img.shields.io/nuget/vpre/fennecs?color=blue)](https://www.nuget.org/packages/fennecs)
+| [TinyEcs](https://github.com/andreakarasho/TinyEcs)                                           | Archetype               | struct | 1.2.0             | [![nuget](https://img.shields.io/nuget/v/TinyEcs.Main?color=blue)](https://www.nuget.org/packages/TinyEcs.Main)
+| [Flecs.Net](https://github.com/BeanCheeseBurrito/Flecs.NET)                                   | Archetype / Sparse Set  | struct | 4.0.0             | [![nuget](https://img.shields.io/nuget/v/Flecs.NET.Release?color=blue)](https://www.nuget.org/packages/Flecs.NET.Release)
+| [Arch](https://github.com/genaray/Arch)                                                       | Archetype               | struct | 1.2.8             | [![nuget](https://img.shields.io/nuget/v/Arch?color=blue)](https://www.nuget.org/packages/Arch)
+| [Morpeh](https://github.com/scellecs/morpeh)                                                  | ?                       | class  | 2023.1.0          | [![nuget](https://img.shields.io/nuget/v/Scellecs.Morpeh?color=blue)](https://www.nuget.org/packages/Scellecs.Morpeh)
+| [Leopotam.EcsLite](https://github.com/Leopotam/ecslite)                                       | Sparse Set              | int    | 1.0.1             | [![nuget](https://img.shields.io/nuget/v/Leopotam.EcsLite?color=blue)](https://www.nuget.org/packages/Leopotam.EcsLite) ⁽¹⁾
+| [DefaultEcs](https://github.com/Doraku/DefaultEcs)                                            | Sparse Set              | struct | 0.18.0-beta01     | [![nuget](https://img.shields.io/nuget/vpre/DefaultEcs?color=blue)](https://www.nuget.org/packages/DefaultEcs)
+
+⁽¹⁾ nuget package not published by project owner
 
 
 ## ECS implementation
