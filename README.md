@@ -276,7 +276,9 @@ Returned components are sequentially stored in memory providing a high cache hit
 
 ## **Relations**
 
-Some ECS projects have support for [Entity Relationships](https://github.com/friflo/Friflo.Json.Fliox/wiki/Examples-~-Component-Types#entity-relationships).
+Some ECS projects have support for [Entity Relationships](https://github.com/friflo/Friflo.Json.Fliox/wiki/Examples-~-Component-Types#entity-relationships).  
+Compared to relational databases: Entity relationships are similar to foreign keys referencing the primary keys in other tables.  
+ECS implementations typically ensure [referential integrity](https://en.wikipedia.org/wiki/Referential_integrity). This means there are never links to entities which doesn't exist.
 
 Relations enable to create *directed* links between entities aka entity relationships.  
 *Directed link* means that a link points from a source entity to a target entity.  
