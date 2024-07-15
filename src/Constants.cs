@@ -17,6 +17,9 @@ public static class Constants
     // --- for Benchmark: SearchComponentField
     public const int    SearchSetSize       = 1_000_000;    // number of components having a field that can be searched
     public const int    SearchCount         = 1000;         // number of executed searches / range queries
+    
+    // --- for Benchmark: ComponentEvents
+    public const int    EventCount          = 100;          // number of component add / remove events
 }
 
 

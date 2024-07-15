@@ -17,7 +17,7 @@ public class ComponentEvents_FlecsNet
     [GlobalSetup]
     public void Setup() {
         world       = World.Create();
-        entities    = world.CreateEntities(Constants.EntityCount);
+        entities    = world.CreateEntities(Constants.EventCount);
         world.Observer<Component1>().Event(Ecs.OnAdd).Each((Entity _, ref Component1 _) => {
             added++;
         });
@@ -29,7 +29,7 @@ public class ComponentEvents_FlecsNet
     [GlobalCleanup]
     public void Shutdown() {
         world.Dispose();
-        var expect = iterations * Constants.EntityCount;
+        var expect = iterations * Constants.EventCount;
         Assert.AreEqual(expect, added);
         Assert.AreEqual(expect, removed);
     }

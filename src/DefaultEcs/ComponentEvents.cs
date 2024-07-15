@@ -1,12 +1,13 @@
 ﻿using BenchmarkDotNet.Attributes;
 
-namespace Friflo.Engine.ECS;
+namespace DefaultEcs;
 
 [ShortRunJob]
 [BenchmarkCategory(Category.ComponentEvents)]
 // ReSharper disable once InconsistentNaming
-public class ComponentEvents_Friflo
+public class ComponentEvents_DefaultEcs
 {
+    private World       world;
     private Entity[]    entities;
     private int         iterations;
     private int         added;
@@ -15,25 +16,27 @@ public class ComponentEvents_Friflo
     [GlobalSetup]
     public void Setup()
     {
-        var world   = new EntityStore();
+        world       = new World();
         entities    = world.CreateEntities(Constants.EventCount);
-        world.OnComponentRemoved += _ => { removed++; };
-        world.OnComponentAdded   += _ => { added++;   };
+        world.SubscribeEntityComponentAdded  ((in Entity _, in Component1 _) => { added++;   });
+        world.SubscribeEntityComponentRemoved((in Entity _, in Component1 _) => { removed++; });
     }
     
     [GlobalCleanup]
-    public void Shutdown() {
+    public void Shutdown()
+    {
+        world.Dispose();
         var expect = iterations * Constants.EventCount;
         Assert.AreEqual(expect, added);
         Assert.AreEqual(expect, removed);
     }
     
-    [Benchmark(Baseline = true)]
+    [Benchmark]
     public void Run()
     {
         iterations++;
         foreach (var entity in entities) {
-            entity.Add(new Component1());
+            entity.Set(new Component1());
             entity.Remove<Component1>();
         }
     }
