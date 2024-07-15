@@ -115,7 +115,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 
 ## **Basic**
 
-### Add / Remove 1 component on 100 entities
+### Add & Remove 1 component on 100 entities
 
 **Note:** See impact of structural changes in Archetype based ECS projects.
 
@@ -131,7 +131,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 | fennecs           |     38,592 ns |     6.76 |     86400 B | 
 
 
-### Add / Remove 5 components on 100 entities
+### Add & Remove 5 components on 100 entities
 
 **Note:** See impact of structural changes in Archetype based ECS projects.
 
@@ -207,7 +207,7 @@ In case of Flecs.NET components are store in native heap which is not monitored 
 | TinyEcs           |286,001,355 ns |   184.49 | 491139424 B | 
 
 
-### Get / Set 1 component on 100 entities
+### Get & Set 1 component on 100 entities
 
 **Note:** Sparse Set based ECS projects are in lead because of viewer array lookups.
 
@@ -263,7 +263,12 @@ Returned components are sequentially stored in memory providing a high cache hit
 
 Some ECS projects have support for [Entity Relationships](https://github.com/friflo/Friflo.Json.Fliox/wiki/Examples-~-Component-Types#entity-relationships).
 
-### Add / Remove 1 link relation on 100 entities
+Relations enable to create *directed* links between entities aka entity relationships.  
+*Directed link* means that a link points from a source entity to a target entity.  
+A single entity can have multiple links to other target entities.
+
+### Add & Remove 1 link relation on 100 entities
+
 | ECS               | TargetCount | Mean       | Ratio | Allocated   | 
 |------------------ |------------ |-----------:|------:|------------:|
 | Friflo.Engine.ECS | 1           |       5 μs |  1.00 |          - | 
@@ -272,7 +277,7 @@ Some ECS projects have support for [Entity Relationships](https://github.com/fri
 | fennecs           | 1           |      92 μs | 18.07 |   180000 B | 
 
 
-### Add / Remove 100 link relations on 100 entities
+### Add & Remove 100 link relations on 100 entities
 
 | ECS               | TargetCount | Mean       | Ratio | Allocated   | 
 |------------------ |------------ |-----------:|------:|------------:|
@@ -286,9 +291,14 @@ Some ECS projects have support for [Entity Relationships](https://github.com/fri
 
 ## **Command buffer**
 
-### Add / Remove 2 components on 100 entities using a command buffer
+A command buffer is used to record entity changes in a buffer.  
+While recording the state of entities remains unchanged.  
+These changes are applied to these entities when calling either   
+`Playback()`, `Execute()`, `Commit()` or `DeferEnd()`
 
-1. Add components.    Apply changes. via Playback(), Execute() or Commit()
+### Add & Remove 2 components on 100 entities using a command buffer
+
+1. Add components.    Apply changes.
 2. Remove components. Apply changes.
 
 | ECS               |  Mean     | Ratio | Allocated | 
