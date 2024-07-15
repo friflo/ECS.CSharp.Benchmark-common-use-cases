@@ -310,7 +310,12 @@ A single entity can have multiple links to other target entities.
 
 
 A typical limitation of an ECS is that an entity can only contain one component of a certain type.  
-Relations can be used to **add components of the same type multiple times** to a single entity.
+Relations can be used to **add components of the same type multiple times** to a single entity.  
+To differentiate relations added to the same entity following mechanisms are used:
+
+- **Friflo.Engine.ECS**         - Any type can be used as discriminator specified in `IRelationComponent<TKey>`.
+- **Flecs.NET** & **TinyEcs**   - Tags are used as discriminator.
+- **fennecs**                   - Reference type instances are used as discriminator.
 
 ### Add & Remove 1 relation on 100 entities
 
