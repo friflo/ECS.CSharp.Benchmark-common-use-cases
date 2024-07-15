@@ -121,14 +121,14 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 
 | ECS               | Mean          | Ratio    | Allocated   | 
 |------------------ |--------------:|---------:|------------:|
-| Leopotam.EcsLite  |        982 ns |     0.17 |          - | 
-| DefaultEcs        |      1,418 ns |     0.25 |          - | 
-| Scellecs.Morpeh   |      1,847 ns |     0.33 |          - | 
-| Flecs.NET         |      2,924 ns |     0.52 |          - | 
-| Friflo.Engine.ECS |      5,674 ns |     1.00 |          - | 
-| TinyEcs           |      8,803 ns |     1.55 |     6400 B | 
-| Arch              |      8,805 ns |     1.55 |    12000 B | 
-| fennecs           |     38,272 ns |     6.74 |    86400 B | 
+| Leopotam.EcsLite  |        977 ns |     0.17 |           - | 
+| DefaultEcs        |      1,435 ns |     0.25 |           - | 
+| Scellecs.Morpeh   |      1,829 ns |     0.32 |           - | 
+| Flecs.NET         |      2,924 ns |     0.51 |           - | 
+| Friflo.Engine.ECS |      5,706 ns |     1.00 |           - | 
+| Arch              |      8,671 ns |     1.52 |     12000 B | 
+| TinyEcs           |     11,945 ns |     2.09 |      6400 B | 
+| fennecs           |     38,592 ns |     6.76 |     86400 B | 
 
 
 ### Add / Remove 5 components on 100 entities
@@ -137,56 +137,56 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 
 | ECS               | Mean          | Ratio    | Allocated   | 
 |------------------ |--------------:|---------:|------------:|
-| Leopotam.EcsLite  |      5,088 ns |     0.65 |          - | 
-| DefaultEcs        |      7,219 ns |     0.92 |          - | 
-| Scellecs.Morpeh   |      7,622 ns |     0.97 |          - | 
-| Friflo.Engine.ECS |      7,842 ns |     1.00 |          - | 
-| Arch              |     24,048 ns |     3.07 |     8800 B | 
-| Flecs.NET         |     31,748 ns |     4.05 |          - | 
-| TinyEcs           |     71,726 ns |     9.15 |    64000 B | 
-| fennecs           |    304,045 ns |    38.77 |   620800 B | 
+| Leopotam.EcsLite  |      5,133 ns |     0.66 |           - | 
+| DefaultEcs        |      7,246 ns |     0.93 |           - | 
+| Scellecs.Morpeh   |      7,605 ns |     0.98 |           - | 
+| Friflo.Engine.ECS |      7,780 ns |     1.00 |           - | 
+| Arch              |     22,366 ns |     2.87 |      8800 B | 
+| Flecs.NET         |     31,669 ns |     4.07 |           - | 
+| TinyEcs           |     86,149 ns |    11.07 |     64000 B | 
+| fennecs           |    305,012 ns |    39.20 |    620800 B | 
 
 
 ### Create 100.000 entities with 1 component
 
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
-| Friflo.Engine.ECS |    394,037 ns |     1.00 |  3449408 B | 
-| fennecs           |  1,070,508 ns |     2.72 |  6815576 B | 
-| Flecs.NET         |  1,320,196 ns |     3.42 |      736 B | 
-| Leopotam.EcsLite  |  1,861,863 ns |     4.81 |  7315384 B | 
-| Arch              |  3,166,488 ns |    14.54 |     3088 B | 
-| TinyEcs           |  5,089,485 ns |    12.92 |  8020784 B | 
-| DefaultEcs        |  6,476,562 ns |    16.55 | 11591808 B | 
-| Scellecs.Morpeh   | 64,726,371 ns |   164.36 | 42301064 B | 
+| Friflo.Engine.ECS |    398,582 ns |     1.00 |   3449408 B | 
+| fennecs           |    864,422 ns |     2.15 |   6815576 B | 
+| Flecs.NET         |  1,323,135 ns |     3.32 |       736 B | 
+| Leopotam.EcsLite  |  1,966,467 ns |     4.88 |   7316032 B | 
+| Arch              |  5,260,709 ns |    13.21 |      3088 B | 
+| DefaultEcs        |  6,601,481 ns |    16.38 |  11592448 B | 
+| TinyEcs           |  6,755,046 ns |    16.78 |  10118352 B | 
+| Scellecs.Morpeh   | 42,849,157 ns |   106.38 |  42293152 B | 
 
 
 ### Create 100.000 entities with 3 components
 
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
-| Friflo.Engine.ECS |    443,651 ns |     1.00 |  4498032 B | 
-| fennecs           |    969,218 ns |     2.19 |  7866864 B | 
-| Flecs.NET         |  1,458,465 ns |     3.31 |      736 B | 
-| Leopotam.EcsLite  |  3,854,255 ns |     8.69 | 11498824 B | 
-| Arch              |  5,564,185 ns |    12.58 |     3088 B | 
-| DefaultEcs        |  9,972,139 ns |    22.76 | 19984720 B | 
-| TinyEcs           | 20,391,615 ns |    46.00 | 21824784 B | 
-| Scellecs.Morpeh   | 47,878,238 ns |   107.58 | 49284080 B | 
+| Friflo.Engine.ECS |    453,287 ns |     1.00 |   4498032 B | 
+| fennecs           |    934,082 ns |     2.06 |   7866864 B | 
+| Flecs.NET         |  1,462,341 ns |     3.22 |       736 B | 
+| Arch              |  1,855,739 ns |     4.08 |      3088 B | 
+| Leopotam.EcsLite  |  2,624,818 ns |     5.89 |  11498680 B | 
+| DefaultEcs        |  5,790,311 ns |    12.99 |  19984528 B | 
+| TinyEcs           | 23,360,839 ns |    51.56 |  23921880 B | 
+| Scellecs.Morpeh   | 29,691,392 ns |    65.51 |  49284080 B | 
 
 
 ### Create world
 
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
-| DefaultEcs        |         72 ns |     0.34 |      336 B | 
-| Friflo.Engine.ECS |        216 ns |     1.00 |     3584 B | 
-| Leopotam.EcsLite  |      1,454 ns |     6.71 |    58944 B | 
-| Arch              |      3,366 ns |    15.54 |    37040 B | 
-| Scellecs.Morpeh   |      4,319 ns |    19.94 |     5056 B | 
-| fennecs           |     21,408 ns |    98.81 |   169820 B | 
-| TinyEcs           |     37,101 ns |   171.22 |  1087272 B | 
-| Flecs.NET         |    985,381 ns | 4,548.31 |     1009 B | 
+| DefaultEcs        |         72 ns |     0.34 |       336 B | 
+| Friflo.Engine.ECS |        216 ns |     1.00 |      3584 B | 
+| Leopotam.EcsLite  |      1,463 ns |     6.77 |     58944 B | 
+| Arch              |      3,392 ns |    15.70 |     37040 B | 
+| Scellecs.Morpeh   |      4,296 ns |    19.88 |      5056 B | 
+| fennecs           |     15,120 ns |    69.95 |    169796 B | 
+| TinyEcs           |     33,251 ns |   153.85 |    889424 B | 
+| Flecs.NET         |  1,000,598 ns | 4,629.00 |      1009 B | 
 
 
 ### Delete 100.000 entities with 5 components
@@ -197,14 +197,14 @@ In case of Flecs.NET components are store in native heap which is not monitored 
 
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
-| Friflo.Engine.ECS |  1,602,675 ns |     1.00 |  3122896 B | 
-| Flecs.NET         |  2,011,145 ns |     1.25 |      736 B | 
-| Arch              |  2,777,989 ns |     1.73 |  2096360 B | 
-| DefaultEcs        |  3,657,826 ns |     2.30 |  3200736 B | 
-| Leopotam.EcsLite  |  4,875,899 ns |     3.04 |  6268768 B | 
-| fennecs           |  5,846,256 ns |     3.65 |  4366912 B | 
-| TinyEcs           |  7,987,843 ns |     4.98 |     1144 B | 
-| Scellecs.Morpeh   |  8,846,687 ns |     5.52 |  1398360 B | 
+| Friflo.Engine.ECS |  1,551,068 ns |     1.00 |   3122896 B | 
+| Flecs.NET         |  1,993,240 ns |     1.29 |       736 B | 
+| Arch              |  2,635,788 ns |     1.70 |      3088 B | 
+| DefaultEcs        |  3,734,260 ns |     2.42 |   3200736 B | 
+| Leopotam.EcsLite  |  4,553,305 ns |     2.94 |   6268768 B | 
+| fennecs           |  5,827,321 ns |     3.76 |   4366912 B | 
+| Scellecs.Morpeh   |  8,721,128 ns |     5.41 |   1398360 B | 
+| TinyEcs           |286,001,355 ns |   184.49 | 491139424 B | 
 
 
 ### Get / Set 1 component on 100 entities
@@ -213,14 +213,14 @@ In case of Flecs.NET components are store in native heap which is not monitored 
 
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
-| Leopotam.EcsLite  |         65 ns |     0.43 |          - | 
-| DefaultEcs        |        108 ns |     0.72 |          - | 
-| Friflo.Engine.ECS |        151 ns |     1.00 |          - | 
-| Arch              |        286 ns |     1.89 |          - | 
-| Scellecs.Morpeh   |        333 ns |     2.20 |          - | 
-| Flecs.NET         |        581 ns |     3.84 |          - | 
-| TinyEcs           |        990 ns |     6.54 |          - | 
-| fennecs           |      2,380 ns |    15.72 |          - | 
+| Leopotam.EcsLite  |         65 ns |     0.43 |           - | 
+| DefaultEcs        |        111 ns |     0.74 |           - | 
+| Friflo.Engine.ECS |        151 ns |     1.00 |           - | 
+| Arch              |        279 ns |     1.84 |           - | 
+| Scellecs.Morpeh   |        329 ns |     2.17 |           - | 
+| Flecs.NET         |        581 ns |     3.84 |           - | 
+| fennecs           |      2,420 ns |    15.98 |           - | 
+| TinyEcs           |      2,481 ns |    16.38 |           - | 
 
 
 ### Query 100 entities with 1 component
@@ -230,14 +230,14 @@ Returned components are sequentially stored in memory providing a high cache hit
 
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
-| DefaultEcs        |         45 ns |     0.94 |          - | 
-| Friflo.Engine.ECS |         47 ns |     1.00 |          - | 
-| Leopotam.EcsLite  |         76 ns |     1.60 |          - | 
-| TinyEcs           |         90 ns |     1.90 |          - | 
-| Arch              |        120 ns |     2.53 |          - | 
-| Flecs.NET         |        146 ns |     3.07 |          - | 
-| fennecs           |        172 ns |     3.62 |       40 B | 
-| Scellecs.Morpeh   |        314 ns |     6.58 |          - | 
+| DefaultEcs        |         45 ns |     0.99 |           - | 
+| Friflo.Engine.ECS |         45 ns |     1.00 |           - | 
+| TinyEcs           |         65 ns |     1.44 |           - | 
+| Leopotam.EcsLite  |         76 ns |     1.68 |           - | 
+| Arch              |        120 ns |     2.64 |           - | 
+| Flecs.NET         |        142 ns |     3.13 |           - | 
+| fennecs           |        170 ns |     3.75 |        40 B | 
+| Scellecs.Morpeh   |        313 ns |     6.87 |           - | 
 
 
 ### Query 100 entities with 5 components
@@ -247,14 +247,14 @@ Returned components are sequentially stored in memory providing a high cache hit
 
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
-| Friflo.Engine.ECS |        110 ns |     1.00 |          - | 
-| TinyEcs           |        145 ns |     1.32 |          - | 
-| Arch              |        197 ns |     1.79 |          - | 
-| Flecs.NET         |        207 ns |     1.88 |          - | 
-| DefaultEcs        |        272 ns |     2.47 |          - | 
-| Leopotam.EcsLite  |        347 ns |     3.16 |          - | 
-| fennecs           |        407 ns |     3.70 |       40 B | 
-| Scellecs.Morpeh   |        791 ns |     7.18 |          - | 
+| Friflo.Engine.ECS |        111 ns |     1.00 |           - | 
+| TinyEcs           |        115 ns |     1.03 |           - | 
+| Arch              |        196 ns |     1.77 |           - | 
+| Flecs.NET         |        198 ns |     1.79 |           - | 
+| DefaultEcs        |        271 ns |     2.45 |           - | 
+| Leopotam.EcsLite  |        345 ns |     3.11 |           - | 
+| fennecs           |        407 ns |     3.66 |        40 B | 
+| Scellecs.Morpeh   |        783 ns |     7.04 |           - | 
 
 <br/>
 
@@ -267,19 +267,19 @@ Some ECS projects have support for [Entity Relationships](https://github.com/fri
 | ECS               | TargetCount | Mean       | Ratio | Allocated   | 
 |------------------ |------------ |-----------:|------:|------------:|
 | Friflo.Engine.ECS | 1           |       5 μs |  1.00 |          - | 
-| Flecs.NET         | 1           |      10 μs |  1.98 |          - | 
-| TinyEcs           | 1           |      25 μs |  4.94 |    22400 B | 
-| fennecs           | 1           |      90 μs | 17.32 |   180000 B | 
+| Flecs.NET         | 1           |      10 μs |  2.01 |          - | 
+| TinyEcs           | 1           |      28 μs |  5.58 |    22400 B | 
+| fennecs           | 1           |      92 μs | 18.07 |   180000 B | 
 
 
 ### Add / Remove 100 link relations on 100 entities
 
 | ECS               | TargetCount | Mean       | Ratio | Allocated   | 
 |------------------ |------------ |-----------:|------:|------------:|
-| Flecs.NET         | 100         |     958 μs |  0.81 |        1 B | 
-| Friflo.Engine.ECS | 100         |   1,191 μs |  1.00 |        1 B | 
-| TinyEcs           | 100         |   8,471 μs |  7.11 | 18080012 B | 
-| fennecs           | 100         |  78,162 μs | 65.66 | 93124905 B |  
+| Flecs.NET         | 100         |     947 μs |  0.82 |        1 B | 
+| Friflo.Engine.ECS | 100         |   1,158 μs |  1.00 |        1 B | 
+| TinyEcs           | 100         |   8,776 μs |  7.57 | 18080012 B | 
+| fennecs           | 100         |  70,384 μs | 60.74 | 93124892 B | 
 
 <br/>
 
@@ -293,12 +293,12 @@ Some ECS projects have support for [Entity Relationships](https://github.com/fri
 
 | ECS               |  Mean     | Ratio | Allocated | 
 |------------------ |----------:|------:|----------:|
-| Scellecs.Morpeh   |      4 μs |  0.59 |         - | 
-| Friflo.Engine.ECS |      8 μs |  1.00 |         - | 
-| Flecs.NET         |      9 μs |  1.15 |         - | 
-| DefaultEcs        |     16 μs |  1.94 |         - | 
-| TinyEcs           |     40 μs |  4.78 |   46928 B | 
-| Arch              |     51 μs |  6.06 |    4800 B | 
+| Scellecs.Morpeh   |   4.95 μs |  0.58 |         - | 
+| Friflo.Engine.ECS |   8.62 μs |  1.00 |         - | 
+| Flecs.NET         |   9.81 μs |  1.14 |         - | 
+| DefaultEcs        |  16.28 μs |  1.89 |         - | 
+| TinyEcs           |  29.37 μs |  3.41 |   20800 B | 
+| Arch              |  46.29 μs |  5.37 |    4800 B | 
 
 <br/>
 
