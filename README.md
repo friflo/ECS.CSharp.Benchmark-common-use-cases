@@ -47,7 +47,7 @@ Ordered by GitHub Activity
 | [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/README.md)   | Archetype               | struct | 3.0.0-preview.2   | [![nuget](https://img.shields.io/nuget/vpre/Friflo.Engine.ECS?color=blue)](https://www.nuget.org/packages/Friflo.Engine.ECS)
 | [fennecs](https://github.com/thygrrr/fennecs)                                                 | Archetype               | struct | 0.5.8-beta        | [![nuget](https://img.shields.io/nuget/vpre/fennecs?color=blue)](https://www.nuget.org/packages/fennecs)
 | [TinyEcs](https://github.com/andreakarasho/TinyEcs)                                           | Archetype               | struct | 1.3.0             | [![nuget](https://img.shields.io/nuget/v/TinyEcs.Main?color=blue)](https://www.nuget.org/packages/TinyEcs.Main)
-| [Flecs.Net](https://github.com/BeanCheeseBurrito/Flecs.NET)                                   | Archetype / Sparse Set  | struct | 4.0.0             | [![nuget](https://img.shields.io/nuget/v/Flecs.NET.Release?color=blue)](https://www.nuget.org/packages/Flecs.NET.Release)
+| [Flecs.NET](https://github.com/BeanCheeseBurrito/Flecs.NET)                                   | Archetype / Sparse Set  | struct | 4.0.0             | [![nuget](https://img.shields.io/nuget/v/Flecs.NET.Release?color=blue)](https://www.nuget.org/packages/Flecs.NET.Release)
 | [Arch](https://github.com/genaray/Arch)                                                       | Archetype               | struct | 1.2.8             | [![nuget](https://img.shields.io/nuget/v/Arch?color=blue)](https://www.nuget.org/packages/Arch)
 | [Morpeh](https://github.com/scellecs/morpeh)                                                  | ?                       | class  | 2023.1.0          | [![nuget](https://img.shields.io/nuget/v/Scellecs.Morpeh?color=blue)](https://www.nuget.org/packages/Scellecs.Morpeh)
 | [Leopotam.EcsLite](https://github.com/Leopotam/ecslite)                                       | Sparse Set              | int    | 1.0.1             | [![nuget](https://img.shields.io/nuget/v/Leopotam.EcsLite?color=blue)](https://www.nuget.org/packages/Leopotam.EcsLite) ⁽¹⁾
@@ -79,6 +79,21 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
 
 # Benchmarks
+
+## Feature Matrix
+
+| ECS               | Basic | Relations | Command Buffer | Search |
+|------------------ |:-----:|:---------:|:--------------:|:------:|
+| Arch              |  ✅  |           |       ✅       |        |
+| DefaultEcs        |  ✅  |           |       ✅       |        |
+| fennecs           |  ✅  |    ✅     |                |        |
+| Flecs.NET         |  ✅  |    ✅     |       ✅      |         |
+| Friflo.Engine.ECS |  ✅  |    ✅     |       ✅      |   ✅   |
+| Leopotam.EcsLite  |  ✅  |           |                |         |
+| Morpeh            |  ✅  |           |      ✅        |        |
+| TinyEcs           |  ✅  |    ✅     |       ✅      |         |
+
+<br/>
 
 | Benchmark Category                                     | Category id                                     |
 |------------------------------------------------------- | ----------------------------------------------- |
