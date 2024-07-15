@@ -400,12 +400,14 @@ All popular IDE's can be used to run and debug the project: **Rider**, **Visual 
 
 **Benchmark constraints**
 
-- Each benchmark is **simple** and uses the fastest single threaded variant available.
+- Each benchmark is **simple** and uses the fastest single threaded variant available.  
+  To obtain clarity a project must not have multiple variants of the same benchmark type.
 - Each Benchmark shares no state or code with any other benchmarks.
 - Adding or removing a benchmark implementation has no effect on all others.
 - Each project has an extension class `BenchUtils` with two methods to used by its benchmarks.  
   `BenchUtils.CreateEntities(int count)`  
   `BenchUtils.AddComponents(this Entity[] entities)`
+- A package of the ECS must be available on nuget.
 - The Project builds with `<AllowUnsafeBlocks>false</AllowUnsafeBlocks>`. See [ECS.Benchmark.csproj](src/ECS.Benchmark.csproj).
 
 The benchmarks `CreateEntity` and `DeleteEntity` are changing the state of World which has influence on the benchmark measurement.  
