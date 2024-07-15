@@ -11,14 +11,14 @@ public class AddRemoveLinks_Friflo
     private Entity[]    targets;
     
     [Params(Constants.TargetCountP1, Constants.TargetCountP2)]
-    public int TargetCount { get; set; }
+    public  int         RelationCount { get; set; }
     
     [GlobalSetup]
     public void Setup()
     {
         var world   = new EntityStore();
         sources     = world.CreateEntities(Constants.EntityCount).AddComponents();
-        targets     = world.CreateEntities(TargetCount).AddComponents();
+        targets     = world.CreateEntities(RelationCount).AddComponents();
     }
     
     [Benchmark(Baseline = true)]
@@ -26,10 +26,10 @@ public class AddRemoveLinks_Friflo
     {
         foreach (var source in sources)
         {
-            for (int n = 0; n < TargetCount; n++) {
+            for (int n = 0; n < RelationCount; n++) {
                 source.AddRelation(new LinkRelation { Value = n, Target = targets[n] });
             }
-            for (int n = 0; n < TargetCount; n++) {
+            for (int n = 0; n < RelationCount; n++) {
                 source.RemoveRelation<LinkRelation>(targets[n]);
             }
         }

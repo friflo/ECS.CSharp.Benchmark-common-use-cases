@@ -448,7 +448,7 @@ dotnet run -c Release --filter *Friflo* *Arch*                  # compare benchm
 
 # run basic benchmarks
 dotnet run -c Release --filter *AddRemoveComponents* *GetSetComponents* *CreateEntity* *CreateWorld* *DeleteEntity* *Query*
-dotnet run -c Release --filter *AddRemoveLinks*                 # run relations benchmarks
+dotnet run -c Release --filter *Links* *Relations*              # run relations benchmarks
 dotnet run -c Release --filter *CommandBuffer*                  # run command buffer benchmarks
 dotnet run -c Release --filter *Events*                         # run component events benchmarks
 dotnet run -c Release --filter *Search*                         # run search benchmarks
@@ -467,7 +467,7 @@ dotnet run -c Release --filter \*Friflo\* \*Arch\*              # compare benchm
 
 # run basic benchmarks
 dotnet run -c Release --filter \*AddRemoveComponents\* \*GetSetComponents\* \*CreateEntity\* \*CreateWorld\* \*DeleteEntity\* \*Query\*
-dotnet run -c Release --filter \*AddRemoveLinks\*               # run relations benchmarks
+dotnet run -c Release --filter \*Links\* \*Relations\*          # run relations benchmarks
 dotnet run -c Release --filter \*CommandBuffer\*                # run command buffer benchmarks
 dotnet run -c Release --filter \*Events\*                       # run component events benchmarks
 dotnet run -c Release --filter \*Search\*                       # run search benchmarks
