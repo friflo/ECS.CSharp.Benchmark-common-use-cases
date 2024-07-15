@@ -31,6 +31,7 @@ See comments about this benchmark at [reddit announcement post](https://www.redd
   - [Basic](#basic)
   - [Relations](#relations)
   - [Command buffer](#command-buffer)
+  - [Events](#events)
   - [Search](#search)
 * [Setup](#setup)
 * [Contribution](#contribution)
@@ -82,16 +83,16 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
 ## Feature Matrix
 
-| ECS               | Basic | Relations | Command Buffer | Search |
-|------------------ |:-----:|:---------:|:--------------:|:------:|
-| Arch              |  ✅  |           |       ✅       |        |
-| DefaultEcs        |  ✅  |           |       ✅       |        |
-| fennecs           |  ✅  |    ✅     |                |        |
-| Flecs.NET         |  ✅  |    ✅     |       ✅      |         |
-| Friflo.Engine.ECS |  ✅  |    ✅     |       ✅      |   ✅   |
-| Leopotam.EcsLite  |  ✅  |           |                |         |
-| Morpeh            |  ✅  |           |      ✅        |        |
-| TinyEcs           |  ✅  |    ✅     |       ✅      |         |
+| ECS               | Basic | Relations | Command Buffer | Events | Search |
+|------------------ |:-----:|:---------:|:--------------:|:------:|:------:|
+| Arch              |  ✅  |           |       ✅       |        |        |
+| DefaultEcs        |  ✅  |           |       ✅       |  ✅    |        |
+| fennecs           |  ✅  |    ✅     |                |        |        |
+| Flecs.NET         |  ✅  |    ✅     |       ✅      |   ✅   |        |
+| Friflo.Engine.ECS |  ✅  |    ✅     |       ✅      |   ✅   |   ✅   |
+| Leopotam.EcsLite  |  ✅  |           |                |         |        |
+| Morpeh            |  ✅  |           |      ✅        |        |        |
+| TinyEcs           |  ✅  |    ✅     |       ✅      |   ✅   |        |
 
 <br/>
 
@@ -110,6 +111,9 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 |                                                        |                                                 |
 | [**Command Buffer**](#command-buffer)                  |                                                 |
 | Add & Remove 2 components on 100 entities              | `CommandBufferAddRemoveT2`                      |
+|                                                        |                                                 |
+| [**Events**](#events)                                  |                                                 |
+| Get event callback on Add & Remove component           | `ComponentEvents`                               |
 |                                                        |                                                 |
 | [**Search**](#search)                                  |                                                 |
 | Search component field in 1.000.000 entities           | `SearchComponentField`                          |
@@ -328,6 +332,21 @@ These changes are applied to these entities when calling either
 <br/>
 
 
+## **Events**
+
+ECS implementations supporting callbacks for specific events are called **reactive**.  
+Typical event types are:
+- Add / Update / Remove component
+- Add / Remove tag
+- Create / Delete entity
+
+### Get callback event on Add & Remove component on 100 entities
+
+| ECS               |  Mean     | Ratio | Allocated | 
+|------------------ |----------:|------:|----------:|
+
+<br/>
+
 ## **Search**
 
 A search can be used to get all entities with a specific component field value.  
@@ -424,6 +443,7 @@ dotnet run -c Release --filter *Friflo* *Arch*                  # compare benchm
 dotnet run -c Release --filter *AddRemoveComponents* *GetSetComponents* *CreateEntity* *CreateWorld* *DeleteEntity* *Query*
 dotnet run -c Release --filter *AddRemoveLinks*                 # run relations benchmarks
 dotnet run -c Release --filter *CommandBuffer*                  # run command buffer benchmarks
+dotnet run -c Release --filter *Events*                         # run component events benchmarks
 dotnet run -c Release --filter *Search*                         # run search benchmarks
 ```
 
@@ -442,9 +462,7 @@ dotnet run -c Release --filter \*Friflo\* \*Arch\*              # compare benchm
 dotnet run -c Release --filter \*AddRemoveComponents\* \*GetSetComponents\* \*CreateEntity\* \*CreateWorld\* \*DeleteEntity\* \*Query\*
 dotnet run -c Release --filter \*AddRemoveLinks\*               # run relations benchmarks
 dotnet run -c Release --filter \*CommandBuffer\*                # run command buffer benchmarks
+dotnet run -c Release --filter \*Events\*                       # run component events benchmarks
 dotnet run -c Release --filter \*Search\*                       # run search benchmarks
 ```
-
-
-
 
