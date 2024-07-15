@@ -40,7 +40,7 @@ public class AddRemoveLinks_FlecsNet
         foreach (var source in sources)
         {
             for (int n = 0; n < TargetCount; n++) {
-                source.Add(relations[n], targets[n] );
+                source.Add(relations[n], targets[n]);
             }
             for (int n = 0; n < TargetCount; n++) {
                 source.Remove(relations[n], targets[n]);

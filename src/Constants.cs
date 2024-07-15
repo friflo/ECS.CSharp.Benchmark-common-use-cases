@@ -7,6 +7,8 @@ public static class Constants
     // --- for Benchmark: AddRemoveLinks
     public const int    TargetCountP1       = 1;            // NOTE! Must be used only in [Params()]
     public const int    TargetCountP2       = 100;          // NOTE! Must be used only in [Params()]
+    public const int    RelationCountP1     = 1;            // NOTE! Must be used only in [Params()]
+    public const int    RelationCountP2     = 10;           // NOTE! Must be used only in [Params()]
     
     // --- for Benchmark: CreateEntityT1 & CreateEntityT3 
     public const int    CreateEntityCount   = 100_000;
@@ -40,6 +42,7 @@ public static class Category
 
     // --- projects supporting: Relations
     public const string     AddRemoveLinks              = nameof(AddRemoveLinks);
+    public const string     AddRemoveRelations          = nameof(AddRemoveRelations);
 
     // --- projects supporting: Command buffers
     public const string     CommandBufferAddRemoveT2    = nameof(CommandBufferAddRemoveT2);
