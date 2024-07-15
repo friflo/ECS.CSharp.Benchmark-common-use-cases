@@ -8,14 +8,14 @@ namespace TinyEcs;
 public class QueryT1_TinyEcs
 {
     private World   world;
-    private Query<Component1>   query;
+    private Query   query;
     
     [GlobalSetup]
     public void Setup()
     {
         world = new World();
         world.CreateEntities(Constants.EntityCount).AddComponents();
-        query = world.Query<Component1>();
+        query = world.QueryBuilder().With<Component1>().Build();
         Assert.AreEqual(Constants.EntityCount, query.Count());
     }
     
@@ -28,8 +28,10 @@ public class QueryT1_TinyEcs
     [Benchmark]
     public void Run()
     {
-        query.Each((ref Component1 c1) => {
-            c1.Value++;
-        });
+        foreach (var (e, c1) in query.Iter<Component1>()) {
+            for (var n = 0; n < e.Length; n++) {
+                c1[n].Value++;    
+            }
+        }
     }
 }

@@ -15,11 +15,11 @@ public static class BenchUtils
     {
         foreach (var entity in entities)
         {
-            entity.Set<Component1>();
-            entity.Set<Component2>();
-            entity.Set<Component3>();
-            entity.Set<Component4>();
-            entity.Set<Component5>();
+            entity.Set(new Component1());
+            entity.Set(new Component2());
+            entity.Set(new Component3());
+            entity.Set(new Component4());
+            entity.Set(new Component5());
         }
         return entities;
     }

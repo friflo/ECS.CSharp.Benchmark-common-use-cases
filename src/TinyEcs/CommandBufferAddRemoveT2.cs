@@ -27,8 +27,8 @@ public class CommandBufferAddRemoveT2_TinyEcs
         world.BeginDeferred();
         foreach (var entity in entities) {
             entity
-                .Set<Component1>()
-                .Set<Component1>();
+                .Set(new Component1())
+                .Set(new Component2());
         }
         world.EndDeferred(); // Apply changes 1
         
@@ -36,7 +36,7 @@ public class CommandBufferAddRemoveT2_TinyEcs
         foreach (var entity in entities) {
             entity
                 .Unset<Component1>()
-                .Unset<Component1>();
+                .Unset<Component2>();
         }
         world.EndDeferred(); // Apply changes 2
     }

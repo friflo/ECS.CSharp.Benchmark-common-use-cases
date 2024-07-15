@@ -25,7 +25,7 @@ public class CreateEntityT1_TinyEcs
     {
         for (int n = 0; n < Constants.CreateEntityCount; n++) {
             var entity = world.Entity();
-            entity.Set<Component1>();
+            entity.Set(new Component1());
         }
     }
 }

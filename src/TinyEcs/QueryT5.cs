@@ -26,8 +26,10 @@ public class QueryT5_TinyEcs
     [Benchmark]
     public void Run()
     {
-        query.Each((ref Component1 c1, ref Component2 c2, ref Component3 c3, ref Component4 c4, ref Component5 c5) => {
-            c1.Value = c2.Value + c3.Value + c4.Value + c5.Value;        
-        });
+        foreach (var (e, c1, c2, c3, c4, c5) in query.Iter<Component1, Component2, Component3, Component4, Component5>()) {
+            for (var n = 0; n < e.Length; n++) {
+                c1[n].Value = c2[n].Value + c3[n].Value + c4[n].Value + c5[n].Value;
+            }
+        }
     }
 }
