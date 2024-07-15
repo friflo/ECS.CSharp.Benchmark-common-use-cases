@@ -315,6 +315,19 @@ These changes are applied to these entities when calling either
 
 ## **Search**
 
+A search can be used to get all entities with a specific component field value.  
+This type of search is typically executed in O(1) .  
+E.g. to find all entities having a `Player` component where `Player.name == "Bob"`
+```
+struct Player { string name; } 
+```
+
+A search can also be used for range queries to find all entities with a component field value in a [min, max] range.  
+E.g. a range query return all entities with a `Health` component where `Health.value` is between 10 and 100.
+```
+struct Health { int value; } 
+```
+
 Search and Range Queries of component fields are explained at this [GitHub ⋅ Wiki page](https://github.com/friflo/Friflo.Json.Fliox/wiki/Examples-~-Component-Types#search).
 
 ### Search component field in 1.000.000 entities
