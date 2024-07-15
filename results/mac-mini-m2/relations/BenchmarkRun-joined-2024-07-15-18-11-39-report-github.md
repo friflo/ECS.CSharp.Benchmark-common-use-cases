@@ -12,7 +12,7 @@ WarmupCount=3
 
 ```
 | Namespace         | Type                        | RelationCount | Mean          | Ratio | Allocated  | 
-|------------------ |---------------------------- |-------------- |--------------:|------:|-----------:|-
+|------------------ |---------------------------- |-------------- |--------------:|------:|-----------:|
 | Friflo.Engine.ECS | AddRemoveLinks_Friflo       | 1             |      5.121 μs |  1.00 |          - | 
 | Flecs.NET         | AddRemoveLinks_FlecsNet     | 1             |     10.288 μs |  2.01 |          - | 
 | TinyEcs           | AddRemoveLinks_TinyEcs      | 1             |     28.474 μs |  5.56 |    22400 B | 
