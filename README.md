@@ -107,7 +107,8 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 | Query 100 entities with 1/5 components                 | `QueryT1` `QueryT5`                             |
 |                                                        |                                                 |
 | [**Relations**](#relations)                            |                                                 |
-| Add & Remove 1/100 link relation on 100 entities       | `AddRemoveLinks` `TargetCount`: 1/100           |
+| Add & Remove 1/100 link relation on 100 entities       | `AddRemoveLinks` `RelationCount`: 1/100         |
+| Add & Remove 1/10 relations on 100 entities            | `AddRemoveLinks` `RelationCount`: 1/10          |
 |                                                        |                                                 |
 | [**Command Buffer**](#command-buffer)                  |                                                 |
 | Add & Remove 2 components on 100 entities              | `CommandBufferAddRemoveT2`                      |
@@ -288,22 +289,40 @@ A single entity can have multiple links to other target entities.
 
 ### Add & Remove 1 link relation on 100 entities
 
-| ECS               | TargetCount | Mean       | Ratio | Allocated   | 
-|------------------ |------------ |-----------:|------:|------------:|
-| Friflo.Engine.ECS | 1           |       5 μs |  1.00 |          - | 
-| Flecs.NET         | 1           |      10 μs |  2.01 |          - | 
-| TinyEcs           | 1           |      28 μs |  5.58 |    22400 B | 
-| fennecs           | 1           |      92 μs | 18.07 |   180000 B | 
+| ECS               | RelationCount | Mean       | Ratio | Allocated   | 
+|------------------ |-------------- |-----------:|------:|------------:|
+| Friflo.Engine.ECS | 1             |       5 μs |  1.00 |          - | 
+| Flecs.NET         | 1             |      10 μs |  2.01 |          - | 
+| TinyEcs           | 1             |      28 μs |  5.58 |    22400 B | 
+| fennecs           | 1             |      92 μs | 18.07 |   180000 B | 
 
 
 ### Add & Remove 100 link relations on 100 entities
 
-| ECS               | TargetCount | Mean       | Ratio | Allocated   | 
-|------------------ |------------ |-----------:|------:|------------:|
-| Flecs.NET         | 100         |     947 μs |  0.82 |        1 B | 
-| Friflo.Engine.ECS | 100         |   1,158 μs |  1.00 |        1 B | 
-| TinyEcs           | 100         |   8,776 μs |  7.57 | 18080012 B | 
-| fennecs           | 100         |  70,384 μs | 60.74 | 93124892 B | 
+| ECS               | RelationCount | Mean       | Ratio | Allocated   | 
+|------------------ |-------------- |-----------:|------:|------------:|
+| Flecs.NET         | 100           |     947 μs |  0.82 |        1 B | 
+| Friflo.Engine.ECS | 100           |   1,158 μs |  1.00 |        1 B | 
+| TinyEcs           | 100           |   8,776 μs |  7.57 | 18080012 B | 
+| fennecs           | 100           |  70,384 μs | 60.74 | 93124892 B | 
+
+<br/>
+
+A typical limitation of an ECS is that an entity can only contain one component of a certain type.  
+Relations can be used to **add components of the same type multiple times** to a single entity.
+
+### Add & Remove 1 relation on 100 entities
+
+| ECS               | RelationCount | Mean       | Ratio | Allocated   | 
+|------------------ |-------------- |-----------:|------:|------------:|
+
+
+
+### Add & Remove 10 relations on 100 entities
+
+| ECS               | RelationCount | Mean       | Ratio | Allocated   | 
+|------------------ |-------------- |-----------:|------:|------------:|
+
 
 <br/>
 
