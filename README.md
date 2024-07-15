@@ -107,8 +107,8 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 | Query 100 entities with 1/5 components                 | `QueryT1` `QueryT5`                             |
 |                                                        |                                                 |
 | [**Relations**](#relations)                            |                                                 |
-| Add & Remove 1/100 link relation on 100 entities       | `AddRemoveLinks` `RelationCount`: 1/100         |
-| Add & Remove 1/10 relations on 100 entities            | `AddRemoveLinks` `RelationCount`: 1/10          |
+| Add & Remove 1/100 link relation on 100 entities       | `AddRemoveLinks`     `RelationCount`: 1/100     |
+| Add & Remove 1/10 relations on 100 entities            | `AddRemoveRelations` `RelationCount`: 1/10      |
 |                                                        |                                                 |
 | [**Command Buffer**](#command-buffer)                  |                                                 |
 | Add & Remove 2 components on 100 entities              | `CommandBufferAddRemoveT2`                      |
@@ -289,40 +289,47 @@ A single entity can have multiple links to other target entities.
 
 ### Add & Remove 1 link relation on 100 entities
 
-| ECS               | RelationCount | Mean       | Ratio | Allocated   | 
-|------------------ |-------------- |-----------:|------:|------------:|
-| Friflo.Engine.ECS | 1             |       5 μs |  1.00 |          - | 
-| Flecs.NET         | 1             |      10 μs |  2.01 |          - | 
-| TinyEcs           | 1             |      28 μs |  5.58 |    22400 B | 
-| fennecs           | 1             |      92 μs | 18.07 |   180000 B | 
+| ECS               | RelationCount | Mean         | Ratio | Allocated  | 
+|------------------ |-------------- |-------------:|------:|-----------:|
+| Friflo.Engine.ECS | 1             |      5.12 μs |  1.00 |          - | 
+| Flecs.NET         | 1             |     10.28 μs |  2.01 |          - | 
+| TinyEcs           | 1             |     28.47 μs |  5.56 |    22400 B | 
+| fennecs           | 1             |     92.03 μs | 17.97 |   180000 B | 
 
 
 ### Add & Remove 100 link relations on 100 entities
 
-| ECS               | RelationCount | Mean       | Ratio | Allocated   | 
-|------------------ |-------------- |-----------:|------:|------------:|
-| Flecs.NET         | 100           |     947 μs |  0.82 |        1 B | 
-| Friflo.Engine.ECS | 100           |   1,158 μs |  1.00 |        1 B | 
-| TinyEcs           | 100           |   8,776 μs |  7.57 | 18080012 B | 
-| fennecs           | 100           |  70,384 μs | 60.74 | 93124892 B | 
+| ECS               | RelationCount | Mean         | Ratio | Allocated  | 
+|------------------ |-------------- |-------------:|------:|-----------:|
+| Flecs.NET         | 100           |    951.06 μs |  0.80 |        1 B | 
+| Friflo.Engine.ECS | 100           |  1,196.26 μs |  1.00 |        1 B | 
+| TinyEcs           | 100           |  8,942.20 μs |  7.48 | 18080012 B | 
+| fennecs           | 100           | 71,197.12 μs | 59.52 | 93124905 B | 
 
 <br/>
+
 
 A typical limitation of an ECS is that an entity can only contain one component of a certain type.  
 Relations can be used to **add components of the same type multiple times** to a single entity.
 
 ### Add & Remove 1 relation on 100 entities
 
-| ECS               | RelationCount | Mean       | Ratio | Allocated   | 
-|------------------ |-------------- |-----------:|------:|------------:|
-
+| ECS               | RelationCount | Mean         | Ratio | Allocated  | 
+|------------------ |-------------- |-------------:|------:|-----------:|
+| Friflo.Engine.ECS | 1             |      3.08 μs |  1.00 |          - | 
+| Flecs.NET         | 1             |      4.91 μs |  1.59 |          - | 
+| TinyEcs           | 1             |     32.77 μs | 10.62 |    53600 B | 
+| fennecs           | 1             |     39.93 μs | 12.94 |    86400 B | 
 
 
 ### Add & Remove 10 relations on 100 entities
 
-| ECS               | RelationCount | Mean       | Ratio | Allocated   | 
-|------------------ |-------------- |-----------:|------:|------------:|
-
+| ECS               | RelationCount | Mean         | Ratio | Allocated  | 
+|------------------ |-------------- |-------------:|------:|-----------:|
+| Friflo.Engine.ECS | 10            |     49.10 μs |  1.00 |          - | 
+| Flecs.NET         | 10            |    107.56 μs |  2.19 |          - | 
+| TinyEcs           | 10            |    448.74 μs |  9.14 |   694400 B | 
+| fennecs           | 10            |    979.25 μs | 19.94 |  1704801 B | 
 
 <br/>
 
@@ -467,7 +474,7 @@ dotnet run -c Release --filter *Friflo* *Arch*                  # compare benchm
 
 # run basic benchmarks
 dotnet run -c Release --filter *AddRemoveComponents* *GetSetComponents* *CreateEntity* *CreateWorld* *DeleteEntity* *Query*
-dotnet run -c Release --filter *Links* *Relations*              # run relations benchmarks
+dotnet run -c Release --filter *Links* *Relations*              # run relation benchmarks
 dotnet run -c Release --filter *CommandBuffer*                  # run command buffer benchmarks
 dotnet run -c Release --filter *Events*                         # run component events benchmarks
 dotnet run -c Release --filter *Search*                         # run search benchmarks
@@ -486,7 +493,7 @@ dotnet run -c Release --filter \*Friflo\* \*Arch\*              # compare benchm
 
 # run basic benchmarks
 dotnet run -c Release --filter \*AddRemoveComponents\* \*GetSetComponents\* \*CreateEntity\* \*CreateWorld\* \*DeleteEntity\* \*Query\*
-dotnet run -c Release --filter \*Links\* \*Relations\*          # run relations benchmarks
+dotnet run -c Release --filter \*Links\* \*Relations\*          # run relation benchmarks
 dotnet run -c Release --filter \*CommandBuffer\*                # run command buffer benchmarks
 dotnet run -c Release --filter \*Events\*                       # run component events benchmarks
 dotnet run -c Release --filter \*Search\*                       # run search benchmarks
