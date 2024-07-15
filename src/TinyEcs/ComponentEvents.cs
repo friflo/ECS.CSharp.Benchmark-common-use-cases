@@ -25,6 +25,7 @@ public class ComponentEvents_TinyEcs
     [GlobalCleanup]
     public void Shutdown() {
         world.Dispose();
+        // Issue - event count is off by one
         // var expect = iterations * Constants.EventCount;
         // Assert.AreEqual(expect, added);     Exception - expect: 29491300, was: 29491301
         // Assert.AreEqual(expect, removed);   Exception - expect: 29491300, was: 29491301
