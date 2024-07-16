@@ -20,7 +20,9 @@ jobs:
         dotnet-version: 8.0.101
 
     - name: Restore dependencies
+      working-directory: ./src
       run: dotnet restore
 
     - name: Benchmark
+      working-directory: ./src
       run: dotnet run -c Release --filter * --job Dry --disableLogFile
