@@ -3,7 +3,6 @@ using BenchmarkDotNet.Attributes;
 
 namespace Arch;
 
-[ShortRunJob]
 [BenchmarkCategory(Category.CreateWorld)]
 // ReSharper disable once InconsistentNaming
 public class CreateWorld_Arch

@@ -2,7 +2,6 @@
 
 namespace Leopotam.EcsLite;
 
-[ShortRunJob]
 [BenchmarkCategory(Category.GetSetComponentsT1)]
 // ReSharper disable once InconsistentNaming
 public class GetSetComponentsT1_Leopotam

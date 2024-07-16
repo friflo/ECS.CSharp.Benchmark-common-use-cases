@@ -2,7 +2,6 @@
 
 namespace DefaultEcs;
 
-
 [BenchmarkCategory(Category.CreateEntityT1)]
 // ReSharper disable once InconsistentNaming
 public class CreateEntityT1_DefaultEcs

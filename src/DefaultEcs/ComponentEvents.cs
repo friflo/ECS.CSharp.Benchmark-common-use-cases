@@ -2,7 +2,6 @@
 
 namespace DefaultEcs;
 
-[ShortRunJob]
 [BenchmarkCategory(Category.ComponentEvents)]
 // ReSharper disable once InconsistentNaming
 public class ComponentEvents_DefaultEcs

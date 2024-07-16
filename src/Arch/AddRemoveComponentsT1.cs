@@ -3,7 +3,6 @@ using BenchmarkDotNet.Attributes;
 
 namespace Arch;
 
-[ShortRunJob]
 [BenchmarkCategory(Category.AddRemoveComponentsT1)]
 // ReSharper disable once InconsistentNaming
 public class AddRemoveComponentsT1_Arch

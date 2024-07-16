@@ -3,7 +3,6 @@
 // ReSharper disable NotAccessedField.Local
 namespace TinyEcs;
 
-[ShortRunJob]
 [BenchmarkCategory(Category.ComponentEvents)]
 // ReSharper disable once InconsistentNaming
 public class ComponentEvents_TinyEcs

@@ -2,7 +2,6 @@
 
 namespace DefaultEcs;
 
-[ShortRunJob]
 [BenchmarkCategory(Category.GetSetComponentsT1)]
 // ReSharper disable once InconsistentNaming
 public class GetSetComponentsT1_DefaultEcs

@@ -2,7 +2,6 @@
 
 namespace Leopotam.EcsLite;
 
-[ShortRunJob]
 [BenchmarkCategory(Category.QueryT5)]
 // ReSharper disable once InconsistentNaming
 public class QueryT5_Leopotam

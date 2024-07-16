@@ -2,7 +2,6 @@ using BenchmarkDotNet.Attributes;
 
 namespace Friflo.Engine.ECS;
 
-[ShortRunJob]
 [BenchmarkCategory(Category.CommandBufferAddRemoveT2)]
 // ReSharper disable once InconsistentNaming
 public class CommandBufferAddRemoveT2_Friflo

@@ -3,7 +3,6 @@ using DefaultEcs.Command;
 
 namespace DefaultEcs;
 
-[ShortRunJob]
 [BenchmarkCategory(Category.CommandBufferAddRemoveT2)]
 // ReSharper disable once InconsistentNaming
 public class CommandBufferAddRemoveT2_DefaultEcs

@@ -2,7 +2,6 @@
 
 namespace fennecs;
 
-[ShortRunJob]
 [BenchmarkCategory(Category.AddRemoveRelations)]
 // ReSharper disable once InconsistentNaming
 public class AddRemoveRelations_Fennecs

@@ -3,7 +3,6 @@ using Flecs.NET.Core;
 
 namespace Flecs.NET;
 
-[ShortRunJob]
 [BenchmarkCategory(Category.AddRemoveRelations)]
 // ReSharper disable once InconsistentNaming
 public class AddRemoveRelations_FlecsNet

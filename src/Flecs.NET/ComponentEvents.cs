@@ -3,7 +3,6 @@ using Flecs.NET.Core;
 
 namespace Flecs.NET;
 
-[ShortRunJob]
 [BenchmarkCategory(Category.ComponentEvents)]
 // ReSharper disable once InconsistentNaming
 public class ComponentEvents_FlecsNet

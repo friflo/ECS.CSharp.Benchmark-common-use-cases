@@ -2,7 +2,6 @@
 
 namespace DefaultEcs;
 
-
 [BenchmarkCategory(Category.DeleteEntity)]
 // ReSharper disable once InconsistentNaming
 public class DeleteEntity_DefaultEcs

@@ -4,7 +4,6 @@ using BenchmarkDotNet.Attributes;
 
 namespace Arch;
 
-[ShortRunJob]
 [BenchmarkCategory(Category.CommandBufferAddRemoveT2)]
 // ReSharper disable once InconsistentNaming
 public class CommandBufferAddRemoveT2_Arch

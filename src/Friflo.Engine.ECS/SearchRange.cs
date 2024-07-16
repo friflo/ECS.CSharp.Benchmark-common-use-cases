@@ -2,7 +2,6 @@
 
 namespace Friflo.Engine.ECS;
 
-[ShortRunJob]
 [BenchmarkCategory(Category.SearchRange)]
 // ReSharper disable once InconsistentNaming
 public class SearchRange_Friflo

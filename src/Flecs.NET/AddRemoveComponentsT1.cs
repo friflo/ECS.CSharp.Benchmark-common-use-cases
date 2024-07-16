@@ -3,7 +3,6 @@ using Flecs.NET.Core;
 
 namespace Flecs.NET;
 
-[ShortRunJob]
 [BenchmarkCategory(Category.AddRemoveComponentsT1)]
 // ReSharper disable once InconsistentNaming
 public class AddRemoveComponentsT1_FlecsNet

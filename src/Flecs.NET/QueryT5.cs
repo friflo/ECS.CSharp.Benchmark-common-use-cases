@@ -3,7 +3,6 @@ using Flecs.NET.Core;
 
 namespace Flecs.NET;
 
-[ShortRunJob]
 [BenchmarkCategory(Category.QueryT5)]
 // ReSharper disable once InconsistentNaming
 public class QueryT5_FlecsNet

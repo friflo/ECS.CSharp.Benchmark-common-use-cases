@@ -2,7 +2,6 @@
 
 namespace Friflo.Engine.ECS;
 
-[ShortRunJob]
 [BenchmarkCategory(Category.AddRemoveRelations)]
 // ReSharper disable once InconsistentNaming
 public class AddRemoveRelations_Friflo

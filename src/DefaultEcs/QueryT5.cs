@@ -3,7 +3,6 @@ using DefaultEcs.System;
 
 namespace DefaultEcs;
 
-[ShortRunJob]
 [BenchmarkCategory(Category.QueryT5)]
 // ReSharper disable once InconsistentNaming
 public partial class QueryT5_DefaultEcs

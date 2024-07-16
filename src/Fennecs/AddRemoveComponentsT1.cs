@@ -2,7 +2,6 @@
 
 namespace fennecs;
 
-[ShortRunJob]
 [BenchmarkCategory(Category.AddRemoveComponentsT1)]
 // ReSharper disable once InconsistentNaming
 public class AddRemoveComponentsT1_Fennecs
