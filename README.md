@@ -81,16 +81,27 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
 ## Feature Matrix
 
-| ECS               | Basic | Relations | Command Buffer | Events | Search |
-|------------------ |:-----:|:---------:|:--------------:|:------:|:------:|
-| Arch              |  ✅  |           |       ✅       |        |        |
-| DefaultEcs        |  ✅  |           |       ✅       |  ✅    |        |
-| fennecs           |  ✅  |    ✅     |                |        |        |
-| Flecs.NET         |  ✅  |    ✅     |       ✅      |   ✅   |        |
-| Friflo.Engine.ECS |  ✅  |    ✅     |       ✅      |   ✅   |   ✅   |
-| Leopotam.EcsLite  |  ✅  |           |                |         |        |
-| Morpeh            |  ✅  |           |      ✅        |        |        |
-| TinyEcs           |  ✅  |    ✅     |       ✅      |   ✅   |        |
+| ECS               | Basic | Relations | Command Buffer | Events | Search | Heap
+|------------------ |:-----:|:---------:|:--------------:|:------:|:------:|-------
+| Arch              |  ✅  |           |       ✅       |        |        | M / N
+| DefaultEcs        |  ✅  |           |       ✅       |  ✅    |        | M / N
+| fennecs           |  ✅  |    ✅     |                |        |        | M / N
+| Flecs.NET         |  ✅  |    ✅     |       ✅      |   ✅   |        | M / N
+| Friflo.Engine.ECS |  ✅  |    ✅     |       ✅      |   ✅   |   ✅   | M
+| Leopotam.EcsLite  |  ✅  |           |                |         |        | M / N
+| Morpeh            |  ✅  |           |      ✅        |        |        | M / N
+| TinyEcs           |  ✅  |    ✅     |       ✅      |   ✅   |        | M / N
+
+Heap memory:
+
+- **M** - **Managed memory**: Memory is managed by dotnet runtime.  
+  BenchmarkDotNet monitors allocations of this memory in column: Allocated.  
+  Access to managed memory is slower than to native memory because of boundary checks.
+
+- **N** - **Native memory**: Memory is allocated and managed by the ECS.  
+  BenchmarkDotNet does not monitor allocations of native memory.  
+  Bugs in game code or ECS may result in memory corruption / access violation.
+
 
 <br/>
 
