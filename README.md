@@ -83,22 +83,22 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
 | ECS               | Basic | Relations | Command Buffer | Events | Search | Heap  | Debug  |
 |------------------ |:-----:|:---------:|:--------------:|:------:|:------:|-------|:------:|
-| Arch              |  ✅  |           |       ✅       |        |        | M / N |   ✅   |
-| DefaultEcs        |  ✅  |           |       ✅       |  ✅    |        | M / N|   ✅   |
-| fennecs           |  ✅  |    ✅     |                |        |        | M / N |   ✅   |
-| Flecs.NET         |  ✅  |    ✅     |       ✅      |   ✅   |        | M / N |        |
-| Friflo.Engine.ECS |  ✅  |    ✅     |       ✅      |   ✅   |   ✅   | M     |   ✅   |
-| Leopotam.EcsLite  |  ✅  |           |                |         |        | M / N |        |
-| Morpeh            |  ✅  |           |      ✅        |        |        | M / N |         |
-| TinyEcs           |  ✅  |    ✅     |       ✅      |   ✅   |        | M / N |        |
+| Arch              |  ✅  |           |       ✅       |        |        | m / n |   ✅   |
+| DefaultEcs        |  ✅  |           |       ✅       |  ✅    |        | m / n|   ✅   |
+| fennecs           |  ✅  |    ✅     |                |        |        | m / n |   ✅   |
+| Flecs.NET         |  ✅  |    ✅     |       ✅      |   ✅   |        | m / n |        |
+| Friflo.Engine.ECS |  ✅  |    ✅     |       ✅      |   ✅   |   ✅   | m     |   ✅   |
+| Leopotam.EcsLite  |  ✅  |           |                |         |        | m / n |        |
+| morpeh            |  ✅  |           |      ✅        |        |        | m / n |         |
+| TinyEcs           |  ✅  |    ✅     |       ✅      |   ✅   |        | m / n |        |
 
 - Debug - Show entity components in debugger
 - Heap
-    - **M** - **Managed memory**: Memory is managed by dotnet runtime.  
+    - **m** - **managed memory**: Memory is managed by dotnet runtime.  
     BenchmarkDotNet monitors allocations of this memory in column: Allocated.  
     Access to managed memory is slower than to native memory when boundary checks are needed.
 
-    - **N** - **Native memory**: Memory is allocated and managed by the ECS.  
+    - **n** - **native memory**: Memory is allocated and managed by the ECS.  
     BenchmarkDotNet does not monitor allocations of native memory.  
     Bugs in game code or ECS may result in memory corruption / access violation.
 
@@ -291,8 +291,9 @@ Returned components are sequentially stored in memory providing a high cache hit
 ## **Relations**
 
 Some ECS projects have support for [Entity Relationships](https://github.com/friflo/Friflo.Json.Fliox/wiki/Examples-~-Component-Types#entity-relationships).  
-Compared to relational databases: Entity relationships are similar to foreign keys referencing the primary keys in other tables.  
-ECS implementations typically ensure [referential integrity](https://en.wikipedia.org/wiki/Referential_integrity). This means there are never links to entities which doesn't exist.
+Compared to relational databases: Entity relationships are similar to foreign keys referencing the primary keys in other tables.
+ECS implementations typically ensure [referential integrity](https://en.wikipedia.org/wiki/Referential_integrity).
+This means there are never links to entities which doesn't exist.
 
 Relations enable to create *directed* links between entities aka entity relationships.  
 *Directed link* means that a link points from a source entity to a target entity.  
