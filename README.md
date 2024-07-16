@@ -313,7 +313,7 @@ A typical limitation of an ECS is that an entity can only contain one component 
 Relations can be used to **add components of the same type multiple times** to a single entity.  
 To differentiate relations added to the same entity following mechanisms are used:
 
-- **Friflo.Engine.ECS**         - Any type can be used as discriminator specified in `IRelationComponent<TKey>`.
+- **Friflo.Engine.ECS**         - A component field is used as discriminator specified in `IRelationComponent<TKey>`.
 - **Flecs.NET** & **TinyEcs**   - Tags are used as discriminator.
 - **fennecs**                   - Reference type instances are used as discriminator.
 
