@@ -25,4 +25,4 @@ jobs:
 
     - name: Benchmark
       working-directory: ./src
-      run: dotnet run -c Release --filter * --job Dry --disableLogFile
+      run: dotnet run -c Release --filter \* --job Dry --disableLogFile
