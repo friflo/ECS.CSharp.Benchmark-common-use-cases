@@ -463,11 +463,12 @@ Only requirement: Ensure it compiles.
 # Benchmark CLI
 
 Currently ~ 100 benchmarks
-- Running all benchmarks with `-j Short`   ~ 10 minutes
-- Running all benchmarks with `-j Default` ~ 40 minutes
 
-The published benchmarks are executed with: `-j Short` (same as `--job Short`).  
-The difference to `--job Default` is in average < 10%.
+- Running all benchmarks                    ~ 40 minutes
+- Running all benchmarks with `--job Short` ~ 10 minutes
+
+The published benchmarks are executed without: `--job` argument.  
+The measurement difference when using `--job Short` were 2x in some benchmarks.  
 
 For documentation of `--job` argument see [BenchmarkDotNet CLI args](https://github.com/dotnet/BenchmarkDotNet/blob/master/docs/articles/guides/console-args.md#more)
 
@@ -476,18 +477,18 @@ For documentation of `--job` argument see [BenchmarkDotNet CLI args](https://git
 ```php
 cd ./src
 
-dotnet run -c Release -j Short --filter *                                # run all benchmarks
-dotnet run -c Release -j Short --filter *AddRemoveComponentsT1_Friflo*   # run a specific benchmark
-dotnet run -c Release -j Short --filter *AddRemoveComponents*            # run benchmarks of single category
-dotnet run -c Release -j Short --filter *Friflo*                         # run benchmarks of single project
-dotnet run -c Release -j Short --filter *Friflo* *Arch*                  # compare benchmarks of two projects
+dotnet run -c Release --filter *                                # run all benchmarks
+dotnet run -c Release --filter *AddRemoveComponentsT1_Friflo*   # run a specific benchmark
+dotnet run -c Release --filter *AddRemoveComponents*            # run benchmarks of single category
+dotnet run -c Release --filter *Friflo*                         # run benchmarks of single project
+dotnet run -c Release --filter *Friflo* *Arch*                  # compare benchmarks of two projects
 
 # run basic benchmarks
-dotnet run -c-j Short Release --filter *AddRemoveComponents* *GetSetComponents* *CreateEntity* *CreateWorld* *DeleteEntity* *Query*
-dotnet run -c Release -j Short--filter *Links* *Relations*              # run relation benchmarks
-dotnet run -c Release -j Short--filter *CommandBuffer*                  # run command buffer benchmarks
-dotnet run -c Release -j Short--filter *Events*                         # run component events benchmarks
-dotnet run -c Release -j Short--filter *Search*                         # run search benchmarks
+dotnet run -c Release --filter *AddRemoveComponents* *GetSetComponents* *CreateEntity* *CreateWorld* *DeleteEntity* *Query*
+dotnet run -c Release --filter *Links* *Relations*              # run relation benchmarks
+dotnet run -c Release --filter *CommandBuffer*                  # run command buffer benchmarks
+dotnet run -c Release --filter *Events*                         # run component events benchmarks
+dotnet run -c Release --filter *Search*                         # run search benchmarks
 ```
 
 ### macOS / Linux CLI
@@ -495,17 +496,17 @@ dotnet run -c Release -j Short--filter *Search*                         # run se
 ```php
 cd ./src
 
-dotnet run -c Release -j Short --filter \*                               # run all benchmarks
-dotnet run -c Release -j Short --filter \*AddRemoveComponentsT1_Friflo\* # run a specific benchmark
-dotnet run -c Release -j Short --filter \*AddRemoveComponents\*          # run benchmarks of single category
-dotnet run -c Release -j Short --filter \*Friflo\*                       # run benchmarks of single project
-dotnet run -c Release -j Short --filter \*Friflo\* \*Arch\*              # compare benchmarks of two projects
+dotnet run -c Release --filter \*                               # run all benchmarks
+dotnet run -c Release --filter \*AddRemoveComponentsT1_Friflo\* # run a specific benchmark
+dotnet run -c Release --filter \*AddRemoveComponents\*          # run benchmarks of single category
+dotnet run -c Release --filter \*Friflo\*                       # run benchmarks of single project
+dotnet run -c Release --filter \*Friflo\* \*Arch\*              # compare benchmarks of two projects
 
 # run basic benchmarks
-dotnet run -c Release -j Short --filter \*AddRemoveComponents\* \*GetSetComponents\* \*CreateEntity\* \*CreateWorld\* \*DeleteEntity\* \*Query\*
-dotnet run -c Release -j Short --filter \*Links\* \*Relations\*          # run relation benchmarks
-dotnet run -c Release -j Short --filter \*CommandBuffer\*                # run command buffer benchmarks
-dotnet run -c Release -j Short --filter \*Events\*                       # run component events benchmarks
-dotnet run -c Release -j Short --filter \*Search\*                       # run search benchmarks
+dotnet run -c Release --filter \*AddRemoveComponents\* \*GetSetComponents\* \*CreateEntity\* \*CreateWorld\* \*DeleteEntity\* \*Query\*
+dotnet run -c Release --filter \*Links\* \*Relations\*          # run relation benchmarks
+dotnet run -c Release --filter \*CommandBuffer\*                # run command buffer benchmarks
+dotnet run -c Release --filter \*Events\*                       # run component events benchmarks
+dotnet run -c Release --filter \*Search\*                       # run search benchmarks
 ```
 
