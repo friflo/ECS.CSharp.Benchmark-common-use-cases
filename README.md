@@ -289,8 +289,8 @@ A single entity can have multiple links to other target entities.
 
 ### Add & Remove 1 link relation on 100 entities
 
-| ECS               | RelationCount | Mean         | Ratio | Allocated  | 
-|------------------ |-------------- |-------------:|------:|-----------:|
+| ECS               | RelationCount | Mean         | Ratio    | Allocated   | 
+|------------------ |-------------- |-------------:|---------:|------------:|
 | Friflo.Engine.ECS | 1             |     5,079 ns |     1.00 |           - | 
 | Flecs.NET         | 1             |    10,547 ns |     2.08 |           - | 
 | TinyEcs           | 1             |    29,066 ns |     5.72 |     22400 B | 
@@ -299,8 +299,8 @@ A single entity can have multiple links to other target entities.
 
 ### Add & Remove 100 link relations on 100 entities
 
-| ECS               | RelationCount | Mean         | Ratio | Allocated  | 
-|------------------ |-------------- |-------------:|------:|-----------:|
+| ECS               | RelationCount | Mean         | Ratio    | Allocated   | 
+|------------------ |-------------- |-------------:|---------:|------------:|
 | Flecs.NET         | 100           |   946,965 ns |     0.81 |         1 B | 
 | Friflo.Engine.ECS | 100           | 1,174,364 ns |     1.00 |         1 B | 
 | TinyEcs           | 100           | 9,017,758 ns |     7.68 |  18080012 B | 
@@ -324,8 +324,8 @@ To differentiate relations added to the same entity following mechanisms are use
 
 ### Add & Remove 1 relation on 100 entities
 
-| ECS               | RelationCount | Mean         | Ratio | Allocated  | 
-|------------------ |-------------- |-------------:|------:|-----------:|
+| ECS               | RelationCount | Mean         | Ratio    | Allocated   | 
+|------------------ |-------------- |-------------:|---------:|------------:|
 | Friflo.Engine.ECS | 1             |     3,083 ns |     1.00 |           - | 
 | Flecs.NET         | 1             |     4,894 ns |     1.59 |           - | 
 | TinyEcs           | 1             |    32,151 ns |    10.43 |     53600 B | 
@@ -334,8 +334,8 @@ To differentiate relations added to the same entity following mechanisms are use
 
 ### Add & Remove 10 relations on 100 entities
 
-| ECS               | RelationCount | Mean         | Ratio | Allocated  | 
-|------------------ |-------------- |-------------:|------:|-----------:|
+| ECS               | RelationCount | Mean         | Ratio    | Allocated   | 
+|------------------ |-------------- |-------------:|---------:|------------:|
 | Friflo.Engine.ECS | 10            |    48,452 ns |     1.00 |           - | 
 | Flecs.NET         | 10            |   106,787 ns |     2.20 |           - | 
 | TinyEcs           | 10            |   445,950 ns |     9.20 |    694400 B | 
@@ -356,8 +356,8 @@ These changes are applied to these entities when calling either
 1. Add components.    Apply changes.
 2. Remove components. Apply changes.
 
-| ECS               |  Mean     | Ratio | Allocated | 
-|------------------ |----------:|------:|----------:|
+| ECS               | Mean      | Ratio    | Allocated   | 
+|------------------ | ---------:|---------:|------------:|
 | Scellecs.Morpeh   |  5,064 ns |     0.58 |           - | 
 | Friflo.Engine.ECS |  8,736 ns |     1.00 |           - | 
 | Flecs.NET         |  9,844 ns |     1.13 |           - | 
@@ -378,8 +378,8 @@ Typical event types are:
 
 ### Get callback event on Add & Remove component on 100 entities
 
-| ECS               |  Mean     | Ratio | Allocated | 
-|------------------ |----------:|------:|----------:|
+| ECS               | Mean      | Ratio    | Allocated   | 
+|------------------ | ---------:|---------:|------------:|
 | DefaultEcs        |  2,602 ns |     0.35 |           - | 
 | Friflo.Engine.ECS |  7,480 ns |     1.00 |           - | 
 | Flecs.NET         | 10,419 ns |     1.39 |           - | 
@@ -410,8 +410,8 @@ Search and Range Queries of component fields are explained at this [GitHub ⋅ W
 Execute 1000 searches for different search values in a data set of 1.000.000 entities.  
 Each result has 1 match.
 
-| ECS               |  Mean         | Ratio | Allocated | 
-|------------------ |--------------:|------:|----------:|
+| ECS               | Mean          | Ratio    | Allocated   | 
+|------------------ | -------------:| --------:| -----------:|
 | Friflo.Engine.ECS |      4,875 ns |     1.00 |           - | 
 
 
@@ -420,8 +420,8 @@ Each result has 1 match.
 Execute 1000 range queries with different [min, max] in a data set of 1.000.000 entities.  
 Each result has 100 matches.
 
-| ECS               |  Mean         | Ratio | Allocated | 
-|------------------ |--------------:|------:|----------:|
+| ECS               | Mean          | Ratio    | Allocated   | 
+|------------------ | -------------:| --------:| -----------:|
 | Friflo.Engine.ECS |  1,343,502 ns |     1.00 |    560001 B | 
 
 <br/>
