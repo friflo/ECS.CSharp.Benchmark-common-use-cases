@@ -3,6 +3,7 @@ public static class Constants
 {
     // --- for Benchmark: AddRemoveComponentsT1, AddRemoveComponentsT5, QueryT1, QueryT5
     public const int    EntityCount         = 100;
+    public const int    FragmentationCount  = 32;
 
     // --- for Benchmark: AddRemoveLinks
     public const int    TargetCountP1       = 1;            // NOTE! Must be used only in [Params()]
@@ -37,6 +38,7 @@ public static class Category
     public const string     CreateWorld                 = nameof(CreateWorld);
     public const string     DeleteEntity                = nameof(DeleteEntity);
     public const string     GetSetComponentsT1          = nameof(GetSetComponentsT1);
+    public const string     QueryFragmentedT1           = nameof(QueryFragmentedT1);
     public const string     QueryT1                     = nameof(QueryT1);
     public const string     QueryT5                     = nameof(QueryT5);
 
