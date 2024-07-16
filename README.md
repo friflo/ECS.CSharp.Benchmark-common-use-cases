@@ -466,6 +466,7 @@ Currently ~ 100 benchmarks
 
 - Running all benchmarks                    ~ 40 minutes
 - Running all benchmarks with `--job Short` ~ 10 minutes
+- Running all benchmarks with `--job Dry`   ~  1 minute (used by CI)
 
 The published benchmarks are executed without: `--job` argument.  
 The measurement difference when using `--job Short` were 2x in some benchmarks.  
