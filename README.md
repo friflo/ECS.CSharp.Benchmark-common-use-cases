@@ -96,7 +96,7 @@ Heap memory:
 
 - **M** - **Managed memory**: Memory is managed by dotnet runtime.  
   BenchmarkDotNet monitors allocations of this memory in column: Allocated.  
-  Access to managed memory is slower than to native memory because of boundary checks.
+  Access to managed memory is slower than to native memory when boundary checks are needed.
 
 - **N** - **Native memory**: Memory is allocated and managed by the ECS.  
   BenchmarkDotNet does not monitor allocations of native memory.  
