@@ -308,6 +308,11 @@ A single entity can have multiple links to other target entities.
 
 <br/>
 
+When dealing with an ECS following question arises at some point:  
+*"Is it okay for performance to use an array, List<> or Dictionary<> as a component field"?*  
+No, its not 😲. Now each component has a one or more reference types.  
+As a result there is no cache locality anymore and GC requires much more CPU & memory resources.  
+This is the reason why many ECS projects have relations.
 
 A typical limitation of an ECS is that an entity can only contain one component of a certain type.  
 Relations can be used to **add components of the same type multiple times** to a single entity.  
