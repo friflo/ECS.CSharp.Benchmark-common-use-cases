@@ -1,3 +1,5 @@
+[![CI-Engine](https://img.shields.io/github/actions/workflow/status/friflo/ECS.CSharp.Benchmark-common-use-cases/.github/workflows/benchmark-ci.yml?label=Benchmark-CI)](https://github.com/friflo/ECS.CSharp.Benchmark-common-use-cases/actions/workflows/benchmark-ci.yml)
+
 # ECS.CSharp.Benchmark - Common use-cases
 
 Motivation of this benchmark project:
