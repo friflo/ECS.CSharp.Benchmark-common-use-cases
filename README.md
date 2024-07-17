@@ -39,6 +39,7 @@ See comments about this benchmark at [reddit announcement post](https://www.redd
 
 ## Tested projects
 
+All tested project are engine agnostic.  
 Ordered by GitHub Activity
 
 | ECS                                                                                           | ECS implementation      | Entity | tested            | nuget
@@ -105,29 +106,29 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
 <br/>
 
-| Benchmark Category                                     | Category id                                     |
-|------------------------------------------------------- | ----------------------------------------------- |
-| [**Basic**](#basic)                                    |                                                 |
-| Add & Remove 1/3 components on 100 entities            | `AddRemoveComponentsT1` `AddRemoveComponentsT5` |
-| Create 100.000 entities with 1/3 components            | `CreateEntityT1` `CreateEntityT3`               |
-| Create world                                           | `CreateWorld`                                   |
-| Delete 100.000 entities with 5 components              | `DeleteEntity`                                  |
-| Get & Set 1 component on 100 entities                  | `GetSetComponentsT1`                            |
-| Query 100 entities with 1/5 components                 | `QueryT1` `QueryT5`                             |
-|                                                        |                                                 |
-| [**Relations**](#relations)                            |                                                 |
-| Add & Remove 1/100 link relation on 100 entities       | `AddRemoveLinks`     `RelationCount`: 1/100     |
-| Add & Remove 1/10 relations on 100 entities            | `AddRemoveRelations` `RelationCount`: 1/10      |
-|                                                        |                                                 |
-| [**Command Buffer**](#command-buffer)                  |                                                 |
-| Add & Remove 2 components on 100 entities              | `CommandBufferAddRemoveT2`                      |
-|                                                        |                                                 |
-| [**Events**](#events)                                  |                                                 |
-| Get event callback on Add & Remove component           | `ComponentEvents`                               |
-|                                                        |                                                 |
-| [**Search**](#search)                                  |                                                 |
-| Search component field in 1.000.000 entities           | `SearchComponentField`                          |
-| Search range of component fields in 1.000.000 entities | `SearchRange`                                   |
+| Benchmark Category                                            | Category id                                     |
+|-------------------------------------------------------------- | ----------------------------------------------- |
+| [**Basic**](#basic)                                           |                                                 |
+| Add & Remove 1/3 components on 100 entities                   | `AddRemoveComponentsT1` `AddRemoveComponentsT5` |
+| Create 100.000 entities with 1/3 components                   | `CreateEntityT1` `CreateEntityT3`               |
+| Create world                                                  | `CreateWorld`                                   |
+| Delete 100.000 entities with 5 components                     | `DeleteEntity`                                  |
+| Get & Set 1 component on 100 entities                         | `GetSetComponentsT1`                            |
+| Query 100 entities with 1/5 components                        | `QueryT1` `QueryT5`                             |
+|                                                               |                                                 |
+| [**Relations**](#relations)                                   |                                                 |
+| Add & Remove 1/100 link relation on 100 entities              | `AddRemoveLinks`     `RelationCount`: 1/100     |
+| Add & Remove 1/10 relations on 100 entities                   | `AddRemoveRelations` `RelationCount`: 1/10      |
+|                                                               |                                                 |
+| [**Command Buffer**](#command-buffer) - *deferred operations* |                                                 |
+| Add & Remove 2 components on 100 entities                     | `CommandBufferAddRemoveT2`                      |
+|                                                               |                                                 |
+| [**Events**](#events) - *reactive ECS*                        |                                                 |
+| Get event callback on Add & Remove component                  | `ComponentEvents`                               |
+|                                                               |                                                 |
+| [**Search**](#search)                                         |                                                 |
+| Search component field in 1.000.000 entities                  | `SearchComponentField`                          |
+| Search range of component fields in 1.000.000 entities        | `SearchRange`                                   |
 
 <br/>
 
