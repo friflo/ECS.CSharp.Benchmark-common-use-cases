@@ -265,10 +265,12 @@ Returned components are sequentially stored in memory providing a high cache hit
 | TinyEcs           |         65 ns |     1.40 |           - | 
 | Leopotam.EcsLite  |         76 ns |     1.62 |           - | 
 | Arch              |        119 ns |     2.54 |           - | 
-| Flecs.NET         |        142 ns |     3.03 |           - | 
+| Flecs.NET ⁽¹⁾     |        142 ns |     3.03 |           - | 
 | fennecs           |        166 ns |     3.53 |        40 B | 
 | Scellecs.Morpeh   |        314 ns |     6.68 |           - | 
 
+⁽¹⁾ Queries on components with reference type fields (e.g. string) require less performant query iteration.  
+This specific case is not benchmarked.
 
 ### Query 100 entities with 5 components
 
@@ -280,7 +282,7 @@ Returned components are sequentially stored in memory providing a high cache hit
 | Friflo.Engine.ECS |        111 ns |     1.00 |           - | 
 | TinyEcs           |        119 ns |     1.07 |           - | 
 | Arch              |        197 ns |     1.76 |           - | 
-| Flecs.NET         |        207 ns |     1.85 |           - | 
+| Flecs.NET ⁽¹⁾     |        207 ns |     1.85 |           - | 
 | DefaultEcs        |        271 ns |     2.42 |           - | 
 | Leopotam.EcsLite  |        339 ns |     3.03 |           - | 
 | fennecs           |        404 ns |     3.62 |        40 B | 
