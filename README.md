@@ -81,18 +81,18 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
 ## Feature Matrix
 
-| ECS               | Basic | Relations | Command Buffer | Events | Search | Heap  | Debug  |
-|------------------ |:-----:|:---------:|:--------------:|:------:|:------:|-------|:------:|
-| Arch              |  ✅  |           |       ✅       |        |        | m, n  |   ✅  |
-| DefaultEcs        |  ✅  |           |       ✅       |  ✅    |        | m, n  |   ✅  |
-| fennecs           |  ✅  |    ✅     |                |        |        | m, n  |   ✅  |
-| Flecs.NET         |  ✅  |    ✅     |       ✅      |   ✅   |        | m, n  |        |
-| Friflo.Engine.ECS |  ✅  |    ✅     |       ✅      |   ✅   |   ✅   | m    |   ✅   |
-| Leopotam.EcsLite  |  ✅  |           |                |         |        | m, n |        |
-| morpeh            |  ✅  |           |       ✅       |        |        | m, n  |        |
-| TinyEcs           |  ✅  |    ✅     |       ✅      |   ✅   |        | m, n  |        |
+| ECS               | Basic | Relations | Command Buffer | Events | Search | Heap | Watch  |
+|------------------ |:-----:|:---------:|:--------------:|:------:|:------:|------|:------:|
+| Arch              |  ✅  |           |       ✅       |        |        | m, n |   ✅  |
+| DefaultEcs        |  ✅  |           |       ✅       |  ✅    |        | m, n |   ✅  |
+| fennecs           |  ✅  |    ✅     |                |        |        | m, n |   ✅  |
+| Flecs.NET         |  ✅  |    ✅     |       ✅      |   ✅   |        | m, n |        |
+| Friflo.Engine.ECS |  ✅  |    ✅     |       ✅      |   ✅   |   ✅   | m    |   ✅  |
+| Leopotam.EcsLite  |  ✅  |           |                |         |        | m, n |       |
+| morpeh            |  ✅  |           |       ✅       |        |        | m, n |        |
+| TinyEcs           |  ✅  |    ✅     |       ✅      |   ✅   |        | m, n |        |
 
-- Debug - Watch entity components in debugger
+- Watch - Watch entity components in debugger
 - Heap
     - **m** - **managed memory**: Memory is managed by dotnet runtime.  
     BenchmarkDotNet monitors allocations of this memory in column: Allocated.  
