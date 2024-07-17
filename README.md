@@ -182,28 +182,28 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
-| Friflo.Engine.ECS |    391,076 ns |     1.00 |   3449408 B | 
-| fennecs           |    876,606 ns |     2.24 |   6815576 B | 
-| Flecs.NET         |  1,303,024 ns |     3.32 |       736 B | 
-| Leopotam.EcsLite  |  1,976,172 ns |     5.05 |   7316032 B | 
-| Arch              |  5,230,890 ns |    13.48 |      3088 B | 
-| DefaultEcs        |  6,565,510 ns |    16.79 |  11592432 B | 
-| TinyEcs           |  6,826,935 ns |    17.46 |  10118352 B | 
-| Scellecs.Morpeh   | 42,953,791 ns |   109.89 |  42293184 B | 
+| Friflo.Engine.ECS |      394.6 μs |     1.00 |   3454080 B | 
+| fennecs           |    1,059.3 μs |     2.68 |   6815576 B | 
+| Flecs.NET         |    1,332.2 μs |     3.36 |       736 B | 
+| Leopotam.EcsLite  |    1,843.4 μs |     4.72 |   7321696 B | 
+| TinyEcs           |    6,511.4 μs |    16.53 |  10118352 B | 
+| DefaultEcs        |    9,520.6 μs |    24.13 |  11591808 B | 
+| Arch              |   10,326.8 μs |    26.15 |   3255576 B | 
+| Scellecs.Morpeh   |   64,369.5 μs |   162.91 |  42301552 B | 
 
 
 ### Create 100.000 entities with 3 components
 
 | ECS               | Mean          | Ratio    |   Allocated | 
 |------------------ |--------------:|---------:|------------:|
-| Friflo.Engine.ECS |    448,975 ns |     1.00 |   4498032 B | 
-| fennecs           |    937,536 ns |     2.07 |   7866864 B | 
-| Flecs.NET         |  1,464,115 ns |     3.24 |       736 B | 
-| Leopotam.EcsLite  |  2,633,338 ns |     5.91 |  11498680 B | 
-| Arch              |  5,395,988 ns |    11.90 |      3088 B | 
-| DefaultEcs        |  5,774,491 ns |    12.90 |  19984528 B | 
-| TinyEcs           | 23,657,636 ns |    52.30 |  23921880 B | 
-| Scellecs.Morpeh   | 29,805,461 ns |    65.76 |  49284080 B | 
+| Friflo.Engine.ECS |      468.7 μs |     1.00 |   4506960 B | 
+| fennecs           |      974.7 μs |     2.02 |   7866864 B | 
+| Flecs.NET         |    1,465.3 μs |     3.06 |       736 B | 
+| Arch              |    2,350.6 μs |     5.00 |   4043272 B | 
+| Leopotam.EcsLite  |    3,156.3 μs |     6.54 |  11517736 B | 
+| DefaultEcs        |   10,207.1 μs |    21.19 |  19984720 B | 
+| TinyEcs           |   23,419.3 μs |    48.50 |  23921880 B | 
+| Scellecs.Morpeh   |   47,802.6 μs |    99.27 |  49285544 B | 
 
 
 ### Create world
@@ -222,7 +222,8 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
 
 ### Delete 100.000 entities with 5 components
 
-**Note:** The allocations comes from the fact that the buffers used to store components are replaced by smaller buffers over time.  
+**Note:**  
+The high amount of allocations is an indicator that buffers used to store components are replaced by smaller buffers over time.  
 Without this behavior the component buffers allocated by the ECS would never shrink.  
 In case of Flecs.NET components are store in native heap which is not monitored by BenchmarkDotNet.
 
