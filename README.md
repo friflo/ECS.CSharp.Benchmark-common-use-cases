@@ -99,7 +99,7 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 - Watch - Watch entity components in debugger
 - Heap
     - **m** - **managed memory**: Memory is managed by dotnet runtime.  
-    BenchmarkDotNet monitors allocations of this memory in column: Allocated.  
+    BenchmarkDotNet monitors allocations of this memory in column: **Allocated**.  
     Access to managed memory is slower than to native memory when boundary checks are needed.
 
     - **n** - **native memory**: Memory is allocated and managed by the ECS.  
@@ -344,6 +344,7 @@ To differentiate relations added to the same entity following mechanisms are use
 
 - **Friflo.Engine.ECS**         - A component field is used as discriminator specified in `IRelationComponent<TKey>`.
 - **Flecs.NET** & **TinyEcs**   - Tags are used as discriminator.
+- **Arch.Relationships**        - An additional entity with a component is used as discriminator.
 - **fennecs**                   - Reference type instances are used as discriminator.
 
 ### Add & Remove 1 relation on 100 entities
