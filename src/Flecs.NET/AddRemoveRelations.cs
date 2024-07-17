@@ -18,7 +18,7 @@ public class AddRemoveRelations_FlecsNet
     public void Setup()
     {
         world       = World.Create();
-        entities    = world.CreateEntities(Constants.EntityCount);
+        entities    = world.CreateEntities(Constants.EntityCount).AddComponents();
     }
     
     [GlobalCleanup]

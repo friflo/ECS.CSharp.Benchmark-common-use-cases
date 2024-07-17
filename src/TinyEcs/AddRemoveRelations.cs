@@ -14,7 +14,7 @@ public class AddRemoveRelations_TinyEcs
     [GlobalSetup]
     public void Setup() {
         world       = new World();
-        entities    = world.CreateEntities(Constants.EntityCount);
+        entities    = world.CreateEntities(Constants.EntityCount).AddComponents();
     }
     
     [GlobalCleanup]

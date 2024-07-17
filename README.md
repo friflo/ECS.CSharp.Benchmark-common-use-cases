@@ -304,6 +304,8 @@ A single entity can have multiple links to other target entities.
 
 ### Add & Remove 1 link relation on 100 entities
 
+Each entity has 5 components.
+
 | ECS               | RelationCount | Mean         | Ratio    | Allocated   | 
 |------------------ |-------------- |-------------:|---------:|------------:|
 | Friflo.Engine.ECS | 1             |     5,079 ns |     1.00 |           - | 
@@ -313,6 +315,8 @@ A single entity can have multiple links to other target entities.
 
 
 ### Add & Remove 100 link relations on 100 entities
+
+Each entity has 5 components.
 
 | ECS               | RelationCount | Mean         | Ratio    | Allocated   | 
 |------------------ |-------------- |-------------:|---------:|------------:|
