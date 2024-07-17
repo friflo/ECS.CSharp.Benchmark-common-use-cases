@@ -39,7 +39,7 @@ See comments about this benchmark at [reddit announcement post](https://www.redd
 
 ## Tested projects
 
-All tested project are engine agnostic.  
+All tested projects are engine agnostic.  
 Ordered by GitHub Activity
 
 | ECS                                                                                           | ECS implementation      | Entity | tested            | nuget
