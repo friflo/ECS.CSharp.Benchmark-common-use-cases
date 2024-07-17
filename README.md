@@ -98,7 +98,7 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 |-------------------------- |:-----:|:---------:|:--------------:|:------:|:------:|------|:------:|
 | Arch+Arch.Relationships   |  ✅  |    ✅     |       ✅       |  [^1]  |        | m, n |   ✅  |
 | DefaultEcs                |  ✅  |           |       ✅       |  ✅    |        | m, n |   ✅  |
-| fennecs                   |  ✅  |    ✅     |                |        |        | m, n |   ✅  |
+| fennecs                   |  ✅  |    ✅     |                |  [^2]  |        | m, n |   ✅  |
 | Flecs.NET                 |  ✅  |    ✅     |       ✅      |   ✅   |        | m, n |        |
 | Friflo.Engine.ECS         |  ✅  |    ✅     |       ✅      |   ✅   |   ✅   | m    |   ✅  |
 | Leopotam.EcsLite          |  ✅  |           |                |         |        | m, n |       |
@@ -416,6 +416,7 @@ Typical event types are:
 | TinyEcs           | 13,781 ns |     1.84 |      6400 B | 
 
 [^1]:  Arch: Support for events requires a custom build. Performance of component related benchmarks will decrease.
+[^2]:  fennecs: Support for events is planned according to its project README.
 
 <br/>
 
