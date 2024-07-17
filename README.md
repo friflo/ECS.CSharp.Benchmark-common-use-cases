@@ -307,26 +307,28 @@ A single entity can have multiple links to other target entities.
 
 ### Add & Remove 1 link relation on 100 entities
 
-Each entity has 5 components.
+Each entity has 5 common components.
 
 | ECS               | RelationCount | Mean         | Ratio    | Allocated   | 
 |------------------ |-------------- |-------------:|---------:|------------:|
-| Friflo.Engine.ECS | 1             |     5,079 ns |     1.00 |           - | 
-| Flecs.NET         | 1             |    10,547 ns |     2.08 |           - | 
-| TinyEcs           | 1             |    29,066 ns |     5.72 |     22400 B | 
-| fennecs           | 1             |    94,018 ns |    18.51 |    180000 B | 
-
+| Friflo.Engine.ECS | 1             |      5.13 μs |     1.00 |           - | 
+| Flecs.NET         | 1             |     10.41 μs |     2.03 |           - | 
+| TinyEcs           | 1             |     28.92 μs |     5.64 |     22400 B | 
+| Arch              | 1             |     70.70 μs |    13.78 |     36800 B | 
+| fennecs           | 1             |     92.52 μs |    18.03 |    180000 B | 
+ 
 
 ### Add & Remove 100 link relations on 100 entities
 
-Each entity has 5 components.
+Each entity has 5 common components.
 
 | ECS               | RelationCount | Mean         | Ratio    | Allocated   | 
 |------------------ |-------------- |-------------:|---------:|------------:|
-| Flecs.NET         | 100           |   946,965 ns |     0.81 |         1 B | 
-| Friflo.Engine.ECS | 100           | 1,174,364 ns |     1.00 |         1 B | 
-| TinyEcs           | 100           | 9,017,758 ns |     7.68 |  18080012 B | 
-| fennecs           | 100           |71,485,885 ns |    60.87 |  93124892 B | 
+| Flecs.NET         | 100           |    966.37 μs |     0.80 |         1 B | 
+| Friflo.Engine.ECS | 100           |  1,202.79 μs |     1.00 |         1 B | 
+| Arch              | 100           |  4,198.95 μs |     3.49 |   2180006 B | 
+| TinyEcs           | 100           |  9,039.65 μs |     7.52 |  18080012 B | 
+| fennecs           | 100           | 70,773.54 μs |    58.86 |  93124892 B | 
 
 <br/>
 
@@ -346,22 +348,28 @@ To differentiate relations added to the same entity following mechanisms are use
 
 ### Add & Remove 1 relation on 100 entities
 
+Each entity has 5 common components.
+
 | ECS               | RelationCount | Mean         | Ratio    | Allocated   | 
 |------------------ |-------------- |-------------:|---------:|------------:|
-| Friflo.Engine.ECS | 1             |     3,083 ns |     1.00 |           - | 
-| Flecs.NET         | 1             |     4,894 ns |     1.59 |           - | 
-| TinyEcs           | 1             |    32,151 ns |    10.43 |     53600 B | 
-| fennecs           | 1             |    40,777 ns |    13.22 |     86400 B | 
+| Friflo.Engine.ECS | 1             |      3.09 μs |     1.00 |           - | 
+| Flecs.NET         | 1             |     12.24 μs |     3.96 |           - | 
+| TinyEcs           | 1             |     47.58 μs |    15.39 |     71200 B | 
+| Arch              | 1             |     48.63 μs |    15.73 |     36800 B | 
+| fennecs           | 1             |     95.90 μs |    31.02 |    180000 B | 
 
 
 ### Add & Remove 10 relations on 100 entities
 
+Each entity has 5 common components.
+
 | ECS               | RelationCount | Mean         | Ratio    | Allocated   | 
 |------------------ |-------------- |-------------:|---------:|------------:|
-| Friflo.Engine.ECS | 10            |    48,452 ns |     1.00 |           - | 
-| Flecs.NET         | 10            |   106,787 ns |     2.20 |           - | 
-| TinyEcs           | 10            |   445,950 ns |     9.20 |    694400 B | 
-| fennecs           | 10            |   977,793 ns |    20.18 |   1704801 B | 
+| Friflo.Engine.ECS | 10            |     48.46 μs |     1.00 |           - | 
+| Flecs.NET         | 10            |    156.16 μs |     3.22 |           - | 
+| Arch              | 10            |    203.38 μs |     4.20 |    240800 B | 
+| TinyEcs           | 10            |    587.43 μs |    12.12 |    856001 B | 
+| fennecs           | 10            |  1,582.73 μs |    32.66 |   2573601 B | 
 
 <br/>
 
