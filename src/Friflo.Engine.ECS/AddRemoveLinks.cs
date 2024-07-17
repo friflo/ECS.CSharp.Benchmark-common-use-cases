@@ -27,7 +27,9 @@ public class AddRemoveLinks_Friflo
         {
             for (int n = 0; n < RelationCount; n++) {
                 source.AddRelation(new LinkRelation { Value = n, Target = targets[n] });
+                // Assert.AreEqual(n, source.GetRelation<LinkRelation, Entity>(targets[n]).Value);  // O(1)
             }
+            // Assert.AreEqual(RelationCount, source.GetRelations<LinkRelation>().Length);          // O(1)
             for (int n = 0; n < RelationCount; n++) {
                 source.RemoveRelation<LinkRelation>(targets[n]);
             }

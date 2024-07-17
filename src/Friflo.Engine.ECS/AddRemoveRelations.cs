@@ -45,9 +45,9 @@ public class AddRemoveRelations_Friflo
         {
             foreach (var key in Keys) {
                 entity.AddRelation(new Relation(key, 1337));
-                // Assert.AreEqual(1337, entity.GetRelation<Relation, RelationKey>(key).Value);
+                // Assert.AreEqual(1337, entity.GetRelation<Relation, RelationKey>(key).Value); // O(1)
             }
-            //  Assert.AreEqual(RelationCount, entity.GetRelations<Relation>().Length);
+            //  Assert.AreEqual(RelationCount, entity.GetRelations<Relation>().Length);         // O(1)
             foreach (var key in Keys) {
                 entity.RemoveRelation<Relation, RelationKey>(key);
             }
