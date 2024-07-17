@@ -11,6 +11,7 @@
 
     <ItemGroup>
       <PackageReference Include="Arch" Version="1.2.8" />
+      <PackageReference Include="Arch.Relationships" Version="1.0.1" />
       <PackageReference Include="BenchmarkDotNet" Version="0.13.12" />
       <PackageReference Include="DefaultEcs" Version="0.18.0-beta01" />
       <PackageReference Include="DefaultEcs.Analyzer" Version="0.17.0" PrivateAssets="all" />

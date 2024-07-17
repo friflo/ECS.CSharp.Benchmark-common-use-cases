@@ -5,9 +5,9 @@ namespace Arch;
 
 public static class BenchUtils
 {
-    public static Entity[] CreateEntities (this World world, int count)
+    public static Entity[] CreateEntities (this World world, int count, Entity[] entities = null)
     {
-        var entities = new Entity[count];
+        entities ??= new Entity[count];
         for (int n = 0; n < count; n++) {
             entities[n] = world.Create();
         }
