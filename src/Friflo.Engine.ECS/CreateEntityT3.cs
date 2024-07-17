@@ -7,13 +7,11 @@ namespace Friflo.Engine.ECS;
 public class CreateEntityT3_Friflo
 {
     private EntityStore world;
-    private Archetype   archetype3;
     
     [IterationSetup]
     public void Setup()
     {
         world = new EntityStore();
-        archetype3 = world.GetArchetype(ComponentTypes.Get<Component1,Component2,Component3>());
     }
     
     [IterationCleanup]
@@ -25,6 +23,7 @@ public class CreateEntityT3_Friflo
     [Benchmark(Baseline = true)]
     public void Run()
     {
+        var archetype3 = world.GetArchetype(ComponentTypes.Get<Component1,Component2,Component3>());
         archetype3.CreateEntities(Constants.CreateEntityCount);
     }
 }

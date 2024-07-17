@@ -6,18 +6,12 @@ namespace Leopotam.EcsLite;
 // ReSharper disable once InconsistentNaming
 public class CreateEntityT3_Leopotam
 {
-    private EcsWorld            world;
-    private EcsPool<Component1> ecsPoolC1;
-    private EcsPool<Component2> ecsPoolC2;
-    private EcsPool<Component3> ecsPoolC3;
+    private EcsWorld world;
     
     [IterationSetup]
     public void Setup()
     {
-        world       = new EcsWorld();
-        ecsPoolC1   = world.GetPool<Component1>();
-        ecsPoolC2   = world.GetPool<Component2>();
-        ecsPoolC3   = world.GetPool<Component3>();
+        world = new EcsWorld();
     }
     
     [IterationCleanup]
@@ -29,6 +23,9 @@ public class CreateEntityT3_Leopotam
     [Benchmark]
     public void Run()
     {
+        var ecsPoolC1 = world.GetPool<Component1>();
+        var ecsPoolC2 = world.GetPool<Component2>();
+        var ecsPoolC3 = world.GetPool<Component3>();
         for (int n = 0; n < Constants.CreateEntityCount; n++) {
             var entity = world.NewEntity();
             ecsPoolC1.Add(entity);

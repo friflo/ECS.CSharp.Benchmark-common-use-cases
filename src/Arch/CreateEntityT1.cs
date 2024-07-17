@@ -14,8 +14,7 @@ public class CreateEntityT1_Arch
     [IterationSetup]
     public void Setup()
     {
-        world   = World.Create();
-        world.Reserve(ComponentTypes1, Constants.CreateEntityCount);
+        world = World.Create();
     }
     
     [IterationCleanup]
@@ -27,6 +26,7 @@ public class CreateEntityT1_Arch
     [Benchmark]
     public void Run()
     {
+        world.Reserve(ComponentTypes1, Constants.CreateEntityCount);
         for (int n = 0; n < Constants.CreateEntityCount; n++) {
             world.Create(ComponentTypes1);
         }

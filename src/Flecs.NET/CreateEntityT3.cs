@@ -8,16 +8,11 @@ namespace Flecs.NET;
 public class CreateEntityT3_FlecsNet
 {
     private World   world;
-    private Table   table;
     
     [IterationSetup]
     public void Setup()
     {
         world = World.Create();
-        table = world.Table()
-            .Add<Component1>()
-            .Add<Component2>()
-            .Add<Component3>();
     }
     
     [IterationCleanup]
@@ -29,6 +24,10 @@ public class CreateEntityT3_FlecsNet
     [Benchmark]
     public void Run()
     {
+        var table = world.Table()
+            .Add<Component1>()
+            .Add<Component2>()
+            .Add<Component3>();
         for (int n = 0; n < Constants.CreateEntityCount; n++) {
             world.Entity(table);
         }
