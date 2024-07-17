@@ -94,16 +94,16 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 - **Watch** - Watch entity components in debugger
 
 
-| ECS                       | Basic | Relations | Command Buffer | Events | Search | Heap | Watch  |
-|-------------------------- |:-----:|:---------:|:--------------:|:------:|:------:|------|:------:|
-| Arch+Arch.Relationships   |  ✅  |    ✅     |       ✅       |  [^1]  |        | m, n |   ✅  |
-| DefaultEcs                |  ✅  |           |       ✅       |  ✅    |        | m, n |   ✅  |
-| fennecs                   |  ✅  |    ✅     |                |  [^2]  |        | m, n |   ✅  |
-| Flecs.NET                 |  ✅  |    ✅     |       ✅      |   ✅   |        | m, n |        |
-| Friflo.Engine.ECS         |  ✅  |    ✅     |       ✅      |   ✅   |   ✅   | m    |   ✅  |
-| Leopotam.EcsLite          |  ✅  |           |                |         |        | m, n |       |
-| Morpeh                    |  ✅  |           |       ✅       |        |        | m, n |        |
-| TinyEcs                   |  ✅  |    ✅     |       ✅      |   ✅   |        | m, n |        |
+| ECS                  | Basic | Relations | Command Buffer | Events | Search | Heap | Watch  |
+|--------------------- |:-----:|:---------:|:--------------:|:------:|:------:|------|:------:|
+| Arch + Relationships |  ✅  |    ✅     |       ✅       |  [^1]  |        | m, n |   ✅  |
+| DefaultEcs           |  ✅  |           |       ✅       |  ✅    |        | m, n |   ✅  |
+| fennecs              |  ✅  |    ✅     |                |  [^2]  |        | m, n |   ✅  |
+| Flecs.NET            |  ✅  |    ✅     |       ✅      |   ✅   |        | m, n |        |
+| Friflo.Engine.ECS    |  ✅  |    ✅     |       ✅      |   ✅   |   ✅   | m    |   ✅  |
+| Leopotam.EcsLite     |  ✅  |           |                |         |        | m, n |       |
+| Morpeh               |  ✅  |           |       ✅       |        |        | m, n |        |
+| TinyEcs              |  ✅  |    ✅     |       ✅      |   ✅   |        | m, n |        |
 
 <br/>
 
