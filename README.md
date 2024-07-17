@@ -83,21 +83,7 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
 ## Feature Matrix
 
-⁽¹⁾ Events supported by custom build. Performance of component related benchmarks will decrease.
-
-| ECS                       | Basic | Relations | Command Buffer | Events | Search | Heap | Watch  |
-|-------------------------- |:-----:|:---------:|:--------------:|:------:|:------:|------|:------:|
-| Arch+Arch.Relationships   |  ✅  |    ✅     |       ✅       |  ⁽¹⁾   |        | m, n |   ✅  |
-| DefaultEcs                |  ✅  |           |       ✅       |  ✅    |        | m, n |   ✅  |
-| fennecs                   |  ✅  |    ✅     |                |        |        | m, n |   ✅  |
-| Flecs.NET                 |  ✅  |    ✅     |       ✅      |   ✅   |        | m, n |        |
-| Friflo.Engine.ECS         |  ✅  |    ✅     |       ✅      |   ✅   |   ✅   | m    |   ✅  |
-| Leopotam.EcsLite          |  ✅  |           |                |         |        | m, n |       |
-| morpeh                    |  ✅  |           |       ✅       |        |        | m, n |        |
-| TinyEcs                   |  ✅  |    ✅     |       ✅      |   ✅   |        | m, n |        |
-
-- Watch - Watch entity components in debugger
-- Heap
+- **Heap**
     - **m** - **managed memory**: Memory is managed by dotnet runtime.  
     BenchmarkDotNet monitors allocations of this memory in column: **Allocated**.  
     Access to managed memory is slower than to native memory when boundary checks are needed.
@@ -105,7 +91,19 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
     - **n** - **native memory**: Memory is allocated and managed by the ECS.  
     BenchmarkDotNet does not monitor allocations of native memory.  
     Bugs in game code or ECS related to native memory may result in memory corruption / access violation.
+- **Watch** - Watch entity components in debugger
 
+
+| ECS                       | Basic | Relations | Command Buffer | Events | Search | Heap | Watch  |
+|-------------------------- |:-----:|:---------:|:--------------:|:------:|:------:|------|:------:|
+| Arch+Arch.Relationships   |  ✅  |    ✅     |       ✅       |  [^1]  |        | m, n |   ✅  |
+| DefaultEcs                |  ✅  |           |       ✅       |  ✅    |        | m, n |   ✅  |
+| fennecs                   |  ✅  |    ✅     |                |        |        | m, n |   ✅  |
+| Flecs.NET                 |  ✅  |    ✅     |       ✅      |   ✅   |        | m, n |        |
+| Friflo.Engine.ECS         |  ✅  |    ✅     |       ✅      |   ✅   |   ✅   | m    |   ✅  |
+| Leopotam.EcsLite          |  ✅  |           |                |         |        | m, n |       |
+| Morpeh                    |  ✅  |           |       ✅       |        |        | m, n |        |
+| TinyEcs                   |  ✅  |    ✅     |       ✅      |   ✅   |        | m, n |        |
 
 <br/>
 
@@ -415,6 +413,8 @@ Typical event types are:
 | Friflo.Engine.ECS |  7,480 ns |     1.00 |           - | 
 | Flecs.NET         | 10,419 ns |     1.39 |           - | 
 | TinyEcs           | 13,781 ns |     1.84 |      6400 B | 
+
+[^1]:  Arch: Support for events requires a custom build. Performance of component related benchmarks will decrease.
 
 <br/>
 
