@@ -100,7 +100,7 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
     - **n** - **native memory**: Memory is allocated and managed by the ECS.  
     BenchmarkDotNet does not monitor allocations of native memory.  
-    Bugs in game code or ECS may result in memory corruption / access violation.
+    Bugs in game code or ECS related to native memory may result in memory corruption / access violation.
 
 
 <br/>
