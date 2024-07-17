@@ -83,10 +83,12 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
 ## Feature Matrix
 
+*Notes*  
+⁽¹⁾ Events supported by custom build. Performance of AddRemoveComponents, CreateEntity & DeleteEntity will decrease.
 
 | ECS                       | Basic | Relations | Command Buffer | Events | Search | Heap | Watch  |
 |-------------------------- |:-----:|:---------:|:--------------:|:------:|:------:|------|:------:|
-| Arch+Arch.Relationships   |  ✅  |    ✅     |       ✅       |        |        | m, n |   ✅  |
+| Arch+Arch.Relationships   |  ✅  |    ✅     |       ✅       |  ⁽¹⁾   |        | m, n |   ✅  |
 | DefaultEcs                |  ✅  |           |       ✅       |  ✅    |        | m, n |   ✅  |
 | fennecs                   |  ✅  |    ✅     |                |        |        | m, n |   ✅  |
 | Flecs.NET                 |  ✅  |    ✅     |       ✅      |   ✅   |        | m, n |        |
