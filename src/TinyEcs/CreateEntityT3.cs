@@ -7,27 +7,25 @@ namespace TinyEcs;
 public class CreateEntityT3_TinyEcs
 {
     private World   world;
-    
+
     [IterationSetup]
     public void Setup()
     {
         world = new World();
     }
-    
+
     [IterationCleanup]
     public void Shutdown()
     {
         world.Dispose();
     }
-    
+
     [Benchmark]
     public void Run()
     {
+        var archetype = world.Archetype<Component1, Component2, Component3>();
         for (int n = 0; n < Constants.CreateEntityCount; n++) {
-            var entity = world.Entity();
-            entity.Set(new Component1());
-            entity.Set(new Component2());
-            entity.Set(new Component3());
+            world.Entity(archetype);
         }
     }
 }
