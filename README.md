@@ -42,10 +42,10 @@ See comments about this benchmark at [reddit announcement post](https://www.redd
 All tested projects are engine agnostic.  
 Ordered by GitHub Activity
 
-| ECS                                                                                           | ECS implementation      | Entity | tested            | nuget
-|---------------------------------------------------------------------------------------------- | ----------------------- | -------| ----------------- | ------
-| [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/README.md)   | Archetype               | struct | 3.0.0-preview.2   | [![nuget](https://img.shields.io/nuget/vpre/Friflo.Engine.ECS?color=blue)](https://www.nuget.org/packages/Friflo.Engine.ECS)
-| [fennecs](https://github.com/thygrrr/fennecs)                                                 | Archetype               | struct | 0.5.8-beta        | [![nuget](https://img.shields.io/nuget/vpre/fennecs?color=blue)](https://www.nuget.org/packages/fennecs)
+| ECS                                                                                           | ECS implementation      | Entity | tested            | nuget latest
+|---------------------------------------------------------------------------------------------- | ----------------------- | -------| ----------------- | --------------------------------------
+| [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/README.md)   | Archetype               | struct | 3.0.0-preview.3   | [![nuget](https://img.shields.io/nuget/vpre/Friflo.Engine.ECS?color=blue)](https://www.nuget.org/packages/Friflo.Engine.ECS)
+| [fennecs](https://github.com/thygrrr/fennecs)                                                 | Archetype               | struct | 0.5.9-beta        | [![nuget](https://img.shields.io/nuget/vpre/fennecs?color=blue)](https://www.nuget.org/packages/fennecs)
 | [TinyEcs](https://github.com/andreakarasho/TinyEcs)                                           | Archetype               | struct | 1.4.0             | [![nuget](https://img.shields.io/nuget/v/TinyEcs.Main?color=blue)](https://www.nuget.org/packages/TinyEcs.Main)
 | [Flecs.NET](https://github.com/BeanCheeseBurrito/Flecs.NET)                                   | Archetype / Sparse Set  | struct | 4.0.0             | [![nuget](https://img.shields.io/nuget/v/Flecs.NET.Release?color=blue)](https://www.nuget.org/packages/Flecs.NET.Release)
 | [Arch](https://github.com/genaray/Arch)                                                       | Archetype               | struct | 1.2.8             | [![nuget](https://img.shields.io/nuget/v/Arch?color=blue)](https://www.nuget.org/packages/Arch)
