@@ -31,48 +31,6 @@ WarmupCount=Default
 | Flecs.NET         | AddRemoveComponentsT5_FlecsNet      | ?             |     35,145.788 ns |     4.63 |          - | 
 | fennecs           | AddRemoveComponentsT5_Fennecs       | ?             |    306,849.204 ns |    40.39 |   620800 B | 
 |                   |                                     |               |                   |          |            | 
-| Friflo.Engine.ECS | AddRemoveLinks_Friflo               | 1             |      5,428.089 ns |     1.00 |          - | 
-| Flecs.NET         | AddRemoveLinks_FlecsNet             | 1             |     10,567.567 ns |     1.95 |          - | 
-| TinyEcs           | AddRemoveLinks_TinyEcs              | 1             |     15,696.415 ns |     2.89 |          - | 
-| Arch              | AddRemoveLinks_Arch                 | 1             |     72,352.899 ns |    13.33 |    36800 B | 
-| fennecs           | AddRemoveLinks_Fennecs              | 1             |     94,680.991 ns |    17.44 |   180000 B | 
-|                   |                                     |               |                   |          |            | 
-| Flecs.NET         | AddRemoveLinks_FlecsNet             | 100           |    967,353.470 ns |     0.84 |        1 B | 
-| Friflo.Engine.ECS | AddRemoveLinks_Friflo               | 100           |  1,156,866.743 ns |     1.00 |        1 B | 
-| TinyEcs           | AddRemoveLinks_TinyEcs              | 100           |  3,496,924.692 ns |     3.02 |        4 B | 
-| Arch              | AddRemoveLinks_Arch                 | 100           |  4,297,847.757 ns |     3.72 |  2180006 B | 
-| fennecs           | AddRemoveLinks_Fennecs              | 100           | 70,893,303.581 ns |    61.28 | 93124905 B | 
-|                   |                                     |               |                   |          |            | 
-| Friflo.Engine.ECS | AddRemoveRelations_Friflo           | 1             |      3,385.548 ns |     1.00 |          - | 
-| Flecs.NET         | AddRemoveRelations_FlecsNet         | 1             |     12,279.739 ns |     3.63 |          - | 
-| TinyEcs           | AddRemoveRelations_TinyEcs          | 1             |     23,528.519 ns |     6.95 |          - | 
-| Arch              | AddRemoveRelations_Arch             | 1             |     49,004.396 ns |    14.47 |    36800 B | 
-| fennecs           | AddRemoveRelations_Fennecs          | 1             |     95,627.608 ns |    28.25 |   180000 B | 
-|                   |                                     |               |                   |          |            | 
-| Friflo.Engine.ECS | AddRemoveRelations_Friflo           | 10            |     45,817.621 ns |     1.00 |          - | 
-| Flecs.NET         | AddRemoveRelations_FlecsNet         | 10            |    158,533.870 ns |     3.46 |          - | 
-| Arch              | AddRemoveRelations_Arch             | 10            |    200,083.760 ns |     4.37 |   240800 B | 
-| TinyEcs           | AddRemoveRelations_TinyEcs          | 10            |    285,382.981 ns |     6.23 |        1 B | 
-| fennecs           | AddRemoveRelations_Fennecs          | 10            |  1,548,092.295 ns |    33.80 |  2528801 B | 
-|                   |                                     |               |                   |          |            | 
-| Friflo.Engine.ECS | ChildEntitiesAddRemove_Friflo       | ?             |     37,385.854 ns |        ? |          - | 
-| Flecs.NET         | ChildEntitiesAddRemove_FlecsNet     | ?             |     94,565.904 ns |        ? |          - | 
-| TinyEcs           | ChildEntitiesAddRemove_TinyEcs      | ?             |    188,211.709 ns |        ? |          - | 
-| Arch              | ChildEntitiesAddRemove_Arch         | ?             |    430,421.345 ns |        ? |   232801 B | 
-| fennecs           | ChildEntitiesAddRemove_Fennecs      | ?             |    942,540.509 ns |        ? |  1800001 B | 
-|                   |                                     |               |                   |          |            | 
-| Scellecs.Morpeh   | CommandBufferAddRemoveT2_Morpeh     | ?             |      5,121.168 ns |     0.60 |          - | 
-| Friflo.Engine.ECS | CommandBufferAddRemoveT2_Friflo     | ?             |      8,490.131 ns |     1.00 |          - | 
-| TinyEcs           | CommandBufferAddRemoveT2_TinyEcs    | ?             |     12,959.426 ns |     1.53 |     4800 B | 
-| Flecs.NET         | CommandBufferAddRemoveT2_FlecsNet   | ?             |     14,399.755 ns |     1.70 |          - | 
-| DefaultEcs        | CommandBufferAddRemoveT2_DefaultEcs | ?             |     16,476.300 ns |     1.94 |          - | 
-| Arch              | CommandBufferAddRemoveT2_Arch       | ?             |     48,222.287 ns |     5.68 |     4800 B | 
-|                   |                                     |               |                   |          |            | 
-| DefaultEcs        | ComponentEvents_DefaultEcs          | ?             |      2,548.685 ns |     0.37 |          - | 
-| TinyEcs           | ComponentEvents_TinyEcs             | ?             |      4,414.266 ns |     0.64 |          - | 
-| Friflo.Engine.ECS | ComponentEvents_Friflo              | ?             |      6,935.659 ns |     1.00 |          - | 
-| Flecs.NET         | ComponentEvents_FlecsNet            | ?             |     11,421.612 ns |     1.65 |          - | 
-|                   |                                     |               |                   |          |            | 
 | Friflo.Engine.ECS | CreateEntityT1_Friflo               | ?             |    395,229.571 ns |     1.00 |  3454080 B | 
 | fennecs           | CreateEntityT1_Fennecs              | ?             |    856,106.857 ns |     2.17 |  6815576 B | 
 | TinyEcs           | CreateEntityT1_TinyEcs              | ?             |    955,280.875 ns |     2.42 |  6119312 B | 
@@ -144,7 +102,3 @@ WarmupCount=Default
 | Leopotam.EcsLite  | QueryT5_Leopotam                    | ?             |        336.674 ns |     3.00 |          - | 
 | fennecs           | QueryT5_Fennecs                     | ?             |        405.841 ns |     3.62 |       40 B | 
 | Scellecs.Morpeh   | QueryT5_Morpeh                      | ?             |        790.498 ns |     7.05 |          - | 
-|                   |                                     |               |                   |          |            | 
-| Friflo.Engine.ECS | SearchComponentField_Friflo         | ?             |      4,760.410 ns |     1.00 |          - | 
-|                   |                                     |               |                   |          |            | 
-| Friflo.Engine.ECS | SearchRange_Friflo                  | ?             |  1,472,963.891 ns |     1.00 |   560001 B | 
