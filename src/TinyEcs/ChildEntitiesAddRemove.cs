@@ -29,6 +29,7 @@ public class ChildEntitiesAddRemove_TinyEcs
         world.Dispose();
     }
 
+    // according to example: https://github.com/andreakarasho/TinyEcs?tab=readme-ov-file#childof
     [Benchmark]
     public void Run()
     {

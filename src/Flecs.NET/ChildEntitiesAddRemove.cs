@@ -30,6 +30,7 @@ public class ChildEntitiesAddRemove_FlecsNet
         world.Dispose();
     }
 
+    // according to example : https://github.com/SanderMertens/flecs/blob/master/docs/Relationships.md#the-childof-relationship
     [Benchmark]
     public void Run()
     {
