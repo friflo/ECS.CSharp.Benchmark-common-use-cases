@@ -15,8 +15,8 @@
       <PackageReference Include="BenchmarkDotNet" Version="0.13.12" />
       <PackageReference Include="DefaultEcs" Version="0.18.0-beta01" />
       <PackageReference Include="DefaultEcs.Analyzer" Version="0.17.0" PrivateAssets="all" />
-      <PackageReference Include="fennecs" Version="0.5.8-beta" />
-      <PackageReference Include="Friflo.Engine.ECS" Version="3.0.0-preview.2" />
+      <PackageReference Include="fennecs" Version="0.5.9-beta" />
+      <PackageReference Include="Friflo.Engine.ECS" Version="3.0.0-preview.3" />
       <PackageReference Include="Scellecs.Morpeh" Version="2023.1.0" />
       <PackageReference Include="TinyEcs.Main" Version="1.4.0" />
       <PackageReference Include="Leopotam.EcsLite" Version="1.0.1" />
