@@ -24,7 +24,7 @@ public class ChildEntitiesAddRemove_Friflo
     }
     
     // according to example: https://github.com/friflo/Friflo.Json.Fliox/wiki/Examples-~-General#child-entities
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public void Run()
     {
         for (int n = 0; n < entityCount; n++) {
