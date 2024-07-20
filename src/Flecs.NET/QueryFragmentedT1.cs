@@ -19,11 +19,11 @@ public class QueryFragmentedT1_FlecsNet
         query = world.QueryBuilder().With<Component1>().Build();
         for (int n = 0; n < Constants.FragmentationCount; n++) {
             var entity = entities[n]; 
-                                entity.Add<Component1>();
-            if ((n &   1) != 0) entity.Add<Component2>();
-            if ((n &   2) != 0) entity.Add<Component3>();
-            if ((n &   4) != 0) entity.Add<Component4>();
-            if ((n &   8) != 0) entity.Add<Component5>();
+                                entity.Set(new Component1());
+            if ((n &   1) != 0) entity.Set(new Component2());
+            if ((n &   2) != 0) entity.Set(new Component3());
+            if ((n &   4) != 0) entity.Set(new Component4());
+            if ((n &   8) != 0) entity.Set(new Component5());
         }
         Assert.AreEqual(Constants.FragmentationCount, query.Count());
     }

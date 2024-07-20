@@ -25,7 +25,7 @@ public class AddRemoveComponentsT1_FlecsNet
     public void Run()
     {
         foreach (var entity in entities) {
-            entity.Add<Component1>();
+            entity.Set(new Component1());
         }
         foreach (var entity in entities) {
             entity.Remove<Component1>();

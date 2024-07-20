@@ -23,7 +23,7 @@ public class AddRemoveLinks_FlecsNet
         targets     = world.CreateEntities(RelationCount).AddComponents();
         relations   = world.CreateEntities(RelationCount);
         foreach (var relation in relations) {
-            relation.Add<LinkRelation>(); // add a component with data to every relation entity
+            relation.Set(new LinkRelation()); // add a component with data to every relation entity
         }
     }
     

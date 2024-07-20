@@ -27,8 +27,8 @@ public class CommandBufferAddRemoveT2_FlecsNet
         world.DeferBegin();
         foreach (var entity in entities) {
             entity
-                .Add<Component1>()
-                .Add<Component2>();
+                .Set(new Component1())
+                .Set(new Component2());
         }
         world.DeferEnd(); // Apply changes 1
 

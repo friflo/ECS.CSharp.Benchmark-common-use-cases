@@ -38,7 +38,7 @@ public class ComponentEvents_FlecsNet
     {
         iterations++;
         foreach (var entity in entities) {
-            entity.Add<Component1>();
+            entity.Set(new Component1());
             entity.Remove<Component1>();
         }
     }
