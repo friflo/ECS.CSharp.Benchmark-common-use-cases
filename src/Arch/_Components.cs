@@ -13,3 +13,5 @@ internal record struct Component4(int Value);
 internal record struct Component5(int Value);
 
 internal record struct LinkRelation(int Value);
+
+internal record struct ParentOf;
