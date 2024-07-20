@@ -144,6 +144,8 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
   ShortRun : .NET 8.0.0 (8.0.23.53103), Arm64 RyuJIT AdvSIMD
 ```
 
+Last benchmark update in README: **2024-07-20**
+
 ## **Basic**
 
 ### Add & Remove 1 component on 100 entities
