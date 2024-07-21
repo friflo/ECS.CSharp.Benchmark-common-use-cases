@@ -120,6 +120,7 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 | [**Relations**](#relations)                                   |                                                 |
 | Add & Remove 1/100 link relation on 100 entities              | `AddRemoveLinks`     `RelationCount`: 1/100     |
 | Add & Remove 1/10 relations on 100 entities                   | `AddRemoveRelations` `RelationCount`: 1/10      |
+| Add & Remove 10 child entities on 100 parent entities         | `ChildEntitiesAddRemove`                        |
 |                                                               |                                                 |
 | [**Command Buffer**](#command-buffer) - *deferred operations* |                                                 |
 | Add & Remove 2 components on 100 entities                     | `CommandBufferAddRemoveT2`                      |
@@ -375,6 +376,9 @@ Each entity has 5 common components.
 
 
 ### Add & Remove 10 child entities on 100 parent entities
+
+Child / parent entity relationships are used to build a hierarchy / tree of entities.  
+It is, among other things, a use case for scene trees, entity parenting or character rig skeletons.
 
 | ECS               |  Mean         | Ratio    | Allocated   | 
 |------------------ |--------------:|---------:|------------:|
