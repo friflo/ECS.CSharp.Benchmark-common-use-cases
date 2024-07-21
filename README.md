@@ -44,7 +44,7 @@ Ordered by GitHub Activity
 
 | ECS                                                                                           | ECS implementation      | Entity | tested            | nuget latest
 |---------------------------------------------------------------------------------------------- | ----------------------- | -------| ----------------- | --------------------------------------
-| [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/README.md)   | Archetype               | struct | 3.0.0-preview.3   | [![nuget](https://img.shields.io/nuget/vpre/Friflo.Engine.ECS?color=blue)](https://www.nuget.org/packages/Friflo.Engine.ECS)
+| [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/README.md)   | Archetype               | struct | 3.0.0-preview.4   | [![nuget](https://img.shields.io/nuget/vpre/Friflo.Engine.ECS?color=blue)](https://www.nuget.org/packages/Friflo.Engine.ECS)
 | [fennecs](https://github.com/thygrrr/fennecs)                                                 | Archetype               | struct | 0.5.9-beta        | [![nuget](https://img.shields.io/nuget/vpre/fennecs?color=blue)](https://www.nuget.org/packages/fennecs)
 | [TinyEcs](https://github.com/andreakarasho/TinyEcs)                                           | Archetype               | struct | 1.4.0             | [![nuget](https://img.shields.io/nuget/v/TinyEcs.Main?color=blue)](https://www.nuget.org/packages/TinyEcs.Main)
 | [Flecs.NET](https://github.com/BeanCheeseBurrito/Flecs.NET)                                   | Archetype / Sparse Set  | struct | 4.0.0             | [![nuget](https://img.shields.io/nuget/v/Flecs.NET.Release?color=blue)](https://www.nuget.org/packages/Flecs.NET.Release)
@@ -145,7 +145,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
   ShortRun : .NET 8.0.0 (8.0.23.53103), Arm64 RyuJIT AdvSIMD
 ```
 
-Last benchmark update in README: **2024-07-20**
+Last benchmark update in README: **2024-07-21**
 
 ## **Basic**
 
@@ -313,11 +313,11 @@ Each entity has 5 common components.
 
 | ECS               | RelationCount | Mean         | Ratio    | Allocated   | 
 |------------------ |-------------- |-------------:|---------:|------------:|
-| Friflo.Engine.ECS | 1             |     5,428 ns |     1.00 |          - | 
-| Flecs.NET         | 1             |    10,567 ns |     1.95 |          - | 
-| TinyEcs           | 1             |    15,696 ns |     2.89 |          - | 
-| Arch              | 1             |    72,352 ns |    13.33 |    36800 B | 
-| fennecs           | 1             |    94,680 ns |    17.44 |   180000 B | 
+| Friflo.Engine.ECS | 1             |      5.41 μs |     1.00 |          - | 
+| Flecs.NET         | 1             |     10.51 μs |     1.94 |          - | 
+| TinyEcs           | 1             |     15.92 μs |     2.94 |          - | 
+| Arch              | 1             |     71.06 μs |    13.14 |    36800 B | 
+| fennecs           | 1             |     93.58 μs |    17.30 |   180000 B | 
  
 
 ### Add & Remove 100 link relations on 100 entities
@@ -326,11 +326,11 @@ Each entity has 5 common components.
 
 | ECS               | RelationCount | Mean         | Ratio    | Allocated   | 
 |------------------ |-------------- |-------------:|---------:|------------:|
-| Flecs.NET         | 100           |   967,353 ns |     0.84 |        1 B | 
-| Friflo.Engine.ECS | 100           | 1,156,866 ns |     1.00 |        1 B | 
-| TinyEcs           | 100           | 3,496,924 ns |     3.02 |        4 B | 
-| Arch              | 100           | 4,297,847 ns |     3.72 |  2180006 B | 
-| fennecs           | 100           |70,893,303 ns |    61.28 | 93124905 B | 
+| Flecs.NET         | 100           |    977.16 μs |     0.84 |        1 B | 
+| Friflo.Engine.ECS | 100           |  1,164.12 μs |     1.00 |        1 B | 
+| Arch              | 100           |  4,267.58 μs |     3.67 |  2180006 B | 
+| TinyEcs           | 100           |  4,716.07 μs |     4.05 |        8 B | 
+| fennecs           | 100           | 71,543.59 μs |    61.46 | 93124892 B | 
 
 <br/>
 
@@ -355,11 +355,11 @@ Each entity has 5 common components.
 
 | ECS               | RelationCount | Mean         | Ratio    | Allocated   | 
 |------------------ |-------------- |-------------:|---------:|------------:|
-| Friflo.Engine.ECS | 1             |     3,385 ns |     1.00 |          - | 
-| Flecs.NET         | 1             |    12,279 ns |     3.63 |          - | 
-| TinyEcs           | 1             |    23,528 ns |     6.95 |          - | 
-| Arch              | 1             |    49,004 ns |    14.47 |    36800 B | 
-| fennecs           | 1             |    95,627 ns |    28.25 |   180000 B | 
+| Friflo.Engine.ECS | 1             |      3.37 μs |     1.00 |          - | 
+| Flecs.NET         | 1             |     11.90 μs |     3.53 |          - | 
+| TinyEcs           | 1             |     23.36 μs |     6.93 |          - | 
+| Arch              | 1             |     49.14 μs |    14.58 |    36800 B | 
+| fennecs           | 1             |     96.08 μs |    28.52 |   180000 B | 
 
 
 ### Add & Remove 10 relations on 100 entities
@@ -368,11 +368,11 @@ Each entity has 5 common components.
 
 | ECS               | RelationCount | Mean         | Ratio    | Allocated   | 
 |------------------ |-------------- |-------------:|---------:|------------:|
-| Friflo.Engine.ECS | 10            |    45,817 ns |     1.00 |          - | 
-| Flecs.NET         | 10            |   158,533 ns |     3.46 |          - | 
-| Arch              | 10            |   200,083 ns |     4.37 |   240800 B | 
-| TinyEcs           | 10            |   285,382 ns |     6.23 |        1 B | 
-| fennecs           | 10            | 1,548,092 ns |    33.80 |  2528801 B | 
+| Friflo.Engine.ECS | 10            |     45.21 μs |     1.00 |          - | 
+| Flecs.NET         | 10            |    154.43 μs |     3.41 |          - | 
+| Arch              | 10            |    200.64 μs |     4.44 |   240800 B | 
+| TinyEcs           | 10            |    284.53 μs |     6.29 |        1 B | 
+| fennecs           | 10            |  1,560.80 μs |    34.52 |  2568001 B | 
 
 
 ### Add & Remove 10 child entities on 100 parent entities
@@ -382,11 +382,11 @@ It is, among other things, a use case for scene trees, entity parenting or chara
 
 | ECS               |  Mean         | Ratio    | Allocated   | 
 |------------------ |--------------:|---------:|------------:|
-| Friflo.Engine.ECS |     37,385 ns |        ? |          - | 
-| Flecs.NET         |     94,565 ns |        ? |          - | 
-| TinyEcs           |    188,211 ns |        ? |          - | 
-| Arch              |    430,421 ns |        ? |   232801 B | 
-| fennecs           |    942,540 ns |        ? |  1800001 B | 
+| Friflo.Engine.ECS |      25.11 μs |     1.00 |          - | 
+| Flecs.NET         |      95.01 μs |     3.78 |          - | 
+| TinyEcs           |     190.32 μs |     7.58 |          - | 
+| Arch              |     434.92 μs |    17.32 |   232801 B | 
+| fennecs           |     950.42 μs |    37.86 |  1800001 B | 
 
 <br/>
 
