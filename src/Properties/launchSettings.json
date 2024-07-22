@@ -1,0 +1,8 @@
+{
+    "profiles": {
+        "ECS.Benchmark": {
+            "commandName": "Project",
+            "dotnetRunMessages": true
+        }
+    }
+}
