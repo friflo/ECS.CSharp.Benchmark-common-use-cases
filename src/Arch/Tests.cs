@@ -2,7 +2,6 @@
 using Arch.Relationships;
 using Xunit;
 
-
 namespace Arch;
 
 // ReSharper disable once InconsistentNaming

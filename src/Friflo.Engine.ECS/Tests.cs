@@ -1,6 +1,5 @@
 ﻿using Xunit;
 
-
 namespace Friflo.Engine.ECS;
 
 // ReSharper disable once InconsistentNaming
