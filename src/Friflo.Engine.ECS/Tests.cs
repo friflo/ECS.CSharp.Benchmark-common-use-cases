@@ -10,8 +10,8 @@ public static class Tests_Friflo
     public static void CheckTreeCycles()
     {
         var world   = new EntityStore();
-        var entity1 = world.CreateEntity();
-        var entity2 = world.CreateEntity();
+        var entity1 = world.CreateEntity(1);
+        var entity2 = world.CreateEntity(2);
         entity1.AddChild(entity2);
         var e = Throws<InvalidOperationException>(() => {
             entity2.AddChild(entity1);

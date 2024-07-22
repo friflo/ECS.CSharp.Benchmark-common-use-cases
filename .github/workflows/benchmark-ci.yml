@@ -23,6 +23,10 @@ jobs:
       working-directory: ./src
       run: dotnet restore
 
+    - name: Tests
+      working-directory: ./src
+      run: dotnet test -c Release
+
     - name: Benchmark
       working-directory: ./src
       run: dotnet run -c Release --filter \* --job Dry --disableLogFile
