@@ -3,7 +3,7 @@
 namespace TinyEcs;
 
 // ReSharper disable once InconsistentNaming
-public static class Tests_Fennecs
+public static class Tests_TinyEcs
 {
     [Fact]
     public static void CheckTreeCycles()
