@@ -95,15 +95,17 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
 
 | ECS                  | Basic | Relations | Command Buffer | Events | Search | Heap | Watch  |
-|--------------------- |:-----:|:---------:|:--------------:|:------:|:------:|------|:------:|
-| Arch + Relationships |  ✅  |    ✅     |       ✅       |  [^1]  |        | m, n |   ✅  |
-| DefaultEcs           |  ✅  |           |       ✅       |  ✅    |        | m, n |   ✅  |
-| fennecs              |  ✅  |    ✅     |                |  [^2]  |        | m, n |   ✅  |
-| Flecs.NET            |  ✅  |    ✅     |       ✅      |   ✅   |        | m, n |        |
-| Friflo.Engine.ECS    |  ✅  |    ✅     |       ✅      |   ✅   |   ✅   | m    |   ✅  |
+|--------------------- | ----- | --------- | -------------- | ------ | ------ | ---- | ------ |
+| Arch + Relationships |  ✅  |  ✅       |  ✅           |  [^1]  |         | m, n |  ✅   |
+| DefaultEcs           |  ✅  |           |  ✅            |  ✅    |        | m, n |  ✅   |
+| fennecs              |  ✅  |  ✅       |                |  [^2]  |        | m, n |  ✅   |
+| Flecs.NET            |  ✅  |  ✅       |  ✅           |   ✅   |        | m, n |        |
+| Friflo.Engine.ECS    |  ✅  |  ✅ ¹     |  ✅           |   ✅   |   ✅   | m    |  ✅   |
 | Leopotam.EcsLite     |  ✅  |           |                |         |        | m, n |       |
-| Morpeh               |  ✅  |           |       ✅       |        |        | m, n |        |
-| TinyEcs              |  ✅  |    ✅     |       ✅      |   ✅   |        | m, n |        |
+| Morpeh               |  ✅  |           |  ✅            |        |        | m, n |        |
+| TinyEcs              |  ✅  |  ✅       |  ✅           |   ✅   |        | m, n |        |
+
+¹ Assert cycle free entity hierarchy
 
 <br/>
 
@@ -145,7 +147,7 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
   ShortRun : .NET 8.0.0 (8.0.23.53103), Arm64 RyuJIT AdvSIMD
 ```
 
-Last benchmark update in README: **2024-07-21**
+Last benchmark update: **2024-07-21**
 
 ## **Basic**
 
