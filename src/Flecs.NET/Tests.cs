@@ -13,6 +13,6 @@ public static class Tests_FlecsNet
         var entity1     = world.Entity();
         var entity2     = world.Entity();
         entity1.Add(Ecs.ChildOf, entity2);
-        // entity2.Add(Ecs.ChildOf, entity1); // process exit
+        // entity2.Add(Ecs.ChildOf, entity1); // process exit - cause: Stack overflow.
     }
 }
