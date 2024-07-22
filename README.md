@@ -105,7 +105,7 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 | Morpeh               |  ✅  |           |  ✅            |        |        | m, n |        |
 | TinyEcs              |  ✅  |  ✅       |  ✅           |   ✅   |        | m, n |        |
 
-¹ Ensures a cycle free entity hierarchy
+¹ Ensures a cycle free entity hierarchy. See [CheckTreeCycles()](https://github.com/search?q=repo%3Afriflo%2FECS.CSharp.Benchmark-common-use-cases+CheckTreeCycles&type=code)
 
 <br/>
 
