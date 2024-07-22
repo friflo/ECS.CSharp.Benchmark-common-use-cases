@@ -23,7 +23,7 @@ public class QueryFragmentedT1_TinyEcs
             if ((n &   4) != 0) entity.Set(new Component4());
             if ((n &   8) != 0) entity.Set(new Component5());
         }
-        Assert.AreEqual(Constants.FragmentationCount, query.Count());
+        Check.AreEqual(Constants.FragmentationCount, query.Count());
     }
     
     [GlobalCleanup]

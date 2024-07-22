@@ -14,7 +14,7 @@ public class QueryT5_Fennecs
         world = new World();
         world.CreateEntities(Constants.EntityCount).AddComponents();
         stream = world.Query<Component1>().Compile().Stream<Component1,Component2,Component3,Component4,Component5>();
-        Assert.AreEqual(Constants.EntityCount, stream.Count);
+        Check.AreEqual(Constants.EntityCount, stream.Count);
     }
     
     [GlobalCleanup]

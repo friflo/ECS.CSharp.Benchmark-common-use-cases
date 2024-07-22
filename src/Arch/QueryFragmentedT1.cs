@@ -26,7 +26,7 @@ public class QueryFragmentedT1_Arch
             if ((n &   4) != 0) entity.Add<Component4>();
             if ((n &   8) != 0) entity.Add<Component5>();
         }
-        Assert.AreEqual(Constants.FragmentationCount, world.CountEntities(queryDescription));
+        Check.AreEqual(Constants.FragmentationCount, world.CountEntities(queryDescription));
     }
     
     [GlobalCleanup]

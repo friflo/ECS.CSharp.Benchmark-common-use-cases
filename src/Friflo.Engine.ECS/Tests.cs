@@ -1,5 +1,5 @@
 ﻿using Xunit;
-using static Xunit.Assert;
+
 
 namespace Friflo.Engine.ECS;
 
@@ -13,9 +13,11 @@ public static class Tests_Friflo
         var entity1 = world.CreateEntity(1);
         var entity2 = world.CreateEntity(2);
         entity1.AddChild(entity2);
-        var e = Throws<InvalidOperationException>(() => {
+        var e = Assert.Throws<InvalidOperationException>(() => {
             entity2.AddChild(entity1);
         });
-        Equal("operation would cause a cycle: 2 -> 1 -> 2", e!.Message);
+        Assert.Equal("operation would cause a cycle: 2 -> 1 -> 2", e!.Message);
+        Assert.True(entity1 == entity2.Parent);
+        Assert.True(entity1.Parent.IsNull);
     }
 }

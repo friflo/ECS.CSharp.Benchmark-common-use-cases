@@ -27,7 +27,7 @@ public class SearchRange_Friflo
             var min = searchValue * 100;
             var max = searchValue * 100 + 99;
             var result = world.Query().ValueInRange<SearchableComponent,int>(min, max);
-            Assert.AreEqual(100, result.Count);
+            Check.AreEqual(100, result.Count);
         }
     }
 }

@@ -14,7 +14,7 @@ public class QueryT5_Friflo
         var world = new EntityStore();
         world.CreateEntities(Constants.EntityCount).AddComponents();
         query = world.Query<Component1,Component2,Component3,Component4,Component5>();
-        Assert.AreEqual(Constants.EntityCount, query.Count);
+        Check.AreEqual(Constants.EntityCount, query.Count);
     }
     
     [Benchmark(Baseline = true)]

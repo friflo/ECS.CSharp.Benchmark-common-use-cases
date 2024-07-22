@@ -25,7 +25,7 @@ public class SearchComponentField_Friflo
         for (int searchValue = 0; searchValue < Constants.SearchCount; searchValue++)
         {
             var result = world.GetEntitiesWithComponentValue<SearchableComponent,int>(searchValue);
-            Assert.AreEqual(1, result.Count);
+            Check.AreEqual(1, result.Count);
         }
     }
 }

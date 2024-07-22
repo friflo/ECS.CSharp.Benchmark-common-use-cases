@@ -41,7 +41,7 @@ ManualConfig customConfig = DefaultConfig.Instance
 BenchmarkSwitcher.FromAssembly(Assembly.GetExecutingAssembly()).Run(args, config);
 
 
-public static class Assert
+public static class Check
 {
     public static void AreEqual(int expect, int actual)
     {

@@ -24,7 +24,7 @@ public class QueryT5_Leopotam
         c4      = world.GetPool<Component4>();
         c5      = world.GetPool<Component5>();
         filter  = world.Filter<Component1>().Inc<Component2>().Inc<Component3>().Inc<Component4>().Inc<Component5>().End();
-        Assert.AreEqual(Constants.EntityCount, filter.GetEntitiesCount());
+        Check.AreEqual(Constants.EntityCount, filter.GetEntitiesCount());
     }
     
     [GlobalCleanup]

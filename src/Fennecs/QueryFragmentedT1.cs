@@ -23,7 +23,7 @@ public class QueryFragmentedT1_Fennecs
             if ((n &   4) != 0) entity.Add(new Component4());
             if ((n &   8) != 0) entity.Add(new Component5());
         }
-        Assert.AreEqual(Constants.FragmentationCount, stream.Count);
+        Check.AreEqual(Constants.FragmentationCount, stream.Count);
     }
     
     [GlobalCleanup]

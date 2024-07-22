@@ -18,7 +18,7 @@ public class QueryT5_Arch
         world.CreateEntities(Constants.EntityCount).AddComponents();
         queryDescription = new QueryDescription().WithAll<Component1,Component2,Component3,Component4,Component5>();
 
-        Assert.AreEqual(Constants.EntityCount, world.CountEntities(queryDescription));
+        Check.AreEqual(Constants.EntityCount, world.CountEntities(queryDescription));
     }
     
     [GlobalCleanup]

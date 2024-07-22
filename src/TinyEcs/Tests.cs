@@ -13,5 +13,8 @@ public static class Tests_TinyEcs
         var entity2 = world.Entity();
         entity1.AddChild(entity2);
         entity2.AddChild(entity1); // creates cycle
+        
+        Assert.True(entity1.Has<Defaults.ChildOf>(entity2));
+        Assert.True(entity2.Has<Defaults.ChildOf>(entity1));
     }
 }

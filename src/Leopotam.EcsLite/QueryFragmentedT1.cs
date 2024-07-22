@@ -29,7 +29,7 @@ public class QueryFragmentedT1_Leopotam
             if ((n &   4) != 0) c4.Add(entity);
             if ((n &   8) != 0) c5.Add(entity);
         }
-        Assert.AreEqual(Constants.FragmentationCount, filter.GetEntitiesCount());
+        Check.AreEqual(Constants.FragmentationCount, filter.GetEntitiesCount());
     }
     
     [GlobalCleanup]

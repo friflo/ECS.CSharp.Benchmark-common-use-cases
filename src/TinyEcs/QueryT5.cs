@@ -14,7 +14,7 @@ public class QueryT5_TinyEcs
         world = new World();
         world.CreateEntities(Constants.EntityCount).AddComponents();
         query = world.QueryBuilder().With<Component1>().With<Component2>().With<Component3>().With<Component4>().With<Component5>().Build();
-        Assert.AreEqual(Constants.EntityCount, query.Count());
+        Check.AreEqual(Constants.EntityCount, query.Count());
     }
     
     [GlobalCleanup]

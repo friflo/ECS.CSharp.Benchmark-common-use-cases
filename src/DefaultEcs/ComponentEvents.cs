@@ -26,8 +26,8 @@ public class ComponentEvents_DefaultEcs
     {
         world.Dispose();
         var expect = iterations * Constants.EventCount;
-        Assert.AreEqual(expect, added);
-        Assert.AreEqual(expect, removed);
+        Check.AreEqual(expect, added);
+        Check.AreEqual(expect, removed);
     }
     
     [Benchmark]

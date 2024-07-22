@@ -22,7 +22,7 @@ public class QueryFragmentedT1_Friflo
             if ((n &   4) != 0) entity.AddComponent<Component4>();
             if ((n &   8) != 0) entity.AddComponent<Component5>();
         }
-        Assert.AreEqual(Constants.FragmentationCount, query.Count);
+        Check.AreEqual(Constants.FragmentationCount, query.Count);
     }
     
     [Benchmark(Baseline = true)]

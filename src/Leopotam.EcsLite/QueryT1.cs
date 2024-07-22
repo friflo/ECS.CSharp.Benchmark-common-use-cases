@@ -17,7 +17,7 @@ public class QueryT1_Leopotam
         world.CreateEntities(Constants.EntityCount).AddComponents(world);
         c1      = world.GetPool<Component1>();
         filter  = world.Filter<Component1>().End();
-        Assert.AreEqual(Constants.EntityCount, filter.GetEntitiesCount());
+        Check.AreEqual(Constants.EntityCount, filter.GetEntitiesCount());
     }
     
     [GlobalCleanup]
