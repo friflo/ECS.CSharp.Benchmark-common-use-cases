@@ -107,6 +107,10 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
 ¹ Ensures a cycle free entity hierarchy. See [CheckTreeCycles()](https://github.com/search?q=repo%3Afriflo%2FECS.CSharp.Benchmark-common-use-cases+CheckTreeCycles&type=code)
 
+### Benchmark Overview
+
+Overview of benchmark results as [Google Sheets table](https://docs.google.com/spreadsheets/d/1170ZjOXhiQJpY-VuNxocxaxPKGTJYQL72Zcbrvq0CcY).
+
 <br/>
 
 | Benchmark Category                                            | Category id                                     |
