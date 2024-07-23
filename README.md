@@ -26,6 +26,7 @@ See comments about this benchmark at [reddit announcement post](https://www.redd
 * [Tested projects](#tested-projects)
 * [ECS implementation](#ecs-implementation)
 * [Benchmarks](#benchmarks)
+  - [Overview](#overview)
   - [Basic](#basic)
   - [Relations](#relations)
   - [Command buffer](#command-buffer)
@@ -107,10 +108,6 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
 ¹ Ensures a cycle free entity hierarchy. See [CheckTreeCycles()](https://github.com/search?q=repo%3Afriflo%2FECS.CSharp.Benchmark-common-use-cases+CheckTreeCycles&type=code)
 
-### Benchmark Overview
-
-Overview of benchmark results as [Google Sheets table](https://docs.google.com/spreadsheets/d/1170ZjOXhiQJpY-VuNxocxaxPKGTJYQL72Zcbrvq0CcY).
-
 <br/>
 
 | Benchmark Category                                            | Category id                                     |
@@ -151,7 +148,19 @@ Apple M2, 1 CPU, 8 logical and 8 physical cores
   ShortRun : .NET 8.0.0 (8.0.23.53103), Arm64 RyuJIT AdvSIMD
 ```
 
+
+## Overview
+
 Last benchmark update: **2024-07-21**
+
+*Ratio*: Average Performance Ratio - see [C# ECS Benchmark Overview ⋅ Google Sheets](https://docs.google.com/spreadsheets/d/1170ZjOXhiQJpY-VuNxocxaxPKGTJYQL72Zcbrvq0CcY) 
+
+|         |     friflo | Flecs.NET  | TinyEcs    | Arch       | fennecs    | Leopotam   | DefaultEcs | Morpeh     |
+| ------- | ----------:| ----------:| ----------:| ----------:| ----------:| ----------:| ----------:| ----------:|
+| *Ratio* |       1.00 |       2.55 |       3.42 |       6.96 |      19.02 |       2.57 |       3.81 |      21.09 |
+| *Notes* |            |            |            |            |            | [^sparse]  | [^sparse]  | [^sparse]  |
+
+[^sparse]: Sparse Set based ECS projects.
 
 ## **Basic**
 
