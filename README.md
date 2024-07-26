@@ -43,17 +43,17 @@ See comments about this benchmark at [reddit announcement post](https://www.redd
 All tested projects are engine agnostic.  
 Ordered by GitHub Activity
 
-| ECS                                                               | ECS implementation      | Entity | tested            | nuget latest
-|------------------------------------------------------------------ | ----------------------- | -------| ----------------- | --------------------------------------
-| [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Engine.ECS)  | Archetype               | struct | 3.0.0-preview.4   | [![nuget](https://img.shields.io/nuget/vpre/Friflo.Engine.ECS?color=blue)](https://www.nuget.org/packages/Friflo.Engine.ECS)
-| [fennecs](https://github.com/thygrrr/fennecs)                     | Archetype               | struct | 0.5.9-beta        | [![nuget](https://img.shields.io/nuget/vpre/fennecs?color=blue)](https://www.nuget.org/packages/fennecs)
-| [TinyEcs](https://github.com/andreakarasho/TinyEcs)               | Archetype               | struct | 1.4.0             | [![nuget](https://img.shields.io/nuget/v/TinyEcs.Main?color=blue)](https://www.nuget.org/packages/TinyEcs.Main)
-| [Flecs.NET](https://github.com/BeanCheeseBurrito/Flecs.NET)       | Archetype / Sparse Set  | struct | 4.0.0             | [![nuget](https://img.shields.io/nuget/v/Flecs.NET.Release?color=blue)](https://www.nuget.org/packages/Flecs.NET.Release)
-| [Arch](https://github.com/genaray/Arch)                           | Archetype               | struct | 1.2.8             | [![nuget](https://img.shields.io/nuget/v/Arch?color=blue)](https://www.nuget.org/packages/Arch)
-| [Arch.Relationships](https://github.com/genaray/Arch.Extended)    | add-on                  |        | 1.0.1             | [![nuget](https://img.shields.io/nuget/v/Arch.Relationships?color=blue)](https://www.nuget.org/packages/Arch.Relationships)
-| [Morpeh](https://github.com/scellecs/morpeh)                      | ?                       | class  | 2023.1.0          | [![nuget](https://img.shields.io/nuget/v/Scellecs.Morpeh?color=blue)](https://www.nuget.org/packages/Scellecs.Morpeh)
-| [Leopotam.EcsLite](https://github.com/Leopotam/ecslite)           | Sparse Set              | int    | 1.0.1             | [![nuget](https://img.shields.io/nuget/v/Leopotam.EcsLite?color=blue)](https://www.nuget.org/packages/Leopotam.EcsLite) ⁽¹⁾
-| [DefaultEcs](https://github.com/Doraku/DefaultEcs)                | Sparse Set              | struct | 0.18.0-beta01     | [![nuget](https://img.shields.io/nuget/vpre/DefaultEcs?color=blue)](https://www.nuget.org/packages/DefaultEcs)
+| ECS                                                               | ECS implementation      | Entity | dll size |            tested | nuget latest
+|------------------------------------------------------------------ | ----------------------- | -------| --------:| -----------------:| --------------------------------------
+| [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Engine.ECS)  | Archetype               | struct |   303 kb |   3.0.0-preview.4 | [![nuget](https://img.shields.io/nuget/vpre/Friflo.Engine.ECS?color=blue)](https://www.nuget.org/packages/Friflo.Engine.ECS)
+| [fennecs](https://github.com/thygrrr/fennecs)                     | Archetype               | struct |   157 kb |        0.5.9-beta | [![nuget](https://img.shields.io/nuget/vpre/fennecs?color=blue)](https://www.nuget.org/packages/fennecs)
+| [TinyEcs](https://github.com/andreakarasho/TinyEcs)               | Archetype               | struct |   487 kb |             1.4.0 | [![nuget](https://img.shields.io/nuget/v/TinyEcs.Main?color=blue)](https://www.nuget.org/packages/TinyEcs.Main)
+| [Flecs.NET](https://github.com/BeanCheeseBurrito/Flecs.NET)       | Archetype / Sparse Set  | struct |  1600 kb |             4.0.0 | [![nuget](https://img.shields.io/nuget/v/Flecs.NET.Release?color=blue)](https://www.nuget.org/packages/Flecs.NET.Release)
+| [Arch](https://github.com/genaray/Arch)                           | Archetype               | struct |   765 kb |             1.2.8 | [![nuget](https://img.shields.io/nuget/v/Arch?color=blue)](https://www.nuget.org/packages/Arch)
+| [Arch.Relationships](https://github.com/genaray/Arch.Extended)    | add-on                  |        |     9 kb |             1.0.1 | [![nuget](https://img.shields.io/nuget/v/Arch.Relationships?color=blue)](https://www.nuget.org/packages/Arch.Relationships)
+| [Morpeh](https://github.com/scellecs/morpeh)                      | ?                       | class  |    76 kb |          2023.1.0 | [![nuget](https://img.shields.io/nuget/v/Scellecs.Morpeh?color=blue)](https://www.nuget.org/packages/Scellecs.Morpeh)
+| [Leopotam.EcsLite](https://github.com/Leopotam/ecslite)           | Sparse Set              | int    |    18 kb |             1.0.1 | [![nuget](https://img.shields.io/nuget/v/Leopotam.EcsLite?color=blue)](https://www.nuget.org/packages/Leopotam.EcsLite) ⁽¹⁾
+| [DefaultEcs](https://github.com/Doraku/DefaultEcs)                | Sparse Set              | struct |   169 kb | 0.18.0-beta01     | [![nuget](https://img.shields.io/nuget/vpre/DefaultEcs?color=blue)](https://www.nuget.org/packages/DefaultEcs)
 
 ⁽¹⁾ nuget package not published by project owner
 
