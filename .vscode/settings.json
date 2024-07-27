@@ -11,6 +11,7 @@
         "**/*-report.csv": true,
         "**/*-report.html": true,
         "src/.editorconfig": true,
+        "src/Directory.Build.props": true,
         "Artifacts/*.log": false,
     },
     "cSpell.words": [
