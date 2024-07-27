@@ -6,10 +6,11 @@
 	"files.exclude": {
         "**/obj": true,
 		"**/bin": true,
+        "**/.vs": true,
         "**/.idea": true,
         "**/*-report.csv": true,
         "**/*-report.html": true,
-        "Directory.Build.props": true,
+        "src/.editorconfig": true,
         "Artifacts/*.log": false,
     },
     "cSpell.words": [

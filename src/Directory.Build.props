@@ -1,5 +1,5 @@
 <Project>
   <PropertyGroup>
     <BaseIntermediateOutputPath>..\obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
-  </PropertyGroup>  
+  </PropertyGroup>
 </Project>
