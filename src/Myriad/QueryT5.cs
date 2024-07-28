@@ -18,11 +18,8 @@ public class QueryT5_Myriad
     {
         world = new WorldBuilder().Build();
 
-        // Create all the entities using a command buffer
-        var cmd = new CommandBuffer(world);
-        for (var i = 0; i < Constants.EntityCount; i++)
-            cmd.Create().Set(new Component1()).Set(new Component2()).Set(new Component3()).Set(new Component4()).Set(new Component5());
-        using var resolver = cmd.Playback();
+        var entities = world.CreateEntities(Constants.EntityCount);
+        entities.AddComponents(world);
 
         query = new QueryBuilder().Include<Component1, Component2, Component3, Component4, Component5>().Build(world);
         if (query.Count() != Constants.EntityCount)

@@ -18,16 +18,10 @@ public class CommandBufferAddRemoveT2_Myriad
     {
         world = new WorldBuilder().Build();
 
-        // Create all the entities using a command buffer
-        cmd = new CommandBuffer(world);
-        for (var i = 0; i < Constants.EntityCount; i++)
-            cmd.Create();
-        using var resolver = cmd.Playback();
+        entities = world.CreateEntities(Constants.EntityCount);
+        entities.AddComponents(world);
 
-        // Extract the created entities
-        entities = new Entity[Constants.EntityCount];
-        for (var i = 0; i < resolver.Count; i++)
-            entities[i] = resolver[i];
+        cmd = new CommandBuffer(world);
     }
 
     [GlobalCleanup]
