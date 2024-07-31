@@ -35,6 +35,8 @@ See comments about this benchmark at [reddit announcement post](https://www.redd
 * [Setup](#setup)
 * [Contribution](#contribution)
 * [Benchmark CLI](#benchmark-cli)
+* [Other C# ECS Benchmarks](#other-c-ecs-benchmarks)
+
 
 <br/>
 
@@ -582,3 +584,11 @@ dotnet run -c Release --filter \*Events\*                       # run component 
 dotnet run -c Release --filter \*Search\*                       # run search benchmarks
 ```
 
+# Other C# ECS Benchmarks
+
+- [Ecs.CSharp.Benchmark](https://github.com/Doraku/Ecs.CSharp.Benchmark)  
+  Popular C# ECS Benchmark with focus on large data sets: Create & query entities
+
+- [ecs-benchmark-runner-dotnet](https://github.com/cNoNim/ecs-benchmark-runner-dotnet)  
+  C# ECS benchmark frameworks with a near-real-world scenario test scenario.  
+  Benchmarks runs on multiple platforms: .NET, Native AOT & Unity.
