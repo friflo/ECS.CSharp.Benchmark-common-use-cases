@@ -8,20 +8,20 @@ public class DeleteEntity_Friflo
 {
     private EntityStore world;
     private Entity[]    entities;
-    
+
     [IterationSetup]
     public void Setup()
     {
-        world       = new EntityStore();
+        world       = new EntityStore { RecycleIds = false };
         entities    = world.CreateEntities(Constants.DeleteEntityCount).AddComponents();
     }
-    
+
     [IterationCleanup]
     public void Shutdown()
     {
         world = null;
     }
-    
+
     [Benchmark(Baseline = true)]
     public void Run()
     {
