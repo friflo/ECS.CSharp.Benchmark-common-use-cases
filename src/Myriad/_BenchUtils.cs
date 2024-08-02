@@ -32,5 +32,7 @@ public static class _BenchUtils
             buffer.Set(entity, new Component4());
             buffer.Set(entity, new Component5());
         }
+
+        buffer.Playback().Dispose();
     }
 }

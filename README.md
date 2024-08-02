@@ -107,6 +107,7 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 | Friflo.Engine.ECS    |  ✅  |  ✅ ¹     |  ✅           |   ✅   |   ✅   | m    |  ✅   |
 | Leopotam.EcsLite     |  ✅  |           |                |         |        | m, n |       |
 | Morpeh               |  ✅  |           |  ✅            |        |        | m, n |        |
+| Myriad.ECS           |  ✅  |           |  ✅            |        |        | m    |  ✅    |
 | TinyEcs              |  ✅  |  ✅       |  ✅           |   ✅   |        | m, n |        |
 
 ¹ Ensures a cycle free entity hierarchy. See [CheckTreeCycles()](https://github.com/search?q=repo%3Afriflo%2FECS.CSharp.Benchmark-common-use-cases+CheckTreeCycles&type=code)
