@@ -95,8 +95,11 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
     - **n** - **native memory**: Memory is allocated and managed by the ECS.  
     BenchmarkDotNet does not monitor allocations of native memory.  
     Bugs in game code or ECS related to native memory may result in memory corruption / access violation.
-- **Watch** - Watch entity components in debugger
-
+- **Watch** - Watch / navigate entity components in debugger without adding debug code.
+    <details>    
+        <summary>See example screenshot</summary>
+        <img src="docs/images/Debugger-Watch.png" width="634" height="178"/>        
+    </details>
 
 | ECS                  | Basic | Relations | Command Buffer | Events | Search | Heap | Watch  |
 |--------------------- | ----- | --------- | -------------- | ------ | ------ | ---- | ------ |
@@ -107,7 +110,7 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 | Friflo.Engine.ECS    |  ✅  |  ✅ ¹     |  ✅           |   ✅   |   ✅   | m    |  ✅   |
 | Leopotam.EcsLite     |  ✅  |           |                |         |        | m, n |       |
 | Morpeh               |  ✅  |           |  ✅            |        |        | m, n |        |
-| Myriad.ECS           |  ✅  |           |  ✅            |        |        | m    |  ✅    |
+| Myriad.ECS           |  ✅  |           |  ✅            |        |        | m    |        |
 | TinyEcs              |  ✅  |  ✅       |  ✅           |   ✅   |        | m, n |        |
 
 ¹ Ensures a cycle free entity hierarchy. See [CheckTreeCycles()](https://github.com/search?q=repo%3Afriflo%2FECS.CSharp.Benchmark-common-use-cases+CheckTreeCycles&type=code)
