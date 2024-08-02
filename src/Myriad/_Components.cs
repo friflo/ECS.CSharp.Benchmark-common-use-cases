@@ -14,5 +14,3 @@ internal record struct Component3(int Value) : IComponent;
 internal record struct Component4(int Value) : IComponent;
 
 internal record struct Component5(int Value) : IComponent;
-
-internal record struct SearchableComponent(int Value) : IComponent;
