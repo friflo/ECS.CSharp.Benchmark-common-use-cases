@@ -41,7 +41,7 @@ public static class Category
     public const string     CreateEntityT3              = nameof(CreateEntityT3);
     public const string     CreateWorld                 = nameof(CreateWorld);
     public const string     DeleteEntity                = nameof(DeleteEntity);
-    public const string     GetSetComponentsT1          = nameof(GetSetComponentsT1);
+    public const string     GetSetComponents            = nameof(GetSetComponents);
     public const string     QueryFragmentedT1           = nameof(QueryFragmentedT1);
     public const string     QueryT1                     = nameof(QueryT1);
     public const string     QueryT5                     = nameof(QueryT5);
