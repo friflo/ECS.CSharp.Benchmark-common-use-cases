@@ -2,9 +2,9 @@
 
 namespace Leopotam.EcsLite;
 
-[BenchmarkCategory(Category.AddRemoveComponentsT5)]
+[BenchmarkCategory(Category.AddRemoveComponents)]
 // ReSharper disable once InconsistentNaming
-public class AddRemoveComponentsT5_Leopotam
+public class AddRemoveComponents_Leopotam
 {
     private EcsWorld            world;
     private int[]               entities;
@@ -13,7 +13,10 @@ public class AddRemoveComponentsT5_Leopotam
     private EcsPool<Component3> ecsPoolC3;
     private EcsPool<Component4> ecsPoolC4;
     private EcsPool<Component5> ecsPoolC5;
-    
+
+    [Params(Constants.CompCount1, Constants.CompCount5)]
+    public  int         Components { get; set; }
+
     [GlobalSetup]
     public void Setup() {
         world       = new EcsWorld();
@@ -24,7 +27,7 @@ public class AddRemoveComponentsT5_Leopotam
         ecsPoolC4   = world.GetPool<Component4>();
         ecsPoolC5   = world.GetPool<Component5>();
     }
-    
+
     [GlobalCleanup]
     public void Shutdown() {
         world.Destroy();
@@ -32,6 +35,24 @@ public class AddRemoveComponentsT5_Leopotam
 
     [Benchmark]
     public void Run()
+    {
+        switch (Components) {
+            case 1: Run1Component();    return;
+            case 5: Run5Components();   return;
+        }
+    }
+
+    private void Run1Component()
+    {
+        foreach (var entity in entities) {
+            ecsPoolC1.Add(entity);
+        }
+        foreach (var entity in entities) {
+            ecsPoolC1.Del(entity);
+        }
+    }
+
+    private void Run5Components()
     {
         foreach (var entity in entities) {
             ecsPoolC1.Add(entity);
