@@ -8,13 +8,15 @@ public class GetSetComponentsT1_Morpeh
 {
     private World       world;
     private Entity[]    entities;
-    
+    private Access      access;
+
     [GlobalSetup]
     public void Setup() {
         world       = World.Create();
+        access      = new Access(world);
         entities    = world.CreateEntities(Constants.EntityCount).AddComponents(world);
     }
-    
+
     [GlobalCleanup]
     public void Shutdown() {
         world.Dispose();
@@ -24,7 +26,7 @@ public class GetSetComponentsT1_Morpeh
     public void Run()
     {
         foreach (var entity in entities) {
-            entity.GetComponent<Component1>() = new Component1();
+            access.stash1.Get(entity) = new Component1();
         }
     }
 }
