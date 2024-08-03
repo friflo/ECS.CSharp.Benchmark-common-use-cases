@@ -35,18 +35,18 @@ public class GetSetComponents_TinyEcs
     private void Run1Component()
     {
         foreach (var entity in entities) {
-            entity.Get<Component1>() = new Component1();
+            world.Get<Component1>(entity) = new Component1();
         }
     }
 
     private void Run5Components()
     {
         foreach (var entity in entities) {
-            entity.Get<Component1>() = new Component1();
-            entity.Get<Component2>() = new Component2();
-            entity.Get<Component3>() = new Component3();
-            entity.Get<Component4>() = new Component4();
-            entity.Get<Component5>() = new Component5();
+            world.Get<Component1>(entity) = new Component1();
+            world.Get<Component2>(entity) = new Component2();
+            world.Get<Component3>(entity) = new Component3();
+            world.Get<Component4>(entity) = new Component4();
+            world.Get<Component5>(entity) = new Component5();
         }
     }
 }
