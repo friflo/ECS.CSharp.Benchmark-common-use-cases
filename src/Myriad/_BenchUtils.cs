@@ -4,7 +4,7 @@ using Myriad.ECS.Worlds;
 
 namespace Myriad;
 
-public static class _BenchUtils
+public static class BenchUtils
 {
     public static Entity[] CreateEntities(this World world, int count)
     {
