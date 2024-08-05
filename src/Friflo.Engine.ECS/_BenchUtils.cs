@@ -10,7 +10,7 @@ public static class BenchUtils
         }
         return entities;
     }
-    
+
     public static Entity[] AddComponents(this Entity[] entities)
     {
         foreach (var entity in entities)

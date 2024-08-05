@@ -2,16 +2,12 @@
 
 namespace Scellecs.Morpeh;
 
-[BenchmarkCategory(Category.GetSetComponents)]
 // ReSharper disable once InconsistentNaming
-public class GetSetComponents_Morpeh
+public class GetSetComponents_Morpeh : GetSetComponents
 {
     private World       world;
     private Entity[]    entities;
     private Access      access;
-
-    [Params(Constants.CompCount1, Constants.CompCount5)]
-    public  int         Components { get; set; }
 
     [GlobalSetup]
     public void Setup() {
@@ -25,23 +21,14 @@ public class GetSetComponents_Morpeh
         world.Dispose();
     }
 
-    [Benchmark]
-    public void Run()
-    {
-        switch (Components) {
-            case 1: Run1Component();    return;
-            case 5: Run5Components();   return;
-        }
-    }
-
-    private void Run1Component()
+    protected override void Run1Component()
     {
         foreach (var entity in entities) {
             access.stash1.Get(entity) = new Component1();
         }
     }
 
-    private void Run5Components()
+    protected override void Run5Components()
     {
         foreach (var entity in entities) {
             access.stash1.Get(entity) = new Component1();

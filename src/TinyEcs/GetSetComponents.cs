@@ -2,15 +2,11 @@
 
 namespace TinyEcs;
 
-[BenchmarkCategory(Category.GetSetComponents)]
 // ReSharper disable once InconsistentNaming
-public class GetSetComponents_TinyEcs
+public class GetSetComponents_TinyEcs : GetSetComponents
 {
     private World           world;
     private EntityView[]    entities;
-
-    [Params(Constants.CompCount1, Constants.CompCount5)]
-    public  int         Components { get; set; }
 
     [GlobalSetup]
     public void Setup() {
@@ -23,23 +19,14 @@ public class GetSetComponents_TinyEcs
         world.Dispose();
     }
 
-    [Benchmark]
-    public void Run()
-    {
-        switch (Components) {
-            case 1: Run1Component();    return;
-            case 5: Run5Components();   return;
-        }
-    }
-
-    private void Run1Component()
+    protected override void Run1Component()
     {
         foreach (var entity in entities) {
             world.Get<Component1>(entity) = new Component1();
         }
     }
 
-    private void Run5Components()
+    protected override void Run5Components()
     {
         foreach (var entity in entities) {
             world.Get<Component1>(entity) = new Component1();

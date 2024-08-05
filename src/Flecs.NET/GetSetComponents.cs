@@ -3,15 +3,11 @@ using Flecs.NET.Core;
 
 namespace Flecs.NET;
 
-[BenchmarkCategory(Category.GetSetComponents)]
 // ReSharper disable once InconsistentNaming
-public class GetSetComponents_FlecsNet
+public class GetSetComponents_FlecsNet : GetSetComponents
 {
     private World       world;
     private Entity[]    entities;
-
-    [Params(Constants.CompCount1, Constants.CompCount5)]
-    public  int         Components { get; set; }
 
     [GlobalSetup]
     public void Setup() {
@@ -24,23 +20,14 @@ public class GetSetComponents_FlecsNet
         world.Dispose();
     }
 
-    [Benchmark]
-    public void Run()
-    {
-        switch (Components) {
-            case 1: Run1Component();    return;
-            case 5: Run5Components();   return;
-        }
-    }
-
-    private void Run1Component()
+    protected override void Run1Component()
     {
         foreach (var entity in entities) {
             entity.GetMut<Component1>() = new Component1();
         }
     }
 
-    private void Run5Components()
+    protected override void Run5Components()
     {
         foreach (var entity in entities) {
             entity.GetMut<Component1>() = new Component1();

@@ -2,14 +2,10 @@
 
 namespace Friflo.Engine.ECS;
 
-[BenchmarkCategory(Category.GetSetComponents)]
 // ReSharper disable once InconsistentNaming
-public class GetSetComponents_Friflo
+public class GetSetComponents_Friflo : GetSetComponents
 {
     private Entity[] entities;
-
-    [Params(Constants.CompCount1, Constants.CompCount5)]
-    public  int         Components { get; set; }
 
     [GlobalSetup]
     public void Setup()
@@ -19,22 +15,16 @@ public class GetSetComponents_Friflo
     }
 
     [Benchmark(Baseline = true)]
-    public void Run()
-    {
-        switch (Components) {
-            case 1: Run1Component();    return;
-            case 5: Run5Components();   return;
-        }
-    }
+    public override void Run() => base.Run();
 
-    private void Run1Component()
+    protected override void Run1Component()
     {
         foreach (var entity in entities) {
             entity.GetComponent<Component1>() = new Component1();
         }
     }
 
-    private void Run5Components()
+    protected override void Run5Components()
     {
         foreach (var entity in entities) {
             var data = entity.Data;

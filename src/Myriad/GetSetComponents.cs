@@ -4,15 +4,11 @@ using Myriad.ECS.Worlds;
 
 namespace Myriad;
 
-[BenchmarkCategory(Category.GetSetComponents)]
 // ReSharper disable once InconsistentNaming
-public class GetSetComponents_Myriad
+public class GetSetComponents_Myriad : GetSetComponents
 {
     private World       world;
     private Entity[]    entities;
-
-    [Params(Constants.CompCount1, Constants.CompCount5)]
-    public  int         Components { get; set; }
 
     [GlobalSetup]
     public void Setup()
@@ -29,22 +25,13 @@ public class GetSetComponents_Myriad
         world.Dispose();
     }
 
-    [Benchmark]
-    public void Run()
-    {
-        switch (Components) {
-            case 1: Run1Component();    return;
-            case 5: Run5Components();   return;
-        }
-    }
-
-    private void Run1Component()
+    protected override void Run1Component()
     {
         foreach (var entity in entities)
             entity.GetComponentRef<Component1>(world) = new Component1();
     }
 
-    private void Run5Components()
+    protected override void Run5Components()
     {
         foreach (var entity in entities) {
             entity.GetComponentRef<Component1>(world) = new Component1();
