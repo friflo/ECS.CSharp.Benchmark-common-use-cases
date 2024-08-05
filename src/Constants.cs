@@ -15,7 +15,7 @@ public static class Constants
     public const int    ChildCount          = 10;
 
     // --- for Benchmark: CreateEntityT1 & CreateEntityT3
-    public const int    CreateEntityCount   = 100_000;
+    public const int    CreateEntityCount   = 100;
 
     // --- for Benchmark: DeleteEntity
     public const int    DeleteEntityCount   = 100_000;      // each entity has 5 components
