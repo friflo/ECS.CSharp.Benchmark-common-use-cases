@@ -24,18 +24,22 @@ public class CreateEntity_FlecsNet : CreateEntity
     {
         var table = world.Table().Add<Component1>();
         for (int n = 0; n < Constants.CreateEntityCount; n++) {
-            world.Entity(table);
+            var entity = world.Entity(table);
+            entity.GetMut<Component1>().Value = n;
         }
     }
 
-    protected override void CreateEntity5Components()
+    protected override void CreateEntity3Components()
     {
         var table = world.Table()
             .Add<Component1>()
             .Add<Component2>()
             .Add<Component3>();
         for (int n = 0; n < Constants.CreateEntityCount; n++) {
-            world.Entity(table);
+            var entity = world.Entity(table);
+            entity.GetMut<Component1>().Value = n;
+            entity.GetMut<Component2>().Value = n;
+            entity.GetMut<Component3>().Value = n;
         }
     }
 }

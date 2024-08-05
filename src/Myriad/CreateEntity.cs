@@ -26,21 +26,20 @@ public class CreateEntity_Myriad : CreateEntity
     protected override void CreateEntity1Component()
     {
         var entities = world.CreateEntities(Constants.CreateEntityCount);
-        foreach (var entity in entities) {
-            buffer.Set(entity, new Component1());
+        for (int n = 0; n < entities.Length; n++) {
+            buffer.Set(entities[n], new Component1 { Value = n });
         }
         buffer.Playback().Dispose();
     }
 
-    protected override void CreateEntity5Components()
+    protected override void CreateEntity3Components()
     {
         var entities = world.CreateEntities(Constants.CreateEntityCount);
-        foreach (var entity in entities) {
-            buffer.Set(entity, new Component1());
-            buffer.Set(entity, new Component2());
-            buffer.Set(entity, new Component3());
-            buffer.Set(entity, new Component4());
-            buffer.Set(entity, new Component5());
+        for (int n = 0; n < entities.Length; n++) {
+            var entity = entities[n];
+            buffer.Set(entity, new Component1 { Value = n });
+            buffer.Set(entity, new Component2 { Value = n });
+            buffer.Set(entity, new Component3 { Value = n });
         }
         buffer.Playback().Dispose();
     }

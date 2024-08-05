@@ -25,12 +25,12 @@ public class CreateEntity_Morpeh : CreateEntity
         for (int n = 0; n < Constants.CreateEntityCount; n++)
         {
             var entity = world.CreateEntity();
-            stash1.Add(entity);
+            stash1.Add(entity).Value = n;
         }
         world.Commit();
     }
 
-    protected override void CreateEntity5Components()
+    protected override void CreateEntity3Components()
     {
         var stash1 = world.GetStash<Component1>();
         var stash2 = world.GetStash<Component2>();
@@ -38,9 +38,9 @@ public class CreateEntity_Morpeh : CreateEntity
         for (int n = 0; n < Constants.CreateEntityCount; n++)
         {
             var entity = world.CreateEntity();
-            stash1.Add(entity);
-            stash2.Add(entity);
-            stash3.Add(entity);
+            stash1.Add(entity).Value = n;
+            stash2.Add(entity).Value = n;
+            stash3.Add(entity).Value = n;
         }
         world.Commit();
     }

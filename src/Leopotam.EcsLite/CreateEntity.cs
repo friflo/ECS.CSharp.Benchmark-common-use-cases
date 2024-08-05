@@ -24,20 +24,20 @@ public class CreateEntity_Leopotam : CreateEntity
         var ecsPoolC1 = world.GetPool<Component1>();
         for (int n = 0; n < Constants.CreateEntityCount; n++) {
             var entity = world.NewEntity();
-            ecsPoolC1.Add(entity);
+            ecsPoolC1.Add(entity).Value = n;
         }
     }
 
-    protected override void CreateEntity5Components()
+    protected override void CreateEntity3Components()
     {
         var ecsPoolC1 = world.GetPool<Component1>();
         var ecsPoolC2 = world.GetPool<Component2>();
         var ecsPoolC3 = world.GetPool<Component3>();
         for (int n = 0; n < Constants.CreateEntityCount; n++) {
             var entity = world.NewEntity();
-            ecsPoolC1.Add(entity);
-            ecsPoolC2.Add(entity);
-            ecsPoolC3.Add(entity);
+            ecsPoolC1.Add(entity).Value = n;
+            ecsPoolC2.Add(entity).Value = n;
+            ecsPoolC3.Add(entity).Value = n;
         }
     }
 }

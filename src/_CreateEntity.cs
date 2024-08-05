@@ -12,10 +12,10 @@ public abstract class CreateEntity
     {
         switch (Components) {
             case 1: CreateEntity1Component();    return;
-            case 3: CreateEntity5Components();   return;
+            case 3: CreateEntity3Components();   return;
         }
     }
 
     protected abstract   void CreateEntity1Component();
-    protected abstract   void CreateEntity5Components();
+    protected abstract   void CreateEntity3Components();
 }

@@ -25,12 +25,21 @@ public class CreateEntity_Friflo : CreateEntity
     protected override void CreateEntity1Component()
     {
         var archetype1 = world.GetArchetype(ComponentTypes.Get<Component1>());
-        archetype1.CreateEntities(Constants.CreateEntityCount);
+        var entities = archetype1.CreateEntities(Constants.CreateEntityCount);
+        for (int n = 0; n < entities.Count; n++) {
+            entities[n].GetComponent<Component1>().Value = n;
+        }
     }
 
-    protected override void CreateEntity5Components()
+    protected override void CreateEntity3Components()
     {
         var archetype3 = world.GetArchetype(ComponentTypes.Get<Component1,Component2,Component3>());
-        archetype3.CreateEntities(Constants.CreateEntityCount);
+        var entities = archetype3.CreateEntities(Constants.CreateEntityCount);
+        for (int n = 0; n < entities.Count; n++) {
+            var data = entities[n].Data;
+            data.Get<Component1>().Value = n;
+            data.Get<Component2>().Value = n;
+            data.Get<Component3>().Value = n;
+        }
     }
 }

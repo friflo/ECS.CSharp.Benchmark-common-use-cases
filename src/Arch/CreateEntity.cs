@@ -27,15 +27,19 @@ public class CreateEntity_Arch : CreateEntity
     {
         world.Reserve(ComponentTypes1, Constants.CreateEntityCount);
         for (int n = 0; n < Constants.CreateEntityCount; n++) {
-            world.Create(ComponentTypes1);
+            var entity = world.Create(ComponentTypes1);
+            world.Get<Component1>(entity).Value = n;
         }
     }
 
-    protected override void CreateEntity5Components()
+    protected override void CreateEntity3Components()
     {
         world.Reserve(ComponentTypes3, Constants.CreateEntityCount);
         for (int n = 0; n < Constants.CreateEntityCount; n++) {
-            world.Create(ComponentTypes3);
+            var entity = world.Create(ComponentTypes3);
+            world.Get<Component1>(entity).Value = n;
+            world.Get<Component2>(entity).Value = n;
+            world.Get<Component3>(entity).Value = n;
         }
     }
 }

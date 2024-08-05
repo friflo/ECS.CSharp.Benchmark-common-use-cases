@@ -23,17 +23,17 @@ public class CreateEntity_DefaultEcs : CreateEntity
     {
         for (int n = 0; n < Constants.CreateEntityCount; n++) {
             var entity = world.CreateEntity();
-            entity.Set<Component1>();
+            entity.Set(new Component1 { Value = n });
         }
     }
 
-    protected override void CreateEntity5Components()
+    protected override void CreateEntity3Components()
     {
         for (int n = 0; n < Constants.CreateEntityCount; n++) {
             var entity = world.CreateEntity();
-            entity.Set<Component1>();
-            entity.Set<Component2>();
-            entity.Set<Component3>();
+            entity.Set(new Component1 { Value = n });
+            entity.Set(new Component2 { Value = n });
+            entity.Set(new Component3 { Value = n });
         }
     }
 }
