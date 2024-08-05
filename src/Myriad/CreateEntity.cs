@@ -1,4 +1,4 @@
-﻿using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Attributes;
 using Myriad.ECS.Command;
 using Myriad.ECS.Worlds;
 
@@ -25,22 +25,22 @@ public class CreateEntity_Myriad : CreateEntity
 
     protected override void CreateEntity1Component()
     {
-        var entities = world.CreateEntities(Constants.CreateEntityCount);
-        for (int n = 0; n < entities.Length; n++) {
-            buffer.Set(entities[n], new Component1 { Value = n });
-        }
+        for (var n = 0; n < Constants.CreateEntityCount; n++)
+            buffer.Create().Set(new Component1(n));
+
         buffer.Playback().Dispose();
     }
 
     protected override void CreateEntity3Components()
     {
-        var entities = world.CreateEntities(Constants.CreateEntityCount);
-        for (int n = 0; n < entities.Length; n++) {
-            var entity = entities[n];
-            buffer.Set(entity, new Component1 { Value = n });
-            buffer.Set(entity, new Component2 { Value = n });
-            buffer.Set(entity, new Component3 { Value = n });
+        for (var n = 0; n < Constants.CreateEntityCount; n++)
+        {
+            buffer.Create()
+                  .Set(new Component1(n))
+                  .Set(new Component2(n))
+                  .Set(new Component3(n));
         }
+
         buffer.Playback().Dispose();
     }
 }
