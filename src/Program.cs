@@ -13,6 +13,7 @@ $@"
     -------------------------------------
     {nameof(Constants.EntityCount)}:        {Constants.EntityCount}
     {nameof(Constants.CreateEntityCount)}:  {Constants.CreateEntityCount}
+    {nameof(Constants.CreateBulkCount)}:    {Constants.CreateBulkCount}
     {nameof(Constants.DeleteEntityCount)}:  {Constants.DeleteEntityCount}
     args: {string.Join(' ', args)}
 ";
