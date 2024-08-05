@@ -36,6 +36,7 @@ public class CreateEntity_FlecsNet : CreateEntity
             .Add<Component2>()
             .Add<Component3>();
         for (int n = 0; n < Constants.CreateEntityCount; n++) {
+            world.Entity(table);
             var entity = world.Entity(table);
             entity.GetMut<Component1>().Value = n;
             entity.GetMut<Component2>().Value = n;

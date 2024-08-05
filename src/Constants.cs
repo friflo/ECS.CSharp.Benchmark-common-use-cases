@@ -36,6 +36,7 @@ public static class Category
     public const string     AddRemoveComponents         = nameof(AddRemoveComponents);
     public const string     ComponentEvents             = nameof(ComponentEvents);
     public const string     CreateEntity                = nameof(CreateEntity);
+    public const string     CreateBulk                  = nameof(CreateBulk);
     public const string     CreateWorld                 = nameof(CreateWorld);
     public const string     DeleteEntity                = nameof(DeleteEntity);
     public const string     GetSetComponents            = nameof(GetSetComponents);
