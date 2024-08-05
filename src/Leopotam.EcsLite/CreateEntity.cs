@@ -2,26 +2,33 @@
 
 namespace Leopotam.EcsLite;
 
-[BenchmarkCategory(Category.CreateEntityT3)]
 // ReSharper disable once InconsistentNaming
-public class CreateEntityT3_Leopotam
+public class CreateEntity_Leopotam : CreateEntity
 {
-    private EcsWorld world;
-    
+    private EcsWorld    world;
+
     [IterationSetup]
     public void Setup()
     {
         world = new EcsWorld();
     }
-    
+
     [IterationCleanup]
     public void Shutdown()
     {
         world.Destroy();
     }
-    
-    [Benchmark]
-    public void Run()
+
+    protected override void CreateEntity1Component()
+    {
+        var ecsPoolC1 = world.GetPool<Component1>();
+        for (int n = 0; n < Constants.CreateEntityCount; n++) {
+            var entity = world.NewEntity();
+            ecsPoolC1.Add(entity);
+        }
+    }
+
+    protected override void CreateEntity5Components()
     {
         var ecsPoolC1 = world.GetPool<Component1>();
         var ecsPoolC2 = world.GetPool<Component2>();

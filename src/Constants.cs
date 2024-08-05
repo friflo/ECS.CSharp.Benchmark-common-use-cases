@@ -35,8 +35,7 @@ public static class Category
     // --- Basic features
     public const string     AddRemoveComponents         = nameof(AddRemoveComponents);
     public const string     ComponentEvents             = nameof(ComponentEvents);
-    public const string     CreateEntityT1              = nameof(CreateEntityT1);
-    public const string     CreateEntityT3              = nameof(CreateEntityT3);
+    public const string     CreateEntity                = nameof(CreateEntity);
     public const string     CreateWorld                 = nameof(CreateWorld);
     public const string     DeleteEntity                = nameof(DeleteEntity);
     public const string     GetSetComponents            = nameof(GetSetComponents);
