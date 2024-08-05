@@ -508,6 +508,9 @@ All popular IDE's can be used to run and debug the project: **Rider**, **Visual 
 
 - Each benchmark is **simple** and uses the fastest single threaded variant available.  
   To obtain clarity a project must not have multiple variants of the same benchmark type.
+- A ECS framework must implement all [Basic](#basic) benchmarks. Reasons  
+  - Operations used in basic benchmarks are required to build a rudimentary application.
+  - Avoid cherry picking of benchmarks with good performance.
 - Each Benchmark shares no state or code with any other benchmarks.
 - Adding or removing a benchmark implementation has no effect on all others.
 - Each project has an extension class `BenchUtils` with two methods to used by its benchmarks.  
