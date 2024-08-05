@@ -3,29 +3,38 @@ using Flecs.NET.Core;
 
 namespace Flecs.NET;
 
-[BenchmarkCategory(Category.QueryT5)]
 // ReSharper disable once InconsistentNaming
-public class QueryT5_FlecsNet
+public class QueryComponents_FlecsNet : QueryComponents
 {
     private World   world;
-    private Query   query;
-    
+    private Query   query1;
+    private Query   query5;
+
     [GlobalSetup]
     public void Setup() {
         world = World.Create();
         world.CreateEntities(Constants.EntityCount).AddComponents();
-        query = world.QueryBuilder().With<Component1>().With<Component2>().With<Component3>().With<Component4>().With<Component5>().Build();
+        query1 = world.QueryBuilder().With<Component1>().Build();
+        query5 = world.QueryBuilder().With<Component1>().With<Component2>().With<Component3>().With<Component4>().With<Component5>().Build();
     }
-    
+
     [GlobalCleanup]
     public void Shutdown() {
         world.Dispose();
     }
-    
-    [Benchmark]
-    public void Run()
+
+    protected override void Run1Component()
     {
-        query.Iter((Iter _,
+        query1.Iter((Iter _, Span<Component1> c1Span) => {
+            foreach (ref var c1 in c1Span) {
+                c1.Value++;
+            }
+        });
+    }
+
+    protected override void Run5Components()
+    {
+        query5.Iter((Iter _,
             Span<Component1> c1Span,
             Span<Component2> c2Span,
             Span<Component3> c3Span,

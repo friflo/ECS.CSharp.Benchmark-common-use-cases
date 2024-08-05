@@ -42,7 +42,7 @@ public static class Category
     public const string     GetSetComponents            = nameof(GetSetComponents);
     public const string     QueryFragmentedT1           = nameof(QueryFragmentedT1);
     public const string     QueryT1                     = nameof(QueryT1);
-    public const string     QueryT5                     = nameof(QueryT5);
+    public const string     QueryComponents             = nameof(QueryComponents);
 
     // --- projects supporting: Relations
     public const string     AddRemoveLinks              = nameof(AddRemoveLinks);

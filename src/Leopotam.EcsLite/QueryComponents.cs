@@ -2,18 +2,18 @@
 
 namespace Leopotam.EcsLite;
 
-[BenchmarkCategory(Category.QueryT5)]
 // ReSharper disable once InconsistentNaming
-public class QueryT5_Leopotam
+public class QueryComponents_Leopotam : QueryComponents
 {
     private EcsWorld            world;
-    private EcsFilter           filter;
+    private EcsFilter           filter1;
+    private EcsFilter           filter5;
     private EcsPool<Component1> c1;
     private EcsPool<Component2> c2;
     private EcsPool<Component3> c3;
     private EcsPool<Component4> c4;
     private EcsPool<Component5> c5;
-    
+
     [GlobalSetup]
     public void Setup() {
         world = new EcsWorld();
@@ -23,20 +23,28 @@ public class QueryT5_Leopotam
         c3      = world.GetPool<Component3>();
         c4      = world.GetPool<Component4>();
         c5      = world.GetPool<Component5>();
-        filter  = world.Filter<Component1>().Inc<Component2>().Inc<Component3>().Inc<Component4>().Inc<Component5>().End();
-        Check.AreEqual(Constants.EntityCount, filter.GetEntitiesCount());
+        filter1 = world.Filter<Component1>().End();
+        filter5 = world.Filter<Component1>().Inc<Component2>().Inc<Component3>().Inc<Component4>().Inc<Component5>().End();
+        Check.AreEqual(Constants.EntityCount, filter5.GetEntitiesCount());
     }
-    
+
     [GlobalCleanup]
     public void Shutdown() {
         world.Destroy();
     }
-    
-    [Benchmark]
-    public void Run()
+
+    protected override void Run1Component()
     {
-        int[] entities = filter.GetRawEntities();
-        for (int i = 0, iMax = filter.GetEntitiesCount(); i < iMax; i++)
+        int[] entities = filter1.GetRawEntities();
+        for (int i = 0, iMax = filter1.GetEntitiesCount(); i < iMax; i++) {
+            ++c1.Get(entities[i]).Value;
+        }
+    }
+
+    protected override void Run5Components()
+    {
+        int[] entities = filter5.GetRawEntities();
+        for (int i = 0, iMax = filter5.GetEntitiesCount(); i < iMax; i++)
         {
             var entity = entities[i];
             c1.Get(entity).Value =

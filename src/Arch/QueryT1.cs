@@ -9,8 +9,8 @@ public class QueryT1_Arch
 {
     private World               world;
     private QueryDescription    queryDescription;
-    private ForEach1            forEach;
-    
+    private ForEach1            forEach1;
+
     [GlobalSetup]
     public void Setup()
     {
@@ -19,16 +19,16 @@ public class QueryT1_Arch
         queryDescription = new QueryDescription().WithAll<Component1>();
         Check.AreEqual(Constants.EntityCount, world.CountEntities(queryDescription));
     }
-    
+
     [GlobalCleanup]
     public void Shutdown()
     {
         World.Destroy(world);
     }
-    
+
     [Benchmark]
     public void Run()
     {
-        world.InlineQuery<ForEach1, Component1>(queryDescription, ref forEach);
+        world.InlineQuery<ForEach1, Component1>(queryDescription, ref forEach1);
     }
 }
