@@ -2,13 +2,12 @@ using BenchmarkDotNet.Attributes;
 
 namespace Friflo.Engine.ECS;
 
-[BenchmarkCategory(Category.CommandBufferAddRemoveT2)]
 // ReSharper disable once InconsistentNaming
-public class CommandBufferAddRemoveT2_Friflo
+public class CommandBufferAddRemove_Friflo : CommandBufferAddRemove
 {
     private Entity[]        entities;
     private CommandBuffer   commandBuffer;
-    
+
     [GlobalSetup]
     public void Setup()
     {
@@ -17,9 +16,9 @@ public class CommandBufferAddRemoveT2_Friflo
         commandBuffer   = world.GetCommandBuffer();
         commandBuffer.ReuseBuffer = true;
     }
-    
+
     [Benchmark(Baseline = true)]
-    public void Run()
+    public override void Run()
     {
         var cb = commandBuffer;
         foreach (var entity in entities) {
@@ -27,7 +26,7 @@ public class CommandBufferAddRemoveT2_Friflo
             cb.AddComponent(entity.Id, new Component2());
         }
         cb.Playback(); // Apply changes 1
-        
+
         foreach (var entity in entities) {
             cb.RemoveComponent<Component1>(entity.Id);
             cb.RemoveComponent<Component2>(entity.Id);

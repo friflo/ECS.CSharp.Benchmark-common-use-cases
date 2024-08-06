@@ -47,7 +47,7 @@ public static class Category
 
 
     // --- projects supporting: Command buffers
-    public const string     CommandBufferAddRemoveT2    = nameof(CommandBufferAddRemoveT2);
+    public const string     CommandBufferAddRemove      = nameof(CommandBufferAddRemove);
 
     // --- projects supporting: Search
     public const string     SearchComponentField        = nameof(SearchComponentField);

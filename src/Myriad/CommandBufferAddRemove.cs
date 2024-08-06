@@ -5,9 +5,8 @@ using Myriad.ECS.Worlds;
 
 namespace Myriad;
 
-[BenchmarkCategory(Category.CommandBufferAddRemoveT2)]
 // ReSharper disable once InconsistentNaming
-public class CommandBufferAddRemoveT2_Myriad
+public class CommandBufferAddRemove_Myriad : CommandBufferAddRemove
 {
     private World world;
     private Entity[] entities;
@@ -30,7 +29,7 @@ public class CommandBufferAddRemoveT2_Myriad
     }
 
     [Benchmark]
-    public void Run()
+    public override void Run()
     {
         foreach (var entity in entities)
         {

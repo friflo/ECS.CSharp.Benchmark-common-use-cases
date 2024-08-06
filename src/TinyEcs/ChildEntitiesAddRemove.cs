@@ -2,16 +2,15 @@
 
 namespace TinyEcs;
 
-[BenchmarkCategory(Category.ChildEntitiesAddRemove)]
 // ReSharper disable once InconsistentNaming
-public class ChildEntitiesAddRemove_TinyEcs
+public class ChildEntitiesAddRemove_TinyEcs : ChildEntitiesAddRemove
 {
     private World           world;
     private EntityView[]    parents;
     private EntityView[][]  children;
     private int             entityCount;
     private int             childCount;
-    
+
     [GlobalSetup]
     public void Setup() {
         world       = new World();
@@ -23,7 +22,7 @@ public class ChildEntitiesAddRemove_TinyEcs
             children[n] = world.CreateEntities(childCount).AddComponents();
         }
     }
-    
+
     [GlobalCleanup]
     public void Shutdown() {
         world.Dispose();
@@ -31,7 +30,7 @@ public class ChildEntitiesAddRemove_TinyEcs
 
     // according to example: https://github.com/andreakarasho/TinyEcs?tab=readme-ov-file#childof
     [Benchmark]
-    public void Run()
+    public override void Run()
     {
         for (int n = 0; n < entityCount; n++) {
             for (int child = 0; child < childCount; child++) {
@@ -45,7 +44,7 @@ public class ChildEntitiesAddRemove_TinyEcs
             }
         }
     }
-    
+
     // method only for verification
     private int CountChildren()
     {

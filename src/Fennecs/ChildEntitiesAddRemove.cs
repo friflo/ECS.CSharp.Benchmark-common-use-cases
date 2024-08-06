@@ -2,16 +2,15 @@
 
 namespace fennecs;
 
-[BenchmarkCategory(Category.ChildEntitiesAddRemove)]
 // ReSharper disable once InconsistentNaming
-public class ChildEntitiesAddRemove_Fennecs
+public class ChildEntitiesAddRemove_Fennecs : ChildEntitiesAddRemove
 {
     private World       world;
     private Entity[]    parents;
     private Entity[][]  children;
     private int         entityCount;
     private int         childCount;
-    
+
     [GlobalSetup]
     public void Setup() {
         world       = new World();
@@ -23,7 +22,7 @@ public class ChildEntitiesAddRemove_Fennecs
             children[n] = world.CreateEntities(childCount).AddComponents();
         }
     }
-    
+
     [GlobalCleanup]
     public void Shutdown() {
         world.Dispose();
@@ -32,7 +31,7 @@ public class ChildEntitiesAddRemove_Fennecs
     // found no concrete example. Chose ChildOf approach. An alternative is ParentOf apprach.
     // see: https://fennecs.tech/docs/Components/Relation.html
     [Benchmark]
-    public void Run()
+    public override void Run()
     {
         for (int n = 0; n < entityCount; n++) {
             for (int child = 0; child < childCount; child++) {
@@ -46,7 +45,7 @@ public class ChildEntitiesAddRemove_Fennecs
             }
         }
     }
-    
+
     // method only for verification
     private int CountChildren()
     {

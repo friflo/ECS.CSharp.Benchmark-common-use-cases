@@ -3,16 +3,15 @@ using Flecs.NET.Core;
 
 namespace Flecs.NET;
 
-[BenchmarkCategory(Category.ChildEntitiesAddRemove)]
 // ReSharper disable once InconsistentNaming
-public class ChildEntitiesAddRemove_FlecsNet
+public class ChildEntitiesAddRemove_FlecsNet : ChildEntitiesAddRemove
 {
     private World       world;
     private Entity[]    parents;
     private Entity[][]  children;
     private int         entityCount;
     private int         childCount;
-    
+
     [GlobalSetup]
     public void Setup() {
         world       = World.Create();
@@ -24,7 +23,7 @@ public class ChildEntitiesAddRemove_FlecsNet
             children[n] = world.CreateEntities(childCount).AddComponents();
         }
     }
-    
+
     [GlobalCleanup]
     public void Shutdown() {
         world.Dispose();
@@ -32,7 +31,7 @@ public class ChildEntitiesAddRemove_FlecsNet
 
     // according to example : https://github.com/SanderMertens/flecs/blob/master/docs/Relationships.md#the-childof-relationship
     [Benchmark]
-    public void Run()
+    public override void Run()
     {
         for (int n = 0; n < entityCount; n++) {
             for (int child = 0; child < childCount; child++) {
@@ -46,7 +45,7 @@ public class ChildEntitiesAddRemove_FlecsNet
             }
         }
     }
-    
+
     // method only for verification
     private int CountChildren()
     {

@@ -4,16 +4,15 @@ using BenchmarkDotNet.Attributes;
 
 namespace Arch;
 
-[BenchmarkCategory(Category.ChildEntitiesAddRemove)]
 // ReSharper disable once InconsistentNaming
-public class ChildEntitiesAddRemove_Arch
+public class ChildEntitiesAddRemove_Arch : ChildEntitiesAddRemove
 {
     private World       world;
     private Entity[]    parents;
     private Entity[][]  children;
     private int         entityCount;
     private int         childCount;
-    
+
     [GlobalSetup]
     public void Setup() {
         world       = World.Create();
@@ -25,7 +24,7 @@ public class ChildEntitiesAddRemove_Arch
             children[n] = world.CreateEntities(childCount).AddComponents();
         }
     }
-    
+
     [GlobalCleanup]
     public void Shutdown() {
         world.Dispose();
@@ -33,7 +32,7 @@ public class ChildEntitiesAddRemove_Arch
 
     /// according to example: https://github.com/genaray/Arch.Extended/wiki/Relationships#code-sample
     [Benchmark]
-    public void Run()
+    public override void Run()
     {
         for (int n = 0; n < entityCount; n++) {
             for (int child = 0; child < childCount; child++) {
@@ -47,7 +46,7 @@ public class ChildEntitiesAddRemove_Arch
             }
         }
     }
-    
+
     // method only for verification
     private int CountChildren()
     {
