@@ -2,12 +2,11 @@
 
 namespace Friflo.Engine.ECS;
 
-[BenchmarkCategory(Category.SearchRange)]
 // ReSharper disable once InconsistentNaming
-public class SearchRange_Friflo
+public class SearchRange_Friflo : SearchRange
 {
     private EntityStore world;
-    
+
     [GlobalSetup]
     public void Setup()
     {
@@ -18,9 +17,9 @@ public class SearchRange_Friflo
             entities[value].AddComponent(new SearchableComponent(value));
         }
     }
-    
+
     [Benchmark(Baseline = true)]
-    public void Run()
+    public override void Run()
     {
         for (int searchValue = 0; searchValue < Constants.SearchCount; searchValue++)
         {
