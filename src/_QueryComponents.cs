@@ -1,7 +1,7 @@
 ﻿
 using BenchmarkDotNet.Attributes;
 
-[BenchmarkCategory(Category.QueryComponents)]
+[BenchmarkCategory(nameof(QueryComponents))]
 public abstract class QueryComponents
 {
     [Params(1, 5)]
@@ -20,7 +20,7 @@ public abstract class QueryComponents
     protected abstract   void Run5Components();
 }
 
-[BenchmarkCategory(Category.QueryFragmented)]
+[BenchmarkCategory(nameof(QueryFragmented))]
 public abstract class QueryFragmented
 {
     [Benchmark]

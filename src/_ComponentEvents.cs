@@ -1,7 +1,7 @@
 ﻿
 using BenchmarkDotNet.Attributes;
 
-[BenchmarkCategory(Category.ComponentEvents)]
+[BenchmarkCategory(nameof(ComponentEvents))]
 public abstract class ComponentEvents
 {
     public abstract void Run();

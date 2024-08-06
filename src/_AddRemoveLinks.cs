@@ -1,6 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
 
-[BenchmarkCategory(Category.AddRemoveLinks)]
+[BenchmarkCategory(nameof(AddRemoveLinks))]
 public abstract class AddRemoveLinks
 {
     [Params(1, 100)]

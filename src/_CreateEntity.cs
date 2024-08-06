@@ -2,7 +2,7 @@
 using BenchmarkDotNet.Attributes;
 
 [WarmupCount(5000)] // so fast implementation to execute JIT compiler
-[BenchmarkCategory(Category.CreateEntity)]
+[BenchmarkCategory(nameof(CreateEntity))]
 public abstract class CreateEntity
 {
     [Params(1, 3)]
@@ -22,7 +22,7 @@ public abstract class CreateEntity
 }
 
 [WarmupCount(5000)] // so fast implementation to execute JIT compiler
-[BenchmarkCategory(Category.CreateBulk)]
+[BenchmarkCategory(nameof(CreateBulk))]
 public abstract class CreateBulk
 {
     [Params(1, 3)]

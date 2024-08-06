@@ -1,6 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
 
-[BenchmarkCategory(Category.AddRemoveRelations)]
+[BenchmarkCategory(nameof(AddRemoveRelations))]
 public abstract class AddRemoveRelations
 {
     [Params(1, 10)]

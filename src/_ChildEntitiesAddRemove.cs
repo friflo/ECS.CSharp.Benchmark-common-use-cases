@@ -1,6 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
 
-[BenchmarkCategory(Category.ChildEntitiesAddRemove)]
+[BenchmarkCategory(nameof(ChildEntitiesAddRemove))]
 public abstract class ChildEntitiesAddRemove
 {
     public abstract void Run();

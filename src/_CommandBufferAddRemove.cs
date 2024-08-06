@@ -1,6 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
 
-[BenchmarkCategory(Category.CommandBufferAddRemove)]
+[BenchmarkCategory(nameof(CommandBufferAddRemove))]
 public abstract class CommandBufferAddRemove
 {
     public abstract void Run();

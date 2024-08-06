@@ -1,7 +1,7 @@
 ﻿
 using BenchmarkDotNet.Attributes;
 
-[BenchmarkCategory(Category.DeleteEntity)]
+[BenchmarkCategory(nameof(DeleteEntity))]
 public abstract class DeleteEntity
 {
     public abstract void Run();

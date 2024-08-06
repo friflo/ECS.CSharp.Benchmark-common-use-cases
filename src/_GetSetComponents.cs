@@ -1,7 +1,7 @@
 ﻿
 using BenchmarkDotNet.Attributes;
 
-[BenchmarkCategory(Category.GetSetComponents)]
+[BenchmarkCategory(nameof(GetSetComponents))]
 public abstract class GetSetComponents
 {
     [Params(1, 5)]

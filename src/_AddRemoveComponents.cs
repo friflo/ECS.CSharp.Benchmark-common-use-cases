@@ -1,7 +1,7 @@
 ﻿
 using BenchmarkDotNet.Attributes;
 
-[BenchmarkCategory(Category.AddRemoveComponents)]
+[BenchmarkCategory(nameof(AddRemoveComponents))]
 public abstract class AddRemoveComponents
 {
     [Params(1, 5)]

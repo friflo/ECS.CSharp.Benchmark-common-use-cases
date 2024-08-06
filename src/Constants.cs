@@ -24,32 +24,3 @@ public static class Constants
     // --- for Benchmark: ComponentEvents
     public const int    EventCount          = 100;          // number of component add / remove events
 }
-
-
-// --- Benchmark categories
-public static class Category
-{
-    // --- Basic features
-    public const string     AddRemoveComponents         = nameof(AddRemoveComponents);
-    public const string     ComponentEvents             = nameof(ComponentEvents);
-    public const string     CreateEntity                = nameof(CreateEntity);
-    public const string     CreateBulk                  = nameof(CreateBulk);
-    public const string     CreateWorld                 = nameof(CreateWorld);
-    public const string     DeleteEntity                = nameof(DeleteEntity);
-    public const string     GetSetComponents            = nameof(GetSetComponents);
-    public const string     QueryFragmented           = nameof(QueryFragmented);
-    public const string     QueryComponents             = nameof(QueryComponents);
-
-    // --- projects supporting: Relations
-    public const string     AddRemoveLinks              = nameof(AddRemoveLinks);
-    public const string     AddRemoveRelations          = nameof(AddRemoveRelations);
-    public const string     ChildEntitiesAddRemove      = nameof(ChildEntitiesAddRemove);
-
-
-    // --- projects supporting: Command buffers
-    public const string     CommandBufferAddRemove      = nameof(CommandBufferAddRemove);
-
-    // --- projects supporting: Search
-    public const string     SearchComponentField        = nameof(SearchComponentField);
-    public const string     SearchRange                 = nameof(SearchRange);  // aka range query
-}
