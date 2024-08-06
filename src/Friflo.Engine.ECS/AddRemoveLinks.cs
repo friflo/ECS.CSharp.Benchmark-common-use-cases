@@ -17,7 +17,7 @@ public class AddRemoveLinks_Friflo : AddRemoveLinks
     }
 
     [Benchmark(Baseline = true)]
-    public void Run()
+    public override void Run()
     {
         foreach (var source in sources)
         {

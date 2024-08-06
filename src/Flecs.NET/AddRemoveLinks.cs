@@ -30,7 +30,7 @@ public class AddRemoveLinks_FlecsNet : AddRemoveLinks
     }
 
     [Benchmark]
-    public void Run()
+    public override void Run()
     {
         foreach (var source in sources)
         {

@@ -29,7 +29,7 @@ public class AddRemoveLinks_TinyEcs : AddRemoveLinks
     }
 
     [Benchmark]
-    public void Run()
+    public override void Run()
     {
         foreach (var source in sources)
         {

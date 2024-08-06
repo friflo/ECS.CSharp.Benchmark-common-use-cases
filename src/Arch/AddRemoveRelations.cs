@@ -16,6 +16,7 @@ public class AddRemoveRelations_Arch : AddRemoveRelations
     {
         world       = World.Create();
         entities    = world.CreateEntities(Constants.EntityCount).AddComponents();
+        targets     = new Entity[RelationCount];
     }
 
     [GlobalCleanup]
@@ -24,10 +25,20 @@ public class AddRemoveRelations_Arch : AddRemoveRelations
         World.Destroy(world);
     }
 
-    [Benchmark]
-    public void Run()
+    protected override void AddRemove1Relation()
     {
-        targets = world.CreateEntities(RelationCount, targets);
+        var target = world.CreateEntities(1, targets)[0];
+        foreach (var entity in entities)
+        {
+            entity.AddRelationship(target, new LinkRelation(1337));
+            entity.RemoveRelationship<LinkRelation>(target);
+        }
+        world.Destroy(target);
+    }
+
+    protected override void AddRemove10Relations()
+    {
+        world.CreateEntities(RelationCount, targets);
         foreach (var entity in entities)
         {
             for (int n = 0; n < RelationCount; n++) {

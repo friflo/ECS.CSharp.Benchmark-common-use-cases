@@ -15,16 +15,9 @@ public class AddRemoveRelations_Friflo : AddRemoveRelations
     }
 
     [Benchmark(Baseline = true)]
-    public void Run()
-    {
-        if (RelationCount == 1) {
-            AddRemove1Relation();
-            return;
-        }
-        AddRemove10Relations();
-    }
+    public override void Run() => base.Run();
 
-    private void AddRemove1Relation()
+    protected override void AddRemove1Relation()
     {
         foreach (var entity in entities)
         {
@@ -35,7 +28,7 @@ public class AddRemoveRelations_Friflo : AddRemoveRelations
 
     private static readonly RelationKey[] Keys = Enum.GetValues(typeof(RelationKey)).Cast<RelationKey>().ToArray();
 
-    private void AddRemove10Relations()
+    protected override void AddRemove10Relations()
     {
         foreach (var entity in entities)
         {

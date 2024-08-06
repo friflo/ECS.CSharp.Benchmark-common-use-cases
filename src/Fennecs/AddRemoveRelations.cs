@@ -19,17 +19,7 @@ public class AddRemoveRelations_Fennecs : AddRemoveRelations
         world.Dispose();
     }
 
-    [Benchmark]
-    public void Run()
-    {
-        if (RelationCount == 1) {
-            AddRemove1Relation();
-            return;
-        }
-        AddRemove10Relations();
-    }
-
-    private void AddRemove1Relation()
+    protected override void AddRemove1Relation()
     {
         foreach (var entity in entities)
         {
@@ -38,7 +28,7 @@ public class AddRemoveRelations_Fennecs : AddRemoveRelations
         }
     }
 
-    private void AddRemove10Relations()
+    protected override void AddRemove10Relations()
     {
         foreach (var entity in entities)
         {

@@ -24,7 +24,7 @@ public class AddRemoveLinks_Fennecs : AddRemoveLinks
     }
 
     [Benchmark]
-    public void Run()
+    public override void Run()
     {
         foreach (var source in sources)
         {

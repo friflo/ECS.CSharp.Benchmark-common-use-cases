@@ -26,7 +26,7 @@ public class AddRemoveLinks_Arch : AddRemoveLinks
     }
 
     [Benchmark]
-    public void Run()
+    public override void Run()
     {
         foreach (var entity in entities)
         {
