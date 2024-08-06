@@ -2,16 +2,12 @@
 
 namespace Friflo.Engine.ECS;
 
-[BenchmarkCategory(Category.AddRemoveLinks)]
 // ReSharper disable once InconsistentNaming
-public class AddRemoveLinks_Friflo
+public class AddRemoveLinks_Friflo : AddRemoveLinks
 {
     private Entity[]    sources;
     private Entity[]    targets;
-    
-    [Params(Constants.TargetCountP1, Constants.TargetCountP2)]
-    public  int         RelationCount { get; set; }
-    
+
     [GlobalSetup]
     public void Setup()
     {
@@ -19,7 +15,7 @@ public class AddRemoveLinks_Friflo
         sources     = world.CreateEntities(Constants.EntityCount).AddComponents();
         targets     = world.CreateEntities(RelationCount).AddComponents();
     }
-    
+
     [Benchmark(Baseline = true)]
     public void Run()
     {

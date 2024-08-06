@@ -4,17 +4,13 @@ using BenchmarkDotNet.Attributes;
 
 namespace Arch;
 
-[BenchmarkCategory(Category.AddRemoveLinks)]
 // ReSharper disable once InconsistentNaming
-public class AddRemoveLinks_Arch
+public class AddRemoveLinks_Arch : AddRemoveLinks
 {
     private World       world;
     private Entity[]    entities;
     private Entity[]    targets;
-    
-    [Params(Constants.TargetCountP1, Constants.TargetCountP2)]
-    public  int         RelationCount { get; set; }
-    
+
     [GlobalSetup]
     public void Setup()
     {
@@ -22,13 +18,13 @@ public class AddRemoveLinks_Arch
         entities    = world.CreateEntities(Constants.EntityCount).AddComponents();
         targets     = world.CreateEntities(RelationCount).AddComponents();
     }
-    
+
     [GlobalCleanup]
     public void Shutdown()
     {
         World.Destroy(world);
     }
-    
+
     [Benchmark]
     public void Run()
     {

@@ -5,12 +5,6 @@ public static class Constants
     public const int    EntityCount         = 100;
     public const int    FragmentationCount  = 32;
 
-    // --- for Benchmark: AddRemoveLinks
-    public const int    TargetCountP1       = 1;            // NOTE! Must be used only in [Params()]
-    public const int    TargetCountP2       = 100;          // NOTE! Must be used only in [Params()]
-    public const int    RelationCountP1     = 1;            // NOTE! Must be used only in [Params()]
-    public const int    RelationCountP2     = 10;           // NOTE! Must be used only in [Params()]
-
     // --- for Benchmark: ChildEntitiesAddRemove
     public const int    ChildCount          = 10;
 

@@ -2,22 +2,18 @@
 
 namespace Friflo.Engine.ECS;
 
-[BenchmarkCategory(Category.AddRemoveRelations)]
 // ReSharper disable once InconsistentNaming
-public class AddRemoveRelations_Friflo
+public class AddRemoveRelations_Friflo : AddRemoveRelations
 {
     private Entity[]    entities;
-    
-    [Params(Constants.RelationCountP1, Constants.RelationCountP2)]
-    public int RelationCount { get; set; }
-    
+
     [GlobalSetup]
     public void Setup()
     {
         var world   = new EntityStore();
         entities    = world.CreateEntities(Constants.EntityCount).AddComponents();
     }
-    
+
     [Benchmark(Baseline = true)]
     public void Run()
     {
@@ -27,7 +23,7 @@ public class AddRemoveRelations_Friflo
         }
         AddRemove10Relations();
     }
-    
+
     private void AddRemove1Relation()
     {
         foreach (var entity in entities)
@@ -36,9 +32,9 @@ public class AddRemoveRelations_Friflo
             entity.RemoveRelation<Relation, RelationKey>(RelationKey.Key1);
         }
     }
-    
+
     private static readonly RelationKey[] Keys = Enum.GetValues(typeof(RelationKey)).Cast<RelationKey>().ToArray();
-    
+
     private void AddRemove10Relations()
     {
         foreach (var entity in entities)

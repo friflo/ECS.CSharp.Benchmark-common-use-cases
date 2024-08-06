@@ -2,21 +2,18 @@
 
 namespace fennecs;
 
-[BenchmarkCategory(Category.AddRemoveRelations)]
 // ReSharper disable once InconsistentNaming
-public class AddRemoveRelations_Fennecs
+public class AddRemoveRelations_Fennecs : AddRemoveRelations
 {
     private World       world;
     private Entity[]    entities;
-    [Params(Constants.RelationCountP1, Constants.RelationCountP2)]
-    public  int         RelationCount { get; set; }
-    
+
     [GlobalSetup]
     public void Setup() {
         world       = new World();
         entities    = world.CreateEntities(Constants.EntityCount).AddComponents();
     }
-    
+
     [GlobalCleanup]
     public void Shutdown() {
         world.Dispose();
@@ -31,7 +28,7 @@ public class AddRemoveRelations_Fennecs
         }
         AddRemove10Relations();
     }
-    
+
     private void AddRemove1Relation()
     {
         foreach (var entity in entities)
@@ -40,7 +37,7 @@ public class AddRemoveRelations_Fennecs
             entity.Remove(Link.With(RelationKey.Key1));
         }
     }
-    
+
     private void AddRemove10Relations()
     {
         foreach (var entity in entities)

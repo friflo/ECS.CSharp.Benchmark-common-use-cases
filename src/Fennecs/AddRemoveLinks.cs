@@ -2,17 +2,13 @@
 
 namespace fennecs;
 
-[BenchmarkCategory(Category.AddRemoveLinks)]
 // ReSharper disable once InconsistentNaming
-public class AddRemoveLinks_Fennecs
+public class AddRemoveLinks_Fennecs : AddRemoveLinks
 {
     private World       world;
     private Entity[]    sources;
     private Entity[]    targets;
-    
-    [Params(Constants.TargetCountP1, Constants.TargetCountP2)]
-    public  int         RelationCount { get; set; }
-    
+
     [GlobalSetup]
     public void Setup()
     {
@@ -20,13 +16,13 @@ public class AddRemoveLinks_Fennecs
         sources = world.CreateEntities(Constants.EntityCount).AddComponents();
         targets = world.CreateEntities(RelationCount).AddComponents();
     }
-    
+
     [GlobalCleanup]
     public void Shutdown()
     {
         world.Dispose();
     }
-    
+
     [Benchmark]
     public void Run()
     {

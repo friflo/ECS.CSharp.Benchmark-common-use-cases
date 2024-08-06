@@ -2,17 +2,13 @@
 
 namespace TinyEcs;
 
-[BenchmarkCategory(Category.AddRemoveLinks)]
 // ReSharper disable once InconsistentNaming
-public class AddRemoveLinks_TinyEcs
+public class AddRemoveLinks_TinyEcs : AddRemoveLinks
 {
     private World           world;
     private EntityView[]    sources;
     private EntityView[]    targets;
     private EntityView[]    relations;
-
-    [Params(Constants.TargetCountP1, Constants.TargetCountP2)]
-    public  int             RelationCount { get; set; }
 
     [GlobalSetup]
     public void Setup()

@@ -3,30 +3,25 @@ using Flecs.NET.Core;
 
 namespace Flecs.NET;
 
-[BenchmarkCategory(Category.AddRemoveRelations)]
 // ReSharper disable once InconsistentNaming
-public class AddRemoveRelations_FlecsNet
+public class AddRemoveRelations_FlecsNet : AddRemoveRelations
 {
     private World       world;
     private Entity[]    entities;
-    
-    
-    [Params(Constants.RelationCountP1, Constants.RelationCountP2)]
-    public int RelationCount { get; set; }
-    
+
     [GlobalSetup]
     public void Setup()
     {
         world       = World.Create();
         entities    = world.CreateEntities(Constants.EntityCount).AddComponents();
     }
-    
+
     [GlobalCleanup]
     public void Shutdown()
     {
         world.Dispose();
     }
-    
+
     [Benchmark]
     public void Run()
     {
@@ -36,7 +31,7 @@ public class AddRemoveRelations_FlecsNet
         }
         AddRemove10Relations();
     }
-    
+
     private void AddRemove1Relation()
     {
         foreach (var entity in entities)
@@ -45,7 +40,7 @@ public class AddRemoveRelations_FlecsNet
             entity.Remove<Tag1, Relation>();
         }
     }
-    
+
     private void AddRemove10Relations()
     {
         foreach (var entity in entities)

@@ -4,30 +4,26 @@ using BenchmarkDotNet.Attributes;
 
 namespace Arch;
 
-[BenchmarkCategory(Category.AddRemoveRelations)]
 // ReSharper disable once InconsistentNaming
-public class AddRemoveRelations_Arch
+public class AddRemoveRelations_Arch : AddRemoveRelations
 {
     private World       world;
     private Entity[]    entities;
     private Entity[]    targets;
-    
-    [Params(Constants.RelationCountP1, Constants.RelationCountP2)]
-    public int RelationCount { get; set; }
-    
+
     [GlobalSetup]
     public void Setup()
     {
         world       = World.Create();
         entities    = world.CreateEntities(Constants.EntityCount).AddComponents();
     }
-    
+
     [GlobalCleanup]
     public void Shutdown()
     {
         World.Destroy(world);
     }
-    
+
     [Benchmark]
     public void Run()
     {

@@ -3,18 +3,14 @@ using Flecs.NET.Core;
 
 namespace Flecs.NET;
 
-[BenchmarkCategory(Category.AddRemoveLinks)]
 // ReSharper disable once InconsistentNaming
-public class AddRemoveLinks_FlecsNet
+public class AddRemoveLinks_FlecsNet : AddRemoveLinks
 {
     private World       world;
     private Entity[]    sources;
     private Entity[]    targets;
     private Entity[]    relations;
-    
-    [Params(Constants.TargetCountP1, Constants.TargetCountP2)]
-    public  int         RelationCount { get; set; }
-    
+
     [GlobalSetup]
     public void Setup()
     {
@@ -26,13 +22,13 @@ public class AddRemoveLinks_FlecsNet
             relation.Set(new LinkRelation()); // add a component with data to every relation entity
         }
     }
-    
+
     [GlobalCleanup]
     public void Shutdown()
     {
         world.Dispose();
     }
-    
+
     [Benchmark]
     public void Run()
     {
