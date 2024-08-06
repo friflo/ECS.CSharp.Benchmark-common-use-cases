@@ -5,9 +5,8 @@ using Myriad.ECS.Worlds;
 
 namespace Myriad;
 
-[BenchmarkCategory(Category.DeleteEntity)]
 // ReSharper disable once InconsistentNaming
-public class DeleteEntity_Myriad
+public class DeleteEntity_Myriad : DeleteEntity
 {
     private World       world;
     private Entity[]    entities;
@@ -28,7 +27,7 @@ public class DeleteEntity_Myriad
     }
 
     [Benchmark]
-    public void Run()
+    public override void Run()
     {
         foreach (var entity in entities) {
             cmd.Delete(entity);

@@ -2,9 +2,8 @@
 
 namespace Friflo.Engine.ECS;
 
-[BenchmarkCategory(Category.DeleteEntity)]
 // ReSharper disable once InconsistentNaming
-public class DeleteEntity_Friflo
+public class DeleteEntity_Friflo : DeleteEntity
 {
     private EntityStore world;
     private Entity[]    entities;
@@ -23,7 +22,7 @@ public class DeleteEntity_Friflo
     }
 
     [Benchmark(Baseline = true)]
-    public void Run()
+    public override void Run()
     {
         foreach (var entity in entities) {
             entity.DeleteEntity();
