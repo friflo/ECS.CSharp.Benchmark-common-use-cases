@@ -2,12 +2,11 @@
 
 namespace Scellecs.Morpeh;
 
-[BenchmarkCategory(Category.CreateWorld)]
 // ReSharper disable once InconsistentNaming
-public class CreateWorld_Morpeh
+public class CreateWorld_Morpeh : CreateWorld
 {
     [Benchmark]
-    public void Run()
+    public override  void Run()
     {
         var world = World.Create();
         world.Dispose();

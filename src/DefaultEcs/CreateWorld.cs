@@ -2,12 +2,11 @@
 
 namespace DefaultEcs;
 
-[BenchmarkCategory(Category.CreateWorld)]
 // ReSharper disable once InconsistentNaming
-public class CreateWorld_DefaultEcs
+public class CreateWorld_DefaultEcs : CreateWorld
 {
     [Benchmark]
-    public void Run()
+    public override  void Run()
     {
         var world = new World();
         world.Dispose();

@@ -3,12 +3,11 @@ using BenchmarkDotNet.Attributes;
 
 namespace Arch;
 
-[BenchmarkCategory(Category.CreateWorld)]
 // ReSharper disable once InconsistentNaming
-public class CreateWorld_Arch
+public class CreateWorld_Arch : CreateWorld
 {
     [Benchmark]
-    public void Run()
+    public override void Run()
     {
         var world = World.Create();
         World.Destroy(world);

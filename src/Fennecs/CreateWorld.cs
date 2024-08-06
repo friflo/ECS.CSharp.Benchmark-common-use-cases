@@ -2,12 +2,11 @@
 
 namespace fennecs;
 
-[BenchmarkCategory(Category.CreateWorld)]
 // ReSharper disable once InconsistentNaming
-public class CreateWorld_Fennecs
+public class CreateWorld_Fennecs : CreateWorld
 {
     [Benchmark]
-    public void Run()
+    public override  void Run()
     {
         var world = new World();
         world.Dispose();

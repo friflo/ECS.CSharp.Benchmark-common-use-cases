@@ -3,12 +3,11 @@ using Flecs.NET.Core;
 
 namespace Flecs.NET;
 
-[BenchmarkCategory(Category.CreateWorld)]
 // ReSharper disable once InconsistentNaming
-public class CreateWorld_FlecsNet
+public class CreateWorld_FlecsNet : CreateWorld
 {
     [Benchmark]
-    public void Run()
+    public override  void Run()
     {
         var world = World.Create();
         world.Dispose();

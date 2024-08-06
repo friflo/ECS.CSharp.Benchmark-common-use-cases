@@ -3,16 +3,15 @@
 // ReSharper disable NotAccessedField.Local
 namespace TinyEcs;
 
-[BenchmarkCategory(Category.ComponentEvents)]
 // ReSharper disable once InconsistentNaming
-public class ComponentEvents_TinyEcs
+public class ComponentEvents_TinyEcs : ComponentEvents
 {
     private World           world;
     private EntityView[]    entities;
     private int             iterations;
     private int             added;
     private int             removed;
-    
+
     [GlobalSetup]
     public void Setup() {
         world       = new World();
@@ -20,7 +19,7 @@ public class ComponentEvents_TinyEcs
         world.OnComponentSet += (_, _) => { added++;   };
         world.OnComponentSet += (_, _) => { removed++; };
     }
-    
+
     [GlobalCleanup]
     public void Shutdown() {
         world.Dispose();
@@ -31,7 +30,7 @@ public class ComponentEvents_TinyEcs
     }
 
     [Benchmark]
-    public void Run()
+    public override  void Run()
     {
         iterations++;
         foreach (var entity in entities) {

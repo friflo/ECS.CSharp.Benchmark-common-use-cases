@@ -2,12 +2,11 @@
 
 namespace TinyEcs;
 
-[BenchmarkCategory(Category.CreateWorld)]
 // ReSharper disable once InconsistentNaming
-public class CreateWorld_TinyEcs
+public class CreateWorld_TinyEcs : CreateWorld
 {
     [Benchmark]
-    public void Run()
+    public override  void Run()
     {
         var world = new World();
         world.Dispose();

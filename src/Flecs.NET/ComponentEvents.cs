@@ -3,16 +3,15 @@ using Flecs.NET.Core;
 
 namespace Flecs.NET;
 
-[BenchmarkCategory(Category.ComponentEvents)]
 // ReSharper disable once InconsistentNaming
-public class ComponentEvents_FlecsNet
+public class ComponentEvents_FlecsNet : ComponentEvents
 {
     private World       world;
     private Entity[]    entities;
     private int         iterations;
     private int         added;
     private int         removed;
-    
+
     [GlobalSetup]
     public void Setup() {
         world       = World.Create();
@@ -24,7 +23,7 @@ public class ComponentEvents_FlecsNet
             removed++;
         });
     }
-    
+
     [GlobalCleanup]
     public void Shutdown() {
         world.Dispose();
@@ -34,7 +33,7 @@ public class ComponentEvents_FlecsNet
     }
 
     [Benchmark]
-    public void Run()
+    public override  void Run()
     {
         iterations++;
         foreach (var entity in entities) {

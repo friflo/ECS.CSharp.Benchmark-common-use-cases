@@ -2,12 +2,11 @@
 
 namespace Friflo.Engine.ECS;
 
-[BenchmarkCategory(Category.CreateWorld)]
 // ReSharper disable once InconsistentNaming
-public class CreateWorld_Friflo
+public class CreateWorld_Friflo : CreateWorld
 {
     [Benchmark(Baseline = true)]
-    public void Run()
+    public override  void Run()
     {
         _ = new EntityStore();
         // nothing to Dispose() - has no unmanaged resources

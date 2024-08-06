@@ -2,16 +2,15 @@
 
 namespace DefaultEcs;
 
-[BenchmarkCategory(Category.ComponentEvents)]
 // ReSharper disable once InconsistentNaming
-public class ComponentEvents_DefaultEcs
+public class ComponentEvents_DefaultEcs : ComponentEvents
 {
     private World       world;
     private Entity[]    entities;
     private int         iterations;
     private int         added;
     private int         removed;
-    
+
     [GlobalSetup]
     public void Setup()
     {
@@ -20,7 +19,7 @@ public class ComponentEvents_DefaultEcs
         world.SubscribeEntityComponentAdded  ((in Entity _, in Component1 _) => { added++;   });
         world.SubscribeEntityComponentRemoved((in Entity _, in Component1 _) => { removed++; });
     }
-    
+
     [GlobalCleanup]
     public void Shutdown()
     {
@@ -29,9 +28,9 @@ public class ComponentEvents_DefaultEcs
         Check.AreEqual(expect, added);
         Check.AreEqual(expect, removed);
     }
-    
+
     [Benchmark]
-    public void Run()
+    public override void Run()
     {
         iterations++;
         foreach (var entity in entities) {

@@ -2,12 +2,11 @@
 
 namespace Leopotam.EcsLite;
 
-[BenchmarkCategory(Category.CreateWorld)]
 // ReSharper disable once InconsistentNaming
-public class CreateWorld_Leopotam
+public class CreateWorld_Leopotam : CreateWorld
 {
     [Benchmark]
-    public void Run()
+    public override  void Run()
     {
         var world = new EcsWorld();
         world.Destroy();
