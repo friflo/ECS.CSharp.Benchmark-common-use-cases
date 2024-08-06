@@ -37,7 +37,7 @@ public static class Category
     public const string     CreateWorld                 = nameof(CreateWorld);
     public const string     DeleteEntity                = nameof(DeleteEntity);
     public const string     GetSetComponents            = nameof(GetSetComponents);
-    public const string     QueryFragmentedT1           = nameof(QueryFragmentedT1);
+    public const string     QueryFragmented           = nameof(QueryFragmented);
     public const string     QueryComponents             = nameof(QueryComponents);
 
     // --- projects supporting: Relations

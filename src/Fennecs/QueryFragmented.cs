@@ -2,13 +2,12 @@
 
 namespace fennecs;
 
-[BenchmarkCategory(Category.QueryFragmentedT1)]
 // ReSharper disable once InconsistentNaming
-public class QueryFragmentedT1_Fennecs
+public class QueryFragmented_Fennecs : QueryFragmented
 {
     private World               world;
     private Stream<Component1>  stream;
-    
+
     [GlobalSetup]
     public void Setup()
     {
@@ -16,7 +15,7 @@ public class QueryFragmentedT1_Fennecs
         var entities = world.CreateEntities(Constants.FragmentationCount);
         stream = world.Query<Component1>().Compile().Stream<Component1>();
         for (int n = 0; n < Constants.FragmentationCount; n++) {
-            var entity = entities[n]; 
+            var entity = entities[n];
                                 entity.Add(new Component1());
             if ((n &   1) != 0) entity.Add(new Component2());
             if ((n &   2) != 0) entity.Add(new Component3());
@@ -25,15 +24,15 @@ public class QueryFragmentedT1_Fennecs
         }
         Check.AreEqual(Constants.FragmentationCount, stream.Count);
     }
-    
+
     [GlobalCleanup]
     public void Shutdown()
     {
         world.Dispose();
     }
-    
+
     [Benchmark]
-    public void Run()
+    public override void Run()
     {
         stream.Raw(components => {
             foreach (ref Component1 component1 in components.Span) {

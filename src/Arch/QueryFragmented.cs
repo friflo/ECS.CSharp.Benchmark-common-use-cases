@@ -4,14 +4,13 @@ using BenchmarkDotNet.Attributes;
 
 namespace Arch;
 
-[BenchmarkCategory(Category.QueryFragmentedT1)]
 // ReSharper disable once InconsistentNaming
-public class QueryFragmentedT1_Arch
+public class QueryFragmented_Arch : QueryFragmented
 {
     private World               world;
     private QueryDescription    queryDescription;
     private ForEach1            forEach;
-    
+
     [GlobalSetup]
     public void Setup()
     {
@@ -19,7 +18,7 @@ public class QueryFragmentedT1_Arch
         var entities = world.CreateEntities(Constants.FragmentationCount);
         queryDescription = new QueryDescription().WithAll<Component1>();
         for (int n = 0; n < Constants.FragmentationCount; n++) {
-            var entity = entities[n]; 
+            var entity = entities[n];
                                 entity.Add<Component1>();
             if ((n &   1) != 0) entity.Add<Component2>();
             if ((n &   2) != 0) entity.Add<Component3>();
@@ -28,15 +27,15 @@ public class QueryFragmentedT1_Arch
         }
         Check.AreEqual(Constants.FragmentationCount, world.CountEntities(queryDescription));
     }
-    
+
     [GlobalCleanup]
     public void Shutdown()
     {
         World.Destroy(world);
     }
-    
+
     [Benchmark]
-    public void Run()
+    public override void Run()
     {
         world.InlineQuery<ForEach1, Component1>(queryDescription, ref forEach);
     }

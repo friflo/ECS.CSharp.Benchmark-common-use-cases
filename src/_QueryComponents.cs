@@ -19,3 +19,11 @@ public abstract class QueryComponents
     protected abstract   void Run1Component();
     protected abstract   void Run5Components();
 }
+
+[BenchmarkCategory(Category.QueryFragmented)]
+public abstract class QueryFragmented
+{
+    [Benchmark]
+    public abstract void Run();
+}
+

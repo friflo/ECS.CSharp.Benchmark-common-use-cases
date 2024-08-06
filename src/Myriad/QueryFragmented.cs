@@ -6,9 +6,8 @@ using Myriad.ECS.Worlds;
 
 namespace Myriad;
 
-[BenchmarkCategory(Category.QueryFragmentedT1)]
 // ReSharper disable once InconsistentNaming
-public class QueryFragmentedT1_Myriad
+public class QueryFragmented_Myriad : QueryFragmented
 {
     private World world;
     private QueryDescription query;
@@ -46,7 +45,7 @@ public class QueryFragmentedT1_Myriad
     }
 
     [Benchmark]
-    public void Run()
+    public override void Run()
     {
         world.Execute<IncrementComponent1, Component1>(query);
     }

@@ -2,13 +2,12 @@
 
 namespace TinyEcs;
 
-[BenchmarkCategory(Category.QueryFragmentedT1)]
 // ReSharper disable once InconsistentNaming
-public class QueryFragmentedT1_TinyEcs
+public class QueryFragmented_TinyEcs : QueryFragmented
 {
     private World   world;
     private Query   query;
-    
+
     [GlobalSetup]
     public void Setup()
     {
@@ -16,7 +15,7 @@ public class QueryFragmentedT1_TinyEcs
         var entities = world.CreateEntities(Constants.FragmentationCount);
         query = world.QueryBuilder().With<Component1>().Build();
         for (int n = 0; n < Constants.FragmentationCount; n++) {
-            var entity = entities[n]; 
+            var entity = entities[n];
                                 entity.Set(new Component1());
             if ((n &   1) != 0) entity.Set(new Component2());
             if ((n &   2) != 0) entity.Set(new Component3());
@@ -25,19 +24,19 @@ public class QueryFragmentedT1_TinyEcs
         }
         Check.AreEqual(Constants.FragmentationCount, query.Count());
     }
-    
+
     [GlobalCleanup]
     public void Shutdown()
     {
         world.Dispose();
     }
-    
+
     [Benchmark]
-    public void Run()
+    public override void Run()
     {
         foreach (var (e, c1) in query.Iter<Component1>()) {
             for (var n = 0; n < e.Length; n++) {
-                c1[n].Value++;    
+                c1[n].Value++;
             }
         }
     }

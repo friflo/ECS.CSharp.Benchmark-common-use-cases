@@ -2,14 +2,13 @@
 
 namespace Leopotam.EcsLite;
 
-[BenchmarkCategory(Category.QueryFragmentedT1)]
 // ReSharper disable once InconsistentNaming
-public class QueryFragmentedT1_Leopotam
+public class QueryFragmented_Leopotam : QueryFragmented
 {
     private EcsWorld            world;
     private EcsFilter           filter;
     private EcsPool<Component1> c1;
-    
+
     [GlobalSetup]
     public void Setup()
     {
@@ -31,15 +30,15 @@ public class QueryFragmentedT1_Leopotam
         }
         Check.AreEqual(Constants.FragmentationCount, filter.GetEntitiesCount());
     }
-    
+
     [GlobalCleanup]
     public void Shutdown()
     {
         world.Destroy();
     }
-    
+
     [Benchmark]
-    public void Run()
+    public override void Run()
     {
         int[] entities = filter.GetRawEntities();
         for (int i = 0, iMax = filter.GetEntitiesCount(); i < iMax; i++) {
