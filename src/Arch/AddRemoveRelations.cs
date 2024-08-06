@@ -27,7 +27,7 @@ public class AddRemoveRelations_Arch : AddRemoveRelations
 
     protected override void AddRemove1Relation()
     {
-        var target = world.CreateEntities(1, targets)[0];
+        var target = world.Create();
         foreach (var entity in entities)
         {
             entity.AddRelationship(target, new LinkRelation(1337));
