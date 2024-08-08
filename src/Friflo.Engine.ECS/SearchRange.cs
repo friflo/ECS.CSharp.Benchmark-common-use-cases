@@ -11,7 +11,7 @@ public class SearchRange_Friflo : SearchRange
     public void Setup()
     {
         world           = new EntityStore();
-        var entities    = world.CreateEntities(Constants.SearchSetSize);
+        var entities    = world.CreateEntities(Entities);
         // add a component to every entity that can be searched
         for (int value = 0; value < entities.Length; value++) {
             entities[value].AddComponent(new SearchableComponent(value));
