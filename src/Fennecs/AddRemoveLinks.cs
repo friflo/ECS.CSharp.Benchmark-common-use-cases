@@ -14,7 +14,7 @@ public class AddRemoveLinks_Fennecs : AddRemoveLinks
     {
         world = new World();
         sources = world.CreateEntities(Constants.EntityCount).AddComponents();
-        targets = world.CreateEntities(RelationCount).AddComponents();
+        targets = world.CreateEntities(Relations).AddComponents();
     }
 
     [GlobalCleanup]
@@ -28,10 +28,10 @@ public class AddRemoveLinks_Fennecs : AddRemoveLinks
     {
         foreach (var source in sources)
         {
-            for (int n = 0; n < RelationCount; n++) {
+            for (int n = 0; n < Relations; n++) {
                 source.Add(new LinkRelation { Value = n }, targets[n] );
             }
-            for (int n = 0; n < RelationCount; n++) {
+            for (int n = 0; n < Relations; n++) {
                 source.Remove<LinkRelation>(targets[n]);
             }
         }

@@ -16,8 +16,8 @@ public class AddRemoveLinks_FlecsNet : AddRemoveLinks
     {
         world       = World.Create();
         sources     = world.CreateEntities(Constants.EntityCount).AddComponents();
-        targets     = world.CreateEntities(RelationCount).AddComponents();
-        relations   = world.CreateEntities(RelationCount);
+        targets     = world.CreateEntities(Relations).AddComponents();
+        relations   = world.CreateEntities(Relations);
         foreach (var relation in relations) {
             relation.Set(new LinkRelation()); // add a component with data to every relation entity
         }
@@ -34,10 +34,10 @@ public class AddRemoveLinks_FlecsNet : AddRemoveLinks
     {
         foreach (var source in sources)
         {
-            for (int n = 0; n < RelationCount; n++) {
+            for (int n = 0; n < Relations; n++) {
                 source.Add(relations[n], targets[n]);
             }
-            for (int n = 0; n < RelationCount; n++) {
+            for (int n = 0; n < Relations; n++) {
                 source.Remove(relations[n], targets[n]);
             }
         }

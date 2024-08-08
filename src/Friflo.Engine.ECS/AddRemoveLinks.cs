@@ -13,7 +13,7 @@ public class AddRemoveLinks_Friflo : AddRemoveLinks
     {
         var world   = new EntityStore();
         sources     = world.CreateEntities(Constants.EntityCount).AddComponents();
-        targets     = world.CreateEntities(RelationCount).AddComponents();
+        targets     = world.CreateEntities(Relations).AddComponents();
     }
 
     [Benchmark(Baseline = true)]
@@ -21,12 +21,12 @@ public class AddRemoveLinks_Friflo : AddRemoveLinks
     {
         foreach (var source in sources)
         {
-            for (int n = 0; n < RelationCount; n++) {
+            for (int n = 0; n < Relations; n++) {
                 source.AddRelation(new LinkRelation { Value = n, Target = targets[n] });
                 // Assert.AreEqual(n, source.GetRelation<LinkRelation, Entity>(targets[n]).Value);  // O(1)
             }
             // Assert.AreEqual(RelationCount, source.GetRelations<LinkRelation>().Length);          // O(1)
-            for (int n = 0; n < RelationCount; n++) {
+            for (int n = 0; n < Relations; n++) {
                 source.RemoveRelation<LinkRelation>(targets[n]);
             }
         }
