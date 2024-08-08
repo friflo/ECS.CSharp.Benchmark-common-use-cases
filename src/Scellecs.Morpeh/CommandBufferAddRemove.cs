@@ -11,7 +11,7 @@ public class CommandBufferAddRemove_Morpeh : CommandBufferAddRemove
     [GlobalSetup]
     public void Setup() {
         world       = World.Create();
-        entities    = world.CreateEntities(Constants.EntityCount);
+        entities    = world.CreateEntities(Entities);
     }
 
     [GlobalCleanup]

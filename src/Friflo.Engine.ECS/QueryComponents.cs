@@ -12,10 +12,10 @@ public class QueryComponents_Friflo : QueryComponents
     public void Setup()
     {
         var world = new EntityStore();
-        world.CreateEntities(Constants.EntityCount).AddComponents();
+        world.CreateEntities(Entities).AddComponents();
         query1 = world.Query<Component1>();
         query5 = world.Query<Component1,Component2,Component3,Component4,Component5>();
-        Check.AreEqual(Constants.EntityCount, query5.Count);
+        Check.AreEqual(Entities, query5.Count);
     }
 
     [Benchmark(Baseline = true)]

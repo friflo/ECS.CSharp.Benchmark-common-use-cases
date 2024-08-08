@@ -15,7 +15,7 @@ public class AddRemoveLinks_FlecsNet : AddRemoveLinks
     public void Setup()
     {
         world       = World.Create();
-        sources     = world.CreateEntities(Constants.EntityCount).AddComponents();
+        sources     = world.CreateEntities(Entities).AddComponents();
         targets     = world.CreateEntities(Relations).AddComponents();
         relations   = world.CreateEntities(Relations);
         foreach (var relation in relations) {

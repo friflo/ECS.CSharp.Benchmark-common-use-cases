@@ -12,10 +12,10 @@ public class QueryComponents_Fennecs : QueryComponents
     [GlobalSetup]
     public void Setup() {
         world = new World();
-        world.CreateEntities(Constants.EntityCount).AddComponents();
+        world.CreateEntities(Entities).AddComponents();
         stream1 = world.Query<Component1>().Compile().Stream<Component1>();
         stream5 = world.Query<Component1>().Compile().Stream<Component1,Component2,Component3,Component4,Component5>();
-        Check.AreEqual(Constants.EntityCount, stream5.Count);
+        Check.AreEqual(Entities, stream5.Count);
     }
 
     [GlobalCleanup]

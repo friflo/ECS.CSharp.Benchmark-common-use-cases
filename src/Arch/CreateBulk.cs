@@ -25,8 +25,8 @@ public class CreateBulk_Arch : CreateBulk
 
     protected override void CreateEntity1Component()
     {
-        world.Reserve(ComponentTypes1, Constants.CreateBulkCount);
-        for (int n = 0; n < Constants.CreateBulkCount; n++) {
+        world.Reserve(ComponentTypes1, Entities);
+        for (int n = 0; n < Entities; n++) {
             var entity = world.Create(ComponentTypes1);
             world.Get<Component1>(entity).Value = n;
         }
@@ -34,8 +34,8 @@ public class CreateBulk_Arch : CreateBulk
 
     protected override void CreateEntity3Components()
     {
-        world.Reserve(ComponentTypes3, Constants.CreateBulkCount);
-        for (int n = 0; n < Constants.CreateBulkCount; n++) {
+        world.Reserve(ComponentTypes3, Entities);
+        for (int n = 0; n < Entities; n++) {
             var entity = world.Create(ComponentTypes3);
             world.Get<Component1>(entity).Value = n;
             world.Get<Component2>(entity).Value = n;

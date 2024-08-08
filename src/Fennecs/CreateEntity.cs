@@ -21,14 +21,14 @@ public class CreateEntity_Fennecs : CreateEntity
 
     protected override void CreateEntity1Component()
     {
-        for (int n = 0; n < Constants.CreateEntityCount; n++) {
+        for (int n = 0; n < Entities; n++) {
             world.Spawn().Add(new Component1{ Value = n });
         }
     }
 
     protected override void CreateEntity3Components()
     {
-        for (int n = 0; n < Constants.CreateEntityCount; n++) {
+        for (int n = 0; n < Entities; n++) {
             var entity = world.Spawn();
             entity.Add(new Component1{ Value = n });
             entity.Add(new Component2{ Value = n });

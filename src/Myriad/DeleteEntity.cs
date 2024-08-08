@@ -16,7 +16,7 @@ public class DeleteEntity_Myriad : DeleteEntity
     public void Setup()
     {
         world       = new WorldBuilder().Build();
-        entities    = world.CreateEntities(Constants.DeleteEntityCount);
+        entities    = world.CreateEntities(Entities);
         cmd         = new CommandBuffer(world);
     }
 

@@ -12,7 +12,7 @@ public class AddRemoveComponents_DefaultEcs : AddRemoveComponents
     public void Setup()
     {
         world       = new World();
-        entities    = world.CreateEntities(Constants.EntityCount);
+        entities    = world.CreateEntities(Entities);
     }
 
     [GlobalCleanup]

@@ -13,7 +13,7 @@ public class ChildEntitiesAddRemove_Friflo : ChildEntitiesAddRemove
     [GlobalSetup]
     public void Setup() {
         var world   = new EntityStore();
-        entityCount = Constants.EntityCount;
+        entityCount = Entities;
         childCount  = Constants.ChildCount;
         parents     = world.CreateEntities(entityCount).AddComponents();
         children    = new Entity[entityCount][];

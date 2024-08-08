@@ -14,7 +14,7 @@ public class CommandBufferAddRemove_DefaultEcs : CommandBufferAddRemove
     public void Setup()
     {
         world           = new World();
-        entities        = world.CreateEntities(Constants.EntityCount);
+        entities        = world.CreateEntities(Entities);
         commandBuffer   = new EntityCommandRecorder();
     }
 

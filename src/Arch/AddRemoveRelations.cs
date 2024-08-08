@@ -15,7 +15,7 @@ public class AddRemoveRelations_Arch : AddRemoveRelations
     public void Setup()
     {
         world       = World.Create();
-        entities    = world.CreateEntities(Constants.EntityCount).AddComponents();
+        entities    = world.CreateEntities(Entities).AddComponents();
         targets     = new Entity[RelationCount];
     }
 

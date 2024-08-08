@@ -13,7 +13,7 @@ public class DeleteEntity_Arch : DeleteEntity
     public void Setup()
     {
         world       = World.Create();
-        entities    = world.CreateEntities(Constants.DeleteEntityCount).AddComponents();
+        entities    = world.CreateEntities(Entities).AddComponents();
     }
 
     [IterationCleanup]

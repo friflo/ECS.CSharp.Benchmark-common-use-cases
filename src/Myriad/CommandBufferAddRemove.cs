@@ -17,7 +17,7 @@ public class CommandBufferAddRemove_Myriad : CommandBufferAddRemove
     {
         world = new WorldBuilder().Build();
 
-        entities = world.CreateEntities(Constants.EntityCount);
+        entities = world.CreateEntities(Entities);
 
         cmd = new CommandBuffer(world);
     }

@@ -3,6 +3,9 @@
 [BenchmarkCategory(nameof(AddRemoveRelations))]
 public abstract class AddRemoveRelations
 {
+    [Params(Constants.EntityCount)]
+    public  int         Entities { get; set; }
+
     [Params(1, 10)]
     public  int         RelationCount { get; set; }
 

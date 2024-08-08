@@ -17,7 +17,7 @@ public class AddRemoveComponents_Myriad : AddRemoveComponents
     {
         world = new WorldBuilder().Build();
 
-        entities = world.CreateEntities(Constants.EntityCount);
+        entities = world.CreateEntities(Entities);
 
         cmd = new CommandBuffer(world);
     }

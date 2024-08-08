@@ -12,7 +12,7 @@ public class DeleteEntity_Friflo : DeleteEntity
     public void Setup()
     {
         world       = new EntityStore { RecycleIds = false };
-        entities    = world.CreateEntities(Constants.DeleteEntityCount).AddComponents();
+        entities    = world.CreateEntities(Entities).AddComponents();
     }
 
     [IterationCleanup]

@@ -14,7 +14,7 @@ public partial class QueryComponents_DefaultEcs : QueryComponents
     public void Setup()
     {
         world = new World();
-        world.CreateEntities(Constants.EntityCount).AddComponents();
+        world.CreateEntities(Entities).AddComponents();
         componentSystem1 = new ComponentSystem1(world);
         entitySetSystem5 = new EntitySetSystem5(world);
         // query = world.Query<Component1,Component2,Component3,Component4,Component5>();

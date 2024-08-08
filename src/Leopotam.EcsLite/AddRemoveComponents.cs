@@ -16,7 +16,7 @@ public class AddRemoveComponents_Leopotam : AddRemoveComponents
     [GlobalSetup]
     public void Setup() {
         world       = new EcsWorld();
-        entities    = world.CreateEntities(Constants.EntityCount);
+        entities    = world.CreateEntities(Entities);
         ecsPoolC1   = world.GetPool<Component1>();
         ecsPoolC2   = world.GetPool<Component2>();
         ecsPoolC3   = world.GetPool<Component3>();

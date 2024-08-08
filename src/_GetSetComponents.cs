@@ -4,6 +4,9 @@ using BenchmarkDotNet.Attributes;
 [BenchmarkCategory(nameof(GetSetComponents))]
 public abstract class GetSetComponents
 {
+    [Params(Constants.EntityCount)]
+    public  int         Entities { get; set; }
+
     [Params(1, 5)]
     public  int         Components { get; set; }
 

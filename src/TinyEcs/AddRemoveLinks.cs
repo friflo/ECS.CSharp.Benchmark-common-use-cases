@@ -14,7 +14,7 @@ public class AddRemoveLinks_TinyEcs : AddRemoveLinks
     public void Setup()
     {
         world       = new World();
-        sources     = world.CreateEntities(Constants.EntityCount).AddComponents();
+        sources     = world.CreateEntities(Entities).AddComponents();
         targets     = world.CreateEntities(Relations).AddComponents();
         relations   = world.CreateEntities(Relations);
         foreach (var relation in relations) {

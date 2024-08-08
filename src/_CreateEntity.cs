@@ -5,6 +5,9 @@ using BenchmarkDotNet.Attributes;
 [BenchmarkCategory(nameof(CreateEntity))]
 public abstract class CreateEntity
 {
+    [Params(Constants.CreateEntityCount)]
+    public  int         Entities { get; set; }
+
     [Params(1, 3)]
     public  int         Components { get; set; }
 
@@ -25,6 +28,9 @@ public abstract class CreateEntity
 [BenchmarkCategory(nameof(CreateBulk))]
 public abstract class CreateBulk
 {
+    [Params(Constants.CreateBulkCount)]
+    public  int         Entities { get; set; }
+
     [Params(1, 3)]
     public  int         Components { get; set; }
 

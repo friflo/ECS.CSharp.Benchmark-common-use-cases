@@ -13,7 +13,7 @@ public class GetSetComponents_Morpeh : GetSetComponents
     public void Setup() {
         world       = World.Create();
         access      = new Access(world);
-        entities    = world.CreateEntities(Constants.EntityCount).AddComponents(world);
+        entities    = world.CreateEntities(Entities).AddComponents(world);
     }
 
     [GlobalCleanup]

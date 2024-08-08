@@ -11,7 +11,7 @@ public class CommandBufferAddRemove_TinyEcs : CommandBufferAddRemove
     [GlobalSetup]
     public void Setup() {
         world       = new World();
-        entities    = world.CreateEntities(Constants.EntityCount);
+        entities    = world.CreateEntities(Entities);
     }
 
     [GlobalCleanup]

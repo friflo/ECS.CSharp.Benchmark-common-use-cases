@@ -16,7 +16,7 @@ public class GetSetComponents_Leopotam : GetSetComponents
     [GlobalSetup]
     public void Setup() {
         world       = new EcsWorld();
-        entities    = world.CreateEntities(Constants.EntityCount).AddComponents(world);
+        entities    = world.CreateEntities(Entities).AddComponents(world);
         ecsPoolC1   = world.GetPool<Component1>();
         ecsPoolC2   = world.GetPool<Component2>();
         ecsPoolC3   = world.GetPool<Component3>();

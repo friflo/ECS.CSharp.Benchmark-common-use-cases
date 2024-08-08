@@ -15,8 +15,8 @@ public class CommandBufferAddRemove_Arch : CommandBufferAddRemove
     public void Setup()
     {
         world           = World.Create();
-        entities        = world.CreateEntities(Constants.EntityCount);
-        commandBuffer   = new CommandBuffer(Constants.EntityCount);
+        entities        = world.CreateEntities(Entities);
+        commandBuffer   = new CommandBuffer(Entities);
     }
 
     [GlobalCleanup]

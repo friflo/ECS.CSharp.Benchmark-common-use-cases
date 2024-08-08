@@ -12,7 +12,7 @@ public class QueryComponents_Morpeh : QueryComponents
     [GlobalSetup]
     public void Setup() {
         world = World.Create();
-        world.CreateEntities(Constants.EntityCount).AddComponents(world);
+        world.CreateEntities(Entities).AddComponents(world);
 
         stashSystem1 = new StashSystem1 { World = world };
         stashSystem1.OnAwake();

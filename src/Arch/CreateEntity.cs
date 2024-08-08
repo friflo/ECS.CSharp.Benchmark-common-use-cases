@@ -23,14 +23,14 @@ public class CreateEntity_Arch : CreateEntity
 
     protected override void CreateEntity1Component()
     {
-        for (int n = 0; n < Constants.CreateEntityCount; n++) {
+        for (int n = 0; n < Entities; n++) {
             world.Create(new Component1{ Value = n });
         }
     }
 
     protected override void CreateEntity3Components()
     {
-        for (int n = 0; n < Constants.CreateEntityCount; n++) {
+        for (int n = 0; n < Entities; n++) {
             world.Create(
                 new Component1{ Value = n },
                 new Component2{ Value = n },

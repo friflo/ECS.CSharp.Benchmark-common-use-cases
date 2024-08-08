@@ -13,7 +13,7 @@ public class QueryComponents_FlecsNet : QueryComponents
     [GlobalSetup]
     public void Setup() {
         world = World.Create();
-        world.CreateEntities(Constants.EntityCount).AddComponents();
+        world.CreateEntities(Entities).AddComponents();
         query1 = world.QueryBuilder().With<Component1>().Build();
         query5 = world.QueryBuilder().With<Component1>().With<Component2>().With<Component3>().With<Component4>().With<Component5>().Build();
     }

@@ -23,7 +23,7 @@ public class CreateEntity_FlecsNet : CreateEntity
     protected override void CreateEntity1Component()
     {
         var table = world.Table().Add<Component1>();
-        for (int n = 0; n < Constants.CreateEntityCount; n++) {
+        for (int n = 0; n < Entities; n++) {
             var entity = world.Entity(table);
             entity.GetMut<Component1>().Value = n;
         }
@@ -35,7 +35,7 @@ public class CreateEntity_FlecsNet : CreateEntity
             .Add<Component1>()
             .Add<Component2>()
             .Add<Component3>();
-        for (int n = 0; n < Constants.CreateEntityCount; n++) {
+        for (int n = 0; n < Entities; n++) {
             world.Entity(table);
             var entity = world.Entity(table);
             entity.GetMut<Component1>().Value = n;

@@ -15,7 +15,7 @@ public class AddRemoveLinks_Arch : AddRemoveLinks
     public void Setup()
     {
         world       = World.Create();
-        entities    = world.CreateEntities(Constants.EntityCount).AddComponents();
+        entities    = world.CreateEntities(Entities).AddComponents();
         targets     = world.CreateEntities(Relations).AddComponents();
     }
 

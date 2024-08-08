@@ -16,11 +16,11 @@ public class QueryComponents_Arch : QueryComponents
     public void Setup()
     {
         world = World.Create();
-        world.CreateEntities(Constants.EntityCount).AddComponents();
+        world.CreateEntities(Entities).AddComponents();
         query1Description = new QueryDescription().WithAll<Component1>();
         query5Description = new QueryDescription().WithAll<Component1,Component2,Component3,Component4,Component5>();
 
-        Check.AreEqual(Constants.EntityCount, world.CountEntities(query5Description));
+        Check.AreEqual(Entities, world.CountEntities(query5Description));
     }
 
     [GlobalCleanup]

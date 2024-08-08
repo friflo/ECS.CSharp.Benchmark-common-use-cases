@@ -11,7 +11,7 @@ public class AddRemoveRelations_Friflo : AddRemoveRelations
     public void Setup()
     {
         var world   = new EntityStore();
-        entities    = world.CreateEntities(Constants.EntityCount).AddComponents();
+        entities    = world.CreateEntities(Entities).AddComponents();
     }
 
     [Benchmark(Baseline = true)]

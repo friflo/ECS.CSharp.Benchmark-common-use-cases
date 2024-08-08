@@ -11,7 +11,7 @@ public class AddRemoveComponents_TinyEcs : AddRemoveComponents
     [GlobalSetup]
     public void Setup() {
         world       = new World();
-        entities    = world.CreateEntities(Constants.EntityCount);
+        entities    = world.CreateEntities(Entities);
     }
 
     [GlobalCleanup]

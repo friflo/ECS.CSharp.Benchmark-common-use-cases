@@ -17,12 +17,12 @@ public class QueryComponents_Myriad : QueryComponents
     {
         world = new WorldBuilder().Build();
 
-        var entities = world.CreateEntities(Constants.EntityCount);
+        var entities = world.CreateEntities(Entities);
         entities.AddComponents(world);
 
         query1 = new QueryBuilder().Include<Component1>().Build(world);
         query5 = new QueryBuilder().Include<Component1, Component2, Component3, Component4, Component5>().Build(world);
-        if (query5.Count() != Constants.EntityCount)
+        if (query5.Count() != Entities)
             throw new Exception("Setup failed to create correct number of entities (Myriad bug?)");
     }
 

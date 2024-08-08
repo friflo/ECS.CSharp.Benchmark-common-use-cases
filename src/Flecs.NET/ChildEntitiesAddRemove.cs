@@ -15,7 +15,7 @@ public class ChildEntitiesAddRemove_FlecsNet : ChildEntitiesAddRemove
     [GlobalSetup]
     public void Setup() {
         world       = World.Create();
-        entityCount = Constants.EntityCount;
+        entityCount = Entities;
         childCount  = Constants.ChildCount;
         parents     = world.CreateEntities(entityCount).AddComponents();
         children    = new Entity[entityCount][];

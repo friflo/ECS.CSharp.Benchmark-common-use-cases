@@ -12,7 +12,7 @@ public class AddRemoveLinks_Friflo : AddRemoveLinks
     public void Setup()
     {
         var world   = new EntityStore();
-        sources     = world.CreateEntities(Constants.EntityCount).AddComponents();
+        sources     = world.CreateEntities(Entities).AddComponents();
         targets     = world.CreateEntities(Relations).AddComponents();
     }
 

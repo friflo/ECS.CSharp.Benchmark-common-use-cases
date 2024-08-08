@@ -13,7 +13,7 @@ public class AddRemoveLinks_Fennecs : AddRemoveLinks
     public void Setup()
     {
         world = new World();
-        sources = world.CreateEntities(Constants.EntityCount).AddComponents();
+        sources = world.CreateEntities(Entities).AddComponents();
         targets = world.CreateEntities(Relations).AddComponents();
     }
 

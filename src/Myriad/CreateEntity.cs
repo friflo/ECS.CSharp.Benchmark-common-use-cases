@@ -25,7 +25,7 @@ public class CreateEntity_Myriad : CreateEntity
 
     protected override void CreateEntity1Component()
     {
-        for (var n = 0; n < Constants.CreateEntityCount; n++)
+        for (var n = 0; n < Entities; n++)
             buffer.Create().Set(new Component1(n));
 
         buffer.Playback().Dispose();
@@ -33,7 +33,7 @@ public class CreateEntity_Myriad : CreateEntity
 
     protected override void CreateEntity3Components()
     {
-        for (var n = 0; n < Constants.CreateEntityCount; n++)
+        for (var n = 0; n < Entities; n++)
         {
             buffer.Create()
                   .Set(new Component1(n))

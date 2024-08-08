@@ -13,7 +13,7 @@ public class AddRemoveComponents_Arch : AddRemoveComponents
     public void Setup()
     {
         world       = World.Create();
-        entities    = world.CreateEntities(Constants.EntityCount);
+        entities    = world.CreateEntities(Entities);
     }
 
     [GlobalCleanup]

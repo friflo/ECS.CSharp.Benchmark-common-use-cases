@@ -14,7 +14,7 @@ public class ChildEntitiesAddRemove_TinyEcs : ChildEntitiesAddRemove
     [GlobalSetup]
     public void Setup() {
         world       = new World();
-        entityCount = Constants.EntityCount;
+        entityCount = Entities;
         childCount  = Constants.ChildCount;
         parents     = world.CreateEntities(entityCount).AddComponents();
         children    = new EntityView[entityCount][];

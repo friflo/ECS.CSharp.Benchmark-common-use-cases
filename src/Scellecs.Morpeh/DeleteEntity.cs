@@ -12,7 +12,7 @@ public class DeleteEntity_Morpeh : DeleteEntity
     public void Setup()
     {
         world       = World.Create();
-        entities    = world.CreateEntities(Constants.DeleteEntityCount).AddComponents(world);
+        entities    = world.CreateEntities(Entities).AddComponents(world);
     }
 
     [IterationCleanup]

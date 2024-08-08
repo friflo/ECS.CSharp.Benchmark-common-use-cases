@@ -12,7 +12,7 @@ public class DeleteEntity_TinyEcs : DeleteEntity
     public void Setup()
     {
         world       = new World();
-        entities    = world.CreateEntities(Constants.DeleteEntityCount).AddComponents();
+        entities    = world.CreateEntities(Entities).AddComponents();
     }
 
     [IterationCleanup]

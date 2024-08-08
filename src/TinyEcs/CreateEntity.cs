@@ -22,7 +22,7 @@ public class CreateEntity_TinyEcs : CreateEntity
     protected override void CreateEntity1Component()
     {
         var archetype = world.Archetype<Component1>();
-        for (int n = 0; n < Constants.CreateEntityCount; n++) {
+        for (int n = 0; n < Entities; n++) {
             world.Entity(archetype).Get<Component1>().Value = n;
         }
     }
@@ -30,7 +30,7 @@ public class CreateEntity_TinyEcs : CreateEntity
     protected override void CreateEntity3Components()
     {
         var archetype = world.Archetype<Component1, Component2, Component3>();
-        for (int n = 0; n < Constants.CreateEntityCount; n++) {
+        for (int n = 0; n < Entities; n++) {
             var entity = world.Entity(archetype);
             entity.Get<Component1>().Value = n;
             entity.Get<Component2>().Value = n;

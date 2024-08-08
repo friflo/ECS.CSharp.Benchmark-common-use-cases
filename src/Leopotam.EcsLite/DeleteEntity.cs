@@ -12,7 +12,7 @@ public class DeleteEntity_Leopotam : DeleteEntity
     public void Setup()
     {
         world       = new EcsWorld();
-        entities    = world.CreateEntities(Constants.DeleteEntityCount).AddComponents(world);
+        entities    = world.CreateEntities(Entities).AddComponents(world);
     }
 
     [IterationCleanup]

@@ -12,10 +12,10 @@ public class QueryComponents_TinyEcs : QueryComponents
     [GlobalSetup]
     public void Setup() {
         world = new World();
-        world.CreateEntities(Constants.EntityCount).AddComponents();
+        world.CreateEntities(Entities).AddComponents();
         query1 = world.QueryBuilder().With<Component1>().Build();
         query5 = world.QueryBuilder().With<Component1>().With<Component2>().With<Component3>().With<Component4>().With<Component5>().Build();
-        Check.AreEqual(Constants.EntityCount, query5.Count());
+        Check.AreEqual(Entities, query5.Count());
     }
 
     [GlobalCleanup]

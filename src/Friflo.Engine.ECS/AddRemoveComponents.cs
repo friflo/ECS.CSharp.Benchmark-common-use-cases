@@ -11,7 +11,7 @@ public class AddRemoveComponents_Friflo : AddRemoveComponents
     public void Setup()
     {
         var world   = new EntityStore();
-        entities    = world.CreateEntities(Constants.EntityCount);
+        entities    = world.CreateEntities(Entities);
     }
 
     [Benchmark(Baseline = true)]

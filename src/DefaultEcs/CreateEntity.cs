@@ -21,7 +21,7 @@ public class CreateEntity_DefaultEcs : CreateEntity
 
     protected override void CreateEntity1Component()
     {
-        for (int n = 0; n < Constants.CreateEntityCount; n++) {
+        for (int n = 0; n < Entities; n++) {
             var entity = world.CreateEntity();
             entity.Set(new Component1 { Value = n });
         }
@@ -29,7 +29,7 @@ public class CreateEntity_DefaultEcs : CreateEntity
 
     protected override void CreateEntity3Components()
     {
-        for (int n = 0; n < Constants.CreateEntityCount; n++) {
+        for (int n = 0; n < Entities; n++) {
             var entity = world.CreateEntity();
             entity.Set(new Component1 { Value = n });
             entity.Set(new Component2 { Value = n });

@@ -13,7 +13,7 @@ public class AddRemoveComponents_Morpeh : AddRemoveComponents
     public void Setup() {
         world       = World.Create();
         access      = new Access(world);
-        entities    = world.CreateEntities(Constants.EntityCount);
+        entities    = world.CreateEntities(Entities);
     }
 
     [GlobalCleanup]

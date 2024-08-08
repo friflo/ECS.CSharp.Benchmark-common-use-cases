@@ -12,7 +12,7 @@ public class CommandBufferAddRemove_Friflo : CommandBufferAddRemove
     public void Setup()
     {
         var world       = new EntityStore();
-        entities        = world.CreateEntities(Constants.EntityCount);
+        entities        = world.CreateEntities(Entities);
         commandBuffer   = world.GetCommandBuffer();
         commandBuffer.ReuseBuffer = true;
     }

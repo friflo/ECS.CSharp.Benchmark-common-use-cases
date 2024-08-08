@@ -15,7 +15,7 @@ public class GetSetComponents_Myriad : GetSetComponents
     {
         world = new WorldBuilder().Build();
 
-        entities = world.CreateEntities(Constants.EntityCount);
+        entities = world.CreateEntities(Entities);
         entities.AddComponents(world);
     }
 

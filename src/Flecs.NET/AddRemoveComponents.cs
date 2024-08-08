@@ -12,7 +12,7 @@ public class AddRemoveComponents_FlecsNet : AddRemoveComponents
     [GlobalSetup]
     public void Setup() {
         world       = World.Create();
-        entities    = world.CreateEntities(Constants.EntityCount);
+        entities    = world.CreateEntities(Entities);
     }
 
     [GlobalCleanup]
