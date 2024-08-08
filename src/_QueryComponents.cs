@@ -4,7 +4,7 @@ using BenchmarkDotNet.Attributes;
 [BenchmarkCategory(nameof(QueryComponents))]
 public abstract class QueryComponents
 {
-    [Params(Constants.EntityCount)]
+    [Params(100, 100_000)]
     public  int         Entities { get; set; }
 
     [Params(1, 5)]

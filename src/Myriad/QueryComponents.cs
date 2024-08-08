@@ -39,7 +39,7 @@ public class QueryComponents_Myriad : QueryComponents
 
     protected override void Run5Components()
     {
-        world.Execute<AddComponents, Component1, Component2, Component3, Component4, Component5>(query5);
+        world.Execute<Add5Components, Component1, Component2, Component3, Component4, Component5>(query5);
     }
 }
 
@@ -52,7 +52,7 @@ internal readonly struct IncrementComponent1
     }
 }
 
-internal readonly struct AddComponents
+internal readonly struct Add5Components
     : IQuery5<Component1, Component2, Component3, Component4, Component5>
 {
     public void Execute(Entity e, ref Component1 c1, ref Component2 c2, ref Component3 c3, ref Component4 c4, ref Component5 c5)

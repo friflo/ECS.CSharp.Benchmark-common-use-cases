@@ -32,16 +32,13 @@ public class QueryComponents_Friflo : QueryComponents
 
     protected override void Run5Components()
     {
-        foreach (var (components1, components2, components3, components4, components5, _) in query5.Chunks)
-        {
-            var span1 = components1.Span;
-            var span2 = components2.Span;
-            var span3 = components3.Span;
-            var span4 = components4.Span;
-            var span5 = components5.Span;
-            for (int n = 0; n < components1.Length; n++) {
-                span1[n].Value = span2[n].Value + span3[n].Value + span4[n].Value + span5[n].Value;
-            }
-        }
+        query5.Each(new Each5());
+    }
+}
+
+internal readonly struct Each5 : IEach<Component1,Component2,Component3,Component4,Component5>
+{
+    public void Execute(ref Component1 c1, ref Component2 c2, ref Component3 c3, ref Component4 c4, ref Component5 c5) {
+        c1.Value = c2.Value + c3.Value + c4.Value + c5.Value;
     }
 }
