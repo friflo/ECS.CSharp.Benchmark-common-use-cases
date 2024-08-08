@@ -16,7 +16,7 @@ public class AddRemoveRelations_Arch : AddRemoveRelations
     {
         world       = World.Create();
         entities    = world.CreateEntities(Entities).AddComponents();
-        targets     = new Entity[RelationCount];
+        targets     = new Entity[Relations];
     }
 
     [GlobalCleanup]
@@ -38,10 +38,10 @@ public class AddRemoveRelations_Arch : AddRemoveRelations
 
     protected override void AddRemove10Relations()
     {
-        world.CreateEntities(RelationCount, targets);
+        world.CreateEntities(Relations, targets);
         foreach (var entity in entities)
         {
-            for (int n = 0; n < RelationCount; n++) {
+            for (int n = 0; n < Relations; n++) {
                 entity.AddRelationship(targets[n], new LinkRelation(1337));
             }
             foreach (var relation in targets) {

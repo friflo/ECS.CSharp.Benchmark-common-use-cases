@@ -7,12 +7,12 @@ public abstract class AddRemoveRelations
     public  int         Entities { get; set; }
 
     [Params(1, 10)]
-    public  int         RelationCount { get; set; }
+    public  int         Relations { get; set; }
 
     [Benchmark]
     public virtual void Run()
     {
-        if (RelationCount == 1) {
+        if (Relations == 1) {
             AddRemove1Relation();
             return;
         }
