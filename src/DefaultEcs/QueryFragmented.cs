@@ -13,9 +13,9 @@ public class QueryFragmented_Default : QueryFragmented
     public void Setup()
     {
         world = new World();
-        var entities = world.CreateEntities(Constants.FragmentationCount);
+        var entities = world.CreateEntities(Entities);
         componentSystem = new ComponentSystem(world);
-        for (int n = 0; n < Constants.FragmentationCount; n++) {
+        for (int n = 0; n < Entities; n++) {
             var entity = entities[n];
                                 entity.Set<Component1>();
             if ((n &   1) != 0) entity.Set<Component2>();

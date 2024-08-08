@@ -12,9 +12,9 @@ public class QueryFragmented_TinyEcs : QueryFragmented
     public void Setup()
     {
         world = new World();
-        var entities = world.CreateEntities(Constants.FragmentationCount);
+        var entities = world.CreateEntities(Entities);
         query = world.QueryBuilder().With<Component1>().Build();
-        for (int n = 0; n < Constants.FragmentationCount; n++) {
+        for (int n = 0; n < Entities; n++) {
             var entity = entities[n];
                                 entity.Set(new Component1());
             if ((n &   1) != 0) entity.Set(new Component2());
@@ -22,7 +22,7 @@ public class QueryFragmented_TinyEcs : QueryFragmented
             if ((n &   4) != 0) entity.Set(new Component4());
             if ((n &   8) != 0) entity.Set(new Component5());
         }
-        Check.AreEqual(Constants.FragmentationCount, query.Count());
+        Check.AreEqual(Entities, query.Count());
     }
 
     [GlobalCleanup]

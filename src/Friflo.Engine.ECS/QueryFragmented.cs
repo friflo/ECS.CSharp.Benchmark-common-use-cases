@@ -11,9 +11,9 @@ public class QueryFragmented_Friflo : QueryFragmented
     public void Setup()
     {
         var world = new EntityStore();
-        var entities = world.CreateEntities(Constants.FragmentationCount);
+        var entities = world.CreateEntities(Entities);
         query = world.Query<Component1>();
-        for (int n = 0; n < Constants.FragmentationCount; n++) {
+        for (int n = 0; n < Entities; n++) {
             var entity = entities[n];
                                 entity.AddComponent<Component1>();
             if ((n &   1) != 0) entity.AddComponent<Component2>();
@@ -21,7 +21,7 @@ public class QueryFragmented_Friflo : QueryFragmented
             if ((n &   4) != 0) entity.AddComponent<Component4>();
             if ((n &   8) != 0) entity.AddComponent<Component5>();
         }
-        Check.AreEqual(Constants.FragmentationCount, query.Count);
+        Check.AreEqual(Entities, query.Count);
     }
 
     [Benchmark(Baseline = true)]

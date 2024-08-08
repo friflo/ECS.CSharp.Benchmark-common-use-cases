@@ -12,10 +12,10 @@ public class QueryFragmented_Morpeh : QueryFragmented
     public void Setup()
     {
         world = World.Create();
-        var entities = world.CreateEntities(Constants.FragmentationCount);
+        var entities = world.CreateEntities(Entities);
         stashSystem = new StashSystem { World = world };
         stashSystem.OnAwake();
-        for (int n = 0; n < Constants.FragmentationCount; n++) {
+        for (int n = 0; n < Entities; n++) {
             var entity = entities[n];
                                 entity.AddComponent<Component1>();
             if ((n &   1) != 0) entity.AddComponent<Component2>();

@@ -12,9 +12,9 @@ public class QueryFragmented_Fennecs : QueryFragmented
     public void Setup()
     {
         world = new World();
-        var entities = world.CreateEntities(Constants.FragmentationCount);
+        var entities = world.CreateEntities(Entities);
         stream = world.Query<Component1>().Compile().Stream<Component1>();
-        for (int n = 0; n < Constants.FragmentationCount; n++) {
+        for (int n = 0; n < Entities; n++) {
             var entity = entities[n];
                                 entity.Add(new Component1());
             if ((n &   1) != 0) entity.Add(new Component2());
@@ -22,7 +22,7 @@ public class QueryFragmented_Fennecs : QueryFragmented
             if ((n &   4) != 0) entity.Add(new Component4());
             if ((n &   8) != 0) entity.Add(new Component5());
         }
-        Check.AreEqual(Constants.FragmentationCount, stream.Count);
+        Check.AreEqual(Entities, stream.Count);
     }
 
     [GlobalCleanup]

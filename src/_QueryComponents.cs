@@ -26,6 +26,9 @@ public abstract class QueryComponents
 [BenchmarkCategory(nameof(QueryFragmented))]
 public abstract class QueryFragmented
 {
+    [Params(Constants.FragmentationCount)]
+    public  int         Entities { get; set; }
+
     [Benchmark]
     public abstract void Run();
 }

@@ -15,9 +15,9 @@ public class QueryFragmented_Arch : QueryFragmented
     public void Setup()
     {
         world   = World.Create();
-        var entities = world.CreateEntities(Constants.FragmentationCount);
+        var entities = world.CreateEntities(Entities);
         queryDescription = new QueryDescription().WithAll<Component1>();
-        for (int n = 0; n < Constants.FragmentationCount; n++) {
+        for (int n = 0; n < Entities; n++) {
             var entity = entities[n];
                                 entity.Add<Component1>();
             if ((n &   1) != 0) entity.Add<Component2>();
@@ -25,7 +25,7 @@ public class QueryFragmented_Arch : QueryFragmented
             if ((n &   4) != 0) entity.Add<Component4>();
             if ((n &   8) != 0) entity.Add<Component5>();
         }
-        Check.AreEqual(Constants.FragmentationCount, world.CountEntities(queryDescription));
+        Check.AreEqual(Entities, world.CountEntities(queryDescription));
     }
 
     [GlobalCleanup]

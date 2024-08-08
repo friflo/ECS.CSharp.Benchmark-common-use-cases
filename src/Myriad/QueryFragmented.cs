@@ -19,7 +19,7 @@ public class QueryFragmented_Myriad : QueryFragmented
 
         // Create all the entities using a command buffer
         var cmd = new CommandBuffer(world);
-        for (var i = 0; i < Constants.FragmentationCount; i++)
+        for (var i = 0; i < Entities; i++)
         {
             var entity = cmd.Create();
 
@@ -34,7 +34,7 @@ public class QueryFragmented_Myriad : QueryFragmented
         cmd.Playback().Dispose();
 
         query = new QueryBuilder().Include<Component1>().Build(world);
-        if (query.Count() != Constants.FragmentationCount)
+        if (query.Count() != Entities)
             throw new Exception("Setup failed to create correct number of entities (Myriad bug?)");
     }
 
