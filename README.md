@@ -45,18 +45,21 @@ See comments about this benchmark at [reddit announcement post](https://www.redd
 All tested projects are engine agnostic.  
 Ordered by GitHub Activity
 
-| ECS                                                               | ECS implementation      | Entity | dll size |            tested | nuget latest
-|------------------------------------------------------------------ | ----------------------- | -------| --------:| -----------------:| --------------------------------------
-| [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Engine.ECS)  | Archetype               | struct |   303 kb |   3.0.0-preview.4 | [![nuget](https://img.shields.io/nuget/vpre/Friflo.Engine.ECS?color=blue)](https://www.nuget.org/packages/Friflo.Engine.ECS)
-| [fennecs](https://github.com/outfox/fennecs)                      | Archetype               | struct |   157 kb |        0.5.9-beta | [![nuget](https://img.shields.io/nuget/vpre/fennecs?color=blue)](https://www.nuget.org/packages/fennecs)
-| [TinyEcs](https://github.com/andreakarasho/TinyEcs)               | Archetype               | struct |   487 kb |             1.4.0 | [![nuget](https://img.shields.io/nuget/v/TinyEcs.Main?color=blue)](https://www.nuget.org/packages/TinyEcs.Main)
-| [Myriad.ECS](https://github.com/martindevans/Myriad.ECS)          | Archetype               | struct |   631 kb |            21.0.0 | [![nuget](https://img.shields.io/nuget/v/Myriad.ECS?color=blue)](https://www.nuget.org/packages/Myriad.ECS)
-| [Flecs.NET](https://github.com/BeanCheeseBurrito/Flecs.NET)       | Archetype / Sparse Set  | struct |  1600 kb |             4.0.0 | [![nuget](https://img.shields.io/nuget/v/Flecs.NET.Release?color=blue)](https://www.nuget.org/packages/Flecs.NET.Release)
-| [Arch](https://github.com/genaray/Arch)                           | Archetype               | struct |   765 kb |             1.2.8 | [![nuget](https://img.shields.io/nuget/v/Arch?color=blue)](https://www.nuget.org/packages/Arch)
-| [Arch.Relationships](https://github.com/genaray/Arch.Extended)    | add-on                  |        |     9 kb |             1.0.1 | [![nuget](https://img.shields.io/nuget/v/Arch.Relationships?color=blue)](https://www.nuget.org/packages/Arch.Relationships)
-| [Morpeh](https://github.com/scellecs/morpeh)                      | ?                       | class  |    76 kb |          2023.1.0 | [![nuget](https://img.shields.io/nuget/v/Scellecs.Morpeh?color=blue)](https://www.nuget.org/packages/Scellecs.Morpeh)
-| [Leopotam.EcsLite](https://github.com/Leopotam/ecslite)           | Sparse Set              | int    |    18 kb |             1.0.1 | [![nuget](https://img.shields.io/nuget/v/Leopotam.EcsLite?color=blue)](https://www.nuget.org/packages/Leopotam.EcsLite) ⁽¹⁾
-| [DefaultEcs](https://github.com/Doraku/DefaultEcs)                | Sparse Set              | struct |   169 kb | 0.18.0-beta01     | [![nuget](https://img.shields.io/nuget/vpre/DefaultEcs?color=blue)](https://www.nuget.org/packages/DefaultEcs)
+- [x] 🔒 **C#** - dll uses only *verifiable safe code*. See [unsafe code ⋅ Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/unsafe-code).
+
+| ECS                                                                       | ECS type        | Entity  | 🔒 C# | dll size |            tested | nuget latest
+|-------------------------------------------------------------------------- | --------------- | ------- | ----- | --------:| -----------------:| --------------------------------------
+| [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Engine.ECS)          | Archetype       | struct  |  ✅  |   307 kb |  3.0.0-preview.10 | [![nuget](https://img.shields.io/nuget/vpre/Friflo.Engine.ECS?color=blue)](https://www.nuget.org/packages/Friflo.Engine.ECS)
+| [Friflo.Engine.ECS.Boost](https://github.com/friflo/Friflo.Engine.ECS)    | add-on          | struct  |       |    12 kb |  3.0.0-preview.10 | [![nuget](https://img.shields.io/nuget/vpre/Friflo.Engine.ECS.Boost?color=blue)](https://www.nuget.org/packages/Friflo.Engine.ECS.Boost)
+| [fennecs](https://github.com/outfox/fennecs)                              | Archetype       | struct  |       |   157 kb |       0.5.10-beta | [![nuget](https://img.shields.io/nuget/vpre/fennecs?color=blue)](https://www.nuget.org/packages/fennecs)
+| [TinyEcs](https://github.com/andreakarasho/TinyEcs)                       | Archetype       | struct  |       |   487 kb |             1.4.0 | [![nuget](https://img.shields.io/nuget/v/TinyEcs.Main?color=blue)](https://www.nuget.org/packages/TinyEcs.Main)
+| [Myriad.ECS](https://github.com/martindevans/Myriad.ECS)                  | Archetype       | struct  |       |   631 kb |            21.2.1 | [![nuget](https://img.shields.io/nuget/v/Myriad.ECS?color=blue)](https://www.nuget.org/packages/Myriad.ECS)
+| [Flecs.NET](https://github.com/BeanCheeseBurrito/Flecs.NET)               | Arche. / Sparse | struct  |       |  1600 kb |             4.0.0 | [![nuget](https://img.shields.io/nuget/v/Flecs.NET.Release?color=blue)](https://www.nuget.org/packages/Flecs.NET.Release)
+| [Arch](https://github.com/genaray/Arch)                                   | Archetype       | struct  |       |   765 kb |             1.2.8 | [![nuget](https://img.shields.io/nuget/v/Arch?color=blue)](https://www.nuget.org/packages/Arch)
+| [Arch.Relationships](https://github.com/genaray/Arch.Extended)            | add-on          |         |  ✅  |     9 kb |             1.0.1 | [![nuget](https://img.shields.io/nuget/v/Arch.Relationships?color=blue)](https://www.nuget.org/packages/Arch.Relationships)
+| [Morpeh](https://github.com/scellecs/morpeh)                              | ?               | class   |       |    76 kb |          2023.1.0 | [![nuget](https://img.shields.io/nuget/v/Scellecs.Morpeh?color=blue)](https://www.nuget.org/packages/Scellecs.Morpeh)
+| [Leopotam.EcsLite](https://github.com/Leopotam/ecslite)                   | Sparse Set      | int     |       |    18 kb |             1.0.1 | [![nuget](https://img.shields.io/nuget/v/Leopotam.EcsLite?color=blue)](https://www.nuget.org/packages/Leopotam.EcsLite) ⁽¹⁾
+| [DefaultEcs](https://github.com/Doraku/DefaultEcs)                        | Sparse Set      | struct  |       |   169 kb |     0.18.0-beta01 | [![nuget](https://img.shields.io/nuget/vpre/DefaultEcs?color=blue)](https://www.nuget.org/packages/DefaultEcs)
 
 ⁽¹⁾ nuget package not published by project owner
 
@@ -87,31 +90,23 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
 ## Feature Matrix
 
-- **Heap**
-    - **m** - **managed memory**: Memory is managed by dotnet runtime.  
-    BenchmarkDotNet monitors allocations of this memory in column: **Allocated**.  
-    Access to managed memory is slower than to native memory when boundary checks are needed.
-
-    - **n** - **native memory**: Memory is allocated and managed by the ECS.  
-    BenchmarkDotNet does not monitor allocations of native memory.  
-    Bugs in game code or ECS related to native memory may result in memory corruption / access violation.
-- **Watch** - Watch / navigate entity components in debugger without adding debug code.
+- [x] **Watch** - Watch / navigate entity components ad-hoc in debugger.
     <details>    
         <summary>See example screenshot</summary>
         <img src="docs/images/Debugger-Watch.png" width="634" height="178"/>        
     </details>
 
-| ECS                  | Basic | Relations | Command Buffer | Events | Search | Heap | Watch  |
-|--------------------- | ----- | --------- | -------------- | ------ | ------ | ---- | ------ |
-| Arch + Relationships |  ✅  |  ✅       |  ✅           |  [^1]  |         | m, n |  ✅   |
-| DefaultEcs           |  ✅  |           |  ✅            |  ✅    |        | m, n |  ✅   |
-| fennecs              |  ✅  |  ✅       |                |  [^2]  |        | m, n |  ✅   |
-| Flecs.NET            |  ✅  |  ✅       |  ✅           |   ✅   |        | m, n |        |
-| Friflo.Engine.ECS    |  ✅  |  ✅ ¹     |  ✅           |   ✅   |   ✅   | m    |  ✅   |
-| Leopotam.EcsLite     |  ✅  |           |                |         |        | m, n |       |
-| Morpeh               |  ✅  |           |  ✅            |        |        | m, n |        |
-| Myriad.ECS           |  ✅  |           |  ✅            |        |        | m    |        |
-| TinyEcs              |  ✅  |  ✅       |  ✅           |   ✅   |        | m, n |        |
+| ECS                  | Basic | Relations | Command Buffer | Events | Search | Watch  |
+|--------------------- | ----- | --------- | -------------- | ------ | ------ | ------ |
+| Arch + Relationships |  ✅  |  ✅       |  ✅           |  [^1]  |         |  ✅   |
+| DefaultEcs           |  ✅  |           |  ✅            |  ✅    |        |  ✅   |
+| fennecs              |  ✅  |  ✅       |                |  [^2]  |        |  ✅   |
+| Flecs.NET            |  ✅  |  ✅       |  ✅           |   ✅   |        |        |
+| Friflo.Engine.ECS    |  ✅  |  ✅ ¹     |  ✅           |   ✅   |   ✅   |  ✅   |
+| Leopotam.EcsLite     |  ✅  |           |                |         |        |       |
+| Morpeh               |  ✅  |           |  ✅            |        |        |        |
+| Myriad.ECS           |  ✅  |           |  ✅            |        |        |        |
+| TinyEcs              |  ✅  |  ✅       |  ✅           |   ✅   |        |        |
 
 ¹ Ensures a cycle free entity hierarchy. See [CheckTreeCycles()](https://github.com/search?q=repo%3Afriflo%2FECS.CSharp.Benchmark-common-use-cases+CheckTreeCycles&type=code)
 
