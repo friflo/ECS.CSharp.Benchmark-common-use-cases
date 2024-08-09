@@ -42,28 +42,27 @@ See comments about this benchmark at [reddit announcement post](https://www.redd
 
 ## Tested projects
 
-All tested projects are engine agnostic.  
-Ordered by GitHub Activity
-
+- [x] All tested projects are engine agnostic.  
 - [x] 🔒 **C#** - dll uses only *verifiable safe code*. This allows execution in trusted environments.  
 See [Unsafe code ⋅ Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/unsafe-code) and
 [C# Language specification  ⋅ Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/unsafe-code)
 
+*Projects ordered by dll size*  
 | ECS                                                                       | ECS type    | Entity  | 🔒 C# | size kb |            tested | nuget latest
 |-------------------------------------------------------------------------- | ----------- | ------- | ----- | -------:| -----------------:| --------------------------------------
-| [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Engine.ECS)          | Archetype   | struct  |  ✅  |     307  |  3.0.0-preview.10 | [![nuget](https://img.shields.io/nuget/vpre/Friflo.Engine.ECS?label=%20&color=blue)](https://www.nuget.org/packages/Friflo.Engine.ECS)
-| [Friflo.Engine.ECS.Boost](https://github.com/friflo/Friflo.Engine.ECS)    | add-on      |         |       |      12 |  3.0.0-preview.10 | [![nuget](https://img.shields.io/nuget/vpre/Friflo.Engine.ECS.Boost?label=%20&color=blue)](https://www.nuget.org/packages/Friflo.Engine.ECS.Boost)
+| [Leopotam.EcsLite](https://github.com/Leopotam/ecslite)                   | Sparse Set  | int     |       |      18 |             1.0.1 | [![nuget](https://img.shields.io/nuget/v/Leopotam.EcsLite?label=%20&color=blue)](https://www.nuget.org/packages/Leopotam.EcsLite) ⁽¹⁾
+| [Morpeh](https://github.com/scellecs/morpeh)                              | ?           | class   |       |      76 |          2023.1.0 | [![nuget](https://img.shields.io/nuget/v/Scellecs.Morpeh?label=%20&color=blue)](https://www.nuget.org/packages/Scellecs.Morpeh)
 | [fennecs](https://github.com/outfox/fennecs)                              | Archetype   | struct  |       |     157 |       0.5.10-beta | [![nuget](https://img.shields.io/nuget/vpre/fennecs?label=%20&color=blue)](https://www.nuget.org/packages/fennecs)
+| [DefaultEcs](https://github.com/Doraku/DefaultEcs)                        | Sparse Set  | struct  |       |     169 |     0.18.0-beta01 | [![nuget](https://img.shields.io/nuget/vpre/DefaultEcs?label=%20&color=blue)](https://www.nuget.org/packages/DefaultEcs)
+| [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Engine.ECS)          | Archetype   | struct  |  ✅  |     307  |  3.0.0-preview.10 | [![nuget](https://img.shields.io/nuget/vpre/Friflo.Engine.ECS?label=%20&color=blue)](https://www.nuget.org/packages/Friflo.Engine.ECS)
+| [Friflo.Engine.ECS.Boost](https://github.com/friflo/Friflo.Engine.ECS)    | 📦         |         |       |      12 |  3.0.0-preview.10 | [![nuget](https://img.shields.io/nuget/vpre/Friflo.Engine.ECS.Boost?label=%20&color=blue)](https://www.nuget.org/packages/Friflo.Engine.ECS.Boost)
 | [TinyEcs](https://github.com/andreakarasho/TinyEcs)                       | Archetype   | struct  |       |     487 |             1.4.0 | [![nuget](https://img.shields.io/nuget/v/TinyEcs.Main?label=%20&color=blue)](https://www.nuget.org/packages/TinyEcs.Main)
 | [Myriad.ECS](https://github.com/martindevans/Myriad.ECS)                  | Archetype   | struct  |       |     631 |            21.2.1 | [![nuget](https://img.shields.io/nuget/v/Myriad.ECS?label=%20&color=blue)](https://www.nuget.org/packages/Myriad.ECS)
-| [Flecs.NET](https://github.com/BeanCheeseBurrito/Flecs.NET)               | Arch/Sparse | struct  |       |    1600 |             4.0.0 | [![nuget](https://img.shields.io/nuget/v/Flecs.NET.Release?label=%20&color=blue)](https://www.nuget.org/packages/Flecs.NET.Release)
 | [Arch](https://github.com/genaray/Arch)                                   | Archetype   | struct  |       |     765 |             1.2.8 | [![nuget](https://img.shields.io/nuget/v/Arch?label=%20&color=blue)](https://www.nuget.org/packages/Arch)
-| [Arch.Relationships](https://github.com/genaray/Arch.Extended)            | add-on      |         |  ✅  |       9  |             1.0.1 | [![nuget](https://img.shields.io/nuget/v/Arch.Relationships?label=%20&color=blue)](https://www.nuget.org/packages/Arch.Relationships)
-| [Morpeh](https://github.com/scellecs/morpeh)                              | ?           | class   |       |      76 |          2023.1.0 | [![nuget](https://img.shields.io/nuget/v/Scellecs.Morpeh?label=%20&color=blue)](https://www.nuget.org/packages/Scellecs.Morpeh)
-| [Leopotam.EcsLite](https://github.com/Leopotam/ecslite)                   | Sparse Set  | int     |       |      18 |             1.0.1 | [![nuget](https://img.shields.io/nuget/v/Leopotam.EcsLite?label=%20&color=blue)](https://www.nuget.org/packages/Leopotam.EcsLite) ⁽¹⁾
-| [DefaultEcs](https://github.com/Doraku/DefaultEcs)                        | Sparse Set  | struct  |       |     169 |     0.18.0-beta01 | [![nuget](https://img.shields.io/nuget/vpre/DefaultEcs?label=%20&color=blue)](https://www.nuget.org/packages/DefaultEcs)
+| [Arch.Relationships](https://github.com/genaray/Arch.Extended)            | 📦         |         |  ✅  |       9  |             1.0.1 | [![nuget](https://img.shields.io/nuget/v/Arch.Relationships?label=%20&color=blue)](https://www.nuget.org/packages/Arch.Relationships)
+| [Flecs.NET](https://github.com/BeanCheeseBurrito/Flecs.NET)               | Arch/Sparse | struct  |       |    1600 |             4.0.0 | [![nuget](https://img.shields.io/nuget/v/Flecs.NET.Release?label=%20&color=blue)](https://www.nuget.org/packages/Flecs.NET.Release)
 
-⁽¹⁾ nuget package not published by project owner
+⁽¹⁾ nuget package not published by project owner  
 
 
 ## ECS implementation
