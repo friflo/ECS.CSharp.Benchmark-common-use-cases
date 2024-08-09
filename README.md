@@ -136,7 +136,7 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 | Add & Remove 2 components on 100 entities                     | `CommandBufferAddRemove`  |
 |                                                               |                           |
 | [**Events**](#events) - *reactive ECS*                        |                           |
-| Get event callback on Add & Remove component                  | `ComponentEvents`         |
+| Get event callback on Add & Remove 1 component                | `ComponentEvents`         |
 |                                                               |                           |
 | [**Search**](#search)                                         |                           |
 | Search component field in 1.000.000 entities                  | `SearchComponentField`    |
@@ -354,7 +354,7 @@ Relations enable *directed* links between entities aka entity relationships.
 *Directed link* means that a link points from a source entity to a target entity.  
 A single entity can have multiple links to other target entities.
 
-### Add & Remove 1 / 100 link relation on 100 entities
+### Add & Remove 1 / 100 link relations on 100 entities
 
 | Namespace         | Entities | Relations | Mean          | Ratio    | Allocated  | 
 |------------------ |--------- |---------- |--------------:|---------:|-----------:|
@@ -453,7 +453,7 @@ Typical event types are:
 - Add / Remove tag
 - Create / Delete entity
 
-### Get callback event on Add & Remove component on 100 entities
+### Get callback event on Add & Remove 1 component on 100 entities
 
 | Namespace         | Entities | Mean          | Ratio    | Allocated  | 
 |------------------ |--------- |--------------:|---------:|-----------:|
