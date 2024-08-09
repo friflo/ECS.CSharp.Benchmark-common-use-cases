@@ -45,7 +45,9 @@ See comments about this benchmark at [reddit announcement post](https://www.redd
 All tested projects are engine agnostic.  
 Ordered by GitHub Activity
 
-- [x] 🔒 **C#** - dll uses only *verifiable safe code*. See [unsafe code ⋅ Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/unsafe-code).
+- [x] 🔒 **C#** - dll uses only *verifiable safe code*. This allows execution in trusted environments.  
+See [Unsafe code ⋅ Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/unsafe-code) and
+[C# Language specification  ⋅ Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/unsafe-code)
 
 | ECS                                                                       | ECS type        | Entity  | 🔒 C# | dll size |            tested | nuget latest
 |-------------------------------------------------------------------------- | --------------- | ------- | ----- | --------:| -----------------:| --------------------------------------
