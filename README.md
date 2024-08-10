@@ -44,13 +44,14 @@ See comments about this benchmark at [reddit announcement post](https://www.redd
 
 - [x] All tested projects are engine agnostic.  
 - [x] 🔒 **C#** - dll uses only *verifiable safe code*. This allows execution in trusted environments.  
-See [Unsafe code ⋅ Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/unsafe-code) and
-[C# Language specification  ⋅ Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/unsafe-code)
+      See [Unsafe code ⋅ Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/unsafe-code) and
+      [C# Language specification  ⋅ Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/unsafe-code)
+      using `<AllowUnsafeBlocks>`.
 
 *Projects ordered by dll size*  
 | ECS                                                                       | ECS type    | Entity  | 🔒 C# | size kb |            tested | nuget latest
 |-------------------------------------------------------------------------- | ----------- | ------- | ----- | -------:| -----------------:| --------------------------------------
-| [Leopotam.EcsLite](https://github.com/Leopotam/ecslite)                   | Sparse Set  | int     |       |      18 |             1.0.1 | [![nuget](https://img.shields.io/nuget/v/Leopotam.EcsLite?label=%20&color=blue)](https://www.nuget.org/packages/Leopotam.EcsLite) ⁽¹⁾
+| [Leopotam.EcsLite](https://github.com/Leopotam/ecslite)                   | Sparse Set  | int     |  ✅   |      18 |             1.0.1 | [![nuget](https://img.shields.io/nuget/v/Leopotam.EcsLite?label=%20&color=blue)](https://www.nuget.org/packages/Leopotam.EcsLite) ⁽¹⁾
 | [Morpeh](https://github.com/scellecs/morpeh)                              | ?           | class   |       |      76 |          2023.1.0 | [![nuget](https://img.shields.io/nuget/v/Scellecs.Morpeh?label=%20&color=blue)](https://www.nuget.org/packages/Scellecs.Morpeh)
 | [fennecs](https://github.com/outfox/fennecs)                              | Archetype   | struct  |       |     157 |       0.5.10-beta | [![nuget](https://img.shields.io/nuget/vpre/fennecs?label=%20&color=blue)](https://www.nuget.org/packages/fennecs)
 | [DefaultEcs](https://github.com/Doraku/DefaultEcs)                        | Sparse Set  | struct  |       |     169 |     0.18.0-beta01 | [![nuget](https://img.shields.io/nuget/vpre/DefaultEcs?label=%20&color=blue)](https://www.nuget.org/packages/DefaultEcs)
