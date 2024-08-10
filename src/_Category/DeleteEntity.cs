@@ -1,6 +1,6 @@
-﻿
-using BenchmarkDotNet.Attributes;
+﻿using BenchmarkDotNet.Attributes;
 
+// ReSharper disable once CheckNamespace
 [BenchmarkCategory(nameof(DeleteEntity))]
 public abstract class DeleteEntity
 {

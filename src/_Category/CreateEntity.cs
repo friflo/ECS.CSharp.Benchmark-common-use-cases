@@ -1,6 +1,6 @@
-﻿
-using BenchmarkDotNet.Attributes;
+﻿using BenchmarkDotNet.Attributes;
 
+// ReSharper disable once CheckNamespace
 [WarmupCount(5000)] // so fast implementation to execute JIT compiler
 [BenchmarkCategory(nameof(CreateEntity))]
 public abstract class CreateEntity

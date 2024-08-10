@@ -1,5 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
 
+// ReSharper disable once CheckNamespace
 [BenchmarkCategory(nameof(CommandBufferAddRemove))]
 public abstract class CommandBufferAddRemove
 {

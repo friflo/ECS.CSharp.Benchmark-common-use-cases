@@ -1,8 +1,8 @@
-﻿
-using BenchmarkDotNet.Attributes;
+﻿using BenchmarkDotNet.Attributes;
 
-[BenchmarkCategory(nameof(GetSetComponents))]
-public abstract class GetSetComponents
+// ReSharper disable once CheckNamespace
+[BenchmarkCategory(nameof(AddRemoveComponents))]
+public abstract class AddRemoveComponents
 {
     [Params(Constants.EntityCount)]
     public  int         Entities { get; set; }

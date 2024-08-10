@@ -1,6 +1,6 @@
-﻿
-using BenchmarkDotNet.Attributes;
+﻿using BenchmarkDotNet.Attributes;
 
+// ReSharper disable once CheckNamespace
 [BenchmarkCategory(nameof(QueryComponents))]
 public abstract class QueryComponents
 {

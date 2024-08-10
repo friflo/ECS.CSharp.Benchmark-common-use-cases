@@ -1,7 +1,8 @@
 ﻿using BenchmarkDotNet.Attributes;
 
-[BenchmarkCategory(nameof(ChildEntitiesAddRemove))]
-public abstract class ChildEntitiesAddRemove
+// ReSharper disable once CheckNamespace
+[BenchmarkCategory(nameof(ComponentEvents))]
+public abstract class ComponentEvents
 {
     [Params(Constants.EntityCount)]
     public  int         Entities { get; set; }

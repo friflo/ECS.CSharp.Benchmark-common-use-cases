@@ -1,5 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
 
+// ReSharper disable once CheckNamespace
 [BenchmarkCategory(nameof(AddRemoveLinks))]
 public abstract class AddRemoveLinks
 {
