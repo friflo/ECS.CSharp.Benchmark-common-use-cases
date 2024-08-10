@@ -114,7 +114,7 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 
 <br/>
 
-| Benchmark Category                                            | Category id               |
+| Benchmark Description                                         | Category                  |
 |-------------------------------------------------------------- | ------------------------- |
 | [**Basic**](#basic)                                           |                           |
 | Add & Remove 1/5 components on 100 entities                   | `AddRemoveComponents`     |
@@ -122,7 +122,7 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 | Create World                                                  | `CreateWorld`             |
 | Delete 100.000 entities with 5 components                     | `DeleteEntity`            |
 | Get & Set 1 / 5 components on 100 entities                    | `GetSetComponents`        |
-| Query 100 entities with 1/5 components                        | `QueryComponents`         |
+| Query 100 / 100.000 entities with 1 / 5 components            | `QueryComponents`         |
 |                                                               |                           |
 | [**Relations**](#relations)                                   |                           |
 | Add & Remove 1/100 link relation on 100 entities              | `AddRemoveLinks`          |
@@ -220,7 +220,8 @@ Readme benchmark update: **2024-08-09** using this
 | Myriad            | 100      | 3          |     21,014 ns |     5.39 |    27288 B | 
 | fennecs           | 100      | 3          |    103,193 ns |    26.41 |   395856 B | 
 
-Some frameworks support **bulk creation** of entities
+Some frameworks support **bulk creation** of entities.  
+If available bulk creation is faster than the approach creating entities ony by one.
 
 | Namespace         | Entities | Components | Mean          | Ratio    | Allocated  | 
 |------------------ |--------- |----------- |--------------:|---------:|-----------:|
