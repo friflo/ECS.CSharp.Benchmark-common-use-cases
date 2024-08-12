@@ -7,7 +7,7 @@ public abstract class AddRemoveRelations
     [Params(Constants.EntityCount)]
     public  int         Entities { get; set; }
 
-    [Params(1, 10)]
+    [Params(1, 100)]
     public  int         Relations { get; set; }
 
     [Benchmark]
