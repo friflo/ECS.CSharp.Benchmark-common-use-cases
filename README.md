@@ -338,14 +338,17 @@ Returned components are sequentially stored in memory providing a high cache hit
 | Leopotam.EcsLite  | 100000   | 5          |    350,145 ns |     7.29 |          - | 
 | Scellecs.Morpeh   | 100000   | 5          |  1,979,985 ns |    41.20 |        1 B | 
 
-Performance reference [vanilla C++ implementation](docs/query-components-bench.cpp) Entities: 100.000 Components: 5
 
-| C++ vs C#                         | Entities | Components | Mean          |
-|---------------------------------- |--------- |----------- |--------------:|
-| macOS M2: C++                     | 100000   | 5          |     20,557 ns |
-| macOS M2: Friflo.Engine.ECS       | 100000   | 5          |     48,055 ns |
-| Windows x64: C++                  | 100000   | 5          |     58,430 ns |
-| Windows x64: Friflo.Engine.ECS    | 100000   | 5          |     79,058 ns |
+#### Query performance comparison: C++ vs C#
+
+Performance reference [vanilla C++ implementation](docs/query-components-bench.cpp)
+
+| OS      | CPU | Lang. | Impl.             | Entities | Components | Mean          |
+|-------- | --- | ----- | ----------------- |--------- |----------- |--------------:|
+| macOS   | M2  | C++   | vanilla           | 100000   | 5          |     20,557 ns |
+| macOS   | M2  | C#    | Friflo.Engine.ECS | 100000   | 5          |     48,055 ns |
+| Windows | x64 | C++   | vanilla           | 100000   | 5          |     58,430 ns |
+| Windows | x64 | C#    | Friflo.Engine.ECS | 100000   | 5          |     79,058 ns |
 
 <br/>
 
