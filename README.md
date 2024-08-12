@@ -198,7 +198,7 @@ Readme benchmark update: **2024-08-09** using this
 
 ### Create 100 entities with 1 / 3 components
 
-Created entities are initialized with custom values are recommended [here](https://github.com/friflo/ECS.CSharp.Benchmark-common-use-cases/pull/4#issuecomment-2269097772).  
+Created entities are initialized with custom values as recommended [here](https://github.com/friflo/ECS.CSharp.Benchmark-common-use-cases/pull/4#issuecomment-2269097772).  
 *"in a real-world environment creating a large number of default entities isn't very useful and you'll always want to set component values!"*
 
 | Namespace         | Entities | Components | Mean          | Ratio    | Allocated  | 
