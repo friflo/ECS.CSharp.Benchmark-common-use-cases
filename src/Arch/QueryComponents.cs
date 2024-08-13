@@ -1,4 +1,5 @@
-﻿using Arch.Core;
+﻿using System.Runtime.CompilerServices;
+using Arch.Core;
 using BenchmarkDotNet.Attributes;
 
 namespace Arch;
@@ -19,7 +20,6 @@ public class QueryComponents_Arch : QueryComponents
         world.CreateEntities(Entities).AddComponents();
         query1Description = new QueryDescription().WithAll<Component1>();
         query5Description = new QueryDescription().WithAll<Component1,Component2,Component3,Component4,Component5>();
-
         Check.AreEqual(Entities, world.CountEntities(query5Description));
     }
 
