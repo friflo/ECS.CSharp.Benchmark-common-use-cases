@@ -4,7 +4,7 @@ using DefaultEcs.System;
 namespace DefaultEcs;
 
 // ReSharper disable once InconsistentNaming
-public partial class QueryComponents_DefaultEcs : QueryComponents
+public class QueryComponents_DefaultEcs : QueryComponents
 {
     private World               world;
     private ComponentSystem1     componentSystem1;
