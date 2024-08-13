@@ -1,4 +1,5 @@
-﻿using Arch.Core;
+﻿using System.Runtime.CompilerServices;
+using Arch.Core;
 using BenchmarkDotNet.Attributes;
 
 namespace Arch;
