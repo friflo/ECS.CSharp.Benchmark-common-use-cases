@@ -1,4 +1,5 @@
-﻿using Arch.Core;
+﻿using System.Runtime.CompilerServices;
+using Arch.Core;
 using Arch.Core.Extensions;
 using BenchmarkDotNet.Attributes;
 
@@ -10,13 +11,13 @@ public class QueryFragmented_Arch : QueryFragmented
     private World               world;
     private QueryDescription    queryDescription;
     private ForEach1            forEach;
+    private Query               query1;
 
     [GlobalSetup]
     public void Setup()
     {
         world   = World.Create();
         var entities = world.CreateEntities(Entities);
-        queryDescription = new QueryDescription().WithAll<Component1>();
         for (int n = 0; n < Entities; n++) {
             var entity = entities[n];
                                 entity.Add<Component1>();
@@ -25,6 +26,8 @@ public class QueryFragmented_Arch : QueryFragmented
             if ((n &   4) != 0) entity.Add<Component4>();
             if ((n &   8) != 0) entity.Add<Component5>();
         }
+        queryDescription = new QueryDescription().WithAll<Component1>();
+        query1 = world.Query(queryDescription);
         Check.AreEqual(Entities, world.CountEntities(queryDescription));
     }
 
@@ -37,6 +40,13 @@ public class QueryFragmented_Arch : QueryFragmented
     [Benchmark]
     public override void Run()
     {
-        world.InlineQuery<ForEach1, Component1>(queryDescription, ref forEach);
+        foreach (ref var chunk in query1.GetChunkIterator())
+        {
+            ref var first = ref chunk.GetFirst<Component1>();
+            foreach (var entity in chunk)
+            {
+                Unsafe.Add(ref first, entity).Value++;
+            }
+        }
     }
 }
