@@ -41,14 +41,14 @@
     </ItemGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
         <DefineConstants>TRACE</DefineConstants>
         <OutputPath>..\bin\Debug\</OutputPath>
         <Optimize>true</Optimize>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
         <OutputPath>..\bin\Release\</OutputPath>
     </PropertyGroup>
 
