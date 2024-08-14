@@ -299,6 +299,9 @@ If available bulk creation is faster than the approach creating entities ony by 
 **Note:** Archetype based ECS projects are in lead if querying multiple components.  
 Returned components are sequentially stored in memory providing a high cache hit rate.
 
+**Rule**: Query implementations must not use vectorization (SIMD instructions).  
+If doing so this case requires a new benchmark category: `QueryVectorization`.
+
 | Namespace         | Entities | Components | Mean          | Ratio    | Allocated  | 
 |------------------ |--------- |----------- |--------------:|---------:|-----------:|
 | DefaultEcs        | 100      | 1          |         44 ns |     0.86 |          - | 
@@ -537,7 +540,6 @@ All popular IDE's can be used to run and debug the project: **Rider**, **Visual 
   `BenchUtils.CreateEntities(int count)`  
   `BenchUtils.AddComponents(this Entity[] entities)`
 - A package of the ECS must be available on nuget.
-- The Project builds with `<AllowUnsafeBlocks>false</AllowUnsafeBlocks>`. See [ECS.Benchmark.csproj](src/ECS.Benchmark.csproj).
 
 The benchmarks `CreateEntity` and `DeleteEntity` are changing the state of World which has influence on the benchmark measurement.  
 If executing their `[Benchmark]` method multiple times the number of entities will grow / shrink for each method iteration.  
