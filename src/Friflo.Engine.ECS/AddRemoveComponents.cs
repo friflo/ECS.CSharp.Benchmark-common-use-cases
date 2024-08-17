@@ -20,10 +20,10 @@ public class AddRemoveComponents_Friflo : AddRemoveComponents
     protected override void Run1Component()
     {
         foreach (var entity in entities) {
-            entity.Add(new Component1());
+            entity.AddComponent(new Component1());
         }
         foreach (var entity in entities) {
-            entity.Remove<Component1>();
+            entity.RemoveComponent<Component1>();
         }
     }
 

@@ -31,8 +31,8 @@ public class ComponentEvents_Friflo : ComponentEvents
     {
         iterations++;
         foreach (var entity in entities) {
-            entity.Add(new Component1());
-            entity.Remove<Component1>();
+            entity.AddComponent(new Component1());
+            entity.RemoveComponent<Component1>();
         }
     }
 }
