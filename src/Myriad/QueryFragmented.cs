@@ -51,7 +51,7 @@ public class QueryFragmented_Myriad : QueryFragmented
     }
 
     private readonly struct IncrementComponent1
-        : IQuery1<Component1>
+        : IQuery<Component1>
     {
         public void Execute(Entity e, ref Component1 t0)
         {

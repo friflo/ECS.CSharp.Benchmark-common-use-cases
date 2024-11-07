@@ -28,17 +28,17 @@ public class GetSetComponents_Myriad : GetSetComponents
     protected override void Run1Component()
     {
         foreach (var entity in entities)
-            entity.GetComponentRef<Component1>(world) = new Component1();
+            entity.GetComponentRef<Component1>() = new Component1();
     }
 
     protected override void Run5Components()
     {
         foreach (var entity in entities) {
-            entity.GetComponentRef<Component1>(world) = new Component1();
-            entity.GetComponentRef<Component2>(world) = new Component2();
-            entity.GetComponentRef<Component3>(world) = new Component3();
-            entity.GetComponentRef<Component4>(world) = new Component4();
-            entity.GetComponentRef<Component5>(world) = new Component5();
+            entity.GetComponentRef<Component1>() = new Component1();
+            entity.GetComponentRef<Component2>() = new Component2();
+            entity.GetComponentRef<Component3>() = new Component3();
+            entity.GetComponentRef<Component4>() = new Component4();
+            entity.GetComponentRef<Component5>() = new Component5();
         }
     }
 }
