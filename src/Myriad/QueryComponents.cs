@@ -44,7 +44,7 @@ public class QueryComponents_Myriad : QueryComponents
 }
 
 internal readonly struct IncrementComponent1
-    : IQuery1<Component1>
+    : IQuery<Component1>
 {
     public void Execute(Entity e, ref Component1 t0)
     {
@@ -53,7 +53,7 @@ internal readonly struct IncrementComponent1
 }
 
 internal readonly struct Add5Components
-    : IQuery5<Component1, Component2, Component3, Component4, Component5>
+    : IQuery<Component1, Component2, Component3, Component4, Component5>
 {
     public void Execute(Entity e, ref Component1 c1, ref Component2 c2, ref Component3 c3, ref Component4 c4, ref Component5 c5)
     {
