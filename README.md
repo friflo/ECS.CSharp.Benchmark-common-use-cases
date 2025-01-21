@@ -59,6 +59,7 @@ See comments about this benchmark at [reddit announcement post](https://www.redd
 | [Friflo.Engine.ECS.Boost](https://github.com/friflo/Friflo.Engine.ECS)    | 📦         |         |       |     +12 |  3.0.0-preview.10 | [![nuget](https://img.shields.io/nuget/vpre/Friflo.Engine.ECS.Boost?label=%20&color=blue)](https://www.nuget.org/packages/Friflo.Engine.ECS.Boost)
 | [TinyEcs](https://github.com/andreakarasho/TinyEcs)                       | Archetype   | struct  |       |     487 |             1.4.0 | [![nuget](https://img.shields.io/nuget/v/TinyEcs.Main?label=%20&color=blue)](https://www.nuget.org/packages/TinyEcs.Main)
 | [Myriad.ECS](https://github.com/martindevans/Myriad.ECS)                  | Archetype   | struct  |       |     631 |            21.2.1 | [![nuget](https://img.shields.io/nuget/v/Myriad.ECS?label=%20&color=blue)](https://www.nuget.org/packages/Myriad.ECS)
+| [Frent](https://github.com/itsBuggingMe/Frent)                            | Archetype   | struct  |       |     690 |        0.3.2-beta | [![nuget](https://img.shields.io/nuget/v/Frent?label=%20&color=blue)](https://www.nuget.org/packages/Frent/)
 | [Arch](https://github.com/genaray/Arch)                                   | Archetype   | struct  |       |     765 |             1.2.8 | [![nuget](https://img.shields.io/nuget/v/Arch?label=%20&color=blue)](https://www.nuget.org/packages/Arch)
 | [Arch.Relationships](https://github.com/genaray/Arch.Extended)            | 📦         |         |  ✅  |      +9  |             1.0.1 | [![nuget](https://img.shields.io/nuget/v/Arch.Relationships?label=%20&color=blue)](https://www.nuget.org/packages/Arch.Relationships)
 | [Flecs.NET](https://github.com/BeanCheeseBurrito/Flecs.NET)               | Arch/Sparse | struct  |       |    1600 |             4.0.0 | [![nuget](https://img.shields.io/nuget/v/Flecs.NET.Release?label=%20&color=blue)](https://www.nuget.org/packages/Flecs.NET.Release)
@@ -104,6 +105,7 @@ A sparse Set based ECS stores each component in its own sparse set which is has 
 | DefaultEcs           |  ✅  |           |  ✅            |  ✅    |        |  ✅   |
 | fennecs              |  ✅  |  ✅       |                |  [^2]  |        |  ✅   |
 | Flecs.NET            |  ✅  |  ✅       |  ✅           |   ✅   |        |        |
+| Frent                |  ✅  |           |                |        |         |  ✅   |
 | Friflo.Engine.ECS    |  ✅  |  ✅ ¹     |  ✅           |   ✅   |   ✅   |  ✅   |
 | Leopotam.EcsLite     |  ✅  |           |                |         |        |       |
 | Morpeh               |  ✅  |           |  ✅            |        |        |        |
