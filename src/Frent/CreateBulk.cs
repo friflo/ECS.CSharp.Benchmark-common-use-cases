@@ -21,19 +21,24 @@ public class CreateBulk_Frent : CreateBulk
 
     protected override void CreateEntity1Component()
     {
-        world.EnsureCapacity<Component1>(Entities);
-        for (int n = 0; n < Entities; n++)
+        var span = world.CreateMany<Component1>(Entities).Span;
+        for (int n = 0; n < span.Length; n++)
         {
-            world.Create<Component1>(new(n));
+            span[n].Value = n;
         }
     }
 
     protected override void CreateEntity3Components()
     {
-        world.EnsureCapacity<Component1>(Entities);
-        for (int n = 0; n < Entities; n++)
+        var data = world.CreateMany<Component1, Component2, Component3>(Entities);
+        var span1 = data.Span1;
+        var span2 = data.Span2[..span1.Length];
+        var span3 = data.Span3[..span1.Length];
+        for (int n = 0; n < span1.Length; n++)
         {
-            world.Create<Component1, Component2, Component3>(new(n), new(n), new(n));
+            span1[n].Value = n;
+            span2[n].Value = n;
+            span3[n].Value = n;
         }
     }
 }
