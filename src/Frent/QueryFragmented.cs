@@ -28,7 +28,7 @@ public class QueryFragmented_Frent : QueryFragmented
             if ((n &   4) != 0) entity.Add(new Component4());
             if ((n &   8) != 0) entity.Add(new Component5());
         }
-        //Check.AreEqual(Entities, world.EntityCount);
+        Check.AreEqual(Entities, world.EntityCount);
     }
 
 

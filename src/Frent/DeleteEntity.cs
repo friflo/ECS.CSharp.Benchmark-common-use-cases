@@ -1,4 +1,5 @@
 using BenchmarkDotNet.Attributes;
+using System.Diagnostics;
 
 namespace Frent;
 

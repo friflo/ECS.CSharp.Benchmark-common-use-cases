@@ -15,8 +15,8 @@ public class QueryComponents_Frent : QueryComponents
         world = new World();
         world.CreateEntities(Entities).AddComponents();
         query1 = world.Query<With<Component1>>();
-        query5 = world.Query<With<Component1, Component2, Component3, Component4, Component5>>();
-        //Check.AreEqual(Entities, world.EntityCount);
+        query5 = world.Query<With<Component1>, With<Component2>, With<Component3>, With<Component4>, With<Component5>>();
+        Check.AreEqual(Entities, world.EntityCount);
     }
 
     [GlobalCleanup]
