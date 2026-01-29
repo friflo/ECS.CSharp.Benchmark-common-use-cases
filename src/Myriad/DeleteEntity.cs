@@ -1,4 +1,4 @@
-﻿using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Attributes;
 using Myriad.ECS;
 using Myriad.ECS.Command;
 using Myriad.ECS.Worlds;
@@ -12,16 +12,21 @@ public class DeleteEntity_Myriad : DeleteEntity
     private Entity[]    entities;
     private CommandBuffer cmd;
 
+    [GlobalSetup]
+    public void GlobalSetup()
+    {
+        world = new WorldBuilder().Build();
+        cmd   = new CommandBuffer(world);
+    }
+
     [IterationSetup]
     public void Setup()
     {
-        world       = new WorldBuilder().Build();
-        entities    = world.CreateEntities(Entities);
+        entities = world.CreateEntities(Entities);
         entities.AddComponents(world);
-        cmd         = new CommandBuffer(world);
     }
 
-    [IterationCleanup]
+    [GlobalCleanup]
     public void Shutdown()
     {
         world.Dispose();
