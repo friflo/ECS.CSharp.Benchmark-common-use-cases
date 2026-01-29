@@ -34,7 +34,7 @@ public class QueryComponents_Myriad : QueryComponents
 
     protected override void Run1Component()
     {
-        world.Execute<IncrementComponent1, Component1>(query1);
+        world.ExecuteChunk<IncrementComponent1, Component1>(query1);
     }
 
     protected override void Run5Components()
@@ -44,11 +44,14 @@ public class QueryComponents_Myriad : QueryComponents
 }
 
 internal readonly struct IncrementComponent1
-    : IQuery<Component1>
+    : IChunkQuery<Component1>
 {
-    public void Execute(Entity e, ref Component1 t0)
+    public void Execute(ChunkHandle chunk, Span<Component1> t0)
     {
-        t0.Value++;
+        foreach (ref var item in t0)
+        {
+            item.Value++;
+        }
     }
 }
 

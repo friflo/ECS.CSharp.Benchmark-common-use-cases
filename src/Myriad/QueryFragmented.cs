@@ -1,5 +1,4 @@
 using BenchmarkDotNet.Attributes;
-using Myriad.ECS;
 using Myriad.ECS.Command;
 using Myriad.ECS.Queries;
 using Myriad.ECS.Worlds;
@@ -47,15 +46,18 @@ public class QueryFragmented_Myriad : QueryFragmented
     [Benchmark]
     public override void Run()
     {
-        world.Execute<IncrementComponent1, Component1>(query);
+        world.ExecuteChunk<IncrementComponent1, Component1>(query);
     }
 
     private readonly struct IncrementComponent1
-        : IQuery<Component1>
+        : IChunkQuery<Component1>
     {
-        public void Execute(Entity e, ref Component1 t0)
+        public void Execute(ChunkHandle chunk, Span<Component1> t0)
         {
-            t0.Value++;
+            foreach (ref var item in t0)
+            {
+                item.Value++;
+            }
         }
     }
 }

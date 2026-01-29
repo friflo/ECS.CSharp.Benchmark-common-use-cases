@@ -1,5 +1,6 @@
 using BenchmarkDotNet.Attributes;
 using Myriad.ECS.Command;
+using Myriad.ECS.Queries;
 using Myriad.ECS.Worlds;
 
 namespace Myriad;
@@ -10,15 +11,27 @@ public class CreateEntity_Myriad : CreateEntity
     private World           world;
     private CommandBuffer   buffer;
 
-    [IterationSetup]
-    public void Setup()
+    [GlobalSetup]
+    public void GlobalSetup()
     {
         world = new WorldBuilder().Build();
         buffer = new CommandBuffer(world);
     }
 
+    [IterationSetup]
+    public void Setup()
+    {
+    }
+
     [IterationCleanup]
     public void Shutdown()
+    {
+        // Delete everything
+        buffer.Delete(new QueryBuilder().Build(world));
+    }
+
+    [GlobalCleanup]
+    public void GlobalCleanup()
     {
         world.Dispose();
     }
