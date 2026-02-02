@@ -15,6 +15,7 @@
       <PackageReference Include="BenchmarkDotNet" Version="0.14.0" />
       <PackageReference Include="DefaultEcs" Version="0.18.0-beta01" />
       <PackageReference Include="DefaultEcs.Analyzer" Version="0.17.0" PrivateAssets="all" />
+      <PackageReference Include="EntitiesDb" Version="3.2.1" />
       <PackageReference Include="fennecs" Version="0.5.10-beta" />
       <PackageReference Include="Frent" Version="0.5.2-beta" />
       <PackageReference Include="Friflo.Engine.ECS" Version="3.0.0-preview.13" />
